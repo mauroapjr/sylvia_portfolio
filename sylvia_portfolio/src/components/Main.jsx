@@ -39,7 +39,9 @@ export default function Main() {
                   <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
                   <circle cx="12" cy="13" r="4"></circle>
                 </svg>
-                <strong>Album</strong>
+
+                <strong>Sylvia</strong>
+                <h6>Learning Experience Designer</h6>
               </a>
               <button
                 className="navbar-toggler"
@@ -55,50 +57,34 @@ export default function Main() {
               <div className="collapse navbar-collapse" id="navbarHeader">
                 <div className="container">
                   <div className="row">
-                    <div className="col-sm-8 col-md-7 py-4">
-                      <h4>About</h4>
-                      <p className="text-body-secondary">
-                        Add some information about the album below, the author,
-                        or any other background context. Make it a few sentences
-                        long so folks can pick up some informative tidbits.
-                        Then, link them off to some social networking sites or
-                        contact information.
-                      </p>
-                    </div>
+                    <div className="col-sm-8 col-md-7 py-4"></div>
                     <div className="col-sm-4 offset-md-1 py-4">
-                      <h4>Contact</h4>
                       <ul className="list-unstyled">
                         <li>
-                          <a href="#" className="text-white">
-                            Follow on Twitter
+                          <a
+                            href="https://www.linkedin.com/in/sylviabpereira/"
+                            className="text-white"
+                          >
+                            Follow on Linkedin
                           </a>
                         </li>
                         <li>
-                          <a href="#" className="text-white">
-                            Like on Facebook
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#" className="text-white">
+                          <a
+                            href="mailto:sylvia.bachiegga@hotmail.com"
+                            className="text-white"
+                          >
                             Email me
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" className="text-white">
+                            Resume
                           </a>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-
-                <button
-                  className="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarHeader"
-                  aria-controls="navbarHeader"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span className="navbar-toggler-icon"></span>
-                </button>
               </div>
             </div>
           </nav>
@@ -108,7 +94,7 @@ export default function Main() {
           <section className="py-5 text-center container">
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
-                <h1 className="fw-light">Album example</h1>
+                <h1 className="fw-light">About me</h1>
                 <p className="lead text-body-secondary">
                   Something short and leading about the collection below—its
                   contents, the creator, etc. Make it short and sweet, but not
@@ -144,7 +130,7 @@ export default function Main() {
                       <title>Placeholder</title>
                       <rect width="100%" height="100%" fill="#55595c"></rect>
                       <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                        Thumbnail
+                        E-Learning
                       </text>
                     </svg>
                     <div className="card-body">
@@ -160,12 +146,6 @@ export default function Main() {
                             className="btn btn-sm btn-outline-secondary"
                           >
                             View
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-outline-secondary"
-                          >
-                            Edit
                           </button>
                         </div>
                         <small className="text-body-secondary">9 mins</small>
@@ -188,7 +168,7 @@ export default function Main() {
                       <title>Placeholder</title>
                       <rect width="100%" height="100%" fill="#55595c"></rect>
                       <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                        Thumbnail
+                        Instructor Lead-training
                       </text>
                     </svg>
                     <div className="card-body">
@@ -204,12 +184,6 @@ export default function Main() {
                             className="btn btn-sm btn-outline-secondary"
                           >
                             View
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-outline-secondary"
-                          >
-                            Edit
                           </button>
                         </div>
                         <small className="text-body-secondary">9 mins</small>
@@ -232,7 +206,7 @@ export default function Main() {
                       <title>Placeholder</title>
                       <rect width="100%" height="100%" fill="#55595c"></rect>
                       <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                        Thumbnail
+                        *Resume*
                       </text>
                     </svg>
                     <div className="card-body">
@@ -248,12 +222,6 @@ export default function Main() {
                             className="btn btn-sm btn-outline-secondary"
                           >
                             View
-                          </button>
-                          <button
-                            type="button"
-                            className="btn btn-sm btn-outline-secondary"
-                          >
-                            Edit
                           </button>
                         </div>
                         <small className="text-body-secondary">9 mins</small>
