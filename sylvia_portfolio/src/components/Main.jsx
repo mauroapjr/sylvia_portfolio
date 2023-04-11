@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -79,6 +79,11 @@ export default function Main() {
                         <li>
                           <a href="#" className="text-white">
                             Resume
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/Admin" className="text-white">
+                            Admin
                           </a>
                         </li>
                       </ul>
