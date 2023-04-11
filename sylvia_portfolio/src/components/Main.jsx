@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Main() {
+  const navigate = useNavigate();
+  const handleViewClick = () => {
+    navigate("/VideoPage");
+  };
+    
   return (
     <>
       <body>
@@ -160,7 +167,7 @@ export default function Main() {
                           <button
                             type="button"
                             className="btn btn-sm btn-outline-secondary"
-                            onClick={""}
+                            onClick={handleViewClick}
                           >
                             View
                           </button>
