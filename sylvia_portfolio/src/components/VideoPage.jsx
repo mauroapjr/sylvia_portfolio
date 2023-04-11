@@ -88,6 +88,17 @@ export default function VideoPage() {
           </div>
         </nav>
       </header>
+      <div className="ratio ratio-16x9">
+        <iframe
+          width="330"
+          height="186"
+          src="https://www.youtube.com/embed/sjDuXGhCzwc"
+          title="Desafio Semanal"
+          frameBorder="10"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
     </body>
   );
 }
