@@ -40,7 +40,7 @@ export default function Admin() {
       <header data-bs-theme="dark">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

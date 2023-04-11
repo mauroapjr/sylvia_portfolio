@@ -29,7 +29,7 @@ export default function Main() {
         <header data-bs-theme="dark">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-              <a className="navbar-brand" href="#">
+              <a className="navbar-brand" href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -169,7 +169,7 @@ export default function Main() {
                             className="btn btn-sm btn-outline-secondary"
                             onClick={handleViewClick}
                           >
-                            View
+                            Watch Video
                           </button>
                         </div>
 

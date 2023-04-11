@@ -21,7 +21,7 @@ export default function VideoPage() {
       <header data-bs-theme="dark">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -94,7 +94,6 @@ export default function VideoPage() {
           height="186"
           src="https://www.youtube.com/embed/sjDuXGhCzwc"
           title="Desafio Semanal"
-          frameBorder="10"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
