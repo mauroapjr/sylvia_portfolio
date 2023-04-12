@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../main.css";
+import Login from "./Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -10,7 +11,7 @@ export default function Main() {
   const handleViewClick = () => {
     navigate("/VideoPage");
   };
-    
+
   return (
     <>
       <body>
@@ -66,34 +67,8 @@ export default function Main() {
                   <div className="row">
                     <div className="col-sm-8 col-md-7 py-4"></div>
                     <div className="col-sm-4 offset-md-1 py-4">
-                      <ul className="list-unstyled">
-                        <li>
-                          <a
-                            href="https://www.linkedin.com/in/sylviabpereira/"
-                            className="text-white"
-                          >
-                            Follow on Linkedin
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="mailto:sylvia.bachiegga@hotmail.com"
-                            className="text-white"
-                          >
-                            Email me
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#" className="text-white">
-                            Resume
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/Admin" className="text-white">
-                            Admin
-                          </a>
-                        </li>
-                      </ul>
+                      <ul className="list-unstyled"></ul>
+                      <Login />
                     </div>
                   </div>
                 </div>
@@ -173,7 +148,7 @@ export default function Main() {
                           </button>
                         </div>
 
-                        <small className="text-body-secondary">9 mins</small>
+                        <small className="text-body-secondary">1 min 20'</small>
                       </div>
                     </div>
                   </div>
@@ -259,12 +234,44 @@ export default function Main() {
           </div>
         </main>
 
-        <footer className="text-body-secondary py-5">
+        <footer className="text-body-secondary py-5 footer-dark-grey">
           <div className="container">
-            <p className="float-end mb-1">
-              <a href="#">Back to top</a>
-            </p>
+            <div className="col-sm-8 col-md-7 py-4"></div>
+            <div className="col-sm-4 offset-md-1 py-4">
+              <ul className="list-unstyled">
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/sylviabpereira/"
+                    className="text-white"
+                  >
+                    Follow on Linkedin
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:sylvia.bachiegga@hotmail.com"
+                    className="text-white"
+                  >
+                    Email me
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-white">
+                    Resume
+                  </a>
+                </li>
+                <li>
+                  <a href="/Admin" className="text-white">
+                    Admin
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
+
+          <p className="float-end mb-1">
+            <a href="#">Back to top</a>
+          </p>
         </footer>
 
         <script

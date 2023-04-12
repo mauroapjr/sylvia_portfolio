@@ -75,3 +75,15 @@
   z-index: 1500;
 }
 
+.navbar-toggler {
+  
+  
+}
+
+.navbar-toggler-icon { 
+  /* background-color: rgb(190, 186, 186) !important;  */
+}
+
+.footer-dark-grey {
+  background-color: #212529;
+}
