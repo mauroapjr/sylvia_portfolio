@@ -1,5 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 import "../main.css";
 import Login from "./Login";
@@ -233,45 +238,63 @@ export default function Main() {
             </div>
           </div>
         </main>
-
         <footer className="text-body-secondary py-5 footer-dark-grey">
           <div className="container">
-            <div className="col-sm-8 col-md-7 py-4"></div>
-            <div className="col-sm-4 offset-md-1 py-4">
-              <ul className="list-unstyled">
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/sylviabpereira/"
-                    className="text-white"
-                  >
-                    Follow on Linkedin
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:sylvia.bachiegga@hotmail.com"
-                    className="text-white"
-                  >
-                    Email me
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-white">
-                    Resume
-                  </a>
-                </li>
-                <li>
-                  <a href="/Admin" className="text-white">
-                    Admin
-                  </a>
-                </li>
-              </ul>
+            <div className="row">
+              <div className="col-sm-8 col-md-7 py-4"></div>
+              <div className="col-sm-4 offset-md-1 py-4">
+                <ul className="list-unstyled d-flex justify-content-end">
+                  {" "}
+                  <li className="mx-2">
+                    {" "}
+                    <a
+                      href="https://www.linkedin.com/in/sylviabpereira/"
+                      className="text-white"
+                    >
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        size="2xl"
+                        style={{ color: "#bbbcbf" }}
+                      />
+                    </a>
+                  </li>
+                  <li className="mx-2">
+                    {" "}
+                    <a
+                      href="mailto:sylvia.bachiegga@hotmail.com"
+                      className="text-white"
+                    >
+                      <FontAwesomeIcon
+                        icon={faEnvelope}
+                        size="2xl"
+                        style={{ color: "#bbbcbf" }}
+                      />
+                    </a>
+                  </li>
+                  <li className="mx-2">
+                    {" "}
+                    <a href="#" className="text-white">
+                      <FontAwesomeIcon
+                        icon={faFileLines}
+                        size="2xl"
+                        style={{ color: "#bbbcbf" }}
+                      />
+                    </a>
+                  </li>
+                  <li className="mx-2">
+                    {" "}
+                    <a href="/Admin" className="text-white">
+                      <FontAwesomeIcon
+                        icon={faToolbox}
+                        size="2xl"
+                        style={{ color: "#bbbcbf" }}
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-
-          <p className="float-end mb-1">
-            <a href="#">Back to top</a>
-          </p>
         </footer>
 
         <script
