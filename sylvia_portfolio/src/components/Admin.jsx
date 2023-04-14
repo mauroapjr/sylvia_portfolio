@@ -24,7 +24,7 @@ export default function Admin() {
       });
   };
   return (
-    <body>
+    <>
       <link
         rel="canonical"
         href="https://getbootstrap.com/docs/5.3/examples/album/"
@@ -107,6 +107,7 @@ export default function Admin() {
           </div>
         </nav>
       </header>
+      <body>
       <div
         className=""
         style={{
@@ -177,5 +178,6 @@ export default function Admin() {
         </div>
       </div>
     </body>
+    </>
   );
 }

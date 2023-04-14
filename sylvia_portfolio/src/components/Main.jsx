@@ -88,12 +88,12 @@ export default function Main() {
               <div className="col-lg-6 col-md-8 mx-auto">
                 <h1 className="fw-light">About me</h1>
                 <p className="lead text-body-secondary">
-                  Something short and leading about the collection below—its
-                  contents, the creator, etc. Make it short and sweet, but not
-                  too short so folks don’t simply skip over it entirely.
+                  Customer Education Specialist | Learning Experience Designer |
+                  eLearning Developer | Adult Learning Specialist | Learning
+                  Analytics | Localization | Curious by Nature
                 </p>
                 <p>
-                  <a href="#" className="btn btn-primary my-2">
+                  <a href="#" className="btn btn-primary my-2 mx-2">
                     Main call to action
                   </a>
                   <a href="#" className="btn btn-secondary my-2">
