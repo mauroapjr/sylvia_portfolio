@@ -1,5 +1,6 @@
 import React from "react";
 import "../main.css";
+import "../videoPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -14,6 +15,7 @@ export default function VideoPage() {
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
       ></link>
+
       <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -88,14 +90,19 @@ export default function VideoPage() {
           </div>
         </nav>
       </header>
-      <body>
-        <div id="carouselExampleCaptions" class="carousel slide">
-          <div class="carousel-indicators">
+
+      <>
+        <div
+          id="carouselExampleCaptions"
+          className="carousel slide"
+          style={{ marginTop: "10px" }}
+        >
+          <div className="carousel-indicators">
             <button
               type="button"
               data-bs-target="#carouselExampleCaptions"
               data-bs-slide-to="0"
-              class="active"
+              className="active"
               aria-current="true"
               aria-label="Slide 1"
             ></button>
@@ -112,34 +119,34 @@ export default function VideoPage() {
               aria-label="Slide 3"
             ></button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <div className="ratio ratio-16x9 !important">
+                <iframe
+                  style={{ width: "330px", height: "186px" }}
+                  src="https://www.youtube.com/embed/sjDuXGhCzwc"
+                  title="Desafio Semanal"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              <div className="carousel-caption d-md-block">
                 <h5>First slide label</h5>
-                <div className="ratio ratio-16x9">
-                  <iframe
-                    style={{ width: "330px", height: "186px" }}
-                    src="https://www.youtube.com/embed/sjDuXGhCzwc"
-                    title="Desafio Semanal"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-item">
+              <img src="..." className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>
                   Some representative placeholder content for the second slide.
                 </p>
               </div>
             </div>
-            <div class="carousel-item">
-              <img src="..." class="d-block w-100" alt="..." />
-              <div class="carousel-caption d-none d-md-block">
+            <div className="carousel-item">
+              <img src="..." className="d-block w-100" alt="..." />
+              <div className="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>
                   Some representative placeholder content for the third slide.
@@ -148,34 +155,31 @@ export default function VideoPage() {
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
-        {/* <div className="ratio ratio-16x9">
-        <iframe
-          style={{ width: "330px", height: "186px" }}
-          src="https://www.youtube.com/embed/sjDuXGhCzwc"
-          title="Desafio Semanal"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
-      </div> */}
-      </body>
+      </>
     </>
   );
 }
