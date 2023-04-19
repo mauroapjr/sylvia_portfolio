@@ -542,17 +542,17 @@ export default function Main() {
                       </div>
                     </div>
                   </div>
-
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                   <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target=".carousel"
                     data-bs-slide="prev"
                     style={{
-                      backgroundColor: "#000",
+                      backgroundColor: "rgb(136 133 133)",
                       borderColor: "#000",
-                      width: "20px",
-                      height: "100px",
+                      width: "13px",
+                      height: "100%",
                     }}
                   >
                     <span
@@ -567,18 +567,22 @@ export default function Main() {
                     data-bs-target=".carousel"
                     data-bs-slide="next"
                     style={{
-                      backgroundColor: "#000",
+                      display: 'flex',
+                      justifyContent: 'center',
+                      backgroundColor: "rgb(136 133 133)",
                       borderColor: "#000",
-                      width: "20px",
-                      height: "100px",
+                      width: "13px",
+                      height: "100%",
                     }}
                   >
                     <span
                       className="carousel-control-next-icon"
                       aria-hidden="true"
+                      
                     ></span>
                     <span className="visually-hidden">Next</span>
                   </button>
+                  </div>
                 </div>
               </div>
             </div>
