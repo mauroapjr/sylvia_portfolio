@@ -1,24 +1,12 @@
-/* .carousel-indicators button {
-  background-color: #333;
-  border-color: #333;
-}
-.carousel-indicators button.active {
-  background-color: gray;
-  border-color: gray;
-} */
-
-
-
-/* .carousel-control-prev,
-.carousel-control-next {
-  background-color: #343a40;
-  border-color: #343a40;
+.ratio {
+  position: relative;
+  width: 100%;
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover,
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
-  background-color: #1d2124;
-  border-color: #1d2124;
-} */
+.ratio iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}

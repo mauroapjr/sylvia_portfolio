@@ -4,6 +4,12 @@ import "../videoPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faToolbox } from "@fortawesome/free-solid-svg-icons";
+
 export default function VideoPage() {
   return (
     <>
@@ -60,26 +66,52 @@ export default function VideoPage() {
                 <div className="row">
                   <div className="col-sm-8 col-md-7 py-4"></div>
                   <div className="col-sm-4 offset-md-1 py-4">
-                    <ul className="list-unstyled">
-                      <li>
+                    <ul className="list-unstyled d-flex justify-content-end">
+                      {" "}
+                      <li className="mx-2">
+                        {" "}
                         <a
                           href="https://www.linkedin.com/in/sylviabpereira/"
                           className="text-white"
                         >
-                          Follow on Linkedin
+                          <FontAwesomeIcon
+                            icon={faLinkedin}
+                            size="2xl"
+                            style={{ color: "#bbbcbf" }}
+                          />
                         </a>
                       </li>
-                      <li>
+                      <li className="mx-2">
+                        {" "}
                         <a
                           href="mailto:sylvia.bachiegga@hotmail.com"
                           className="text-white"
                         >
-                          Email me
+                          <FontAwesomeIcon
+                            icon={faEnvelope}
+                            size="2xl"
+                            style={{ color: "#bbbcbf" }}
+                          />
                         </a>
                       </li>
-                      <li>
+                      <li className="mx-2">
+                        {" "}
                         <a href="#" className="text-white">
-                          Resume
+                          <FontAwesomeIcon
+                            icon={faFileLines}
+                            size="2xl"
+                            style={{ color: "#bbbcbf" }}
+                          />
+                        </a>
+                      </li>
+                      <li className="mx-2">
+                        {" "}
+                        <a href="/Admin" className="text-white">
+                          <FontAwesomeIcon
+                            icon={faToolbox}
+                            size="2xl"
+                            style={{ color: "#bbbcbf" }}
+                          />
                         </a>
                       </li>
                     </ul>
@@ -91,95 +123,14 @@ export default function VideoPage() {
         </nav>
       </header>
 
-      <>
-        <div
-          id="carouselExampleCaptions"
-          className="carousel slide"
-          style={{ marginTop: "10px" }}
-        >
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div className="ratio ratio-16x9 !important">
-                <iframe
-                  style={{ width: "330px", height: "186px" }}
-                  src="https://www.youtube.com/embed/sjDuXGhCzwc"
-                  title="Desafio Semanal"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-
-              <div className="carousel-caption d-md-block">
-                <h5>First slide label</h5>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src="..." className="d-block w-100" alt="..." />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>
-                  Some representative placeholder content for the second slide.
-                </p>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <img src="..." className="d-block w-100" alt="..." />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>
-                  Some representative placeholder content for the third slide.
-                </p>
-              </div>
-            </div>
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      </>
+      <div className="ratio ratio-16x9">
+        <iframe
+          src="https://www.youtube.com/embed/sjDuXGhCzwc"
+          title="Desafio Semanal"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
     </>
   );
 }
