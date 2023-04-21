@@ -9,6 +9,7 @@ import './index.css';
 import App from './App';
 import Admin from './components/Admin';
 import VideoPage from './components/VideoPage';
+import StorylinePage from './components/StorylinePage';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "VideoPage",
     element: <VideoPage/>,
+  },
+  {
+    path: "StorylinePage",
+    element: <StorylinePage/>,
   },
 ]);
 

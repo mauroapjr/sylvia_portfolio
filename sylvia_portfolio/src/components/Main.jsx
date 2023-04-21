@@ -17,6 +17,10 @@ export default function Main() {
     navigate("/VideoPage");
   };
 
+  const storyViewClick = () => {
+    navigate("/StorylinePage");
+  };
+
   return (
     <>
       <body>
@@ -230,7 +234,7 @@ export default function Main() {
                               fill="#55595c"
                             ></rect>
                             <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                              *Resume*
+                              Storyline video 
                             </text>
                           </svg>
                           <div className="card-body">
@@ -244,6 +248,7 @@ export default function Main() {
                                 <button
                                   type="button"
                                   className="btn btn-sm btn-outline-secondary"
+                                  onClick={storyViewClick}
                                 >
                                   View
                                 </button>
