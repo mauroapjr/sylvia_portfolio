@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.1"
+    "html-webpack-plugin": "^5.5.1",
+    "style-loader": "^3.3.2"
   }
 }
