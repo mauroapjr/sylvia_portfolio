@@ -234,7 +234,7 @@ export default function Main() {
                               fill="#55595c"
                             ></rect>
                             <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                              Storyline video 
+                              Storyline video
                             </text>
                           </svg>
                           <div className="card-body">
@@ -250,17 +250,18 @@ export default function Main() {
                                   className="btn btn-sm btn-outline-secondary"
                                   onClick={storyViewClick}
                                 >
-                                  View
+                                  Watch video
                                 </button>
                               </div>
                               <small className="text-body-secondary">
-                                9 mins
+                                2 min 39'
                               </small>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+
                     <div style={{ display: "flex", justifyContent: "center" }}>
                       <button
                         className="carousel-control-prev"
@@ -268,37 +269,54 @@ export default function Main() {
                         data-bs-target=".carousel"
                         data-bs-slide="prev"
                         style={{
-                          backgroundColor: "rgb(136 133 133)",
-                          borderColor: "#000",
-                          width: "13px",
+                          backgroundColor: "transparent",
+                          borderColor: "transparent",
+                          width: "18px",
                           height: "100%",
+                          margin: "-20px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
                         }}
                       >
-                        <span
-                          className="carousel-control-prev-icon"
-                          aria-hidden="true"
-                        ></span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="black"
+                          width="24px"
+                          height="24px"
+                        >
+                          <path d="M15.41,18.59L10.83,14l4.58-4.59L14,8l-6,6,6,6Z" />
+                        </svg>
                         <span className="visually-hidden">Previous</span>
                       </button>
                       <button
                         className="carousel-control-next"
                         type="button"
                         data-bs-target=".carousel"
-                        data-bs-slide="next"
+                        data-bs-slide="prev"
                         style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          backgroundColor: "rgb(136 133 133)",
-                          borderColor: "#000",
-                          width: "13px",
+                          backgroundColor: "transparent",
+                          borderColor: "transparent",
+                          width: "18px",
                           height: "100%",
+                          margin: "-20px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          transform: "rotate(180deg)",
                         }}
                       >
-                        <span
-                          className="carousel-control-next-icon"
-                          aria-hidden="true"
-                        ></span>
-                        <span className="visually-hidden">Next</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="black"
+                          width="24px"
+                          height="24px"
+                        >
+                          <path d="M15.41,18.59L10.83,14l4.58-4.59L14,8l-6,6,6,6Z" />
+                        </svg>
+                        <span className="visually-hidden">Previous</span>
                       </button>
                     </div>
                   </div>
