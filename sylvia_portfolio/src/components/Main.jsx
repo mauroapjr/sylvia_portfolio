@@ -52,6 +52,7 @@ export default function Main() {
                   aria-hidden="true"
                   className="me-2"
                   viewBox="0 0 24 24"
+                  backgroundColor="#705846"
                 >
                   <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
                   <circle cx="12" cy="13" r="4"></circle>
@@ -90,20 +91,28 @@ export default function Main() {
           <section className="py-5 text-center container">
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
-                <h1 className="fw-light">About me</h1>
+                {/* <h1 className="fw-light">About me</h1> */}
                 <p className="lead text-body-secondary">
-                  Customer Education Specialist | Learning Experience Designer |
-                  eLearning Developer | Adult Learning Specialist | Learning
-                  Analytics | Localization | Curious by Nature
+                  I am a lifelong learner driven by an insatiable curiosity and
+                  a tenacious spirit. People would describe me as a dedicated
+                  and energetic individual who fearlessly takes on new
+                  challenges and explores innovative avenues to achieve success.
+                  Throughout the years, I have immersed myself in diverse
+                  fields, from music to data analysis, from academic high-school
+                  courses to customer education. My passion lies in learning and
+                  development, and I am always up to talk about education
+                  projects.
                 </p>
-                <p>
+                {/*  */}
+                <h6 className="fw-light">Customer Education | Learning Experience Designer | eLearning Developer | Adult Learning Specialist | Learning Analytics | Localization | Curious by Nature</h6>
+                {/* <p>
                   <a href="#" className="btn btn-primary my-2 mx-2">
                     Main call to action
                   </a>
                   <a href="#" className="btn btn-secondary my-2">
                     Secondary action
                   </a>
-                </p>
+                </p> */}
               </div>
             </div>
           </section>
