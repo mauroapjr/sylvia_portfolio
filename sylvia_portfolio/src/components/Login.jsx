@@ -108,7 +108,11 @@ export default function Login() {
         }
       });
   };
-  
+
+  const handleLogout = () => {
+    setUsername("");
+  };
+
   return (
     <div
       className=""
@@ -157,6 +161,7 @@ export default function Login() {
               placeholder="Password"
             />
           </Form.Item>
+            {username ? null : (
           <Form.Item>
             <Button
               type="primary"
@@ -166,8 +171,20 @@ export default function Login() {
               Log in
             </Button>
           </Form.Item>
+            )}
+          {username && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Button onClick={handleLogout}>Logout</Button>
+            </div>
+          )}
         </Form>
-        {username && <p style={{ color: "white" }}>Welcome to {username}!</p>}
+        {username && <p style={{ color: "white", marginTop: "20px" }}>Welcome to {username}</p>}
       </div>
     </div>
   );
