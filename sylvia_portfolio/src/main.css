@@ -99,3 +99,15 @@
   }
 }
 
+.sylvia-short-logo {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 415px) {
+  .sylvia-short-logo {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

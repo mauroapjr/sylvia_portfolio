@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import sylviaLogo from "../images/Sylvia_Logo2_salmon.png";
+import eLearning from "../images/E_learning.jpg";
 
 export default function Main() {
   const navigate = useNavigate();
@@ -63,7 +64,11 @@ export default function Main() {
                   viewBox="0 0 24 24"
                   backgroundColor="#705846"
                 ></svg>
-                <img className="sylvia-logo" src={sylviaLogo} alt="Sylvia Logo" />
+                <img
+                  className="sylvia-logo"
+                  src={sylviaLogo}
+                  alt="Sylvia Logo"
+                />
               </a>
               <button
                 className="navbar-toggler"
@@ -95,7 +100,6 @@ export default function Main() {
           <section className="py-5 text-center container">
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
-                
                 <p className="lead text-body-secondary">
                   I am a lifelong learner driven by an insatiable curiosity and
                   a tenacious spirit. People would describe me as a dedicated
@@ -133,37 +137,16 @@ export default function Main() {
                     <div className="carousel-inner">
                       <div className="carousel-item active">
                         <div className="card shadow-sm">
-                          <svg
+                          <div
                             className="bd-placeholder-img card-img-top"
-                            width="100%"
-                            height="225"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                          >
-                            <title>Placeholder</title>
-                            <rect
-                              width="100%"
-                              height="100%"
-                              fill="#55595c"
-                            ></rect>
-                            <iframe
-                              width="560"
-                              height="315"
-                              src="https://www.youtube.com/embed/67QNw2xQlsk"
-                              title="YouTube video player"
-                              frameborder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                              gyroscope; picture-in-picture; web-share"
-                              allowfullscreen
-                            ></iframe>
-
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                              E-Learning
-                            </text>
-                          </svg>
+                            style={{
+                              backgroundImage: `url(${eLearning})`,
+                              width: "100%",
+                              height: "225px",
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }}
+                          ></div>
                           <div className="card-body">
                             <p className="card-text">
                               This is a wider card with supporting text below as

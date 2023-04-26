@@ -10,7 +10,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-import sylviaLogo from "../images/Sylvia_Logo2_salmon.png";
+import sylviaLogoShort from "../images/Sylvia_Logo_Salmon_Short.png";
 
 export default function VideoPage() {
   return (
@@ -47,7 +47,7 @@ export default function VideoPage() {
               >
                 
               </svg>
-              <img className="sylvia-logo" src={sylviaLogo} alt="Sylvia Logo" />
+              <img className="sylvia-short-logo" src={sylviaLogoShort} alt="Sylvia Short Logo" />
               
             </a>
             <button
