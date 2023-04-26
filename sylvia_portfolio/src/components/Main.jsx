@@ -66,7 +66,7 @@ export default function Main() {
                 <img className="sylvia-logo" src={sylviaLogo} alt="Sylvia Logo" />
               </a>
               <button
-                className="navbar-toggler d-flex justify-content-center"
+                className="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarHeader"
@@ -80,7 +80,7 @@ export default function Main() {
                 <div className="container">
                   <div className="row">
                     <div className="col-sm-8 col-md-7 py-4"></div>
-                    <div className="col-sm-4 offset-md-1 py-4 d-flex justify-content-center">
+                    <div className="col-sm-4 offset-md-1 py-4">
                       <ul className="list-unstyled"></ul>
                       <Login />
                     </div>
