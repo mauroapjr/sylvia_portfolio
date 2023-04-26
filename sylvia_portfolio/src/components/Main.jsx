@@ -11,6 +11,8 @@ import Login from "./Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+import sylviaLogo from "../images/Sylvia_Logo2_salmon.png";
+
 export default function Main() {
   const navigate = useNavigate();
   const handleViewClick = () => {
@@ -41,7 +43,10 @@ export default function Main() {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <header data-bs-theme="dark">
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <nav
+            className="navbar navbar-expand-lg navbar-dark"
+            style={{ backgroundColor: "#E49393" }}
+          >
             <div className="container-fluid">
               <a className="navbar-brand" href="/">
                 <svg
@@ -57,13 +62,8 @@ export default function Main() {
                   className="me-2"
                   viewBox="0 0 24 24"
                   backgroundColor="#705846"
-                >
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                  <circle cx="12" cy="13" r="4"></circle>
-                </svg>
-
-                <strong>Sylvia</strong>
-                <h6>Learning Experience Designer</h6>
+                ></svg>
+                <img className="sylviaLogo" src={sylviaLogo} alt="Sylvia Logo" />
               </a>
               <button
                 className="navbar-toggler"
@@ -108,7 +108,11 @@ export default function Main() {
                   projects.
                 </p>
                 {/*  */}
-                <h6 className="fw-light">Customer Education | Learning Experience Designer | eLearning Developer | Adult Learning Specialist | Learning Analytics | Localization | Curious by Nature</h6>
+                <h6 className="fw-light">
+                  Customer Education | Learning Experience Designer | eLearning
+                  Developer | Adult Learning Specialist | Learning Analytics |
+                  Localization | Curious by Nature
+                </h6>
                 {/* <p>
                   <a href="#" className="btn btn-primary my-2 mx-2">
                     Main call to action
@@ -339,7 +343,10 @@ export default function Main() {
             </div>
           </div>
         </main>
-        <footer className="text-body-secondary py-5 footer-dark-grey">
+        <footer
+          className="text-body-secondary py-5"
+          style={{ backgroundColor: "#408E91" }}
+        >
           <div className="container">
             <div className="row">
               <div className="col-sm-8 col-md-7 py-4"></div>

@@ -27,7 +27,7 @@ function PPTPage() {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
       <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#E49393"}}>
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               <svg
