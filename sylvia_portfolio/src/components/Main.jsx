@@ -21,6 +21,10 @@ export default function Main() {
     navigate("/StorylinePage");
   };
 
+  const pptViewClick = () => {
+    navigate("/PptPage");
+  };
+
   return (
     <>
       <body>
@@ -213,6 +217,7 @@ export default function Main() {
                                 <button
                                   type="button"
                                   className="btn btn-sm btn-outline-secondary"
+                                  onClick={pptViewClick}
                                 >
                                   View
                                 </button>
