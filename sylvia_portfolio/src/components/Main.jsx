@@ -66,7 +66,7 @@ export default function Main() {
                 <img className="sylvia-logo" src={sylviaLogo} alt="Sylvia Logo" />
               </a>
               <button
-                className="navbar-toggler"
+                className="navbar-toggler d-flex justify-content-center"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarHeader"
@@ -80,7 +80,7 @@ export default function Main() {
                 <div className="container">
                   <div className="row">
                     <div className="col-sm-8 col-md-7 py-4"></div>
-                    <div className="col-sm-4 offset-md-1 py-4">
+                    <div className="col-sm-4 offset-md-1 py-4 d-flex justify-content-center">
                       <ul className="list-unstyled"></ul>
                       <Login />
                     </div>
@@ -95,7 +95,7 @@ export default function Main() {
           <section className="py-5 text-center container">
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
-                {/* <h1 className="fw-light">About me</h1> */}
+                
                 <p className="lead text-body-secondary">
                   I am a lifelong learner driven by an insatiable curiosity and
                   a tenacious spirit. People would describe me as a dedicated

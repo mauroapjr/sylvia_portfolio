@@ -76,4 +76,25 @@
 
 .sylvia-logo {
   width: 450px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 415px) {
+  .sylvia-logo {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.fw-light {
+  color: #245953;
+  font-size: smaller;
+}
+
+@media (max-width: 415px) {
+  .navbar-toggler {
+    margin: 0 auto;
+    display: block;
+  }
 }
