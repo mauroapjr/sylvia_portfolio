@@ -63,7 +63,7 @@ export default function Main() {
                   viewBox="0 0 24 24"
                   backgroundColor="#705846"
                 ></svg>
-                <img className="sylviaLogo" src={sylviaLogo} alt="Sylvia Logo" />
+                <img className="sylvia-logo" src={sylviaLogo} alt="Sylvia Logo" />
               </a>
               <button
                 className="navbar-toggler"
