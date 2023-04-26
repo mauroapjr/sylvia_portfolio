@@ -1,42 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import './index.css';
-
-import App from './App';
-import Admin from './components/Admin';
-import VideoPage from './components/VideoPage';
-import StorylinePage from './components/StorylinePage';
+import "./index.css";
+import App from "./App";
+import Admin from "./components/Admin";
+import VideoPage from "./components/VideoPage";
+import StorylinePage from "./components/StorylinePage";
+import PPTPage from "./components/PPTPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "Admin",
-    element: <Admin/>,
+    element: <Admin />,
   },
   {
     path: "VideoPage",
-    element: <VideoPage/>,
+    element: <VideoPage />,
   },
   {
     path: "StorylinePage",
-    element: <StorylinePage/>,
+    element: <StorylinePage />,
+  },
+  {
+    path: "PPTPage",
+    element: <PPTPage />,
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <RouterProvider router={router}>
-  <React.StrictMode>
-
-    
-  </React.StrictMode>
+    <React.StrictMode></React.StrictMode>
   </RouterProvider>
 );
 

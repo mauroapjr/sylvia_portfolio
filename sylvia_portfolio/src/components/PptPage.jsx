@@ -10,7 +10,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-function PptPage() {
+function PPTPage() {
   return (
     <>
       <link
@@ -129,4 +129,4 @@ function PptPage() {
 }
 
 
-export default PptPage;
+export default PPTPage;

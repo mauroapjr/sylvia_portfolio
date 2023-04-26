@@ -22,7 +22,7 @@ export default function Main() {
   };
 
   const pptViewClick = () => {
-    navigate("/PptPage");
+    navigate("/PPTPage");
   };
 
   return (
