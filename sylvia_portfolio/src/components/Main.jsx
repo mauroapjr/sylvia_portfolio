@@ -13,6 +13,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import sylviaLogo from "../images/Sylvia_Logo2_salmon.png";
 import eLearning from "../images/E_learning.jpg";
+import StoryLineImg from "../images/Storyline.JPG";
 
 export default function Main() {
   const navigate = useNavigate();
@@ -142,7 +143,7 @@ export default function Main() {
                             style={{
                               backgroundImage: `url(${eLearning})`,
                               width: "100%",
-                              height: "225px",
+                              height: "250px",
                               backgroundSize: "cover",
                               backgroundPosition: "center",
                             }}
@@ -218,7 +219,40 @@ export default function Main() {
                       </div>
                       <div className="carousel-item">
                         <div className="card shadow-sm">
-                          <svg
+                        <div
+                            className="bd-placeholder-img card-img-top"
+                            style={{
+                              backgroundImage: `url(${StoryLineImg})`,
+                              width: "auto",
+                              height: "250px",
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }}
+                          ></div>
+                          <div className="card-body">
+                            <p className="card-text">
+                              This is a wider card with supporting text below as
+                              a natural lead-in to additional content. This
+                              content is a little bit longer.
+                            </p>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <div className="btn-group">
+                                <button
+                                  type="button"
+                                  className="btn btn-sm btn-outline-secondary"
+                                  onClick={storyViewClick}
+                                >
+                                  Watch Video
+                                </button>
+                              </div>
+
+                              <small className="text-body-secondary">
+                                2 min 39'
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                          {/* <svg
                             className="bd-placeholder-img card-img-top"
                             width="100%"
                             height="225"
@@ -259,7 +293,7 @@ export default function Main() {
                               </small>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
 
