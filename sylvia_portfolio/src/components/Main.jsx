@@ -295,7 +295,7 @@ export default function Main() {
                         className="carousel-control-next"
                         type="button"
                         data-bs-target=".carousel"
-                        data-bs-slide="prev"
+                        data-bs-slide="next"
                         style={{
                           backgroundColor: "transparent",
                           borderColor: "transparent",
