@@ -71,6 +71,19 @@ export default function Main() {
                   alt="Sylvia Logo"
                 />
               </a>
+              <ul className="head-item" style={{ display: "flex", justifyContent: "center",textAlign: "center"}}>
+              <div className="head-items" style={{ display: "flex"}}>
+                <p className="head-portfolio"style={{ margin: "0 30px"}}>
+                  PORTFOLIO
+                </p>
+                <p className="head-blog"style={{ margin: "0 30px"}}>
+                  BLOG
+                </p>
+                <p className="head-about"style={{ margin: "0 30px"}}>
+                  ABOUT
+                </p>
+              </div>
+              </ul>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -118,14 +131,14 @@ export default function Main() {
                   Developer | Adult Learning Specialist | Learning Analytics |
                   Localization | Curious by Nature
                 </h6>
-                {/* <p>
+                <p>
                   <a href="#" className="btn btn-primary my-2 mx-2">
-                    Main call to action
+                    Check my Portfolio
                   </a>
                   <a href="#" className="btn btn-secondary my-2">
-                    Secondary action
+                    Send a message
                   </a>
-                </p> */}
+                </p>
               </div>
             </div>
           </section>
@@ -219,7 +232,7 @@ export default function Main() {
                       </div>
                       <div className="carousel-item">
                         <div className="card shadow-sm">
-                        <div
+                          <div
                             className="bd-placeholder-img card-img-top"
                             style={{
                               backgroundImage: `url(${StoryLineImg})`,
@@ -252,48 +265,6 @@ export default function Main() {
                             </div>
                           </div>
                         </div>
-                          {/* <svg
-                            className="bd-placeholder-img card-img-top"
-                            width="100%"
-                            height="225"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                          >
-                            <title>Placeholder</title>
-                            <rect
-                              width="100%"
-                              height="100%"
-                              fill="#55595c"
-                            ></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                              Storyline video
-                            </text>
-                          </svg>
-                          <div className="card-body">
-                            <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div className="btn-group">
-                                <button
-                                  type="button"
-                                  className="btn btn-sm btn-outline-secondary"
-                                  onClick={storyViewClick}
-                                >
-                                  Watch video
-                                </button>
-                              </div>
-                              <small className="text-body-secondary">
-                                2 min 39'
-                              </small>
-                            </div>
-                          </div>
-                        </div> */}
                       </div>
                     </div>
 
