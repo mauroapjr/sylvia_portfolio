@@ -117,10 +117,11 @@ export default function Main() {
         </header>
 
         <main>
-          <section className="py-5 text-center container">
+          
+          <section className="py-5 text-center" style={{ backgroundColor: "#408E91", width: "100%" }}>
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
-                <p className="lead text-body-secondary">
+                <p className="lead text-body-secondary" style={{ color: "white", width: "100%" }}>
                   I am a lifelong learner driven by an insatiable curiosity and
                   a tenacious spirit. People would describe me as a dedicated
                   and energetic individual who fearlessly takes on new

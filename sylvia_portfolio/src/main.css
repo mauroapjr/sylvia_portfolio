@@ -49,6 +49,33 @@
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
+.ant-btn-primary {
+background-color: #245953;
+box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+}
+
+.ant-btn-primary:hover {
+  background-color: #408E91 !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #245953 !important;
+  border-color: #245953 !important;
+}
+.btn-primary:hover {
+  background-color: #D8D8D8 !important;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #E49393 !important;
+  border-color: #E49393 !important;
+}
+
+.btn-secondary:hover {
+  background-color: #D8D8D8 !important;
+}
 
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
@@ -71,7 +98,7 @@
 }
 
 .footer-dark-grey {
-  background-color: #212529;
+  background-color: #f4f5f7;
 }
 
 .sylvia-logo {
@@ -87,9 +114,16 @@
   }
 }
 
+.lead {
+  color: #f5f8f8 !important;
+  font-size: 25px !important;
+  margin-bottom: 30px;
+}
+
 .fw-light {
-  color: #245953;
+  color: #f5f8f8;
   font-size: smaller;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 415px) {
