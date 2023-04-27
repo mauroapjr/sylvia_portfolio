@@ -73,15 +73,21 @@ export default function Main() {
               </a>
               <ul className="head-item" style={{ display: "flex", justifyContent: "center",textAlign: "center"}}>
               <div className="head-items" style={{ display: "flex"}}>
+                <a href="/Portfolio" style={{ textDecoration: "none", color: "inherit"}}>
                 <p className="head-portfolio"style={{ margin: "0 30px"}}>
                   PORTFOLIO
                 </p>
-                <p className="head-blog"style={{ margin: "0 30px"}}>
+                </a>
+                <a href="/Blog" style={{ textDecoration: "none", color: "inherit"}}>
+                <p className="head-blog" style={{ margin: "0 30px"}} >
                   BLOG
                 </p>
+                </a>
+                <a href="/About" style={{ textDecoration: "none", color: "inherit"}}>
                 <p className="head-about"style={{ margin: "0 30px"}}>
                   ABOUT
                 </p>
+                </a>
               </div>
               </ul>
               <button
@@ -132,10 +138,10 @@ export default function Main() {
                   Localization | Curious by Nature
                 </h6>
                 <p>
-                  <a href="#" className="btn btn-primary my-2 mx-2">
+                  <a href="/Portfolio" className="btn btn-primary my-2 mx-2">
                     Check my Portfolio
                   </a>
-                  <a href="#" className="btn btn-secondary my-2">
+                  <a href="mailto:sylvia.bachiegga@hotmail.com" className="btn btn-secondary my-2">
                     Send a message
                   </a>
                 </p>

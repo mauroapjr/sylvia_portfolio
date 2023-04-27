@@ -10,6 +10,9 @@ import Admin from "./components/Admin";
 import VideoPage from "./components/VideoPage";
 import StorylinePage from "./components/StorylinePage";
 import PPTPage from "./components/PPTPage";
+import Blog from "./components/Blog";
+import Portfolio from "./components/Portfolio";
+import About from "./components/About";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ const router = createBrowserRouter([
   {
     path: "PPTPage",
     element: <PPTPage />,
+  },
+  {
+    path: "Blog",
+    element: <Blog />,
+  },
+  {
+    path: "Portfolio",
+    element: <Portfolio />,
+  },
+  {
+    path: "About",
+    element: <About />,
   },
 ]);
 

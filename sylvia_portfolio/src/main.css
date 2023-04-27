@@ -95,7 +95,8 @@
 @media (max-width: 415px) {
   .navbar-toggler {
     margin: 0 auto;
-    display: block !important;
+    display: inline-block !important;
+    text-align: center;
   }
 }
 
@@ -115,3 +116,14 @@
 .head-items {
   color: white;
 } 
+
+@media (max-width: 418px) {
+  .head-items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .head-items a {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+}

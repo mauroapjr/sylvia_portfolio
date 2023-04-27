@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import "../main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -9,7 +9,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-function PPTPage() {
+function Blog() {
   return (
     <>
       <link
@@ -124,8 +124,7 @@ function PPTPage() {
 
       
     </>
-  );
+  )
 }
 
-
-export default PPTPage;
+export default Blog
