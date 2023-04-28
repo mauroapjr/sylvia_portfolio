@@ -12,23 +12,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import sylviaLogo from "../images/Sylvia_Logo2_salmon.png";
-import eLearning from "../images/E_learning.jpg";
-import StoryLineImg from "../images/Storyline.JPG";
+import Alteryx from "../images/alteryx.png";
+import Movidaria from "../images/movidaria.png";
+import RoyalConservatory from "../images/Royal_Conservatory_of_Music_logo.svg.png";
+import TVO from "../images/TVO.jpg";
+import CTC from "../images/canadian-tire-logo.png";
 
 export default function Main() {
-  const navigate = useNavigate();
-  const handleViewClick = () => {
-    navigate("/VideoPage");
-  };
-
-  const storyViewClick = () => {
-    navigate("/StorylinePage");
-  };
-
-  const pptViewClick = () => {
-    navigate("/PPTPage");
-  };
-
+  
   return (
     <>
       <body>
@@ -71,24 +62,41 @@ export default function Main() {
                   alt="Sylvia Logo"
                 />
               </a>
-              <ul className="head-item" style={{ display: "flex", justifyContent: "center",textAlign: "center"}}>
-              <div className="head-items" style={{ display: "flex"}}>
-                <a href="/Portfolio" style={{ textDecoration: "none", color: "inherit"}}>
-                <p className="head-portfolio"style={{ margin: "0 30px"}}>
-                  PORTFOLIO
-                </p>
-                </a>
-                <a href="/Blog" style={{ textDecoration: "none", color: "inherit"}}>
-                <p className="head-blog" style={{ margin: "0 30px"}} >
-                  BLOG
-                </p>
-                </a>
-                <a href="/About" style={{ textDecoration: "none", color: "inherit"}}>
-                <p className="head-about"style={{ margin: "0 30px"}}>
-                  ABOUT
-                </p>
-                </a>
-              </div>
+              <ul
+                className="head-item"
+                style={{
+                  display: "flex",
+                  marginTop: "80px",
+                  justifyContent: "center",
+                  textAlign: "center",
+                }}
+              >
+                <div className="head-items" style={{ display: "flex" }}>
+                  <a
+                    href="/Portfolio"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-portfolio" style={{ margin: "0 30px" }}>
+                      PORTFOLIO
+                    </p>
+                  </a>
+                  <a
+                    href="/Blog"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-blog" style={{ margin: "0 30px" }}>
+                      BLOG
+                    </p>
+                  </a>
+                  <a
+                    href="/About"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-about" style={{ margin: "0 30px" }}>
+                      ABOUT
+                    </p>
+                  </a>
+                </div>
               </ul>
               <button
                 className="navbar-toggler"
@@ -117,11 +125,16 @@ export default function Main() {
         </header>
 
         <main>
-          
-          <section className="py-5 text-center" style={{ backgroundColor: "#408E91", width: "100%" }}>
+          <section
+            className="py-5 text-center"
+            style={{ backgroundColor: "#408E91", width: "100%" }}
+          >
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
-                <p className="lead text-body-secondary" style={{ color: "white", width: "100%" }}>
+                <p
+                  className="lead text-body-secondary"
+                  style={{ color: "white", width: "100%" }}
+                >
                   I am a lifelong learner driven by an insatiable curiosity and
                   a tenacious spirit. People would describe me as a dedicated
                   and energetic individual who fearlessly takes on new
@@ -132,7 +145,7 @@ export default function Main() {
                   development, and I am always up to talk about education
                   projects.
                 </p>
-                {/*  */}
+
                 <h6 className="fw-light">
                   Customer Education | Learning Experience Designer | eLearning
                   Developer | Adult Learning Specialist | Learning Analytics |
@@ -142,7 +155,10 @@ export default function Main() {
                   <a href="/Portfolio" className="btn btn-primary my-2 mx-2">
                     Check my Portfolio
                   </a>
-                  <a href="mailto:sylvia.bachiegga@hotmail.com" className="btn btn-secondary my-2">
+                  <a
+                    href="mailto:sylvia.bachiegga@hotmail.com"
+                    className="btn btn-secondary my-2"
+                  >
                     Send a message
                   </a>
                 </p>
@@ -150,192 +166,223 @@ export default function Main() {
             </div>
           </section>
 
-          <div className="album py-5 bg-body-tertiary">
-            <div className="container">
-              <div className="d-flex justify-content-center">
-                <div className="row">
-                  <div className="carousel" data-ride="carousel">
-                    <div className="carousel-inner">
-                      <div className="carousel-item active">
-                        <div className="card shadow-sm">
-                          <div
-                            className="bd-placeholder-img card-img-top"
-                            style={{
-                              backgroundImage: `url(${eLearning})`,
-                              width: "100%",
-                              height: "250px",
-                              backgroundSize: "cover",
-                              backgroundPosition: "center",
-                            }}
-                          ></div>
-                          <div className="card-body">
-                            <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div className="btn-group">
-                                <button
-                                  type="button"
-                                  className="btn btn-sm btn-outline-secondary"
-                                  onClick={handleViewClick}
-                                >
-                                  Watch Video
-                                </button>
-                              </div>
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide-to="4"
+                aria-label="Slide 5"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <svg
+                  class="bd-placeholder-img"
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect
+                    width="100%"
+                    height="100%"
+                    fill="var(--bs-secondary-color)"
+                  ></rect>
+                </svg>
+                <div class="container">
+                  <div
+                    class="carousel-caption text-start"
+                    style={{
+                      backgroundImage: `url(${Alteryx})`,
+                      width: "50%",
+                      height: "100px",
+                      backgroundSize: "contain",
+                      backgroundPosition: "center center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <svg
+                  class="bd-placeholder-img"
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect
+                    width="100%"
+                    height="100%"
+                    fill="var(--bs-secondary-color)"
+                  ></rect>
+                </svg>
 
-                              <small className="text-body-secondary">
-                                1 min 20'
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="carousel-item">
-                        <div className="card shadow-sm">
-                          <svg
-                            className="bd-placeholder-img card-img-top"
-                            width="100%"
-                            height="225"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice"
-                            focusable="false"
-                          >
-                            <title>Placeholder</title>
-                            <rect
-                              width="100%"
-                              height="100%"
-                              fill="#55595c"
-                            ></rect>
-                            <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                              Instructor Lead-training
-                            </text>
-                          </svg>
-                          <div className="card-body">
-                            <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div className="btn-group">
-                                <button
-                                  type="button"
-                                  className="btn btn-sm btn-outline-secondary"
-                                  onClick={pptViewClick}
-                                >
-                                  View
-                                </button>
-                              </div>
-                              <small className="text-body-secondary">
-                                9 mins
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="carousel-item">
-                        <div className="card shadow-sm">
-                          <div
-                            className="bd-placeholder-img card-img-top"
-                            style={{
-                              backgroundImage: `url(${StoryLineImg})`,
-                              width: "auto",
-                              height: "250px",
-                              backgroundSize: "cover",
-                              backgroundPosition: "center",
-                            }}
-                          ></div>
-                          <div className="card-body">
-                            <p className="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div className="btn-group">
-                                <button
-                                  type="button"
-                                  className="btn btn-sm btn-outline-secondary"
-                                  onClick={storyViewClick}
-                                >
-                                  Watch Video
-                                </button>
-                              </div>
+                <div class="container">
+                  <div
+                    class="carousel-caption"
+                    style={{
+                      backgroundImage: `url(${Movidaria})`,
+                      width: "10%",
+                      height: "100px",
+                      backgroundSize: "contain",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></div>
+                </div>
+              </div>
 
-                              <small className="text-body-secondary">
-                                2 min 39'
-                              </small>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              <div class="carousel-item">
+                <svg
+                  class="bd-placeholder-img"
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect
+                    width="100%"
+                    height="100%"
+                    fill="var(--bs-secondary-color)"
+                  ></rect>
+                </svg>
 
-                    <div style={{ display: "flex", justifyContent: "center" }}>
-                      <button
-                        className="carousel-control-prev"
-                        type="button"
-                        data-bs-target=".carousel"
-                        data-bs-slide="prev"
-                        style={{
-                          backgroundColor: "transparent",
-                          borderColor: "transparent",
-                          width: "18px",
-                          height: "100%",
-                          margin: "-20px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="black"
-                          width="24px"
-                          height="24px"
-                        >
-                          <path d="M15.41,18.59L10.83,14l4.58-4.59L14,8l-6,6,6,6Z" />
-                        </svg>
-                        <span className="visually-hidden">Previous</span>
-                      </button>
-                      <button
-                        className="carousel-control-next"
-                        type="button"
-                        data-bs-target=".carousel"
-                        data-bs-slide="next"
-                        style={{
-                          backgroundColor: "transparent",
-                          borderColor: "transparent",
-                          width: "18px",
-                          height: "100%",
-                          margin: "-20px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          transform: "rotate(180deg)",
-                        }}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="black"
-                          width="24px"
-                          height="24px"
-                        >
-                          <path d="M15.41,18.59L10.83,14l4.58-4.59L14,8l-6,6,6,6Z" />
-                        </svg>
-                        <span className="visually-hidden">Previous</span>
-                      </button>
-                    </div>
-                  </div>
+                <div class="container">
+                  <div
+                    class="carousel-caption"
+                    style={{
+                      backgroundImage: `url(${CTC})`,
+                      width: "10%",
+                      height: "100px",
+                      backgroundSize: "contain",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <svg
+                  class="bd-placeholder-img"
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect
+                    width="100%"
+                    height="100%"
+                    fill="var(--bs-secondary-color)"
+                  ></rect>
+                </svg>
+
+                <div class="container">
+                  <div
+                    class="carousel-caption"
+                    style={{
+                      backgroundImage: `url(${TVO})`,
+                      width: "10%",
+                      height: "100px",
+                      backgroundSize: "contain",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <svg
+                  class="bd-placeholder-img"
+                  width="100%"
+                  height="100%"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect
+                    width="100%"
+                    height="100%"
+                    fill="var(--bs-secondary-color)"
+                  ></rect>
+                </svg>
+                <div class="container">
+                  <div
+                    class="carousel-caption text-end"
+                    style={{
+                      backgroundImage: `url(${RoyalConservatory})`,
+                      width: "15%",
+                      height: "100px",
+                      backgroundSize: "contain",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  ></div>
                 </div>
               </div>
             </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </main>
         <footer
