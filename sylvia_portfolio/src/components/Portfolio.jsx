@@ -4,6 +4,8 @@ import "../Portfolio.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+import SylviaSmallLogo from "../images/Sylvia_Logo_Salmon_Short.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -45,33 +47,48 @@ function Portfolio() {
                 aria-hidden="true"
                 className="me-2"
                 viewBox="0 0 24 24"
-              >
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                <circle cx="12" cy="13" r="4"></circle>
-              </svg>
-
-              <strong>Sylvia</strong>
-              <h6>Learning Experience Designer</h6>
+              ></svg>
+              <img
+                className="SylviaSmallLogo"
+                src={SylviaSmallLogo}
+                alt="SylviaSmallLogo"
+              />
             </a>
-            <ul className="head-item" style={{ display: "flex", justifyContent: "center",textAlign: "center"}}>
-              <div className="head-items" style={{ display: "flex"}}>
-                <a href="/Portfolio" style={{ textDecoration: "none", color: "inherit"}}>
-                <p className="head-portfolio"style={{ margin: "0 30px"}}>
-                  PORTFOLIO
-                </p>
+            <ul
+              className="head-item"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              <div className="head-items" style={{ display: "flex" }}>
+                <a
+                  href="/Portfolio"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <p className="head-portfolio" style={{ margin: "0 30px" }}>
+                    PORTFOLIO
+                  </p>
                 </a>
-                <a href="/Blog" style={{ textDecoration: "none", color: "inherit"}}>
-                <p className="head-blog" style={{ margin: "0 30px"}} >
-                  BLOG
-                </p>
+                <a
+                  href="/Blog"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <p className="head-blog" style={{ margin: "0 30px" }}>
+                    BLOG
+                  </p>
                 </a>
-                <a href="/About" style={{ textDecoration: "none", color: "inherit"}}>
-                <p className="head-about"style={{ margin: "0 30px"}}>
-                  ABOUT
-                </p>
+                <a
+                  href="/About"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <p className="head-about" style={{ margin: "0 30px" }}>
+                    ABOUT
+                  </p>
                 </a>
               </div>
-              </ul>
+            </ul>
             <button
               className="navbar-toggler"
               type="button"
@@ -99,7 +116,7 @@ function Portfolio() {
                           <FontAwesomeIcon
                             icon={faLinkedin}
                             size="2xl"
-                            style={{ color: "#bbbcbf" }}
+                            style={{ color: "#D8D8D8" }}
                           />
                         </a>
                       </li>
@@ -112,7 +129,7 @@ function Portfolio() {
                           <FontAwesomeIcon
                             icon={faEnvelope}
                             size="2xl"
-                            style={{ color: "#bbbcbf" }}
+                            style={{ color: "#D8D8D8" }}
                           />
                         </a>
                       </li>
@@ -122,7 +139,7 @@ function Portfolio() {
                           <FontAwesomeIcon
                             icon={faFileLines}
                             size="2xl"
-                            style={{ color: "#bbbcbf" }}
+                            style={{ color: "#D8D8D8" }}
                           />
                         </a>
                       </li>
@@ -132,7 +149,7 @@ function Portfolio() {
                           <FontAwesomeIcon
                             icon={faToolbox}
                             size="2xl"
-                            style={{ color: "#bbbcbf" }}
+                            style={{ color: "#D8D8D8" }}
                           />
                         </a>
                       </li>
