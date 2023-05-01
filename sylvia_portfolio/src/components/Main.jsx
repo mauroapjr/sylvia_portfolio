@@ -125,9 +125,10 @@ export default function Main() {
         </header>
 
         <main>
+        
           <section
             className="py-5 text-center"
-            style={{ backgroundColor: "#408E91", width: "100%" }}
+            style={{ backgroundColor: "#408E91", width: "70%", marginLeft: "600px" }}
           >
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
