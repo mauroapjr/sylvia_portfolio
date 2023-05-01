@@ -17,9 +17,9 @@ import Movidaria from "../images/movidaria.png";
 import RoyalConservatory from "../images/Royal_Conservatory_of_Music_logo.svg.png";
 import TVO from "../images/TVO.jpg";
 import CTC from "../images/canadian-tire-logo.png";
+import BackImg from "../images/background.jpg";
 
 export default function Main() {
-  
   return (
     <>
       <body>
@@ -125,10 +125,19 @@ export default function Main() {
         </header>
 
         <main>
-        
+          <img
+            className="background-image"
+            src={BackImg}
+            alt="Background"
+            style={{ width: "50%", float: "left", margin: "140px 20px 20px 0" }}
+          />
           <section
             className="py-5 text-center"
-            style={{ backgroundColor: "#408E91", width: "70%", marginLeft: "600px" }}
+            style={{
+              backgroundColor: "#408E91",
+              width: "70%",
+              marginLeft: "600px",
+            }}
           >
             <div className="row py-lg-5">
               <div className="col-lg-6 col-md-8 mx-auto">
