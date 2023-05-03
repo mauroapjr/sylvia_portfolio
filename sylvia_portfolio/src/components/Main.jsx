@@ -11,7 +11,7 @@ import Login from "./Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import sylviaLogo from "../images/Sylvia_Logo2_salmon.png";
+import SylviaLogo from "../images/Sylvia_Logo2_salmon.png";
 import Alteryx from "../images/alteryx.png";
 import Movidaria from "../images/movidaria.png";
 import RoyalConservatory from "../images/Royal_Conservatory_of_Music_logo.svg.png";
@@ -58,7 +58,7 @@ export default function Main() {
                 ></svg>
                 <img
                   className="sylvia-logo"
-                  src={sylviaLogo}
+                  src={SylviaLogo}
                   alt="Sylvia Logo"
                 />
               </a>
