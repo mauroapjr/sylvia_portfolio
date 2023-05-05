@@ -4,15 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import "antd/dist/reset.css";
-import { Form, Input, Button, Checkbox } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Form, Input, Button, Checkbox, message } from "antd";
 import axios from "axios";
 
 const { TextArea } = Input;
 
-
-
 export default function Admin() {
+  
+  const [form] = Form.useForm();
+
   const onFinish = async (values) => {
     try {
       const response = await axios.post('http://localhost:3001/blog.db', {
@@ -21,10 +21,35 @@ export default function Admin() {
       });
 
       console.log('Created post:', response.data);
+
+      form.resetFields(); // Reset the form fields
+      message.success('Post created successfully'); // Display a success message
+
     } catch (error) {
       console.error('Failed to create post:', error);
+      message.error('Failed to create post'); // Display an error message
     }
   };
+
+  // const onFinish = async (values, form) => {
+  //   try {
+  //     const response = await axios.post('http://localhost:3001/blog.db', {
+  //       title: values.title,
+  //       content: values.content,
+  //     });
+  
+  //     console.log('Created post:', response.data);
+      
+  //     if (form) {
+  //     form.resetFields(); // Reset the form fields
+  //   }
+  //     message.success('Post created successfully'); // Display a success message
+
+  //   } catch (error) {
+  //     console.error('Failed to create post:', error);
+  //     message.error('Failed to create post'); // Display an error message
+  //   }
+  // };
   
     
   return (
@@ -84,7 +109,8 @@ export default function Admin() {
       initialValues={{
         remember: true,
       }}
-      onFinish={onFinish}
+      onFinish={(values) => onFinish(values, form)}
+      form={form}
       style={{ width: "50%" }}
     >
       <Form.Item
