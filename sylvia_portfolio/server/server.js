@@ -11,10 +11,9 @@ app.use((req, res, next) => {
 });
 app.use(express.json({}));
 
-app.get('/', (req, res) => {
-  res.send('helloWorld');
+app.get("/", (req, res) => {
+  res.send("helloWorld");
 });
-
 
 // ***** Password validation *****
 
@@ -43,7 +42,6 @@ app.post("/validatePassword", (req, res) => {
   );
 });
 
-
 // ***** Blog Database *****
 
 app.get("/admin", (req, res) => {
@@ -63,17 +61,19 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
   }
 });
 
-
-app.post('/blog.db', (req, res) => {
+app.post("/blog.db", (req, res) => {
   const { title, content, author, date } = req.body;
 
+
+  
   // First, check if the post already exists
-  blogDb.get('SELECT * FROM posts WHERE title = ? AND content = ? AND author = ? AND date = ?',
+  blogDb.get(
+    "SELECT * FROM posts WHERE title = ? AND content = ? AND author = ? AND date = ?",
     [title, content, author, date],
     (err, row) => {
       if (err) {
         console.log(err.message);
-        res.status(500).send('Failed to create post');
+        res.status(500).send("Failed to create post");
         return;
       }
 
@@ -86,16 +86,29 @@ app.post('/blog.db', (req, res) => {
 
       // If the post does not exist, insert the new post
       blogDb.run(
-        'INSERT INTO posts (title, content, author, date) VALUES (?, ?, ?, ?)',
+        "INSERT INTO posts (title, content, author, date) VALUES (?, ?, ?, ?)",
         [title, content, author, date],
         function (err) {
           if (err) {
             console.log(err.message);
-            res.status(500).send('Failed to create post');
+            res.status(500).send("Failed to create post");
           } else {
             const postId = this.lastID;
             console.log(`Created post with ID ${postId}`);
-            res.send({ id: postId });
+
+            // Delete the oldest posts
+            blogDb.run(
+              `DELETE FROM posts WHERE id IN (SELECT id FROM posts ORDER BY date ASC LIMIT 1)`,
+              (err) => {
+                if (err) {
+                  console.log(err.message);
+                  res.status(500).send("Failed to delete oldest posts");
+                } else {
+                  console.log("Deleted oldest posts");
+                  res.send({ id: postId });
+                }
+              }
+            );
           }
         }
       );
@@ -103,5 +116,43 @@ app.post('/blog.db', (req, res) => {
   );
 });
 
-app.listen(3001, () => console.log("Server listening on PORT 3001"));
+// app.post('/blog.db', (req, res) => {
+//   const { title, content, author, date } = req.body;
 
+//   // First, check if the post already exists
+//   blogDb.get('SELECT * FROM posts WHERE title = ? AND content = ? AND author = ? AND date = ?',
+//     [title, content, author, date],
+//     (err, row) => {
+//       if (err) {
+//         console.log(err.message);
+//         res.status(500).send('Failed to create post');
+//         return;
+//       }
+
+//       // If the post already exists, return the existing post's ID
+//       if (row) {
+//         console.log(`Post already exists with ID ${row.id}`);
+//         res.send({ id: row.id });
+//         return;
+//       }
+
+//       // If the post does not exist, insert the new post
+//       blogDb.run(
+//         'INSERT INTO posts (title, content, author, date) VALUES (?, ?, ?, ?)',
+//         [title, content, author, date],
+//         function (err) {
+//           if (err) {
+//             console.log(err.message);
+//             res.status(500).send('Failed to create post');
+//           } else {
+//             const postId = this.lastID;
+//             console.log(`Created post with ID ${postId}`);
+//             res.send({ id: postId });
+//           }
+//         }
+//       );
+//     }
+//   );
+// });
+
+app.listen(3001, () => console.log("Server listening on PORT 3001"));

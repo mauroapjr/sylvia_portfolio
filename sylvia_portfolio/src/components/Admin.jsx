@@ -10,48 +10,25 @@ import axios from "axios";
 const { TextArea } = Input;
 
 export default function Admin() {
-  
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
     try {
-      const response = await axios.post('http://localhost:3001/blog.db', {
+      const response = await axios.post("http://localhost:3001/blog.db", {
         title: values.title,
         content: values.content,
       });
+      console.log("Created post:", response.data);
 
-      console.log('Created post:', response.data);
+      form.resetFields();
 
-      form.resetFields(); // Reset the form fields
-      message.success('Post created successfully'); // Display a success message
-
+      message.success("Post created successfully");
     } catch (error) {
-      console.error('Failed to create post:', error);
-      message.error('Failed to create post'); // Display an error message
+      console.error("Failed to create post:", error);
+      message.error("Failed to create post");
     }
   };
 
-  // const onFinish = async (values, form) => {
-  //   try {
-  //     const response = await axios.post('http://localhost:3001/blog.db', {
-  //       title: values.title,
-  //       content: values.content,
-  //     });
-  
-  //     console.log('Created post:', response.data);
-      
-  //     if (form) {
-  //     form.resetFields(); // Reset the form fields
-  //   }
-  //     message.success('Post created successfully'); // Display a success message
-
-  //   } catch (error) {
-  //     console.error('Failed to create post:', error);
-  //     message.error('Failed to create post'); // Display an error message
-  //   }
-  // };
-  
-    
   return (
     <>
       <link
@@ -90,65 +67,62 @@ export default function Admin() {
               <strong>Sylvia</strong>
               <h6>Learning Experience Designer</h6>
             </a>
-            
-          </div> 
+          </div>
         </nav>
       </header>
       <section>
-      <div
-        className=""
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 50,
-        }}
-      >
-        <Form
-      name="post_form"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={(values) => onFinish(values, form)}
-      form={form}
-      style={{ width: "50%" }}
-    >
-      <Form.Item
-        label="Title"
-        name="title"
-        rules={[
-          {
-            required: true,
-            message: "Please input the post title!",
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+        <div
+          className=""
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 50,
+          }}
+        >
+          <Form
+            name="post_form"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={(values) => onFinish(values, form)}
+            form={form}
+            style={{ width: "50%" }}
+          >
+            <Form.Item
+              label="Title"
+              name="title"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the post title!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-      <Form.Item
-        label="Content"
-        name="content"
-        rules={[
-          {
-            required: true,
-            message: "Please input the post content!",
-          },
-        ]}
-      >
-        <TextArea rows={20} />
-      </Form.Item>
+            <Form.Item
+              label="Content"
+              name="content"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the post content!",
+                },
+              ]}
+            >
+              <TextArea rows={20} />
+            </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Create Post
-        </Button>
-      </Form.Item>
-    </Form>
-        
-      </div>
-    </section>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Create Post
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      </section>
     </>
   );
 }
-
