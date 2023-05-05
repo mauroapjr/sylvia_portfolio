@@ -64,8 +64,6 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
 app.post("/blog.db", (req, res) => {
   const { title, content, author, date } = req.body;
 
-
-  
   // First, check if the post already exists
   blogDb.get(
     "SELECT * FROM posts WHERE title = ? AND content = ? AND author = ? AND date = ?",
@@ -115,44 +113,5 @@ app.post("/blog.db", (req, res) => {
     }
   );
 });
-
-// app.post('/blog.db', (req, res) => {
-//   const { title, content, author, date } = req.body;
-
-//   // First, check if the post already exists
-//   blogDb.get('SELECT * FROM posts WHERE title = ? AND content = ? AND author = ? AND date = ?',
-//     [title, content, author, date],
-//     (err, row) => {
-//       if (err) {
-//         console.log(err.message);
-//         res.status(500).send('Failed to create post');
-//         return;
-//       }
-
-//       // If the post already exists, return the existing post's ID
-//       if (row) {
-//         console.log(`Post already exists with ID ${row.id}`);
-//         res.send({ id: row.id });
-//         return;
-//       }
-
-//       // If the post does not exist, insert the new post
-//       blogDb.run(
-//         'INSERT INTO posts (title, content, author, date) VALUES (?, ?, ?, ?)',
-//         [title, content, author, date],
-//         function (err) {
-//           if (err) {
-//             console.log(err.message);
-//             res.status(500).send('Failed to create post');
-//           } else {
-//             const postId = this.lastID;
-//             console.log(`Created post with ID ${postId}`);
-//             res.send({ id: postId });
-//           }
-//         }
-//       );
-//     }
-//   );
-// });
 
 app.listen(3001, () => console.log("Server listening on PORT 3001"));
