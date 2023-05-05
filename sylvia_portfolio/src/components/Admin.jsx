@@ -13,14 +13,23 @@ const { TextArea } = Input;
 
 
 export default function Admin() {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post('http://localhost:3001/blog.db', {
+        title: values.title,
+        content: values.content,
+      });
+
+      console.log('Created post:', response.data);
+    } catch (error) {
+      console.error('Failed to create post:', error);
+    }
   };
   
     
   return (
     <>
-      <link
+      {/* <link
         rel="canonical"
         href="https://getbootstrap.com/docs/5.3/examples/album/"
       ></link>
@@ -101,7 +110,7 @@ export default function Admin() {
             </div>
           </div>
         </nav>
-      </header>
+      </header> */}
       <section>
       <div
         className=""
