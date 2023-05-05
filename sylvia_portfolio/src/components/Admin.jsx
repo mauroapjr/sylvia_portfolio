@@ -8,21 +8,16 @@ import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 
+const { TextArea } = Input;
+
+
+
 export default function Admin() {
   const onFinish = (values) => {
-    const { username, password } = values;
-    axios
-      .post("http://localhost:3001/validatePassword", { username, password })
-      .then((res) => {
-        if (res.data.validation) {
-          alert("Username/password matches");
-        } else {
-          alert(
-            "Password/username is not correct. Contact the website owner to visit this page."
-          );
-        }
-      });
+    console.log("Received values of form: ", values);
   };
+  
+    
   return (
     <>
       <link
@@ -107,7 +102,7 @@ export default function Admin() {
           </div>
         </nav>
       </header>
-      <body>
+      <section>
       <div
         className=""
         style={{
@@ -117,67 +112,49 @@ export default function Admin() {
           marginTop: 50,
         }}
       >
-        <div>
-          <Form
-            name="normal_login"
-            className="login-form"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-          >
-            <Form.Item
-              name="username"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your Username!",
-                },
-              ]}
-            >
-              <Input
-                prefix={<UserOutlined className="site-form-item-icon" />}
-                placeholder="Username"
-              />
-            </Form.Item>
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your Password!",
-                },
-              ]}
-            >
-              <Input
-                prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
-                placeholder="Password"
-              />
-            </Form.Item>
-            <Form.Item>
-              <Form.Item name="remember" valuePropName="checked" noStyle>
-                <Checkbox>Remember me</Checkbox>
-              </Form.Item>
+        <Form
+      name="post_form"
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+    >
+      <Form.Item
+        label="Title"
+        name="title"
+        rules={[
+          {
+            required: true,
+            message: "Please input the post title!",
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
 
-              <a className="login-form-forgot" href="">
-                Forgot password
-              </a>
-            </Form.Item>
+      <Form.Item
+        label="Content"
+        name="content"
+        rules={[
+          {
+            required: true,
+            message: "Please input the post content!",
+          },
+        ]}
+      >
+        <TextArea rows={4} />
+      </Form.Item>
 
-            <Form.Item>
-              <Button
-                type="primary"
-                htmlType="submit"
-                className="login-form-button"
-              >
-                Log in
-              </Button>
-            </Form.Item>
-          </Form>
-        </div>
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          Create Post
+        </Button>
+      </Form.Item>
+    </Form>
+        
       </div>
-    </body>
+    </section>
     </>
   );
 }
+
