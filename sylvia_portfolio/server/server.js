@@ -88,23 +88,42 @@ blogDb.run(`INSERT INTO posts (title, content) VALUES
 app.post('/blog.db', (req, res) => {
   const { title, content, author, date } = req.body;
 
-  blogDb.run(
-    'INSERT INTO posts (title, content, author, date) VALUES (?, ?, ?, ?)',
-    [title, content, author, date],
-    function (err) {
-      if (err) {
-        console.log(err.message);
-        res.status(500).send('Failed to create post');
-      } else {
-        const postId = this.lastID;
-        console.log(`Created post with ID ${postId}`);
-        res.send({ id: postId });
-      }
+  // First, select the oldest post
+  blogDb.get('SELECT * FROM posts ORDER BY date ASC LIMIT 1', (err, row) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).send('Failed to create post');
+      return;
     }
-  );
+
+    // If there is an oldest post, delete it
+    if (row) {
+      blogDb.run('DELETE FROM posts WHERE id = ?', row.id, (err) => {
+        if (err) {
+          console.log(err.message);
+          res.status(500).send('Failed to create post');
+          return;
+        }
+      });
+    }
+
+    // Insert the new post
+    blogDb.run(
+      'INSERT INTO posts (title, content, author, date) VALUES (?, ?, ?, ?)',
+      [title, content, author, date],
+      function (err) {
+        if (err) {
+          console.log(err.message);
+          res.status(500).send('Failed to create post');
+        } else {
+          const postId = this.lastID;
+          console.log(`Created post with ID ${postId}`);
+          res.send({ id: postId });
+        }
+      }
+    );
+  });
 })
-
-
 
 app.listen(3001, () => console.log("Server listening on PORT 3001"));
 
