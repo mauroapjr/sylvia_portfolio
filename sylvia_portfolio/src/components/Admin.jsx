@@ -29,7 +29,7 @@ export default function Admin() {
     
   return (
     <>
-      {/* <link
+      <link
         rel="canonical"
         href="https://getbootstrap.com/docs/5.3/examples/album/"
       ></link>
@@ -65,52 +65,10 @@ export default function Admin() {
               <strong>Sylvia</strong>
               <h6>Learning Experience Designer</h6>
             </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarHeader"
-              aria-controls="navbarHeader"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarHeader">
-              <div className="container">
-                <div className="row">
-                  <div className="col-sm-8 col-md-7 py-4"></div>
-                  <div className="col-sm-4 offset-md-1 py-4">
-                    <ul className="list-unstyled">
-                      <li>
-                        <a
-                          href="https://www.linkedin.com/in/sylviabpereira/"
-                          className="text-white"
-                        >
-                          Follow on Linkedin
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="mailto:sylvia.bachiegga@hotmail.com"
-                          className="text-white"
-                        >
-                          Email me
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-white">
-                          Resume
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            
+          </div> 
         </nav>
-      </header> */}
+      </header>
       <section>
       <div
         className=""
@@ -127,6 +85,7 @@ export default function Admin() {
         remember: true,
       }}
       onFinish={onFinish}
+      style={{ width: "50%" }}
     >
       <Form.Item
         label="Title"
@@ -151,7 +110,7 @@ export default function Admin() {
           },
         ]}
       >
-        <TextArea rows={4} />
+        <TextArea rows={20} />
       </Form.Item>
 
       <Form.Item>
