@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -10,6 +10,15 @@ import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 function Blog() {
+  const [posts, setPosts] = useState ([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/Admin")
+    .then((response) => response.json())
+    .then ((data) => setPosts(data))
+    .then ((error) => console.log(error));
+  }, []);
+
   return (
     <>
       <link
@@ -124,36 +133,12 @@ function Blog() {
           </div>
         </nav>
       </header>
-      {/* lang="en" data-bs-theme="auto"> */}
-      {/* <head> */}
-      {/* <script src="../assets/js/color-modes.js"></script>
+      
 
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="" />
-      <meta
-        name="author"
-        content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-      />
-      <meta name="generator" content="Hugo 0.111.3" />
-      <title>Blog Template · Bootstrap v5.3</title>
 
-      <link
-        rel="canonical"
-        href="https://getbootstrap.com/docs/5.3/examples/blog/"
-      />
 
-      <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-     
 
-      <link
-        href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&amp;display=swap"
-        rel="stylesheet"
-      />
-
-      <link href="blog.css" rel="stylesheet" /> */}
-      {/* </head> */}
       <body>
         <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
           <symbol id="check2" viewBox="0 0 16 16">
@@ -285,7 +270,50 @@ function Blog() {
             </div>
           </div>
 
-          <div class="row mb-2">
+
+          <div>
+      {posts.map((post) => (
+        <div key={post.id} className="row mb-2">
+          <div className="col-md-6">
+            <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div className="col p-4 d-flex flex-column position-static">
+                <strong className="d-inline-block mb-2 text-primary">
+                  {post.category}
+                </strong>
+                <h3 className="mb-0">{post.title}</h3>
+                <div className="mb-1 text-body-secondary">{post.date}</div>
+                <p className="card-text mb-auto">{post.content}</p>
+                <a href="#" className="stretched-link">
+                  Continue reading
+                </a>
+              </div>
+              <div className="col-auto d-none d-lg-block">
+                <svg
+                  className="bd-placeholder-img"
+                  width="200"
+                  height="250"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c"></rect>
+                  <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                    Thumbnail
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+
+
+          {/* <div class="row mb-2">
             <div class="col-md-6">
               <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col p-4 d-flex flex-column position-static">
@@ -359,7 +387,7 @@ function Blog() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div class="row g-5">
             <div class="col-md-8">
