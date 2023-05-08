@@ -152,14 +152,54 @@ function Blog() {
           </div>
 
 
-          
-
-
-
 
 
 
           <div>
+            {posts.map((post) => {
+              const processedContent = new DOMParser().parseFromString(
+                post.content,
+                "text/html"
+              ).documentElement.textContent;
+              post.processedContent = processedContent;
+
+              const styling = JSON.parse(post.styling || "{}");
+              const deltaContent = JSON.parse(post.deltaContent || "{}");
+              const plainTextContent = post.plainTextContent || "";
+
+              return (
+                <div key={post.id} className="row mb-4">
+                  <div className="col-md-12">
+                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                      <img
+                        className="InstImage"
+                        src={InstImage}
+                        alt="InstImage"
+                      />
+                      <div className="col p-4 d-flex flex-column position-static">
+                        <strong className="d-inline-block mb-2 text-primary">
+                          {post.category}
+                        </strong>
+                        <h3 className="mb-0">{post.title}</h3>
+                        <div className="mb-1 text-body-secondary">
+                          {post.date}
+                        </div>
+                        <p className="card-text mb-auto">
+                          {post.processedContent}
+                        </p>
+                        <a href="#" className="stretched-link">
+                          Continue reading
+                        </a>
+                      </div>
+                      <div className="col-auto d-none d-lg-block thumbnail-container"></div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* <div>
             {posts.map((post) => (
               <div key={post.id} className="row mb-4">
                 <div className="col-md-12">
@@ -177,7 +217,7 @@ function Blog() {
                       <div className="mb-1 text-body-secondary">
                         {post.date}
                       </div>
-                      <p className="card-text mb-auto">{post.content}</p>
+                      <p className="card-text mb-auto">{post.processedContent}</p>
                       <a href="#" className="stretched-link">
                         Continue reading
                       </a>
@@ -190,9 +230,7 @@ function Blog() {
                 </div>
               </div>
             ))}
-          </div>
-
-         
+          </div> */}
 
           <div class="row g-5">
             <div class="col-md-8">

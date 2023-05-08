@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import ReactQuill from "react-quill";
+import ReactQuillComponent from '../editor.js';
+
+import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.bubble.css";
 import "../main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -11,17 +16,39 @@ const { TextArea } = Input;
 
 export default function Admin() {
   const [form] = Form.useForm();
-
+  const [content, setContent] = useState({ text: "", paragraphs: [] });
+  const editorRef = useRef();
+  
+  const onChange = (value) => {
+        const delta = value.delta || {};
+        const content = delta.ops || [];
+        const paragraphs = content.filter(op => typeof op.insert === 'string' && op.insert.trim() !== '')
+                                   .map(op => op.insert.trim());
+        setContent({ text: value, paragraphs: paragraphs });
+      };
+  
   const onFinish = async (values) => {
     try {
+      const deltaContent = editorRef.current.getEditor().getContents();
+      const plainTextContent = editorRef.current.getEditor().getText();
+      
+      // Convert deltaContent to an array of paragraphs
+      const paragraphs = deltaContent.ops
+        .filter((op) => op.insert !== "\n") // filter out empty paragraphs
+        .map((op) => op.insert.trim());
+  
       const response = await axios.post("http://localhost:3001/blog.db", {
         title: values.title,
-        content: values.content,
+        content: content.text,
+        styling: JSON.stringify(deltaContent),
+        deltaContent: deltaContent,
+        plainTextContent: plainTextContent,
+        paragraphs: paragraphs,
       });
       console.log("Created post:", response.data);
-
+  
       form.resetFields();
-
+  
       message.success("Post created successfully");
     } catch (error) {
       console.error("Failed to create post:", error);
@@ -106,15 +133,26 @@ export default function Admin() {
               label="Content"
               name="content"
               rules={[
-                {
-                  required: true,
-                  message: "Please input the post content!",
-                },
+                { required: true, message: "Please input the post content!" },
               ]}
             >
-              <TextArea rows={20} />
+              <ReactQuill
+                ref={editorRef}
+                value={content.text}
+                onChange={onChange}
+                // onChange={setContent}
+                modules={{
+                  toolbar: [
+                    [{ header: [1, 2, false] }],
+                    ["bold", "italic", "underline", "strike"],
+                    [{ color: [] }, { background: [] }],
+                    [{ align: [] }],
+                    ["link", "image"],
+                    ["clean"],
+                  ],
+                }}
+              />
             </Form.Item>
-
             <Form.Item>
               <Button type="primary" htmlType="submit">
                 Create Post
