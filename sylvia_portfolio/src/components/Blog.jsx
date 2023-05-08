@@ -151,7 +151,7 @@ function Blog() {
             </div>
           </div>
 
-          <div>
+          <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
               const processedContent = new DOMParser().parseFromString(
                 post.content,

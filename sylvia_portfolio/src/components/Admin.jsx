@@ -1,15 +1,15 @@
 import React, { useState, useRef } from "react";
 import ReactQuill from "react-quill";
-
-import "react-quill/dist/quill.snow.css";
-import "react-quill/dist/quill.bubble.css";
-import "../main.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
-import "antd/dist/reset.css";
 import { Form, Input, Button, Checkbox, message } from "antd";
 import axios from "axios";
+
+import "../main.css";
+import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.bubble.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "antd/dist/reset.css";
+
 
 const { TextArea } = Input;
 
