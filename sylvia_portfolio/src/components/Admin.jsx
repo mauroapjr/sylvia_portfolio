@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import ReactQuill from "react-quill";
-import ReactQuillComponent from '../editor.js';
 
 import "react-quill/dist/quill.snow.css";
 import "react-quill/dist/quill.bubble.css";
