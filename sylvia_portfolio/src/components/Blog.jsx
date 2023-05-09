@@ -180,6 +180,7 @@ function Blog() {
                         <div className="mb-1 text-body-secondary">
                           {post.date}
                         </div>
+                        <div className="mb-1 text-body-secondary">By {post.author}</div>
                         <p className="card-text mb-auto">
                           {post.processedContent}
                         </p>

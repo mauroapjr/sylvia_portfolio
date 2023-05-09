@@ -10,22 +10,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "antd/dist/reset.css";
 
-
 const { TextArea } = Input;
 
 export default function Admin() {
   const [form] = Form.useForm();
   const [content, setContent] = useState({ text: "", paragraphs: [] });
   const editorRef = useRef();
-  
+
   const onChange = (value) => {
-        const delta = value.delta || {};
-        const content = delta.ops || [];
-        const paragraphs = content.filter(op => typeof op.insert === 'string' && op.insert.trim() !== '')
-                                   .map(op => op.insert.trim());
-        setContent({ text: value, paragraphs: paragraphs });
-      };
-  
+    const delta = value.delta || {};
+    const content = delta.ops || [];
+    const paragraphs = content
+      .filter((op) => typeof op.insert === "string" && op.insert.trim() !== "")
+      .map((op) => op.insert.trim());
+    setContent({ text: value, paragraphs: paragraphs });
+  };
   const onFinish = async (values) => {
     try {
       const deltaContent = editorRef.current.getEditor().getContents();
@@ -39,6 +38,8 @@ export default function Admin() {
       const response = await axios.post("http://localhost:3001/blog.db", {
         title: values.title,
         content: content.text,
+        author: "Sylvia Pereira",
+        date: new Date(),
         styling: JSON.stringify(deltaContent),
         deltaContent: deltaContent,
         plainTextContent: plainTextContent,
@@ -55,6 +56,7 @@ export default function Admin() {
     }
   };
 
+  
   return (
     <>
       <link
@@ -137,9 +139,10 @@ export default function Admin() {
             >
               <ReactQuill
                 ref={editorRef}
-                value={content.text}
+                value={JSON.stringify(content)}
+                //value={content.text}
                 onChange={onChange}
-                // onChange={setContent}
+                //onChange={setContent}
                 modules={{
                   toolbar: [
                     [{ header: [1, 2, false] }],
