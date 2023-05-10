@@ -10,6 +10,8 @@ import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 import InstImage from "../images/inst_designer.png";
+import SylviaShortLogo from "../images/Sylvia_Logo_Salmon_Short.png";
+import Lines from "../images/Lines.png";
 
 function Blog() {
   const [posts, setPosts] = useState([]);
@@ -35,107 +37,102 @@ function Blog() {
       <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-      <header data-bs-theme="dark">
-        <nav
-          className="navbar navbar-expand-lg navbar-dark"
-          style={{ backgroundColor: "#E49393" }}
-        >
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                aria-hidden="true"
-                className="me-2"
-                viewBox="0 0 24 24"
+      <body>
+        <header data-bs-theme="dark">
+          <nav
+            className="navbar navbar-expand-lg navbar-dark"
+            style={{ backgroundColor: "#E49393" }}
+          >
+            <div className="container-fluid">
+              <a className="navbar-brand" href="/">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                  className="me-2"
+                  viewBox="0 0 24 24"
+                  backgroundColor="#705846"
+                ></svg>
+                <img
+                  className="sylvia-short-logo"
+                  src={SylviaShortLogo}
+                  alt="sylvia short logo"
+                />
+              </a>
+              <ul
+                className="head-item"
+                style={{
+                  display: "flex",
+                  marginTop: "80px",
+                  justifyContent: "center",
+                  textAlign: "center",
+                }}
               >
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                <circle cx="12" cy="13" r="4"></circle>
-              </svg>
-
-              <strong>Sylvia</strong>
-              <h6>Learning Experience Designer</h6>
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarHeader"
-              aria-controls="navbarHeader"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarHeader">
-              <div className="container">
-                <div className="row">
-                  <div className="col-sm-8 col-md-7 py-4"></div>
-                  <div className="col-sm-4 offset-md-1 py-4">
-                    <ul className="list-unstyled d-flex justify-content-end">
-                      {" "}
-                      <li className="mx-2">
-                        {" "}
-                        <a
-                          href="https://www.linkedin.com/in/sylviabpereira/"
-                          className="text-white"
-                        >
-                          <FontAwesomeIcon
-                            icon={faLinkedin}
-                            size="2xl"
-                            style={{ color: "#bbbcbf" }}
-                          />
-                        </a>
-                      </li>
-                      <li className="mx-2">
-                        {" "}
-                        <a
-                          href="mailto:sylvia.bachiegga@hotmail.com"
-                          className="text-white"
-                        >
-                          <FontAwesomeIcon
-                            icon={faEnvelope}
-                            size="2xl"
-                            style={{ color: "#bbbcbf" }}
-                          />
-                        </a>
-                      </li>
-                      <li className="mx-2">
-                        {" "}
-                        <a href="#" className="text-white">
-                          <FontAwesomeIcon
-                            icon={faFileLines}
-                            size="2xl"
-                            style={{ color: "#bbbcbf" }}
-                          />
-                        </a>
-                      </li>
-                      <li className="mx-2">
-                        {" "}
-                        <a href="/Admin" className="text-white">
-                          <FontAwesomeIcon
-                            icon={faToolbox}
-                            size="2xl"
-                            style={{ color: "#bbbcbf" }}
-                          />
-                        </a>
-                      </li>
-                    </ul>
+                <div className="head-items" style={{ display: "flex" }}>
+                  <a
+                    href="/Portfolio"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-portfolio" style={{ margin: "0 30px" }}>
+                      PORTFOLIO
+                    </p>
+                  </a>
+                  <a
+                    href="/Blog"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-blog" style={{ margin: "0 30px" }}>
+                      BLOG
+                    </p>
+                  </a>
+                  <a
+                    href="/About"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-about" style={{ margin: "0 30px" }}>
+                      ABOUT
+                    </p>
+                  </a>
+                </div>
+              </ul>
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarHeader"
+                aria-controls="navbarHeader"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarHeader">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-sm-8 col-md-7 py-4"></div>
+                    <div className="col-sm-4 offset-md-1 py-4">
+                      <ul className="list-unstyled"></ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </nav>
-      </header>
+          </nav>
+        </header>
 
+        <img
+          className="line-header"
+          src={Lines}
+          alt="lines"
+          style={{ width: "100%" }}
+        />
+        </body>
       <body>
         <main class="container">
           <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
@@ -216,10 +213,68 @@ function Blog() {
           </div>
         </main>
 
-        <footer class="blog-footer">
+        <footer className="text-body-secondary py-5"
+        style={{ backgroundColor: "#408E91" }}>
+          <div className="container">
+          <div className="row">
+            <div className="col-sm-8 col-md-7 py-4"></div>
+            <div className="col-sm-4 offset-md-1 py-4">
+              <ul className="list-unstyled d-flex justify-content-end">
+                {" "}
+                <li className="mx-2">
+                  {" "}
+                  <a
+                    href="https://www.linkedin.com/in/sylviabpereira/"
+                    className="text-white"
+                  >
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      size="2xl"
+                      style={{ color: "#D8D8D8" }}
+                    />
+                  </a>
+                </li>
+                <li className="mx-2">
+                  {" "}
+                  <a
+                    href="mailto:sylvia.bachiegga@hotmail.com"
+                    className="text-white"
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      size="2xl"
+                      style={{ color: "#D8D8D8" }}
+                    />
+                  </a>
+                </li>
+                <li className="mx-2">
+                  {" "}
+                  <a href="#" className="text-white">
+                    <FontAwesomeIcon
+                      icon={faFileLines}
+                      size="2xl"
+                      style={{ color: "#D8D8D8" }}
+                    />
+                  </a>
+                </li>
+                <li className="mx-2">
+                  {" "}
+                  <a href="/Admin" className="text-white">
+                    <FontAwesomeIcon
+                      icon={faToolbox}
+                      size="2xl"
+                      style={{ color: "#D8D8D8" }}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
           <p>
             <a href="#">Back to top</a>
           </p>
+
         </footer>
       </body>
     </>
