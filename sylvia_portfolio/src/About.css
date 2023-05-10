@@ -14,3 +14,25 @@
     margin-bottom: 10px;
   }
 }
+
+.profile-picture-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.about-text-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.about-text{
+  justify-items: center;
+}
