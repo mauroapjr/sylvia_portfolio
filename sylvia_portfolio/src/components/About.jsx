@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import "../main.css";
+import "../About.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -29,7 +30,10 @@ function About() {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
       <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#E49393"}}>
+        <nav
+          className="navbar navbar-expand-lg navbar-dark"
+          style={{ backgroundColor: "#E49393" }}
+        >
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               <svg
@@ -44,15 +48,44 @@ function About() {
                 aria-hidden="true"
                 className="me-2"
                 viewBox="0 0 24 24"
+              ></svg>
+              <img className="sylvia-logo" src={SylviaLogo} alt="Sylvia Logo" />
+              <ul
+                className="head-item"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  textAlign: "center",
+                }}
               >
-                
-              </svg>
-              <img
-                  className="sylvia-logo"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
-              
+                 <div className="head-items" style={{ display: "flex", justifyContent: "center" }}>
+    
+                  <a
+                    href="/Portfolio"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-portfolio" style={{ margin: "0 30px" }}>
+                      PORTFOLIO
+                    </p>
+                  </a>
+                  <a
+                    href="/Blog"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-blog" style={{ margin: "0 30px" }}>
+                      BLOG
+                    </p>
+                  </a>
+                  <a
+                    href="/About"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <p className="head-about" style={{ margin: "0 30px" }}>
+                      ABOUT
+                    </p>
+                  </a>
+                </div>
+              </ul>
             </a>
             <button
               className="navbar-toggler"
@@ -126,25 +159,23 @@ function About() {
           </div>
         </nav>
       </header>
-      
+
       {/* <img
             className="background-image"
             src={""}
             alt="Background"
             style={{ width: "50%", float: "left", margin: "140px 20px 20px 0" }}
           /> */}
-          <section
-            className="py-5 text-center"
-            style={{
-              backgroundColor: "#408E91",
-              width: "100%",
-              marginTop: '20px',
-            }}
-          >
-      </section>
-      
+      <section
+        className="py-5 text-center"
+        style={{
+          backgroundColor: "#408E91",
+          width: "100%",
+          marginTop: "20px",
+        }}
+      ></section>
     </>
-  )
+  );
 }
 
 export default About;
