@@ -9,6 +9,9 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
+import SylviaLogo from "../images/Sylvia_Logo2_salmon.png";
+import BackImg from "../images/background.jpg";
+
 function About() {
   return (
     <>
@@ -42,12 +45,14 @@ function About() {
                 className="me-2"
                 viewBox="0 0 24 24"
               >
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                <circle cx="12" cy="13" r="4"></circle>
+                
               </svg>
-
-              <strong>Sylvia</strong>
-              <h6>Learning Experience Designer</h6>
+              <img
+                  className="sylvia-logo"
+                  src={SylviaLogo}
+                  alt="Sylvia Logo"
+                />
+              
             </a>
             <button
               className="navbar-toggler"
@@ -121,10 +126,25 @@ function About() {
           </div>
         </nav>
       </header>
-
+      
+      {/* <img
+            className="background-image"
+            src={""}
+            alt="Background"
+            style={{ width: "50%", float: "left", margin: "140px 20px 20px 0" }}
+          /> */}
+          <section
+            className="py-5 text-center"
+            style={{
+              backgroundColor: "#408E91",
+              width: "100%",
+              marginTop: '20px',
+            }}
+          >
+      </section>
       
     </>
   )
 }
 
-export default About
+export default About;
