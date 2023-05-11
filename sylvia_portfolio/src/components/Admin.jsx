@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import ReactQuill from "react-quill";
-import { Form, Input, Button, Checkbox, message } from "antd";
+import { Form, Input, Button, message } from "antd";
 import axios from "axios";
 
 import "../main.css";
@@ -15,47 +15,79 @@ const { TextArea } = Input;
 export default function Admin() {
   const [form] = Form.useForm();
   const [content, setContent] = useState({ text: "", paragraphs: [] });
+  const [base64data, setBase64data] = useState(null);
   const editorRef = useRef();
 
   const onChange = (value) => {
     const delta = value.delta || {};
     const content = delta.ops || [];
+
     const paragraphs = content
       .filter((op) => typeof op.insert === "string" && op.insert.trim() !== "")
       .map((op) => op.insert.trim());
     setContent({ text: value, paragraphs: paragraphs });
   };
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const base64data = reader.result.split(",")[1];
+      setBase64data(base64data);
+    };
+  };
+
   const onFinish = async (values) => {
     try {
       const deltaContent = editorRef.current.getEditor().getContents();
       const plainTextContent = editorRef.current.getEditor().getText();
-  
+
+      if (!deltaContent) {
+        return;
+      }
       // Convert deltaContent to an array of paragraphs
       const paragraphs = deltaContent.ops
-        .filter((op) => op.insert !== "\n") // filter out empty paragraphs
+        .filter(
+          (op) => typeof op.insert === "string" && op.insert.trim() !== ""
+        )
         .map((op) => op.insert.trim());
-  
-      const response = await axios.post("http://localhost:3001/blog.db", {
+
+      const post = {
+        image: base64data,
         title: values.title,
         content: content.text,
-        author: "Sylvia Pereira",
+        author: values.author,
         date: new Date(),
         styling: JSON.stringify(deltaContent),
         deltaContent: deltaContent,
         plainTextContent: plainTextContent,
         paragraphs: paragraphs,
-      });
+      };
+
+      const response = await axios.post("http://localhost:3001/blog.db", post);
       console.log("Created post:", response.data);
-  
+
       form.resetFields();
-  
+
       message.success("Post created successfully");
     } catch (error) {
       console.error("Failed to create post:", error);
       message.error("Failed to create post");
     }
   };
+  // const [form] = Form.useForm();
+  // const [content, setContent] = useState({ text: "", paragraphs: [] });
+  // const editorRef = useRef();
+
+  // const onChange = (value) => {
+  //   const delta = value.delta || {};
+  //   const content = delta.ops || [];
+  //   const paragraphs = content
+  //     .filter((op) => typeof op.insert === "string" && op.insert.trim() !== "")
+  //     .map((op) => op.insert.trim());
+  //   setContent({ text: value, paragraphs: paragraphs });
+  // };
 
   // const onFinish = async (values) => {
   //   try {
@@ -70,7 +102,7 @@ export default function Admin() {
   //     const response = await axios.post("http://localhost:3001/blog.db", {
   //       title: values.title,
   //       content: content.text,
-  //       author: "Sylvia Pereira",
+  //       author: values.author,
   //       date: new Date(),
   //       styling: JSON.stringify(deltaContent),
   //       deltaContent: deltaContent,
@@ -87,9 +119,6 @@ export default function Admin() {
   //     message.error("Failed to create post");
   //   }
   // };
-
-
-
 
   return (
     <>
@@ -174,9 +203,6 @@ export default function Admin() {
               <ReactQuill
                 ref={editorRef}
                 value={JSON.stringify(content)}
-                //value={content.text}
-                //onChange={onChange}
-                //onChange={setContent}
                 onChange={(content) => onChange(content)}
                 modules={{
                   toolbar: [
@@ -189,6 +215,18 @@ export default function Admin() {
                   ],
                 }}
               />
+            </Form.Item>
+            <Form.Item
+              label="Author"
+              name="author"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input the author of this post!",
+                },
+              ]}
+            >
+              <Input />
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit">

@@ -61,10 +61,19 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
   }
 });
 
+// Add image column to posts table
+blogDb.run(`ALTER TABLE posts ADD COLUMN image TEXT`, (err) => {
+  if (err) {
+    console.log(err.message);
+  } else {
+    console.log("Added image column to posts table");
+  }
+});
+
 app.post("/blog.db", (req, res) => {
   const { title, content, author, date } = req.body;
 
-  // First, check if the post already exists
+  // Check if the post already exists
   blogDb.get(
     "SELECT * FROM posts WHERE title = ? AND content = ? AND author = ? AND date = ?",
     [title, content, author, date],

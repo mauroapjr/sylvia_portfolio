@@ -9,7 +9,6 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-import InstImage from "../images/inst_designer.png";
 import SylviaShortLogo from "../images/Sylvia_Logo_Salmon_Short.png";
 import Lines from "../images/Lines.png";
 
@@ -191,9 +190,9 @@ function Blog() {
                   <div className="col-md-12">
                     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <img
-                        className="InstImage"
-                        src={InstImage}
-                        alt="InstImage"
+                        className="post-image"
+                        src={post.image}
+                        alt="post image"
                       />
                       <div className="col p-4 d-flex flex-column position-static">
                         <strong className="d-inline-block mb-2 text-primary">
