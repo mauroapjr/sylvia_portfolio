@@ -25,16 +25,17 @@ export default function Admin() {
       .map((op) => op.insert.trim());
     setContent({ text: value, paragraphs: paragraphs });
   };
+
   const onFinish = async (values) => {
     try {
       const deltaContent = editorRef.current.getEditor().getContents();
       const plainTextContent = editorRef.current.getEditor().getText();
-
+  
       // Convert deltaContent to an array of paragraphs
       const paragraphs = deltaContent.ops
         .filter((op) => op.insert !== "\n") // filter out empty paragraphs
         .map((op) => op.insert.trim());
-
+  
       const response = await axios.post("http://localhost:3001/blog.db", {
         title: values.title,
         content: content.text,
@@ -46,15 +47,49 @@ export default function Admin() {
         paragraphs: paragraphs,
       });
       console.log("Created post:", response.data);
-
+  
       form.resetFields();
-
+  
       message.success("Post created successfully");
     } catch (error) {
       console.error("Failed to create post:", error);
       message.error("Failed to create post");
     }
   };
+
+  // const onFinish = async (values) => {
+  //   try {
+  //     const deltaContent = editorRef.current.getEditor().getContents();
+  //     const plainTextContent = editorRef.current.getEditor().getText();
+
+  //     // Convert deltaContent to an array of paragraphs
+  //     const paragraphs = deltaContent.ops
+  //       .filter((op) => op.insert !== "\n") // filter out empty paragraphs
+  //       .map((op) => op.insert.trim());
+
+  //     const response = await axios.post("http://localhost:3001/blog.db", {
+  //       title: values.title,
+  //       content: content.text,
+  //       author: "Sylvia Pereira",
+  //       date: new Date(),
+  //       styling: JSON.stringify(deltaContent),
+  //       deltaContent: deltaContent,
+  //       plainTextContent: plainTextContent,
+  //       paragraphs: paragraphs,
+  //     });
+  //     console.log("Created post:", response.data);
+
+  //     form.resetFields();
+
+  //     message.success("Post created successfully");
+  //   } catch (error) {
+  //     console.error("Failed to create post:", error);
+  //     message.error("Failed to create post");
+  //   }
+  // };
+
+
+
 
   return (
     <>

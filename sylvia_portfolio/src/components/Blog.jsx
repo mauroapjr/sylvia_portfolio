@@ -13,6 +13,43 @@ import InstImage from "../images/inst_designer.png";
 import SylviaShortLogo from "../images/Sylvia_Logo_Salmon_Short.png";
 import Lines from "../images/Lines.png";
 
+function BlogPost({ post }) {
+  const styling = JSON.parse(post.styling || "{}");
+  const deltaContent = JSON.parse(post.deltaContent || "{}");
+  const plainTextContent = post.plainTextContent || "";
+
+  const [showFullContent, setShowFullContent] = useState(false);
+
+  const toggleContent = () => {
+    setShowFullContent(!showFullContent);
+  };
+
+  return (
+    <div className="col-md-4" key={post.id}>
+      <div className="card mb-4 shadow-sm">
+        <div className="card-body">
+          <h2>{post.title}</h2>
+          <p className="card-text">
+            {showFullContent ? deltaContent : plainTextContent}
+          </p>
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="btn-group">
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-secondary"
+                onClick={toggleContent}
+              >
+                {showFullContent ? "Read Less" : "Read More"}
+              </button>
+            </div>
+            <small className="text-muted">{post.date}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Blog() {
   const [posts, setPosts] = useState([]);
 
@@ -132,15 +169,14 @@ function Blog() {
           alt="lines"
           style={{ width: "100%" }}
         />
-        </body>
-      <body>
-        <main class="container">
-          <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-            <div class="col-md-6 px-0">
-              <h1 class="display-4 fst-italic">
+
+        <main className="container">
+          <div className="p-4 p-md-5 mb-4 rounded text-bg-dark">
+            <div className="col-md-6 px-0">
+              <h1 className="display-4 fst-italic">
                 Here is where I share my thoutghs and ideas!
               </h1>
-              <p class="lead my-3">
+              <p className="lead my-3">
                 Multiple lines of text that form the lede, informing new readers
                 quickly and efficiently about what’s most interesting in this
                 post’s contents.
@@ -150,16 +186,6 @@ function Blog() {
 
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
-              const processedContent = new DOMParser().parseFromString(
-                post.content,
-                "text/html"
-              ).documentElement.textContent;
-              post.processedContent = processedContent;
-
-              const styling = JSON.parse(post.styling || "{}");
-              const deltaContent = JSON.parse(post.deltaContent || "{}");
-              const plainTextContent = post.plainTextContent || "";
-
               return (
                 <div key={post.id} className="row mb-4">
                   <div className="col-md-12">
@@ -177,10 +203,12 @@ function Blog() {
                         <div className="mb-1 text-body-secondary">
                           {post.date}
                         </div>
-                        <div className="mb-1 text-body-secondary">By {post.author}</div>
-                        <p className="card-text mb-auto">
-                          {post.processedContent}
-                        </p>
+                        <div className="mb-1 text-body-secondary">
+                          By {post.author}
+                        </div>
+                        <div
+                          dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
                         <a href="#" className="stretched-link">
                           Continue reading
                         </a>
@@ -193,16 +221,16 @@ function Blog() {
             })}
           </div>
 
-          <div class="row g-5">
-            <div class="col-md-8">
-              <h3 class="pb-4 mb-4 fst-italic border-bottom"></h3>
+          <div className="row g-5">
+            <div className="col-md-8">
+              <h3 className="pb-4 mb-4 fst-italic border-bottom"></h3>
             </div>
 
-            <div class="col-md-4">
-              <div class="position-sticky" style={{ top: "2rem" }}>
-                <div class="p-4 mb-3 bg-body-tertiary rounded">
-                  <h4 class="fst-italic">About</h4>
-                  <p class="mb-0">
+            <div className="col-md-4">
+              <div className="position-sticky" style={{ top: "2rem" }}>
+                <div className="p-4 mb-3 bg-body-tertiary rounded">
+                  <h4 className="fst-italic">About</h4>
+                  <p className="mb-0">
                     Customize this section to tell your visitors a little bit
                     about your publication, writers, content, or something else
                     entirely. Totally up to you.
@@ -213,68 +241,69 @@ function Blog() {
           </div>
         </main>
 
-        <footer className="text-body-secondary py-5"
-        style={{ backgroundColor: "#408E91" }}>
+        <footer
+          className="text-body-secondary py-5"
+          style={{ backgroundColor: "#408E91" }}
+        >
           <div className="container">
-          <div className="row">
-            <div className="col-sm-8 col-md-7 py-4"></div>
-            <div className="col-sm-4 offset-md-1 py-4">
-              <ul className="list-unstyled d-flex justify-content-end">
-                {" "}
-                <li className="mx-2">
+            <div className="row">
+              <div className="col-sm-8 col-md-7 py-4"></div>
+              <div className="col-sm-4 offset-md-1 py-4">
+                <ul className="list-unstyled d-flex justify-content-end">
                   {" "}
-                  <a
-                    href="https://www.linkedin.com/in/sylviabpereira/"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-2">
-                  {" "}
-                  <a
-                    href="mailto:sylvia.bachiegga@hotmail.com"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-2">
-                  {" "}
-                  <a href="#" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faFileLines}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-2">
-                  {" "}
-                  <a href="/Admin" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faToolbox}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-              </ul>
+                  <li className="mx-2">
+                    {" "}
+                    <a
+                      href="https://www.linkedin.com/in/sylviabpereira/"
+                      className="text-white"
+                    >
+                      <FontAwesomeIcon
+                        icon={faLinkedin}
+                        size="2xl"
+                        style={{ color: "#D8D8D8" }}
+                      />
+                    </a>
+                  </li>
+                  <li className="mx-2">
+                    {" "}
+                    <a
+                      href="mailto:sylvia.bachiegga@hotmail.com"
+                      className="text-white"
+                    >
+                      <FontAwesomeIcon
+                        icon={faEnvelope}
+                        size="2xl"
+                        style={{ color: "#D8D8D8" }}
+                      />
+                    </a>
+                  </li>
+                  <li className="mx-2">
+                    {" "}
+                    <a href="#" className="text-white">
+                      <FontAwesomeIcon
+                        icon={faFileLines}
+                        size="2xl"
+                        style={{ color: "#D8D8D8" }}
+                      />
+                    </a>
+                  </li>
+                  <li className="mx-2">
+                    {" "}
+                    <a href="/Admin" className="text-white">
+                      <FontAwesomeIcon
+                        icon={faToolbox}
+                        size="2xl"
+                        style={{ color: "#D8D8D8" }}
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
           <p>
             <a href="#">Back to top</a>
           </p>
-
         </footer>
       </body>
     </>

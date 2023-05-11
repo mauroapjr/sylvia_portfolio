@@ -152,8 +152,8 @@ function About() {
         leading complex scenarios that involve different areas and
         stakeholders, tight deadlines, and a limited budget.
       </p>
-      <p className="about-text" style={{ color: "black", width: "100%" }}>
-        Highlights & Achievements
+      <p className="about-text" style={{ color: "black", width: "100%", marginTop: '5%', marginBottom: '5%' }}>
+        Highlights & Achievements:
         <ul>
           <li>
             Interactions with hundreds of learners to increase engagement
@@ -190,7 +190,7 @@ function About() {
         </ul>
       </p>
 
-      <h6 className="fw-light">
+      <h6 className="about-text">
         Customer Education | Learning Experience Designer | eLearning
         Developer | Adult Learning Specialist | Learning Analytics |
         Localization | Curious by Nature
