@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../main.css";
+import "../Blog.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -20,7 +21,7 @@ function BlogPost({ post }) {
   const [showFullContent, setShowFullContent] = useState(false);
 
   const toggleContent = () => {
-    setShowFullContent(!showFullContent);
+    setShowFullContent(!showFullContent);    
   };
 
   return (
@@ -51,6 +52,7 @@ function BlogPost({ post }) {
 
 function Blog() {
   const [posts, setPosts] = useState([]);
+  const [showFullContent, setShowFullContent] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3001/Admin")
@@ -58,6 +60,10 @@ function Blog() {
       .then((data) => setPosts(data))
       .then((error) => console.log(error));
   }, []);
+
+  const toggleContent = () => {
+    setShowFullContent(!showFullContent);
+  };
 
   return (
     <>
@@ -186,9 +192,9 @@ function Blog() {
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
               return (
-                <div key={post.id} className="row mb-4">
+                <div key={post.id} className="post-row mb-4">
                   <div className="col-md-12">
-                    <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div className="post-row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <img
                         className="post-image"
                         src={post.image}
@@ -206,12 +212,19 @@ function Blog() {
                           By {post.author}
                         </div>
                         <div
-                          dangerouslySetInnerHTML={{ __html: post.content }}
-                        />
-                        <a href="#" className="stretched-link">
-                          Continue reading
-                        </a>
-                      </div>
+                    className={`post-content ${
+                      showFullContent ? "show" : ""
+                    }`}
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                  />
+                  <a
+                    href="#"
+                    className="stretched-link"
+                    onClick={toggleContent}
+                  >
+                    {showFullContent ? "Hide content" : "Continue reading"}
+                  </a>
+                </div>
                       <div className="col-auto d-none d-lg-block thumbnail-container"></div>
                     </div>
                   </div>

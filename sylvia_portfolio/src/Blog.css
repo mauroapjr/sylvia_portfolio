@@ -1,5 +1,27 @@
 .thumbnail-container {
- 
   background-size: cover;
   background-position: center;
 }
+
+.post-content {
+  display: none;
+}
+
+.post-content.show {
+  display: block;
+}
+
+/* .post-image {
+  max-width: 150px !important;
+  max-height: 100px !important;
+  width: auto !important;
+  height: auto !important;
+} */
+
+ .a.stretched-link .post-image {
+  max-width: 150px !important;
+  max-height: 100px !important;
+  width: auto !important;
+  height: auto !important;
+}
+

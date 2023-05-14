@@ -12,9 +12,9 @@ app.use((req, res, next) => {
 });
 
 // Increase payload size limit
-app.use(express.json({ limit: "10mb" }));
-app.use(bodyParser.json({ limit: "10mb" }));
-app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
+app.use(express.json({ limit: "100mb" }));
+app.use(bodyParser.json({ limit: "100mb" }));
+app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 
 app.get("/", (req, res) => {
   res.send("helloWorld");
@@ -54,6 +54,7 @@ app.get("/admin", (req, res) => {
     if (err) {
       throw err;
     }
+    
     res.send(rows);
   });
 });
@@ -66,7 +67,7 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
   }
 });
 
-// Add image column to posts table
+// Add image column to posts table - Needed just to create the column once. 
 // blogDb.run(`ALTER TABLE posts ADD COLUMN image TEXT`, (err) => {
 //   if (err) {
 //     console.log(err.message);
