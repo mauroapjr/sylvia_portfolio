@@ -191,6 +191,7 @@ function Blog() {
 
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
+              //  <BlogPost key={post.id} post={post} />
               return (
                 <div key={post.id} className="post-row mb-4">
                   <div className="col-md-12">
