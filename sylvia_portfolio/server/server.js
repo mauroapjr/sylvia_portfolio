@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const sqlite3 = require("sqlite3").verbose();
+const bodyParser = require("body-parser");
 
 app.use(cors());
 
@@ -9,7 +10,11 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
-app.use(express.json({}));
+
+// Increase payload size limit
+app.use(express.json({ limit: "10mb" }));
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 app.get("/", (req, res) => {
   res.send("helloWorld");
@@ -62,13 +67,13 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
 });
 
 // Add image column to posts table
-blogDb.run(`ALTER TABLE posts ADD COLUMN image TEXT`, (err) => {
-  if (err) {
-    console.log(err.message);
-  } else {
-    console.log("Added image column to posts table");
-  }
-});
+// blogDb.run(`ALTER TABLE posts ADD COLUMN image TEXT`, (err) => {
+//   if (err) {
+//     console.log(err.message);
+//   } else {
+//     console.log("Added image column to posts table");
+//   }
+// });
 
 app.post("/blog.db", (req, res) => {
   const { title, content, author, date } = req.body;
