@@ -25,3 +25,10 @@
   height: auto !important;
 }
 
+.post-row.expanded {
+  width: 100%;
+}
+
+.expanded {
+  flex: 1 0 100%;
+}

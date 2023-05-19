@@ -52,15 +52,13 @@ function BlogPost({ post }) {
 
 function Blog() {
   const [posts, setPosts] = useState([]);
-  const [showFullContent, setShowFullContent] = useState(false);
-
-  const [expandedPosts, setExpandedPosts] = useState({});
+  // const [expandedPosts, setExpandedPosts] = useState({});
+  const [expandedPostId, setExpandedPostId] = useState(null);
 
   const postsContent = (postId) => {
-    setExpandedPosts((prevExpandedPosts) => ({
-      ...prevExpandedPosts,
-      [postId]: !prevExpandedPosts[postId],
-    }));
+    setExpandedPostId((prevExpandedPostId) =>
+    prevExpandedPostId === postId ? null : postId
+    );
   };
 
   useEffect(() => {
@@ -69,10 +67,6 @@ function Blog() {
       .then((data) => setPosts(data))
       .then((error) => console.log(error));
   }, []);
-
-  const toggleContent = () => {
-    setShowFullContent(!showFullContent);
-  };
 
   return (
     <>
@@ -200,17 +194,14 @@ function Blog() {
 
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
-              const isExpanded = expandedPosts[post.id] || false;
+              const isExpanded = post.id === expandedPostId;
 
               return (
-                <div key={post.id} className="post-row mb-4">
-                  <div className="col-md-12">
-                    <div className="post-row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                      <img
-                        className="post-image"
-                        src={post.image}
-                        alt="post image"
-                      />
+                <div key={post.id} className={`col-md-12 ${isExpanded ? "expanded" : ""}`}>
+                  <div className="post-row mb-4">
+                    <div className={`col p-4 d-flex flex-column position-static ${
+                  isExpanded ? "expanded" : ""
+                }`}>
                       <div className="col p-4 d-flex flex-column position-static">
                         <strong className="d-inline-block mb-2 text-primary">
                           {post.category}
