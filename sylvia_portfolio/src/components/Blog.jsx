@@ -21,7 +21,7 @@ function BlogPost({ post }) {
   const [showFullContent, setShowFullContent] = useState(false);
 
   const toggleContent = () => {
-    setShowFullContent(!showFullContent);    
+    setShowFullContent(!showFullContent);
   };
 
   return (
@@ -53,6 +53,15 @@ function BlogPost({ post }) {
 function Blog() {
   const [posts, setPosts] = useState([]);
   const [showFullContent, setShowFullContent] = useState(false);
+
+  const [expandedPosts, setExpandedPosts] = useState({});
+
+  const postsContent = (postId) => {
+    setExpandedPosts((prevExpandedPosts) => ({
+      ...prevExpandedPosts,
+      [postId]: !prevExpandedPosts[postId],
+    }));
+  };
 
   useEffect(() => {
     fetch("http://localhost:3001/Admin")
@@ -191,7 +200,8 @@ function Blog() {
 
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
-              //  <BlogPost key={post.id} post={post} />
+              const isExpanded = expandedPosts[post.id] || false;
+
               return (
                 <div key={post.id} className="post-row mb-4">
                   <div className="col-md-12">
@@ -213,19 +223,17 @@ function Blog() {
                           By {post.author}
                         </div>
                         <div
-                    className={`post-content ${
-                      showFullContent ? "show" : ""
-                    }`}
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                  />
-                  <a
-                    href="#"
-                    className="stretched-link"
-                    onClick={toggleContent}
-                  >
-                    {showFullContent ? "Hide content" : "Continue reading"}
-                  </a>
-                </div>
+                          className={`post-content ${isExpanded ? "show" : ""}`}
+                          dangerouslySetInnerHTML={{ __html: post.content }}
+                        />
+                        <a
+                          href="#"
+                          className="stretched-link"
+                          onClick={() => postsContent(post.id)}
+                        >
+                          {isExpanded ? "Hide content" : "Continue reading"}
+                        </a>
+                      </div>
                       <div className="col-auto d-none d-lg-block thumbnail-container"></div>
                     </div>
                   </div>
