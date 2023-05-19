@@ -13,46 +13,52 @@ import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 import SylviaShortLogo from "../images/Sylvia_Logo_Salmon_Short.png";
 import Lines from "../images/Lines.png";
 
-function BlogPost({ post }) {
-  const styling = JSON.parse(post.styling || "{}");
-  const deltaContent = JSON.parse(post.deltaContent || "{}");
-  const plainTextContent = post.plainTextContent || "";
+// function BlogPost({ post }) {
+//   const styling = JSON.parse(post.styling || "{}");
+//   const deltaContent = JSON.parse(post.deltaContent || "{}");
+//   const plainTextContent = post.plainTextContent || "";
 
-  const [showFullContent, setShowFullContent] = useState(false);
+//   const [showFullContent, setShowFullContent] = useState(false);
 
-  const toggleContent = () => {
-    setShowFullContent(!showFullContent);
-  };
+//   const toggleContent = () => {
+//     setShowFullContent(!showFullContent);
+//   };
 
-  return (
-    <div className="col-md-4" key={post.id}>
-      <div className="card mb-4 shadow-sm">
-        <div className="card-body">
-          <h2>{post.title}</h2>
-          <p className="card-text">
-            {showFullContent ? deltaContent : plainTextContent}
-          </p>
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="btn-group">
-              <button
-                type="button"
-                className="btn btn-sm btn-outline-secondary"
-                onClick={toggleContent}
-              >
-                {showFullContent ? "Read Less" : "Read More"}
-              </button>
-            </div>
-            <small className="text-muted">{post.date}</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+//   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric",
+//   });
+
+//   return (
+//     <div className="col-md-4" key={post.id}>
+//       <div className="card mb-4 shadow-sm">
+//         <div className="card-body">
+//           <h2>{post.title}</h2>
+//           <p className="card-text">
+//             {showFullContent ? deltaContent : plainTextContent}
+//           </p>
+//           <div className="d-flex justify-content-between align-items-center">
+//             <div className="btn-group">
+//               <button
+//                 type="button"
+//                 className="btn btn-sm btn-outline-secondary"
+//                 onClick={toggleContent}
+//               >
+//                 {showFullContent ? "Read Less" : "Read More"}
+//               </button>
+//             </div>
+//             <small className="text-muted">{{formattedDate}}</small>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 function Blog() {
   const [posts, setPosts] = useState([]);
-  // const [expandedPosts, setExpandedPosts] = useState({});
+  //const [expandedPosts, setExpandedPosts] = useState({});
   const [expandedPostId, setExpandedPostId] = useState(null);
 
   const postsContent = (postId) => {
@@ -191,8 +197,40 @@ function Blog() {
               </p>
             </div>
           </div>
-
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
+      {posts.map((post) => {
+        const isExpanded = post.id === expandedPostId;
+
+        const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+        return (
+          <div key={post.id} className={`col-md-12 ${isExpanded ? "expanded" : ""}`}>
+            <div className="post-row mb-4">
+              <div className={`border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ${isExpanded ? "expanded" : ""}`}>
+                <img className="post-image" src={post.image} alt="post image" />
+                <div className="col p-4 d-flex flex-column position-static">
+                  <strong className="d-inline-block mb-2 text-primary">{post.category}</strong>
+                  <h3 className="mb-0">{post.title}</h3>
+                  <div className="mb-1 text-body-secondary">{formattedDate}</div>
+                  <div className="mb-1 text-body-secondary">By {post.author}</div>
+                  <div className={`post-content ${isExpanded ? "show" : ""}`} dangerouslySetInnerHTML={{ __html: post.content }} />
+                  <a href="#" className="stretched-link" onClick={() => postsContent(post.id)}>
+                    {isExpanded ? "Hide content" : "Continue reading"}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+
+          {/* <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
             {posts.map((post) => {
               const isExpanded = post.id === expandedPostId;
 
@@ -231,7 +269,7 @@ function Blog() {
                 </div>
               );
             })}
-          </div>
+          </div> */}
 
           <div className="row g-5">
             <div className="col-md-8">
