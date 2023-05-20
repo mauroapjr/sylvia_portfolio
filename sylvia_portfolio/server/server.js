@@ -68,6 +68,7 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
 });
 
 // Add image column to posts table - Needed just to create the column once. 
+
 // blogDb.run(`ALTER TABLE posts ADD COLUMN image TEXT`, (err) => {
 //   if (err) {
 //     console.log(err.message);
