@@ -5,6 +5,7 @@ import { Form, Input, Button, message } from "antd";
 import { ImageFileResizer } from "react-image-file-resizer";
 
 import "../main.css";
+import "../admin.css";
 import "react-quill/dist/quill.snow.css";
 import "react-quill/dist/quill.bubble.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -90,7 +91,7 @@ export default function Admin() {
       message.error("Failed to create post");
     }
   };
-  
+
   return (
     <>
       <link
@@ -139,7 +140,7 @@ export default function Admin() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 50,
+            marginTop: 80,
           }}
         >
           <Form
@@ -149,11 +150,12 @@ export default function Admin() {
             }}
             onFinish={(values) => onFinish(values, form)}
             form={form}
-            style={{ width: "50%" }}
+            style={{ width: "80%" }}
           >
             <Form.Item
-              label="Title"
+              label={<span className="title-label">Title</span>}
               name="title"
+              style={{ width: "100%", marginBottom: "40px" }}
               rules={[
                 {
                   required: true,
@@ -161,11 +163,11 @@ export default function Admin() {
                 },
               ]}
             >
-              <Input />
+              <Input style={{ fontSize: "18px" }}/>
             </Form.Item>
 
             <Form.Item
-              label="Content"
+              label={<span className="content-label">Content</span>}
               name="content"
               rules={[
                 { required: true, message: "Please input the post content!" },
@@ -175,6 +177,7 @@ export default function Admin() {
                 ref={editorRef}
                 value={JSON.stringify(content)}
                 onChange={(content) => onChange(content)}
+                className="quill-editor"
                 modules={{
                   toolbar: [
                     [{ header: [1, 2, false] }],
@@ -188,8 +191,9 @@ export default function Admin() {
               />
             </Form.Item>
             <Form.Item
-              label="Author"
+              label={<span className="author-label">Author</span>}
               name="author"
+              style={{ width: "100%", marginTop: "40px", fontSize: "18px" }}
               rules={[
                 {
                   required: true,
@@ -197,7 +201,7 @@ export default function Admin() {
                 },
               ]}
             >
-              <Input />
+              <Input style={{ fontSize: "18px" }}/>
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit">
