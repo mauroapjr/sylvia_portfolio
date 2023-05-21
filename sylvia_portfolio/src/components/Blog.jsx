@@ -17,11 +17,12 @@ function Blog() {
   const [posts, setPosts] = useState([]);
   const [expandedPostId, setExpandedPostId] = useState(null);
 
-  const postsContent = (postId) => {
-    setExpandedPostId((prevExpandedPostId) =>
-      prevExpandedPostId === postId ? null : postId
-    );
-  };
+const handleContinueReading = (e, postId) => {
+  e.preventDefault();
+  setExpandedPostId ((prevExpandedPostId) => 
+    prevExpandedPostId === postId ? null : postId
+  );
+}  
 
   useEffect(() => {
     fetch("http://localhost:3001/Admin")
@@ -29,7 +30,7 @@ function Blog() {
       .then((data) => setPosts(data))
       .then((error) => console.log(error));
   }, []);
-
+  
   return (
     <>
       <link
@@ -146,11 +147,7 @@ function Blog() {
               <h1 className="display-4 fst-italic">
                 Here is where I share my thoutghs and ideas!
               </h1>
-              <p className="lead my-3">
-                Multiple lines of text that form the lede, informing new readers
-                quickly and efficiently about what’s most interesting in this
-                post’s contents.
-              </p>
+              
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
@@ -181,7 +178,7 @@ function Blog() {
                         <strong className="d-inline-block mb-2 text-primary">
                           {post.category}
                         </strong>
-                        <h3 className="mb-0">{post.title}</h3>
+                        <h3 className="mb-0" style={{ fontSize: "38px", padding: "6px" }}>{post.title}</h3>
                         <div className="mb-1 text-body-secondary">
                           {formattedDate}
                         </div>
@@ -191,11 +188,13 @@ function Blog() {
                         <div
                           className={`post-content ${isExpanded ? "show" : ""}`}
                           dangerouslySetInnerHTML={{ __html: post.content }}
+                          style={{ fontSize: "28px", padding: "6px" }}
                         />
                         <a
                           href="#"
                           className="stretched-link"
-                          onClick={() => postsContent(post.id)}
+                          onClick={(clickEvent) => handleContinueReading(clickEvent, post.id)}
+                          style={{ fontSize: "18px", padding: "8px" }}
                         >
                           {isExpanded ? "Hide content" : "Continue reading"}
                         </a>
@@ -206,6 +205,8 @@ function Blog() {
               );
             })}
           </div>
+
+          
 
           <div className="row g-5">
             <div className="col-md-8">

@@ -34,8 +34,8 @@ export default function Admin() {
 
     ImageFileResizer.imageFileResizer(
       file,
-      800, //max width
-      800, //max height
+      600, //max width
+      600, //max height
       "JPEG", //format
       80, //quality
       0, //rotation
