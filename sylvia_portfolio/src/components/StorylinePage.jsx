@@ -134,6 +134,9 @@ function StorylinePage() {
           allowFullScreen
         ></iframe>
       </div>
+      <small className="d-block mb-3 text-body-secondary">
+        mauro pereira © 2023
+      </small>
     </>
   );
 }

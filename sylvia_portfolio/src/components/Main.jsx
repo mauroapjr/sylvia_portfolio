@@ -455,6 +455,9 @@ export default function Main() {
               </div>
             </div>
           </div>
+          <small className="d-block mb-3 text-body-secondary">
+              mauro pereira © 2023
+            </small>
         </footer>
 
         <script

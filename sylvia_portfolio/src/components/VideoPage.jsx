@@ -29,7 +29,10 @@ export default function VideoPage() {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
       <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#E49393"}}>
+        <nav
+          className="navbar navbar-expand-lg navbar-dark"
+          style={{ backgroundColor: "#E49393" }}
+        >
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               <svg
@@ -44,11 +47,12 @@ export default function VideoPage() {
                 aria-hidden="true"
                 className="me-2"
                 viewBox="0 0 24 24"
-              >
-                
-              </svg>
-              <img className="sylvia-short-logo" src={sylviaLogoShort} alt="Sylvia Short Logo" />
-              
+              ></svg>
+              <img
+                className="sylvia-short-logo"
+                src={sylviaLogoShort}
+                alt="Sylvia Short Logo"
+              />
             </a>
             <button
               className="navbar-toggler"
@@ -131,6 +135,9 @@ export default function VideoPage() {
           allowFullScreen
         ></iframe>
       </div>
+      <small className="d-block mb-3 text-body-secondary">
+        mauro pereira © 2023
+      </small>
     </>
   );
 }
