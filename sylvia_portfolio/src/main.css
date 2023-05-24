@@ -80,7 +80,6 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
   --bs-btn-font-weight: 600;
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bd-violet-bg);
@@ -97,17 +96,16 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   z-index: 1500;
 }
 
-/* @media (max-width: 768px) {
-.py-5 {
+@media (max-width: 768px) {
+.box-right {
   width: 100% !important;
   margin-left: 0 !important; 
 
   }
-} */
+}
 
 .container-fluid {
   position: relative;
-  
 }
 
 .flow-container {
@@ -117,7 +115,6 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   right: 0;
   width: 90%;
   height: 100vh;
-  /* overflow: hidden;   */
 }
 
 .flow-background {
@@ -138,8 +135,6 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   }
 }
 
-
-
 .profile-image-container {
   position: relative; /* Add position relative to the container */
   z-index: 1; /* Set a higher z-index to bring the profile image in front */
@@ -149,27 +144,11 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   margin-top: 20px; /* Adjust the margin value as needed */
 }
 
-/* .profile-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px; 
-} */
-
 .profile-image {
   width: 299px;
   border-radius: 50%;
   border: 6px solid #043260;
 }
-
-/* .profile-image {
-  width: 299px;
-  display: block;
-  margin: 6px auto ;
-  margin-top: 27px; 
-  border-radius: 50%;
-  border: 6px solid #043260;
-} */
 
 @media (max-width: 415px) {
   .profile-image {
@@ -183,18 +162,6 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
     width: 299px;
     margin: 0 auto;
   }
-}
-
-.lead {
-  color: #f5f8f8 !important;
-  font-size: 25px !important;
-  margin-bottom: 30px;
-}
-
-.fw-light {
-  color: #f5f8f8;
-  font-size: smaller;
-  margin-bottom: 30px;
 }
 
 @media (max-width: 415px) {
@@ -219,8 +186,12 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 }
 
 .head-items {
-  color: white;
-  
+  color: rgb(14, 14, 14);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
 } 
 
 @media (max-width: 418px) {
@@ -244,5 +215,5 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 }
 
 .footer-dark-grey {
-  background-color: #f4f5f7;
+  background-color: #f8f9fa;
 }

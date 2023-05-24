@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -11,7 +11,6 @@ import Login from "./Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import SylviaLogo from "../images/Sylvia_Logo2_salmon.png";
 import Alteryx from "../images/alteryx.png";
 import Movidaria from "../images/movidaria.png";
 import RoyalConservatory from "../images/Royal_Conservatory_of_Music_logo.svg.png";
@@ -81,136 +80,136 @@ export default function Main() {
                 }}
               />
             </div>
-
-            <ul
-              className="head-item"
-              style={{
-                display: "flex",
-                marginTop: "80px",
-                justifyContent: "center",
-                textAlign: "center",
-              }}
-            >
-              <div className="head-items" style={{ display: "flex" }}>
-                <a
-                  href="/Portfolio"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <p className="head-portfolio" style={{ margin: "0 30px" }}>
-                    PORTFOLIO
-                  </p>
-                </a>
-                <a
-                  href="/Blog"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <p className="head-blog" style={{ margin: "0 30px" }}>
-                    BLOG
-                  </p>
-                </a>
-                <a
-                  href="/About"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <p className="head-about" style={{ margin: "0 30px" }}>
-                    ABOUT
-                  </p>
-                </a>
-              </div>
-            </ul>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarHeader"
-              aria-controls="navbarHeader"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarHeader">
-              <div className="container">
-                <div className="row">
-                  <div className="col-sm-8 col-md-7 py-4"></div>
-                  <div className="col-sm-4 offset-md-1 py-4">
-                    <ul className="list-unstyled"></ul>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </nav>
       </header>
 
       <main>
-        <div style={{ position: "relative" }}>
-          <img
-            className="flow-background"
-            src={FlowBackground}
-            alt="Background"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "91%",
-              backgroundSize: "100%",
-              backgroundRepeat: "no-repeat",
-              marginLeft: "-714px",
-              marginTop: "575px",
-              transform: "rotate(90deg)",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: -1,
-            }}
-          />
-        </div>
-        <section
-          className="py-5 text-center"
-          style={{
-            backgroundColor: "#408E91",
-            width: "70%",
-            marginLeft: "600px",
-          }}
-        >
-          <div className="row py-lg-5">
-            <div className="col-lg-6 col-md-8 mx-auto">
-              <p
-                className="lead text-body-secondary"
-                style={{ color: "black", width: "100%" }}
-              >
-                I am a lifelong learner driven by an insatiable curiosity and a
-                tenacious spirit. People would describe me as a dedicated and
-                energetic individual who fearlessly takes on new challenges and
-                explores innovative avenues to achieve success. Throughout the
-                years, I have immersed myself in diverse fields, from music to
-                data analysis, from academic high-school courses to customer
-                education. My passion lies in learning and development, and I am
-                always up to talk about education projects.
-              </p>
-
-              <h6 className="fw-light">
-                Customer Education | Learning Experience Designer | eLearning
-                Developer | Adult Learning Specialist | Learning Analytics |
-                Localization | Curious by Nature
-              </h6>
-
-              <p>
-                <a href="/Portfolio" className="btn btn-primary my-2 mx-2">
-                  Check my Portfolio
-                </a>
-                <a
-                  href="mailto:sylvia.bachiegga@hotmail.com"
-                  className="btn btn-secondary my-2"
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-md-8">
+              <section className="text-start">
+                <p
+                  className="lead text-body-secondary"
+                  style={{
+                    textAlign: "left",
+                    height: "300px",
+                    marginLeft: "10%",
+                    marginTop: "5%",
+                  }}
                 >
-                  Send a message
-                </a>
-              </p>
+                  I am a lifelong learner driven by an insatiable curiosity and
+                  a tenacious spirit. People would describe me as a dedicated
+                  and energetic individual who fearlessly takes on new
+                  challenges and explores innovative avenues to achieve success.
+                  Throughout the years, I have immersed myself in diverse
+                  fields, from music to data analysis, from academic high-school
+                  courses to customer education. My passion lies in learning and
+                  development, and I am always up to talk about education
+                  projects.
+                </p>
+
+                <h6
+                  className="fw-light"
+                  style={{
+                    textAlign: "left",
+                    marginLeft: "10%",
+                    padding: "10px",
+                  }}
+                >
+                  Customer Education | Learning Experience Designer | eLearning
+                  Developer | Adult Learning Specialist | Learning Analytics |
+                  Localization | Curious by Nature
+                </h6>
+
+                <p
+                  style={{
+                    textAlign: "left",
+                    marginLeft: "10%",
+                    padding: "10px",
+                  }}
+                >
+                  <a href="/Portfolio" className="btn btn-primary my-2 mx-2">
+                    Check my Portfolio
+                  </a>
+                  <a
+                    href="mailto:sylvia.bachiegga@hotmail.com"
+                    className="btn btn-secondary my-2"
+                  >
+                    Send a message
+                  </a>
+                </p>
+              </section>
+            </div>
+            <div className="col-lg-6 col-md-4">
+              <section
+                className="box-right"
+                style={{
+                  backgroundColor: "#acaeb1",
+                  width: "90%",
+                  height: "100%",
+                  marginLeft: "200px",
+                  marginRight: "10px",
+                  marginTop: "5%",
+                }}
+              >
+                <ul className="head-items">
+                  <div className="head-items" style={{ display: "flex" }}>
+                    <Link
+                      to="/Portfolio"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <p
+                        className="head-portfolio"
+                        style={{ margin: "10px 30px" }}
+                      >
+                        PORTFOLIO
+                      </p>
+                    </Link>
+                    <Link
+                      to="/Blog"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <p className="head-blog" style={{ margin: "10px 30px" }}>
+                        BLOG
+                      </p>
+                    </Link>
+                    <Link
+                      to="/About"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <p className="head-about" style={{ margin: "10px 30px" }}>
+                        ABOUT
+                      </p>
+                    </Link>
+                  </div>
+                </ul>
+                <button
+                  className="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarHeader"
+                  aria-controls="navbarHeader"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarHeader">
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-sm-8 col-md-7 py-4"></div>
+                      <div className="col-sm-4 offset-md-1 py-4">
+                        <ul className="list-unstyled"></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
-        </section>
-
+        </div>
+        
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button
