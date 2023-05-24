@@ -105,8 +105,20 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   }
 }
 
+.flow-container {
+  display: flex;
+  height: 100vh;
+}
+.flow-background {
+  width: 80%; 
+  height: 100%;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  margin-right: auto;
+}
+
 @media (max-width: 768px) {
-  .background-image {
+  .flow-background {
     display: none;
   }
 }
@@ -115,14 +127,16 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   background-color: #f4f5f7;
 }
 
-.sylvia-logo {
-  width: 450px;
+.profile-image {
+  width: 250px;
   display: block;
   margin: 0 auto;
+  border-radius: 50%;
+  border: 6px solid #043260;
 }
 
 @media (max-width: 415px) {
-  .sylvia-logo {
+  .profile-image {
     width: 80%;
     margin: 0 auto;
   }

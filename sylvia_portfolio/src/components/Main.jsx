@@ -17,12 +17,13 @@ import Movidaria from "../images/movidaria.png";
 import RoyalConservatory from "../images/Royal_Conservatory_of_Music_logo.svg.png";
 import TVO from "../images/TVO.jpg";
 import CTC from "../images/canadian-tire-logo.png";
-import BackImg from "../images/background.jpg";
+import ProfileImage from "../images/Profile_picture.jpg";
+import FlowBackground from "../images/Flow_backgroung.jpg";
 
 export default function Main() {
   return (
     <>
-      <body>
+     
         <link
           rel="canonical"
           href="https://getbootstrap.com/docs/5.3/examples/album/"
@@ -38,7 +39,11 @@ export default function Main() {
         <header data-bs-theme="dark">
           <nav
             className="navbar navbar-expand-lg navbar-dark"
-            style={{ backgroundColor: "#E49393" }}
+            style={{ backgroundImage: `url(${FlowBackground})`,
+            backgroundSize: "90%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right",
+          marginTop: "20px" }}
           >
             <div className="container-fluid">
               <a className="navbar-brand" href="/">
@@ -57,9 +62,9 @@ export default function Main() {
                   backgroundColor="#705846"
                 ></svg>
                 <img
-                  className="sylvia-logo"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
+                  className="profile-image"
+                  src={ProfileImage}
+                  alt="Profile Image"
                 />
               </a>
               <ul
@@ -125,12 +130,19 @@ export default function Main() {
         </header>
 
         <main>
-          <img
-            className="background-image"
-            src={BackImg}
-            alt="Background"
-            style={{ width: "50%", float: "left", margin: "140px 20px 20px 0" }}
-          />
+          
+            {/* <img
+              className="flow-background"
+              src={FlowBackground}
+              alt="Background"
+              // style={{
+              //   width: '80%',
+              //   transform: 'rotate(-90deg)',
+              //   transformOrigin: 'top left',
+              //   marginRight: 'auto'
+              // }}
+            /> */}
+          
           <section
             className="py-5 text-center"
             style={{
@@ -143,7 +155,7 @@ export default function Main() {
               <div className="col-lg-6 col-md-8 mx-auto">
                 <p
                   className="lead text-body-secondary"
-                  style={{ color: "white", width: "100%" }}
+                  style={{ color: "black", width: "100%" }}
                 >
                   I am a lifelong learner driven by an insatiable curiosity and
                   a tenacious spirit. People would describe me as a dedicated
@@ -395,6 +407,7 @@ export default function Main() {
             </button>
           </div>
         </main>
+
         <footer
           className="text-body-secondary py-5"
           style={{ backgroundColor: "#408E91" }}
@@ -465,7 +478,7 @@ export default function Main() {
           integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
           crossOrigin="anonymous"
         ></script>
-      </body>
+      
     </>
   );
 }
