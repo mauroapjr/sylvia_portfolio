@@ -40,7 +40,7 @@ export default function Main() {
           <nav
             className="navbar navbar-expand-lg navbar-dark"
             style={{ backgroundImage: `url(${FlowBackground})`,
-            backgroundSize: "90%",
+            backgroundSize: "91%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "right",
           marginTop: "20px" }}
