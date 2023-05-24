@@ -97,25 +97,34 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   z-index: 1500;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 .py-5 {
   width: 100% !important;
   margin-left: 0 !important; 
 
   }
+} */
+
+.container-fluid {
+  position: relative;
+  
 }
 
-/* .flow-container {
-  display: flex;
+.flow-container {
+  position: absolute;
+  top: 10px;
+  left: 10;
+  right: 0;
+  width: 90%;
   height: 100vh;
+  /* overflow: hidden;   */
 }
+
 .flow-background {
-  width: 80%; 
-  height: 100%;
-  transform: rotate(-90deg);
-  transform-origin: top left;
-  margin-right: auto;
-} */
+  width: 100%;
+  height: 31%;
+  object-fit: cover; 
+}
 
 @media (max-width: 768px) {
   .flow-background {
@@ -123,23 +132,55 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   }
 }
 
-.footer-dark-grey {
-  background-color: #f4f5f7;
+@media (min-width: 1641px) {
+  .flow-background {
+    display: relative;
+  }
 }
+
+
+
+.profile-image-container {
+  position: relative; /* Add position relative to the container */
+  z-index: 1; /* Set a higher z-index to bring the profile image in front */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust the margin value as needed */
+}
+
+/* .profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
+} */
 
 .profile-image {
   width: 299px;
-  display: block;
-  margin: 0 auto;
-  margin-top: -9px;
   border-radius: 50%;
   border: 6px solid #043260;
-  
 }
+
+/* .profile-image {
+  width: 299px;
+  display: block;
+  margin: 6px auto ;
+  margin-top: 27px; 
+  border-radius: 50%;
+  border: 6px solid #043260;
+} */
 
 @media (max-width: 415px) {
   .profile-image {
     width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1641px) {
+  .profile-image {
+    width: 299px;
     margin: 0 auto;
   }
 }
@@ -202,3 +243,6 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   background-position: left center !important;
 }
 
+.footer-dark-grey {
+  background-color: #f4f5f7;
+}

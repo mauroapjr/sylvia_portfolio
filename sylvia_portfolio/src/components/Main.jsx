@@ -36,38 +36,52 @@ export default function Main() {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
       <header data-bs-theme="dark">
-        <nav
-          className="navbar navbar-expand-lg navbar-dark"
-          style={{
-            backgroundImage: `url(${FlowBackground})`,
-            backgroundSize: "91%",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right",
-            marginTop: "20px",
-          }}
-        >
+        <nav className="navbar navbar-expand-lg navbar-dark">
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                aria-hidden="true"
-                className="me-2"
-                viewBox="0 0 24 24"
-                backgroundColor="#705846"
-              ></svg>
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
+              <div className="profile-image-container">
+                <img
+                  className="profile-image"
+                  src={ProfileImage}
+                  alt="Profile Image"
+                />
+              </div>
             </a>
+            <div className="flow-container">
+              <img
+                className="flow-background"
+                src={FlowBackground}
+                alt="Background 1"
+                style={{
+                  backgroundImage: `url(${FlowBackground})`,
+                  backgroundSize: "120%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right",
+                  marginTop: "15px",
+                  display: "flex",
+                }}
+              />
+              <img
+                className="flow-background"
+                src={FlowBackground}
+                alt="Background 2"
+                style={{
+                  backgroundImage: `url(${FlowBackground})`,
+                  backgroundSize: "100%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "left",
+                  display: "flex",
+                  width: "60%",
+                  marginTop: "75px",
+                  transform: "rotate(90deg)",
+                  position: "absolute",
+                  top: 520,
+                  left: -540,
+                  zIndex: -1,
+                }}
+              />
+            </div>
+
             <ul
               className="head-item"
               style={{
@@ -121,7 +135,6 @@ export default function Main() {
                   <div className="col-sm-8 col-md-7 py-4"></div>
                   <div className="col-sm-4 offset-md-1 py-4">
                     <ul className="list-unstyled"></ul>
-                    <Login />
                   </div>
                 </div>
               </div>
@@ -131,25 +144,28 @@ export default function Main() {
       </header>
 
       <main>
-      <div style={{ position: "relative" }}>
-        <img
-              className="flow-background"
-              src={FlowBackground}
-              alt="Background"
-              style={{
-                width: "91%",
-                backgroundSize: "100%",
-                backgroundRepeat: "no-repeat",
-                marginLeft: "-715px",
-                marginTop: "575px",
-                transform: "rotate(90deg)",
-                position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: -1,
-              }}
-            />
-</div>
+        <div style={{ position: "relative" }}>
+          <img
+            className="flow-background"
+            src={FlowBackground}
+            alt="Background"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "91%",
+              backgroundSize: "100%",
+              backgroundRepeat: "no-repeat",
+              marginLeft: "-714px",
+              marginTop: "575px",
+              transform: "rotate(90deg)",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: -1,
+            }}
+          />
+        </div>
         <section
           className="py-5 text-center"
           style={{
@@ -179,6 +195,7 @@ export default function Main() {
                 Developer | Adult Learning Specialist | Learning Analytics |
                 Localization | Curious by Nature
               </h6>
+
               <p>
                 <a href="/Portfolio" className="btn btn-primary my-2 mx-2">
                   Check my Portfolio
@@ -471,6 +488,7 @@ export default function Main() {
         <small className="d-block mb-3 text-body-secondary">
           mauro pereira © 2023
         </small>
+        <Login />
       </footer>
 
       <script
