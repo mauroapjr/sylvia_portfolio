@@ -186,17 +186,18 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 }
 
 .head-items {
-  color: rgb(14, 14, 14);
+  color: rgb(13, 13, 13);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start;
   justify-content: center;
-  text-align: center;
+  text-align: center; */
 } 
 
 @media (max-width: 418px) {
   .head-items {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
   .head-items a {

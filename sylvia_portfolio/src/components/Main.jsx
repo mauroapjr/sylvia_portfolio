@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -76,7 +76,7 @@ export default function Main() {
                   position: "absolute",
                   top: 520,
                   left: -540,
-                  zIndex: -1,
+                  zIndex: -2,
                 }}
               />
             </div>
@@ -96,6 +96,7 @@ export default function Main() {
                     height: "300px",
                     marginLeft: "10%",
                     marginTop: "5%",
+                    fontSize: "25px",
                   }}
                 >
                   I am a lifelong learner driven by an insatiable curiosity and
@@ -114,109 +115,95 @@ export default function Main() {
                   style={{
                     textAlign: "left",
                     marginLeft: "10%",
-                    padding: "10px",
+                    marginTop: "15%",
+                    padding: "20px",
+                    fontSize: "20px",
                   }}
                 >
                   Customer Education | Learning Experience Designer | eLearning
                   Developer | Adult Learning Specialist | Learning Analytics |
                   Localization | Curious by Nature
                 </h6>
-
-                <p
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "10%",
-                    padding: "10px",
-                  }}
-                >
-                  <a href="/Portfolio" className="btn btn-primary my-2 mx-2">
-                    Check my Portfolio
-                  </a>
-                  <a
-                    href="mailto:sylvia.bachiegga@hotmail.com"
-                    className="btn btn-secondary my-2"
-                  >
-                    Send a message
-                  </a>
-                </p>
               </section>
             </div>
-            <div className="col-lg-6 col-md-4">
-              <section
-                className="box-right"
+
+            <section
+              className="box-right"
+              style={{
+                backgroundColor: "rgb(204, 202, 202)",
+                width: "40%",
+                height: "500%",
+                marginLeft: "auto",
+                marginRight: "0px",
+                zIndex: 0,
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <div
+                className="head-items"
                 style={{
-                  backgroundColor: "#acaeb1",
-                  width: "90%",
-                  height: "100%",
-                  marginLeft: "200px",
-                  marginRight: "10px",
-                  marginTop: "5%",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  marginLeft: "450px",
+                  fontSize: "35px",
                 }}
               >
-                <ul className="head-items">
-                  <div className="head-items" style={{ display: "flex" }}>
-                    <Link
-                      to="/Portfolio"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <p
-                        className="head-portfolio"
-                        style={{ margin: "10px 30px" }}
-                      >
-                        PORTFOLIO
-                      </p>
-                    </Link>
-                    <Link
-                      to="/Blog"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <p className="head-blog" style={{ margin: "10px 30px" }}>
-                        BLOG
-                      </p>
-                    </Link>
-                    <Link
-                      to="/About"
-                      style={{ textDecoration: "none", color: "inherit" }}
-                    >
-                      <p className="head-about" style={{ margin: "10px 30px" }}>
-                        ABOUT
-                      </p>
-                    </Link>
-                  </div>
-                </ul>
-                <button
-                  className="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarHeader"
-                  aria-controls="navbarHeader"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
+                <a
+                  href="/Portfolio"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    marginTop: "180px",
+                    margin: "15px 1px",
+                    zIndex: 1,
+                  }}
                 >
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarHeader">
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-sm-8 col-md-7 py-4"></div>
-                      <div className="col-sm-4 offset-md-1 py-4">
-                        <ul className="list-unstyled"></ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
+                  <p className="head-portfolio">PORTFOLIO</p>
+                </a>
+                <a
+                  href="/Blog"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    margin: "15px 1px",
+                    zIndex: 1,
+                  }}
+                >
+                  <p className="head-blog">BLOG</p>
+                </a>
+                <a
+                  href="/About"
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    margin: "15px 1px",
+                    marginBottom: "180px",
+                    zIndex: 1,
+                  }}
+                >
+                  <p className="head-about">ABOUT</p>
+                </a>
+              </div>
+              {/* <div className="container"> */}
+              {/* <div className="column"> */}
+                {/* <div className="col-sm-8 col-md-7 py-4"></div> */}
+                {/* <div className="" style={{ flexGrow: 1 }}> */}
+                  <ul className="list-unstyled"></ul>
+                {/* </div> */}
+              {/* </div> */}
+              {/* </div> */}
+            </section>
           </div>
         </div>
-        
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
+
+        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+          <div className="carousel-indicators">
             <button
               type="button"
               data-bs-target="#myCarousel"
               data-bs-slide-to="0"
-              class="active"
+              className="active"
               aria-current="true"
               aria-label="Slide 1"
             ></button>
@@ -245,10 +232,10 @@ export default function Main() {
               aria-label="Slide 5"
             ></button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <svg
-                class="bd-placeholder-img"
+                className="bd-placeholder-img"
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -262,9 +249,9 @@ export default function Main() {
                   fill="var(--bs-secondary-color)"
                 ></rect>
               </svg>
-              <div class="container">
+              <div className="container">
                 <div
-                  class="carousel-caption text-start"
+                  className="carousel-caption text-start"
                   style={{
                     backgroundImage: `url(${Alteryx})`,
                     width: "50%",
@@ -276,9 +263,9 @@ export default function Main() {
                 ></div>
               </div>
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <svg
-                class="bd-placeholder-img"
+                className="bd-placeholder-img"
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -293,9 +280,9 @@ export default function Main() {
                 ></rect>
               </svg>
 
-              <div class="container">
+              <div className="container">
                 <div
-                  class="carousel-caption"
+                  className="carousel-caption"
                   style={{
                     backgroundImage: `url(${Movidaria})`,
                     width: "10%",
@@ -308,9 +295,9 @@ export default function Main() {
               </div>
             </div>
 
-            <div class="carousel-item">
+            <div className="carousel-item">
               <svg
-                class="bd-placeholder-img"
+                className="bd-placeholder-img"
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -325,9 +312,9 @@ export default function Main() {
                 ></rect>
               </svg>
 
-              <div class="container">
+              <div className="container">
                 <div
-                  class="carousel-caption"
+                  className="carousel-caption"
                   style={{
                     backgroundImage: `url(${CTC})`,
                     width: "10%",
@@ -340,9 +327,9 @@ export default function Main() {
               </div>
             </div>
 
-            <div class="carousel-item">
+            <div className="carousel-item">
               <svg
-                class="bd-placeholder-img"
+                className="bd-placeholder-img"
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -357,9 +344,9 @@ export default function Main() {
                 ></rect>
               </svg>
 
-              <div class="container">
+              <div className="container">
                 <div
-                  class="carousel-caption"
+                  className="carousel-caption"
                   style={{
                     backgroundImage: `url(${TVO})`,
                     width: "10%",
@@ -372,9 +359,9 @@ export default function Main() {
               </div>
             </div>
 
-            <div class="carousel-item">
+            <div className="carousel-item">
               <svg
-                class="bd-placeholder-img"
+                className="bd-placeholder-img"
                 width="100%"
                 height="100%"
                 xmlns="http://www.w3.org/2000/svg"
@@ -388,9 +375,9 @@ export default function Main() {
                   fill="var(--bs-secondary-color)"
                 ></rect>
               </svg>
-              <div class="container">
+              <div className="container">
                 <div
-                  class="carousel-caption text-end"
+                  className="carousel-caption text-end"
                   style={{
                     backgroundImage: `url(${RoyalConservatory})`,
                     width: "15%",
@@ -404,22 +391,28 @@ export default function Main() {
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#myCarousel"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </main>

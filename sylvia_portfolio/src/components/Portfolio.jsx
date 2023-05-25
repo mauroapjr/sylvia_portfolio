@@ -46,7 +46,7 @@ function Portfolio() {
         >
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
@@ -58,7 +58,7 @@ function Portfolio() {
                 aria-hidden="true"
                 className="me-2"
                 viewBox="0 0 24 24"
-              ></svg>
+              ></svg> */}
               <img
                 className="SylviaSmallLogo"
                 src={SylviaSmallLogo}
@@ -295,7 +295,7 @@ function Portfolio() {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              class="d-block mb-2"
+              className="d-block mb-2"
               role="img"
               viewBox="0 0 24 24"
             >
