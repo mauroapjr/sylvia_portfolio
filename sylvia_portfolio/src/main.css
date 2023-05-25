@@ -164,45 +164,31 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   }
 }
 
-@media (max-width: 415px) {
-  .navbar-toggler {
-    margin: 0 auto;
-    display: inline-block !important;
-    text-align: center;
-  }
+.logo-name {
+  display: flex;
 }
 
-.sylvia-short-logo {
-  width: 200px;
-  display: block;
-  margin: 0 auto;
-}
-
-@media (max-width: 415px) {
-  .sylvia-short-logo {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-.head-items {
+.link-items {
   color: rgb(13, 13, 13);
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center; */
+  text-align: center;
+  margin-bottom: 180px;
+  margin-top: 180px;
 } 
 
 @media (max-width: 418px) {
-  .head-items {
+  .link-items {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .head-items a {
+  .link-items a {
     flex-basis: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 80px;
+    margin-top: 80px;
   }
 }
 

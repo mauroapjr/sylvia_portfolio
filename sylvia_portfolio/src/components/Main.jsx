@@ -46,6 +46,27 @@ export default function Main() {
                 />
               </div>
             </a>
+            <p
+              className="logo-name"
+              style={{
+                color: "black",
+                fontSize: "45px",
+                marginBottom: "140px",
+                marginRight: "700px",
+                zIndex: 1,
+              }}
+            >
+              Sylvia Pereira
+            </p>
+            {/* <p
+            className="logo-name2"
+            style={{
+              color: "black",
+              fontSize: "25px",
+              marginBottom: "100px",
+              zIndex: 1,
+            }}
+              >Learn Experience Designer</p> */}
             <div className="flow-container">
               <img
                 className="flow-background"
@@ -141,7 +162,7 @@ export default function Main() {
               }}
             >
               <div
-                className="head-items"
+                className="link-items"
                 style={{
                   display: "flex",
                   alignItems: "flex-end",
@@ -159,7 +180,7 @@ export default function Main() {
                     zIndex: 1,
                   }}
                 >
-                  <p className="head-portfolio">PORTFOLIO</p>
+                  <p className="link-portfolio">PORTFOLIO</p>
                 </a>
                 <a
                   href="/Blog"
@@ -170,7 +191,7 @@ export default function Main() {
                     zIndex: 1,
                   }}
                 >
-                  <p className="head-blog">BLOG</p>
+                  <p className="link-blog">BLOG</p>
                 </a>
                 <a
                   href="/About"
@@ -182,15 +203,15 @@ export default function Main() {
                     zIndex: 1,
                   }}
                 >
-                  <p className="head-about">ABOUT</p>
+                  <p className="link-about">ABOUT</p>
                 </a>
               </div>
               {/* <div className="container"> */}
               {/* <div className="column"> */}
-                {/* <div className="col-sm-8 col-md-7 py-4"></div> */}
-                {/* <div className="" style={{ flexGrow: 1 }}> */}
-                  <ul className="list-unstyled"></ul>
-                {/* </div> */}
+              {/* <div className="col-sm-8 col-md-7 py-4"></div> */}
+              {/* <div className="" style={{ flexGrow: 1 }}> */}
+              <ul className="list-unstyled"></ul>
+              {/* </div> */}
               {/* </div> */}
               {/* </div> */}
             </section>
