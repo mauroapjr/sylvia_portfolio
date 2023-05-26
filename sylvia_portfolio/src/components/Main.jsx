@@ -18,6 +18,7 @@ import TVO from "../images/TVO.jpg";
 import CTC from "../images/canadian-tire-logo.png";
 import ProfileImage from "../images/Profile_picture.jpg";
 import FlowBackground from "../images/Flow_backgroung.jpg";
+import SylviaLogo from "../images/Sylvia_text_logo.png";
 
 export default function Main() {
   return (
@@ -44,29 +45,16 @@ export default function Main() {
                   src={ProfileImage}
                   alt="Profile Image"
                 />
+                <div className="sylvia-logo-container">
+                <img
+                  className="sylvia-logo"
+                  src={SylviaLogo}
+                  alt="Sylvia Logo"
+                />
+                </div>
               </div>
             </a>
-            <p
-              className="logo-name"
-              style={{
-                color: "black",
-                fontSize: "45px",
-                marginBottom: "140px",
-                marginRight: "700px",
-                zIndex: 1,
-              }}
-            >
-              Sylvia Pereira
-            </p>
-            {/* <p
-            className="logo-name2"
-            style={{
-              color: "black",
-              fontSize: "25px",
-              marginBottom: "100px",
-              zIndex: 1,
-            }}
-              >Learn Experience Designer</p> */}
+
             <div className="flow-container">
               <img
                 className="flow-background"
