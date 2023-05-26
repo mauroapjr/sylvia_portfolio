@@ -83,7 +83,7 @@ export default function Main() {
                   marginTop: "75px",
                   transform: "rotate(90deg)",
                   position: "absolute",
-                  top: 520,
+                  top: 416,
                   left: -540,
                   zIndex: -2,
                 }}
@@ -199,7 +199,7 @@ export default function Main() {
           </div>
         </div>
 
-        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel" >
           <div className="carousel-indicators">
             <button
               type="button"
