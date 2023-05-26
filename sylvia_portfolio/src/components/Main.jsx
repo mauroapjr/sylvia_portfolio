@@ -144,7 +144,7 @@ export default function Main() {
                 height: "500%",
                 marginLeft: "auto",
                 marginRight: "0px",
-                zIndex: -1,
+                zIndex: 0,
                 display: "flex",
                 justifyContent: "flex-end",
               }}
