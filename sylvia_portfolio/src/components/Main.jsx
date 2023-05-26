@@ -144,7 +144,7 @@ export default function Main() {
                 height: "500%",
                 marginLeft: "auto",
                 marginRight: "0px",
-                zIndex: 0,
+                zIndex: -1,
                 display: "flex",
                 justifyContent: "flex-end",
               }}
@@ -164,7 +164,7 @@ export default function Main() {
                     textDecoration: "none",
                     color: "inherit",
                     marginTop: "180px",
-                    margin: "15px 1px",
+                    margin: "15px -40px",
                     zIndex: 1,
                   }}
                 >
@@ -175,7 +175,7 @@ export default function Main() {
                   style={{
                     textDecoration: "none",
                     color: "inherit",
-                    margin: "15px 1px",
+                    margin: "15px -38px",
                     zIndex: 1,
                   }}
                 >
@@ -186,7 +186,7 @@ export default function Main() {
                   style={{
                     textDecoration: "none",
                     color: "inherit",
-                    margin: "15px 1px",
+                    margin: "15px -33px",
                     marginBottom: "180px",
                     zIndex: 1,
                   }}
