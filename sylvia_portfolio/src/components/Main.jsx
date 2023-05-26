@@ -421,7 +421,7 @@ export default function Main() {
 
       <footer
         className="text-body-secondary"
-        style={{ backgroundColor: "#408E91", padding: "4% 0" }}
+        style={{ backgroundColor: "#9EBA99", padding: "4% 0" }}
       >
         <div className="float-start ms-5">
           <Login />
