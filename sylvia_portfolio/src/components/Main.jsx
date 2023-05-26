@@ -46,11 +46,11 @@ export default function Main() {
                   alt="Profile Image"
                 />
                 <div className="sylvia-logo-container">
-                <img
-                  className="sylvia-logo"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
+                  <img
+                    className="sylvia-logo"
+                    src={SylviaLogo}
+                    alt="Sylvia Logo"
+                  />
                 </div>
               </div>
             </a>
@@ -194,14 +194,7 @@ export default function Main() {
                   <p className="link-about">ABOUT</p>
                 </a>
               </div>
-              {/* <div className="container"> */}
-              {/* <div className="column"> */}
-              {/* <div className="col-sm-8 col-md-7 py-4"></div> */}
-              {/* <div className="" style={{ flexGrow: 1 }}> */}
               <ul className="list-unstyled"></ul>
-              {/* </div> */}
-              {/* </div> */}
-              {/* </div> */}
             </section>
           </div>
         </div>
@@ -430,6 +423,9 @@ export default function Main() {
         className="text-body-secondary py-5"
         style={{ backgroundColor: "#408E91" }}
       >
+        <div className="float-start ms-5">
+          <Login />
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-md-7 py-4"></div>
@@ -485,11 +481,10 @@ export default function Main() {
               </ul>
             </div>
           </div>
+          <small className="d-block mb-3 text-white text-center">
+            mauroPereira©2023
+          </small>
         </div>
-        <small className="d-block mb-3 text-body-secondary">
-          mauro pereira © 2023
-        </small>
-        <Login />
       </footer>
 
       <script
