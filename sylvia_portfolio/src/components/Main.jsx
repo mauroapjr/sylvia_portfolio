@@ -57,7 +57,7 @@ export default function Main() {
 
             <div className="flow-container">
               <img
-                className="flow-background"
+                className="flow-background-1"
                 src={FlowBackground}
                 alt="Background 1"
                 style={{
@@ -70,7 +70,7 @@ export default function Main() {
                 }}
               />
               <img
-                className="flow-background"
+                className="flow-background-2"
                 src={FlowBackground}
                 alt="Background 2"
                 style={{
