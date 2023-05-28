@@ -141,9 +141,10 @@ export default function Main() {
               style={{
                 backgroundColor: "rgb(204, 202, 202)",
                 width: "40%",
-                height: "500%",
+                
                 marginLeft: "auto",
                 marginRight: "0px",
+                marginTop: "-1.1%",
                 zIndex: 0,
                 display: "flex",
                 justifyContent: "flex-end",
@@ -423,7 +424,7 @@ export default function Main() {
         className="text-body-secondary"
         style={{ backgroundColor: "#9EBA99", padding: "4% 0" }}
       >
-        <div className="float-start ms-5">
+        <div className="float-start" style={{ marginLeft: '7%' }}>
           <Login />
         </div>
         <div className="container">
@@ -441,7 +442,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2xl"
-                      style={{ color: "#D8D8D8" }}
+                      style={{ color: "#6c757d" }}
                     />
                   </a>
                 </li>
@@ -454,7 +455,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faEnvelope}
                       size="2xl"
-                      style={{ color: "#D8D8D8" }}
+                      style={{ color: "#6c757d" }}
                     />
                   </a>
                 </li>
@@ -464,7 +465,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faFileLines}
                       size="2xl"
-                      style={{ color: "#D8D8D8" }}
+                      style={{ color: "#6c757d" }}
                     />
                   </a>
                 </li>
@@ -474,14 +475,14 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faToolbox}
                       size="2xl"
-                      style={{ color: "#D8D8D8" }}
+                      style={{ color: "#6c757d" }}
                     />
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <small className="d-block mb-3 text-white text-center">
+          <small className="d-block mb-3 text-dark-grey text-center">
             mauroPereira©2023
           </small>
         </div>

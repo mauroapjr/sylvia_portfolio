@@ -96,6 +96,17 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   z-index: 1500;
 }
 
+.container.row.box-right {
+  width: 40%;
+  height: 500%;
+  margin-left: auto;
+  margin-right: 0px;
+  z-index: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 @media (max-width: 768px) {
 .box-right {
   width: 100% !important;
@@ -103,6 +114,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 
   }
 }
+
 
 .container-fluid {
   position: relative;
@@ -190,7 +202,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 }
 .sylvia-logo {
   height: auto;
-  width: 40%;
+  width: 50%;
   margin-bottom: 20%;
   z-index: 1; 
 }
