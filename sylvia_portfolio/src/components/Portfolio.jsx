@@ -6,7 +6,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { useNavigate } from "react-router-dom";
 
-
 import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
@@ -27,7 +26,7 @@ function Portfolio() {
 
   const handleClickStoryline = () => {
     navigate("/StorylinePage");
-  }
+  };
 
   return (
     <>
@@ -103,7 +102,11 @@ function Portfolio() {
                     type="button"
                     className="btn btn-sm btn-outline-secondary"
                     onClick={handleClick}
-                    style={{ marginBottom: "40%", backgroundColor: "#245953", color: "white"}}
+                    style={{
+                      marginBottom: "40%",
+                      backgroundColor: "#245953",
+                      color: "white",
+                    }}
                   >
                     Watch Video
                   </button>
@@ -114,9 +117,7 @@ function Portfolio() {
               <div className="text-bg-dark custom-bg-color-1 me-md-3 pt-3 px-3 pt-md-5 px-md-4 text-center overflow-hidden">
                 <div className="my-3 py-3">
                   <h2 className="display-5">"StoryLine Presentation"</h2>
-                  <p className="lead">
-                    Short video that explain...
-                  </p>
+                  <p className="lead">Short video that explain...</p>
                 </div>
                 <div
                   className="bg-body-tertiary shadow-sm mx-auto"
@@ -135,7 +136,11 @@ function Portfolio() {
                     type="button"
                     className="btn btn-sm btn-outline-secondary"
                     onClick={handleClickStoryline}
-                    style={{ marginBottom: "40%", backgroundColor: "#245953", color: "white"}}
+                    style={{
+                      marginBottom: "40%",
+                      backgroundColor: "#245953",
+                      color: "white",
+                    }}
                   >
                     Watch Video
                   </button>
@@ -148,39 +153,71 @@ function Portfolio() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
-              <div className="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div className="text-bg-dark custom-bg-color-1 me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 py-3">
-                  <h2 className="display-5">Another headline</h2>
-                  <p className="lead">
-                    And an even wittier subheading BBBLAAAACK.
-                  </p>
+                  <h2 className="display-5">TBD</h2>
+                  <p className="lead">Short video that explain...</p>
                 </div>
                 <div
                   className="bg-body-tertiary shadow-sm mx-auto"
                   style={{
                     width: "80%",
                     height: "300px",
+                    marginBottom: "5%",
                     borderRadius: "21px 21px 0 0",
+                    backgroundImage: `url(${StorylineImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 ></div>
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-secondary"
+                    onClick={handleClickStoryline}
+                    style={{
+                      marginBottom: "40%",
+                      backgroundColor: "#245953",
+                      color: "white",
+                    }}
+                  >
+                    Watch Video
+                  </button>
+                </div>
               </div>
             </div>
             <div className="col-md-6">
-              <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div className="bg-body-tertiary custom-bg-color-2 me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 p-3">
-                  <h2 className="display-5">Another headline</h2>
-                  <p className="lead">
-                    And an even wittier subheading WHITEEEE.
-                  </p>
+                  <h2 className="display-5">TBD</h2>
+                  <p className="lead">Short video that explain...</p>
                 </div>
                 <div
                   className="bg-dark shadow-sm mx-auto"
                   style={{
                     width: "80%",
                     height: "300px",
+                    marginBottom: "5%",
                     borderRadius: "21px 21px 0 0",
+                    backgroundImage: `url(${YoutubeImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 ></div>
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-secondary"
+                    onClick={handleClick}
+                    style={{
+                      marginBottom: "40%",
+                      backgroundColor: "#245953",
+                      color: "white",
+                    }}
+                  >
+                    Watch Video
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -236,25 +273,8 @@ function Portfolio() {
         </button>
         <div className="row">
           <div className="col-12 col-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="d-block mb-2"
-              role="img"
-              viewBox="0 0 24 24"
-            >
-              <title>Product</title>
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
-            </svg>
             <small className="d-block mb-3 text-body-secondary">
-              mauro pereira © 2023
+              mauroPereira©2023
             </small>
           </div>
         </div>
