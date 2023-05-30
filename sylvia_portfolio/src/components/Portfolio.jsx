@@ -6,9 +6,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { useNavigate } from "react-router-dom";
 
-import SylviaSmallLogo from "../images/Sylvia_Logo_Salmon_Short.png";
+
 import YoutubeImage from "../images/Youtube_image.JPG";
-import ProfileImage from "../images/Profile_picture.jpg";
+import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/Sylvia_text_logo.png";
 
@@ -99,7 +99,7 @@ function Portfolio() {
                     type="button"
                     className="btn btn-sm btn-outline-secondary"
                     onClick={handleClick}
-                    style={{ marginBottom: "40%"}}
+                    style={{ marginBottom: "40%", backgroundColor: "#245953", color: "white"}}
                   >
                     Watch Video
                   </button>
@@ -107,11 +107,11 @@ function Portfolio() {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="text-bg-dark custom-bg-color-1 me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div className="text-bg-dark custom-bg-color-1 me-md-3 pt-3 px-3 pt-md-5 px-md-4 text-center overflow-hidden">
                 <div className="my-3 py-3">
-                  <h2 className="display-5">Another headline</h2>
+                  <h2 className="display-5">"StoryLine Presentation"</h2>
                   <p className="lead">
-                    And an even wittier subheading BBBLAAAACK.
+                    Short video that explain...
                   </p>
                 </div>
                 <div
@@ -119,9 +119,23 @@ function Portfolio() {
                   style={{
                     width: "80%",
                     height: "300px",
+                    marginBottom: "5%",
                     borderRadius: "21px 21px 0 0",
+                    backgroundImage: `url(${StorylineImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
                   }}
                 ></div>
+                <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-secondary"
+                    onClick={handleClick}
+                    style={{ marginBottom: "40%", backgroundColor: "#245953", color: "white"}}
+                  >
+                    Watch Video
+                  </button>
+                </div>
               </div>
             </div>
           </div>
