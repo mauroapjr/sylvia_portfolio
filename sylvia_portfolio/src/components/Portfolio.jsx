@@ -25,6 +25,10 @@ function Portfolio() {
     navigate("/VideoPage");
   };
 
+  const handleClickStoryline = () => {
+    navigate("/StorylinePage");
+  }
+
   return (
     <>
       <script src="../assets/js/color-modes.js"></script>
@@ -130,7 +134,7 @@ function Portfolio() {
                   <button
                     type="button"
                     className="btn btn-sm btn-outline-secondary"
-                    onClick={handleClick}
+                    onClick={handleClickStoryline}
                     style={{ marginBottom: "40%", backgroundColor: "#245953", color: "white"}}
                   >
                     Watch Video
