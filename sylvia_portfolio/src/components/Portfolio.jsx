@@ -11,14 +11,8 @@ import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/Sylvia_text_logo.png";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
-import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-
 function Portfolio() {
-  const navigate = useNavigate(); // handle the youtube video
+  const navigate = useNavigate(); // handle youtube video
 
   const handleClick = () => {
     navigate("/VideoPage");
