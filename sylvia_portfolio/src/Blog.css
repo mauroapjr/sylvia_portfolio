@@ -5,24 +5,27 @@
 
 .post-content {
   display: none;
+  padding: 2% !important;
 }
 
 .post-content.show {
   display: block;
+  padding: 2% !important;
+  margin-right: 2% !important;
 }
 
-/* .post-image {
+.a.stretched-link .post-image {
   max-width: 150px !important;
   max-height: 100px !important;
   width: auto !important;
   height: auto !important;
-} */
+  padding: 2% !important;
+  
+}
 
- .a.stretched-link .post-image {
-  max-width: 150px !important;
-  max-height: 100px !important;
-  width: auto !important;
-  height: auto !important;
+.a.stretched-link.post-image::after {
+  padding: 2% !important;
+  margin-right: 2% !important;
 }
 
 .post-row.expanded {
@@ -32,3 +35,14 @@
 .expanded {
   flex: 1 0 100%;
 }
+
+.p-2 {
+  background-color: rgb(12, 12, 12);
+}
+.p-4 {
+  background-color: rgb(200, 200, 200);
+}
+.display-2 {
+  color: aliceblue;
+}
+

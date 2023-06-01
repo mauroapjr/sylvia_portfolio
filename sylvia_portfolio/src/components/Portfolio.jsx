@@ -265,6 +265,9 @@ function Portfolio() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <p>
+          <a href="#">Back to top</a>
+        </p>
         <div className="row">
           <div className="col-12 col-md d-flex justify-content-center">
             <small className="d-block mb-3 text-body-secondary">
