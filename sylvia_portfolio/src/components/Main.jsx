@@ -139,7 +139,7 @@ export default function Main() {
             <section
               className="box-right"
               style={{
-                backgroundColor: "rgb(204, 202, 202)",
+                backgroundColor: "rgb(200, 200, 200)",
                 width: "40%",
                 
                 marginLeft: "auto",

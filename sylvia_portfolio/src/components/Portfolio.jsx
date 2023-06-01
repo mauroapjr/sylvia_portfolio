@@ -227,7 +227,7 @@ function Portfolio() {
             textAlign: "center",
           }}
         >
-          <div className="head-items" style={{ display: "flex" }}>
+          <div className="head-items" style={{ display: "flex", fontSize:"155%" }}>
             <a
               href="/Portfolio"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -266,7 +266,7 @@ function Portfolio() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="row">
-          <div className="col-12 col-md">
+          <div className="col-12 col-md d-flex justify-content-center">
             <small className="d-block mb-3 text-body-secondary">
               mauroPereira©2023
             </small>
