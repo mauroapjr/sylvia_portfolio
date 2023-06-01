@@ -113,10 +113,6 @@
   z-index: 1; 
 }
 
-.custom-bg-color-1 {
-  background-color: #9EBA99 !important;
-}
-
-.custom-bg-color-2 {
+.custom-bg-color {
   background-color: rgb(204, 202, 202) !important;
 }

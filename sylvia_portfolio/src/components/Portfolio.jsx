@@ -74,7 +74,7 @@ function Portfolio() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
-              <div className="bg-body-tertiary custom-bg-color-2 me-md-3 pt-3 px-3 pt-md-5 px-md-4 text-center overflow-hidden">
+              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-4 text-center overflow-hidden">
                 <div className="my-3 p-3">
                   <h2 className="display-5">"Desafio Semanal"</h2>
                   <p className="lead text-dark">Short video that explain...</p>
@@ -108,7 +108,7 @@ function Portfolio() {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="text-bg-dark custom-bg-color-1 me-md-3 pt-3 px-3 pt-md-5 px-md-4 text-center overflow-hidden">
+              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 py-3">
                   <h2 className="display-5">"StoryLine Presentation"</h2>
                   <p className="lead">Short video that explain...</p>
@@ -147,7 +147,7 @@ function Portfolio() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
-              <div className="text-bg-dark custom-bg-color-1 me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 py-3">
                   <h2 className="display-5">TBD</h2>
                   <p className="lead">Short video that explain...</p>
@@ -181,7 +181,7 @@ function Portfolio() {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="bg-body-tertiary custom-bg-color-2 me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 p-3">
                   <h2 className="display-5">TBD</h2>
                   <p className="lead">Short video that explain...</p>
