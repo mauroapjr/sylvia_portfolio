@@ -16,7 +16,13 @@
   margin-top: 40px;
 }
 
-.about-text{
+.about-text-top{
   justify-items: center;
   font-size: 160%;
+}
+
+.about-text-bottom {
+  margin-top: 10%;
+  margin-bottom: 20%;  
+  font-size: 130%;
 }

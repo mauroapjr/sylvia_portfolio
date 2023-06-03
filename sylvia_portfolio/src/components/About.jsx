@@ -70,7 +70,7 @@ function About() {
         </div>
         <div className="about-text-container">
           <div className="col-lg-6 col-md-8 mx-auto">
-            <p className="about-text" style={{ color: "black", width: "100%" }}>
+            <p className="about-text-top" style={{ color: "black", width: "100%" }}>
               I have dedicated my time to learn some different things in the
               last few years, from music to data analysis, from academic
               high-school courses to customer enablement, I consider myself a
@@ -82,7 +82,7 @@ function About() {
               instructional design methodologies, and evaluation processes when
               conducting the development of learning programs.
             </p>
-            <p className="about-text" style={{ color: "black", width: "100%" }}>
+            <p className="about-text-top" style={{ color: "black", width: "100%" }}>
               As an accomplished and creative professional, one of my strengths
               is to work closely with learners and help them to achieve their
               goals through effective strategies, while ensuring their journey
@@ -91,7 +91,7 @@ function About() {
               stakeholders, tight deadlines, and a limited budget.
             </p>
             <p
-              className="about-text"
+              className="about-text-top"
               style={{
                 color: "black",
                 width: "100%",
@@ -137,7 +137,7 @@ function About() {
               </ul>
             </p>
 
-            <h6 className="about-text">
+            <h6 className="about-text-bottom">
               Customer Education | Learning Experience Designer | eLearning
               Developer | Adult Learning Specialist | Learning Analytics |
               Localization | Curious by Nature
