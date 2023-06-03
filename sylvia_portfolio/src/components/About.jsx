@@ -10,14 +10,17 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-import SylviaShortLogo from "../images/Sylvia_Logo_Salmon_Short.png";
+
 import Lines from "../images/Lines.png";
 import ProfilePicture from "../images/Profile_picture.jpg";
+import FlowBackground from "../images/Flow_backgroung.jpg";
+import SylviaLogo from "../images/Sylvia_text_logo.png";
+
 
 function About() {
   return (
     <>
-      <body>
+      
         <link
           rel="canonical"
           href="https://getbootstrap.com/docs/5.3/examples/album/"
@@ -31,101 +34,36 @@ function About() {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <header data-bs-theme="dark">
-          <nav
-            className="navbar navbar-expand-lg navbar-dark"
-            style={{ backgroundColor: "#E49393" }}
-          >
-            <div className="container-fluid">
-              <a className="navbar-brand" href="/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  aria-hidden="true"
-                  className="me-2"
-                  viewBox="0 0 24 24"
-                  backgroundColor="#705846"
-                ></svg>
+        <nav className="navbar navbar-expand-lg navbar-dark">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="/">
+              <div className="sylvia-logo-container">
                 <img
-                  className="sylvia-short-logo"
-                  src={SylviaShortLogo}
-                  alt="sylvia short logo"
+                  className="sylvia-logo"
+                  src={SylviaLogo}
+                  alt="Sylvia Logo"
                 />
-              </a>
-              <ul
-                className="head-item"
-                style={{
-                  display: "flex",
-                  marginTop: "80px",
-                  justifyContent: "center",
-                  textAlign: "center",
-                }}
-              >
-                <div className="head-items" style={{ display: "flex" }}>
-                  <a
-                    href="/Portfolio"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <p className="head-portfolio" style={{ margin: "0 30px" }}>
-                      PORTFOLIO
-                    </p>
-                  </a>
-                  <a
-                    href="/Blog"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <p className="head-blog" style={{ margin: "0 30px" }}>
-                      BLOG
-                    </p>
-                  </a>
-                  <a
-                    href="/About"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <p className="head-about" style={{ margin: "0 30px" }}>
-                      ABOUT
-                    </p>
-                  </a>
-                </div>
-              </ul>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarHeader"
-                aria-controls="navbarHeader"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarHeader">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-sm-8 col-md-7 py-4"></div>
-                    <div className="col-sm-4 offset-md-1 py-4">
-                      <ul className="list-unstyled"></ul>
-                    </div>
-                  </div>
-                </div>
               </div>
+            </a>
+
+            <div className="flow-container-1">
+              <img
+                className="flow-background-1"
+                src={FlowBackground}
+                alt="Background 1"
+                style={{
+                  backgroundImage: `url(${FlowBackground})`,
+                  backgroundSize: "120%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right",
+                  marginTop: "15px",
+                  display: "flex",
+                }}
+              />
             </div>
-          </nav>
-        </header>
-
-        <img
-          className="line-header"
-          src={Lines}
-          alt="lines"
-          style={{ width: "100%" }}
-        />
-      </body>
-
+          </div>
+        </nav>
+      </header>
       <main>
         <div className="profile-picture-container">
           <img className="profile-picture" src={ProfilePicture} alt="picture" />
@@ -208,69 +146,66 @@ function About() {
         </div>
       </main>
 
-      <footer
-        className="text-body-secondary py-5"
-        style={{ backgroundColor: "#408E91" }}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-8 col-md-7 py-4"></div>
-            <div className="col-sm-4 offset-md-1 py-4">
-              <ul className="list-unstyled d-flex justify-content-end">
-                {" "}
-                <li className="mx-2">
-                  {" "}
-                  <a
-                    href="https://www.linkedin.com/in/sylviabpereira/"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-2">
-                  {" "}
-                  <a
-                    href="mailto:sylvia.bachiegga@hotmail.com"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-2">
-                  {" "}
-                  <a href="#" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faFileLines}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-2">
-                  {" "}
-                  <a href="/Admin" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faToolbox}
-                      size="2xl"
-                      style={{ color: "#D8D8D8" }}
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
+      <footer className="container py-5">
+        <ul
+          className="head-item"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <div
+            className="head-items"
+            style={{ display: "flex", fontSize: "155%" }}
+          >
+            <a
+              href="/Portfolio"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <p className="head-portfolio" style={{ margin: "0 30px" }}>
+                PORTFOLIO
+              </p>
+            </a>
+            <a
+              href="/Blog"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <p className="head-blog" style={{ margin: "0 30px" }}>
+                BLOG
+              </p>
+            </a>
+            <a
+              href="/About"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <p className="head-about" style={{ margin: "0 30px" }}>
+                ABOUT
+              </p>
+            </a>
+          </div>
+        </ul>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <p>
+          <a href="#">Back to top</a>
+        </p>
+        <div className="row">
+          <div className="col-12 col-md d-flex justify-content-center">
+            <small className="d-block mb-3 text-body-secondary">
+              mauroPereira©2023
+            </small>
           </div>
         </div>
-        <small className="d-block mb-3 text-body-secondary">
-          mauro pereira © 2023
-        </small>
       </footer>
     </>
   );

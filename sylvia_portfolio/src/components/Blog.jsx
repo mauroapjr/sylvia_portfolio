@@ -4,12 +4,6 @@ import "../Blog.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
-import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/Sylvia_text_logo.png";
 
@@ -128,7 +122,7 @@ function Blog() {
                       <div
                         className={`post-content ${isExpanded ? "show" : ""}`}
                         dangerouslySetInnerHTML={{ __html: post.content }}
-                        style={{ fontSize: "140%", padding: "8px" }}
+                        style={{ fontSize: "140%", padding: "10px" }}
                       />
                       <a
                         href="#"
