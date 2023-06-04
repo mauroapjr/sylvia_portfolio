@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import "./index.css";
+import "./styles/index.css";
 import App from "./App";
 import Admin from "./components/Admin";
 import VideoPage from "./components/VideoPage";

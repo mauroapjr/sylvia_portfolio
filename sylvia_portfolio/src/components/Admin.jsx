@@ -4,8 +4,8 @@ import axios from "axios";
 import { Form, Input, Button, message } from "antd";
 import { ImageFileResizer } from "react-image-file-resizer";
 
-import "../main.css";
-import "../admin.css";
+import "../styles/main.css";
+import "../styles/admin.css";
 import "react-quill/dist/quill.snow.css";
 import "react-quill/dist/quill.bubble.css";
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -1,6 +1,6 @@
 import React from "react";
-import "../main.css";
-import "../videoPage.css";
+import "../styles/main.css";
+import "../styles/videoPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
