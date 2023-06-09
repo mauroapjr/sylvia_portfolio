@@ -59,11 +59,15 @@ function Blog() {
                 alt="Background 1"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
-                  backgroundSize: "120%",
+                  // backgroundSize: "120%",
+                  backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right",
-                  marginTop: "15px",
+                  // marginTop: "15px",
+                  marginTop: "2%",
                   display: "flex",
+                  maxWidth: "100%",
+                  height: "auto",
                 }}
               />
             </div>

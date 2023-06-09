@@ -3,6 +3,13 @@
   background-position: center;
 }
 
+.sylvia-logo {
+  background-size: cover;
+  background-position: center;
+  max-width: 60%;
+  height: auto;
+}
+
 .post-content {
   display: none;
   width: 100%;
