@@ -5,6 +5,7 @@
 
 .post-content {
   display: none;
+  width: 100%;
   padding: 2% !important;
 }
 
@@ -15,8 +16,8 @@
 }
 
 .a.stretched-link .post-image {
-  max-width: 150px !important;
-  max-height: 10px !important;
+  max-width: 100% !important;
+  max-height: 5% !important;
   width: auto !important;
   height: auto !important;
   padding: 2% !important;
@@ -26,17 +27,19 @@
   padding: 2% !important;
 }
 
-.post-row.expanded {
-  width: 100%;
+.post-row {
+  width: 110%;
 }
 
 .expanded {
-  flex: 1 0 100%;
+  /* flex: 1 0 100%; */
   margin-right: -10% !important;
+  width: 100%;
 }
 
 .p-2 {
   background-color: rgb(12, 12, 12);
+  width: 110%;
 }
 .p-4 {
   background-color: rgb(200, 200, 200);
