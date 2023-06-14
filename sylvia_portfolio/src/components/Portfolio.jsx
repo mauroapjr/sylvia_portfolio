@@ -5,11 +5,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { useNavigate } from "react-router-dom";
+import { initializeIcons } from "@uifabric/icons";
+import {
+  DocumentCard,
+  DocumentCardPreview,
+  DocumentCardTitle,
+} from "@fluentui/react";
 
 import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/Sylvia_text_logo.png";
+
+initializeIcons();
 
 function Portfolio() {
   const navigate = useNavigate(); // handle youtube video
@@ -20,6 +28,10 @@ function Portfolio() {
 
   const handleClickStoryline = () => {
     navigate("/StorylinePage");
+  };
+
+  const handleClickPpt = () => {
+    navigate("/PPTPage");
   };
 
   return (
@@ -181,14 +193,7 @@ function Portfolio() {
               </div>
             </div> */}
 
-
-
-
-
-
-
-
-            <div className="container-fluid">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
               <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -209,28 +214,23 @@ function Portfolio() {
                   }}
                 ></div>
                 <div className="btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    onClick={handleClickStoryline}
-                    style={{
-                      marginBottom: "40%",
-                      backgroundColor: "#245953",
-                      color: "white",
-                    }}
-                  >
-                    Watch Video
-                  </button>
+                  <DocumentCard onClick={handleClickPpt}>
+                    <DocumentCardPreview
+                      previewImages={[
+                        {
+                          previewImageSrc:
+                            "path-to-your-presentation-thumbnail",
+                          width: 318,
+                          height: 196,
+                          accentColor: "#ce4b1f",
+                        },
+                      ]}
+                    />
+                    <DocumentCardTitle title="Watch Presentation" />
+                  </DocumentCard>
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
 
             <div className="col-md-6">
               <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -279,7 +279,10 @@ function Portfolio() {
             textAlign: "center",
           }}
         >
-          <div className="head-items" style={{ display: "flex", fontSize:"155%" }}>
+          <div
+            className="head-items"
+            style={{ display: "flex", fontSize: "155%" }}
+          >
             <a
               href="/Portfolio"
               style={{ textDecoration: "none", color: "inherit" }}

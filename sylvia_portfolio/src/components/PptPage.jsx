@@ -8,6 +8,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
+// import { DocumentCard, DocumentCardPreview, DocumentCardTitle } from '@fluentui/react';
 
 function PPTPage() {
   return (
@@ -121,6 +122,19 @@ function PPTPage() {
           </div>
         </nav>
       </header>
+      {/* <DocumentCard onClick={handleClickPpt}>
+        <DocumentCardPreview
+          previewImages={[
+            {
+              previewImageSrc: 'path-to-your-presentation-thumbnail',
+              width: 318,
+              height: 196,
+              accentColor: '#ce4b1f',
+            },
+          ]}
+        />
+        <DocumentCardTitle title="Watch Presentation" />
+      </DocumentCard> */}
 
       
     </>
