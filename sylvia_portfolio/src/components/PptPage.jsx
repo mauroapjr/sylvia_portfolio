@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import "../styles/main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -8,9 +8,47 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-// import { DocumentCard, DocumentCardPreview, DocumentCardTitle } from '@fluentui/react';
+import {
+  DocumentCard,
+  DocumentCardPreview,
+  DocumentCardTitle,
+} from "@fluentui/react";
+
+import officegen from "officegen";
+
+import presentation from "../Mauro Pereira.pptx";
 
 function PPTPage() {
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    const generateSlides = async () => {
+      const pptx = officegen('pptx');
+      pptx.on('finalize', async (writtenData) => {
+        const slideImages = [];
+
+        for (let i = 0; i < pptx.slides.length; i++) {
+          const slideData = pptx.slides[i];
+          const slideImage = `data:image/png;base64,${slideData['slide.png']}`;
+
+          slideImages.push(slideImage);
+        }
+
+        setSlides(slideImages);
+      });
+
+      pptx.on('error', (err) => {
+        console.error(err);
+      });
+
+      // Load PowerPoint file
+      pptx.load('path/to/Mauro Pereira.pptx');
+
+      await pptx.render();
+    };
+
+    generateSlides();
+  }, []);
   return (
     <>
       <link
@@ -27,7 +65,10 @@ function PPTPage() {
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
       <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#E49393"}}>
+        <nav
+          className="navbar navbar-expand-lg navbar-dark"
+          style={{ backgroundColor: "#E49393" }}
+        >
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               <svg
@@ -122,7 +163,21 @@ function PPTPage() {
           </div>
         </nav>
       </header>
-      {/* <DocumentCard onClick={handleClickPpt}>
+      <div>
+        <h1>My Presentation</h1>
+        {slides.map((slide, index) => (
+          <img key={index} src={slide} alt={`Slide ${index + 1}`} />
+        ))}
+      </div>
+      {/* <div>
+      <h1>My Presentation</h1>
+      <Presentation>
+        <Slide>
+          <img src={presentation} alt="Presentation Slide" />
+        </Slide>
+      </Presentation>
+    </div> */}
+      {/* <DocumentCard>
         <DocumentCardPreview
           previewImages={[
             {
@@ -135,11 +190,8 @@ function PPTPage() {
         />
         <DocumentCardTitle title="Watch Presentation" />
       </DocumentCard> */}
-
-      
     </>
   );
 }
-
 
 export default PPTPage;
