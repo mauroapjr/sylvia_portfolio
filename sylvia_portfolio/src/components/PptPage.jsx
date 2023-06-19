@@ -8,47 +8,49 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-import {
-  DocumentCard,
-  DocumentCardPreview,
-  DocumentCardTitle,
-} from "@fluentui/react";
+// import {
+//   DocumentCard,
+//   DocumentCardPreview,
+//   DocumentCardTitle,
+// } from "@fluentui/react";
 
-import officegen from "officegen";
+// import officegen from "officegen";
 
 import presentation from "../Mauro Pereira.pptx";
 
 function PPTPage() {
-  const [slides, setSlides] = useState([]);
+  // const [slides, setSlides] = useState([]);
 
-  useEffect(() => {
-    const generateSlides = async () => {
-      const pptx = officegen('pptx');
-      pptx.on('finalize', async (writtenData) => {
-        const slideImages = [];
+  // useEffect(() => {
+  //   const generateSlides = async () => {
+  //     const pptx = officegen('pptx');
+  //     pptx.on('finalize', async (writtenData) => {
+  //       const slideImages = [];
 
-        for (let i = 0; i < pptx.slides.length; i++) {
-          const slideData = pptx.slides[i];
-          const slideImage = `data:image/png;base64,${slideData['slide.png']}`;
+  //       for (let i = 0; i < pptx.slides.length; i++) {
+  //         const slideData = pptx.slides[i];
+  //         const slideImage = `data:image/png;base64,${slideData['slide.png']}`;
 
-          slideImages.push(slideImage);
-        }
+  //         slideImages.push(slideImage);
+  //       }
 
-        setSlides(slideImages);
-      });
+  //       setSlides(slideImages);
+  //     });
 
-      pptx.on('error', (err) => {
-        console.error(err);
-      });
+  //     pptx.on('error', (err) => {
+  //       console.error(err);
+  //     });
 
       // Load PowerPoint file
-      pptx.load('path/to/Mauro Pereira.pptx');
+  //     pptx.load('path/to/Mauro Pereira.pptx');
 
-      await pptx.render();
-    };
+  //     await pptx.render();
+  //   };
 
-    generateSlides();
-  }, []);
+  //   generateSlides();
+  // }, []);
+
+
   return (
     <>
       <link
@@ -163,12 +165,12 @@ function PPTPage() {
           </div>
         </nav>
       </header>
-      <div>
+      {/* <div>
         <h1>My Presentation</h1>
         {slides.map((slide, index) => (
           <img key={index} src={slide} alt={`Slide ${index + 1}`} />
         ))}
-      </div>
+      </div> */}
       {/* <div>
       <h1>My Presentation</h1>
       <Presentation>
