@@ -17,7 +17,7 @@ import TVO from "../images/TVO.jpg";
 import CTC from "../images/canadian-tire-logo.png";
 import ProfileImage from "../images/Profile_picture.jpg";
 import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/logo-no-background.png";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 export default function Main() {
   return (
