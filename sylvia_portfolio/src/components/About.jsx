@@ -215,7 +215,7 @@ function About() {
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
@@ -228,7 +228,7 @@ function About() {
                     <FontAwesomeIcon
                       icon={faEnvelope}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
@@ -238,7 +238,7 @@ function About() {
                     <FontAwesomeIcon
                       icon={faFileLines}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
@@ -248,7 +248,7 @@ function About() {
                     <FontAwesomeIcon
                       icon={faToolbox}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
