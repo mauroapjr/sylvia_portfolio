@@ -441,7 +441,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
@@ -454,7 +454,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faEnvelope}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
@@ -464,7 +464,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faFileLines}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>
@@ -474,7 +474,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faToolbox}
                       size="2xl"
-                      style={{ color: "#6c757d" }}
+                      style={{ color: "#000000" }}
                     />
                   </a>
                 </li>

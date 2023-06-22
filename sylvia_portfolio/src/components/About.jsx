@@ -14,7 +14,7 @@ import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 import ProfilePicture from "../images/Profile_picture.jpg";
 import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/Sylvia_text_logo.png";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 
 function About() {
@@ -39,7 +39,7 @@ function About() {
             <a className="navbar-brand" href="/">
               <div className="sylvia-logo-container">
                 <img
-                  className="sylvia-logo"
+                  className="sylvia-logo-about"
                   src={SylviaLogo}
                   alt="Sylvia Logo"
                 />

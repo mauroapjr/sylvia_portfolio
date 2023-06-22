@@ -10,6 +10,19 @@
   object-fit: cover;
 }
 
+.sylvia-logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sylvia-logo-about {
+  height: auto;
+  width: 30%;
+  margin-top: 3%;
+  margin-bottom: 15%;
+  z-index: 1; 
+}
+
 .about-text-container {
   display: flex;
   justify-content: center;
