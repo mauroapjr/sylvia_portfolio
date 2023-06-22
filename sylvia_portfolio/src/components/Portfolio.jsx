@@ -15,7 +15,7 @@ import {
 import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/Sylvia_text_logo.png";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 import InstDesigner from "../images/inst_designer.png";
 
 initializeIcons();
@@ -58,7 +58,7 @@ function Portfolio() {
             <a className="navbar-brand" href="/">
               <div className="sylvia-logo-container">
                 <img
-                  className="sylvia-logo"
+                  className="sylvia-logo-portfolio"
                   src={SylviaLogo}
                   alt="Sylvia Logo"
                 />

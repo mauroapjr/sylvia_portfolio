@@ -105,11 +105,11 @@
   justify-content: center;
   align-items: center;
 }
-.sylvia-logo {
+.sylvia-logo-portfolio {
   height: auto;
-  width: 50%;
-  margin-bottom: 40%;
-  margin-top: 8%;
+  width: 30%;
+  margin-top: 3%;
+  margin-bottom: 15%;
   z-index: 1; 
 }
 
