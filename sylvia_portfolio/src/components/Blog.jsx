@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/Sylvia_text_logo.png";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 function Blog() {
   const [posts, setPosts] = useState([]);
@@ -46,7 +46,7 @@ function Blog() {
             <a className="navbar-brand" href="/">
               <div className="sylvia-logo-container">
                 <img
-                  className="sylvia-logo"
+                  className="sylvia-logo-blog"
                   src={SylviaLogo}
                   alt="Sylvia Logo"
                 />
