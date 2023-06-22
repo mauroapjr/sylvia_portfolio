@@ -17,7 +17,7 @@ import TVO from "../images/TVO.jpg";
 import CTC from "../images/canadian-tire-logo.png";
 import ProfileImage from "../images/Profile_picture.jpg";
 import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/Sylvia_text_logo.png";
+import SylviaLogo from "../images/logo-no-background.png";
 
 export default function Main() {
   return (
@@ -46,7 +46,7 @@ export default function Main() {
                 />
                 <div className="sylvia-logo-container">
                   <img
-                    className="sylvia-logo"
+                    className="sylvia-logo-main"
                     src={SylviaLogo}
                     alt="Sylvia Logo"
                   />
