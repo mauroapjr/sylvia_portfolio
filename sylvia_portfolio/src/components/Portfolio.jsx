@@ -16,6 +16,7 @@ import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/Sylvia_text_logo.png";
+import InstDesigner from "../images/inst_designer.png"
 
 initializeIcons();
 
@@ -245,7 +246,7 @@ function Portfolio() {
                     height: "300px",
                     marginBottom: "5%",
                     borderRadius: "21px 21px 0 0",
-                    backgroundImage: `url(${YoutubeImage})`,
+                    backgroundImage: `url(${InstDesigner})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
