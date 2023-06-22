@@ -16,7 +16,7 @@ import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/Sylvia_text_logo.png";
-import InstDesigner from "../images/inst_designer.png"
+import InstDesigner from "../images/inst_designer.png";
 
 initializeIcons();
 

@@ -39,6 +39,7 @@ function Blog() {
       <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
       <header data-bs-theme="dark">
         <nav className="navbar navbar-expand-lg navbar-dark">
           <div className="container-fluid">
@@ -59,15 +60,11 @@ function Blog() {
                 alt="Background 1"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
-                  // backgroundSize: "120%",
-                  backgroundSize: "cover",
+                  backgroundSize: "120%",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right",
-                  // marginTop: "15px",
-                  marginTop: "2%",
+                  marginTop: "15px",
                   display: "flex",
-                  maxWidth: "100%",
-                  height: "auto",
                 }}
               />
             </div>
