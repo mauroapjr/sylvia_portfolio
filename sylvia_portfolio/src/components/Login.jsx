@@ -4,7 +4,7 @@ import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 
-export default function Login() {
+export default function Login({ setIsAuthenticaded }) {
   const [username, setUsername] = useState("");
   const formRef = useRef(null);
 
@@ -14,9 +14,10 @@ export default function Login() {
       .post("http://localhost:3001/validatePassword", { username, password })
       .then((res) => {
         if (res.data.validation) {
-          console.log(username);
+          // console.log(username);
           setUsername(username);
-          alert("Username/password matches");
+          setIsAuthenticaded(true);
+          // alert("Username/password matches");
           formRef.current.resetFields();
         } else {
           alert(
@@ -28,6 +29,7 @@ export default function Login() {
 
   const handleLogout = () => {
     setUsername("");
+    setIsAuthenticaded(false);
   };
 
   return (
