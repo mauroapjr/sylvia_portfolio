@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -20,6 +20,9 @@ import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 export default function Main() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
   return (
     <>
       <link
@@ -424,7 +427,16 @@ export default function Main() {
         style={{ backgroundColor: "#9EBA99", padding: "4% 0" }}
       >
         <div className="float-start" style={{ marginLeft: '7%' }}>
-          <Login />
+        <div>
+      {isAuthenticated ? (
+        // Render authenticated content
+        <div>Welcome to my Portfolio!</div>
+      ) : (
+        // Render login component
+        <Login setIsAuthenticated={setIsAuthenticated} />
+      )}
+    </div>
+          {/* <Login /> */}
         </div>
         <div className="container">
           <div className="row">
