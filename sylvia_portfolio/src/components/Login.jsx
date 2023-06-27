@@ -26,7 +26,7 @@ export default function Login({ setIsAuthenticated }) {
   };
 
   const handleLogout = () => {
-    setUsername("");
+    setUsername(null);
     setIsAuthenticated(false);
   };
 

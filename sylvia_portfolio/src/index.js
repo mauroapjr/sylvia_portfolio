@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { createRoot } from "react-dom/client";
 
 import "./styles/index.css";
 import App from "./App";
@@ -14,10 +15,18 @@ import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 
 const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => (
+  <Routes>
   <Route
     {...rest}
-    element={isAuthenticated ? <Component /> : <Navigate to="/Main" />}
+    element={
+      isAuthenticated ? (
+        <Component />
+      ) : (
+        <Navigate to="/Main" state={{ from: rest.path }} replace />
+      )
+    }
   />
+  </Routes>
 );
 
 const routerConfig = [
@@ -46,7 +55,7 @@ const routerConfig = [
     element: <Blog />,
   },
   {
-    path: "/Portfolio",
+    path: "/Portfolio/*",
     element: <ProtectedRoute isAuthenticated={true} component={Portfolio} />,
   },
   {
@@ -55,18 +64,18 @@ const routerConfig = [
   },
 ];
 
-ReactDOM.render(
+createRoot(document.getElementById("root")).render(
   <Router>
     <Routes>
       {routerConfig.map((route, index) => (
         <Route key={index} path={route.path} element={route.element} />
       ))}
     </Routes>
-  </Router>,
-  document.getElementById("root")
+  </Router>
 );
 
 reportWebVitals();
+
 export default ProtectedRoute;
 
 
