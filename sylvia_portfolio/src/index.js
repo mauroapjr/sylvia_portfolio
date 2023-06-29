@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
 import "./styles/index.css";
@@ -13,6 +12,8 @@ import PPTPage from "./components/PPTPage";
 import Blog from "./components/Blog";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
+import ErrorPage from './components/ErrorPage';
+
 
 const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => (
   <Routes>
@@ -56,7 +57,14 @@ const routerConfig = [
   },
   {
     path: "/Portfolio/*",
-    element: <ProtectedRoute isAuthenticated={true} component={Portfolio} />,
+    element: (
+      <ProtectedRoute
+        isAuthenticated={true}
+        component={Portfolio}
+        errorComponent={ErrorPage}
+        errorPath="/error"
+      />
+    ),
   },
   {
     path: "/About",
@@ -73,6 +81,18 @@ createRoot(document.getElementById("root")).render(
     </Routes>
   </Router>
 );
+
+// const Root = () => (
+//   <Router>
+//     <Routes>
+//       {routerConfig.map((route, index) => (
+//         <Route key={index} path={route.path} element={route.element} />
+//       ))}
+//     </Routes>
+//   </Router>
+// );
+
+//createRoot(document.getElementById("root")).render(<Root />);
 
 reportWebVitals();
 

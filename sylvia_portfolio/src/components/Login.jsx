@@ -26,7 +26,7 @@ export default function Login({ setIsAuthenticated }) {
   };
 
   const handleLogout = () => {
-    setUsername(null);
+    setUsername("");
     setIsAuthenticated(false);
   };
 
@@ -103,7 +103,7 @@ export default function Login({ setIsAuthenticated }) {
         </Form>
         {username && (
           <p style={{ color: "white", marginTop: "20px" }}>
-            Welcome to {username}
+            Welcome to {username || "guest"}
           </p>
         )}
       </div>

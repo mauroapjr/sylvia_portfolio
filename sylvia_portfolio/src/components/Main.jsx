@@ -162,7 +162,7 @@ export default function Main() {
                 }}
               >
                 <a
-                  href="/Portfolio"
+                  href="/Portfolio/*"
                   style={{
                     textDecoration: "none",
                     color: "inherit",
