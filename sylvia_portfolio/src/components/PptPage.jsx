@@ -16,7 +16,7 @@ import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
 // import officegen from "officegen";
 
-import presentation from "../Mauro Pereira.pptx";
+//import presentation from "../Mauro Pereira.pptx";
 
 function PPTPage() {
   // const [slides, setSlides] = useState([]);

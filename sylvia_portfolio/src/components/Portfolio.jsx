@@ -20,7 +20,7 @@ import InstDesigner from "../images/inst_designer.png";
 
 initializeIcons();
 
-function Portfolio() {
+function Portfolio({ isAuthenticated }) {
   const navigate = useNavigate(); // handle youtube video
 
   const handleClick = () => {
@@ -339,3 +339,13 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
+// export default function PortfolioWrapper() {
+//   return (
+//     <ProtectedRoute
+//       component={Portfolio}
+//       isAuthenticated={isAuthenticated}
+//       path="/Portfolio/*"
+//     />
+//   );
+// }

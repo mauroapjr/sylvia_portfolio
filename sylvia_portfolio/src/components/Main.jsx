@@ -22,7 +22,6 @@ import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on
 export default function Main() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-
   return (
     <>
       <link
