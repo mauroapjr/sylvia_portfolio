@@ -22,7 +22,7 @@ import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 export default function Main() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <>
