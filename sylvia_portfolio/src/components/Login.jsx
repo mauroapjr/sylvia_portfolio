@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
@@ -6,6 +7,7 @@ import axios from "axios";
 
 export default function Login({ setIsAuthenticated }) {
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
   const formRef = useRef(null);
 
   const onFinish = (values) => {
@@ -17,6 +19,7 @@ export default function Login({ setIsAuthenticated }) {
           setUsername(username);
           setIsAuthenticated(true);
           formRef.current.resetFields();
+          navigate("/Portfolio");
         } else {
           alert(
             "Password/username is not correct. Contact the website owner to visit this page."
@@ -29,6 +32,12 @@ export default function Login({ setIsAuthenticated }) {
     setUsername("");
     setIsAuthenticated(false);
   };
+
+  useEffect(() => {
+    if (!username) {
+      navigate("/Login");
+    }
+  }, [username]);
 
   return (
     <div

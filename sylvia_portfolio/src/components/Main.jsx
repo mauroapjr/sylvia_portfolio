@@ -4,6 +4,8 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
+import  { ProtectedRoute } from "../index.js";
+
 
 import "../styles/main.css";
 import Login from "./Login";
@@ -161,7 +163,7 @@ export default function Main() {
                 }}
               >
                 <a
-                  href="/Portfolio/*"
+                  href="/Login"
                   style={{
                     textDecoration: "none",
                     color: "inherit",

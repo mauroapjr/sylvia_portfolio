@@ -1,61 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
-
-import "./styles/index.css";
-import App from "./App";
-import Admin from "./components/Admin";
-import VideoPage from "./components/VideoPage";
-import StorylinePage from "./components/StorylinePage";
-import PPTPage from "./components/PPTPage";
-import Blog from "./components/Blog";
-import Portfolio from "./components/Portfolio";
-import About from "./components/About";
-import Login from "./components/Login";
-import Main from "./components/Main";
-
-const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-  if (!isAuthenticated) {
-    return <Navigate to="/Main" replace />;
-  }
-
-  return <Route {...rest} element={<Component />} />;
-};
-
-const AppRouter = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/Main" element={<Main />} />
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/VideoPage" element={<VideoPage />} />
-        <Route path="/StorylinePage" element={<StorylinePage />} />
-        <Route path="/PPTPage" element={<PPTPage />} />
-        <Route path="/Blog" element={<Blog />} />
-        <Route path="/About" element={<About />} />
-        <Route
-          path="/Portfolio/*"
-          element={<Portfolio isAuthenticated={isAuthenticated} />}
-        />
-        <Route
-          path="/Main"
-          element={<Login setIsAuthenticated={setIsAuthenticated} />}
-        />
-      </Routes>
-    </Router>
-  );
-};
-
-export { AppRouter, ProtectedRoute };
-
-
-
-// import React from "react";
-// import reportWebVitals from "./reportWebVitals";
-// import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
-// import { createRoot } from "react-dom/client";
+// import React, { useState } from "react";
+// import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 
 // import "./styles/index.css";
 // import App from "./App";
@@ -66,86 +10,148 @@ export { AppRouter, ProtectedRoute };
 // import Blog from "./components/Blog";
 // import Portfolio from "./components/Portfolio";
 // import About from "./components/About";
-// import ErrorPage from './components/ErrorPage';
+// import Login from "./components/Login";
+// import Main from "./components/Main";
 
-// const isAuthenticated = false;
+// const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
+//   if (!isAuthenticated) {
+//     return <Navigate to="/Main" replace />;
+//   }
 
-// const ProtectedRoute = ({ component: Component, isAuthenticated: auth, ...rest }) => (
+//   return <Route {...rest} element={<Component />} />;
+// };
 
-//   <Routes>
-//     <Route
-//       {...rest}
-//       element={
-//         auth ? (
-//           <Component />
-//         ) : (
-//           <Navigate to="/Main" state={{ from: rest.path }} replace />
-//         )
-//       }
-//     />
-//   </Routes>
-// );
+// const AppRouter = () => {
+//   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-// const routerConfig = [
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "/Admin",
-//     element: <Admin />,
-//   },
-//   {
-//     path: "/VideoPage",
-//     element: <VideoPage />,
-//   },
-//   {
-//     path: "/StorylinePage",
-//     element: <StorylinePage />,
-//   },
-//   {
-//     path: "/PPTPage",
-//     element: <PPTPage />,
-//   },
-//   {
-//     path: "/Blog",
-//     element: <Blog />,
-//   },
-//   {
-//     path: "/Portfolio/*",
-//     element: <Portfolio />,
-//   },
-//   {
-//     path: "/About",
-//     element: <About />,
-//   },
-// ];
-
-// createRoot(document.getElementById("root")).render(
-//   <Router>
-//     <Routes>
-//       {routerConfig.map((route, index) => (
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<App />} />
+//         <Route path="/Main" element={<Main />} />
+//         <Route path="/Admin" element={<Admin />} />
+//         <Route path="/VideoPage" element={<VideoPage />} />
+//         <Route path="/StorylinePage" element={<StorylinePage />} />
+//         <Route path="/PPTPage" element={<PPTPage />} />
+//         <Route path="/Blog" element={<Blog />} />
+//         <Route path="/About" element={<About />} />
 //         <Route
-//           key={index}
-//           path={route.path}
-//           element={
-//             route.element.props.path === "/Portfolio/*" ? (
-//               <ProtectedRoute
-//                 isAuthenticated={isAuthenticated}
-//                 component={route.element.props.children.props.component}
-//                 errorComponent={route.element.props.children.props.errorComponent}
-//                 errorPath={route.element.props.children.props.errorPath}
-//               />
-//             ) : (
-//               route.element
-//             )
-//           }
+//           path="/Portfolio/*"
+//           element={<Portfolio isAuthenticated={isAuthenticated} />}
 //         />
-//       ))}
-//     </Routes>
-//   </Router>
-// );
-// reportWebVitals();
+//         <Route
+//           path="/Main"
+//           element={<Login setIsAuthenticated={setIsAuthenticated} />}
+//         />
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+// export { AppRouter, ProtectedRoute };
+
+
+
+import React from "react";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+
+import "./styles/index.css";
+import App from "./App";
+import Admin from "./components/Admin";
+import Login from "./components/Login";
+import VideoPage from "./components/VideoPage";
+import StorylinePage from "./components/StorylinePage";
+import PPTPage from "./components/PPTPage";
+import Blog from "./components/Blog";
+import Portfolio from "./components/Portfolio";
+import About from "./components/About";
+import ErrorPage from './components/ErrorPage';
+
+const isAuthenticated = false;
+
+const ProtectedRoute = ({ component: Component, isAuthenticated: auth, ...rest }) => (
+
+  <Routes>
+    <Route
+      {...rest}
+      element={
+        auth ? (
+          <Component />
+        ) : (
+          <Navigate to="/Login" state={{ from: rest.path }} replace />
+        )
+      }
+    />
+  </Routes>
+);
+
+const routerConfig = [
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/Admin",
+    element: <Admin />,
+  },
+  {
+    path: "/Login",
+    element: <Login setIsAuthenticated={handleSetIsAuthenticated} />,
+  },
+  {
+    path: "/VideoPage",
+    element: <VideoPage />,
+  },
+  {
+    path: "/StorylinePage",
+    element: <StorylinePage />,
+  },
+  {
+    path: "/PPTPage",
+    element: <PPTPage />,
+  },
+  {
+    path: "/Blog",
+    element: <Blog />,
+  },
+  {
+    path: "/Portfolio/*",
+    element: <Portfolio />,
+  },
+  {
+    path: "/About",
+    element: <About />,
+  },
+];
+
+createRoot(document.getElementById("root")).render(
+  <Router>
+    <Routes>
+      {routerConfig.map((route, index) => (
+        <Route
+          key={index}
+          path={route.path}
+          element={
+            route.element.props.path === "/Portfolio/*" ? (
+              <ProtectedRoute
+                isAuthenticated={isAuthenticated}
+                component={route.element.props.children.props.component}
+                errorComponent={route.element.props.children.props.errorComponent}
+                errorPath={route.element.props.children.props.errorPath}
+              />
+            ) : (
+              route.element
+            )
+          }
+        />
+      ))}
+    </Routes>
+  </Router>
+);
+reportWebVitals();
+export default ProtectedRoute;
 
 // createRoot(document.getElementById("root")).render(
 //   <Router>
