@@ -427,18 +427,18 @@ export default function Main() {
         className="text-body-secondary"
         style={{ backgroundColor: "#9EBA99", padding: "4% 0" }}
       >
-        <div className="float-start" style={{ marginLeft: '7%' }}>
+        {/* <div className="float-start" style={{ marginLeft: '7%' }}>
         <div>
       {isAuthenticated ? (
-        // Render authenticated content
+        Render authenticated content
         <div>Welcome to my Portfolio!</div>
       ) : (
-        // Render login component
+        Render login component
         <Login setIsAuthenticated={setIsAuthenticated} />
       )}
-    </div>
+    </div> */}
           {/* <Login /> */}
-        </div>
+        {/* </div> */}
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-md-7 py-4"></div>
