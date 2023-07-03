@@ -5,6 +5,9 @@ import { Form, Input, Button } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 
+import FlowBackground from "../images/Flow_backgroung.jpg";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+
 export default function Login({ setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
@@ -40,6 +43,38 @@ export default function Login({ setIsAuthenticated }) {
   }, [username]);
 
   return (
+    <>
+      <header data-bs-theme="dark">
+        <nav className="navbar navbar-expand-lg navbar-dark">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="/">
+              <div className="sylvia-logo-container">
+                <img
+                  className="sylvia-logo-portfolio"
+                  src={SylviaLogo}
+                  alt="Sylvia Logo"
+                />
+              </div>
+            </a>
+
+            <div className="flow-container-1">
+              <img
+                className="flow-background-1"
+                src={FlowBackground}
+                alt="Background 1"
+                style={{
+                  backgroundImage: `url(${FlowBackground})`,
+                  backgroundSize: "120%",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right",
+                  marginTop: "15px",
+                  display: "flex",
+                }}
+              />
+            </div>
+          </div>
+        </nav>
+      </header>
     <div
       className=""
       style={{
@@ -117,6 +152,7 @@ export default function Login({ setIsAuthenticated }) {
         )}
       </div>
     </div>
+    </>
   );
 }
 

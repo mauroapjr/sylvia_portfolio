@@ -3,7 +3,7 @@ import "../styles/main.css";
 import "../styles/portfolio.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import  { ProtectedRoute } from "../index.js";
+//import  { ProtectedRoute } from "../index.js";
 
 import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
