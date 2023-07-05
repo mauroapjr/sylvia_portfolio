@@ -1,0 +1,16 @@
+.sylvia-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sylvia-logo-login {
+  position: relative;
+  height: auto;
+  width: 30%;
+  margin-top: 8%;
+  margin-bottom: 15%;
+  z-index: 1;
+}
+
+

@@ -7,6 +7,7 @@ import axios from "axios";
 
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+import "../styles/login.css";
 
 export default function Login({ setIsAuthenticated }) {
   const [username, setUsername] = useState("");
@@ -50,7 +51,7 @@ export default function Login({ setIsAuthenticated }) {
             <a className="navbar-brand" href="/">
               <div className="sylvia-logo-container">
                 <img
-                  className="sylvia-logo-portfolio"
+                  className="sylvia-logo-login"
                   src={SylviaLogo}
                   alt="Sylvia Logo"
                 />
@@ -68,7 +69,7 @@ export default function Login({ setIsAuthenticated }) {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right",
                   marginTop: "15px",
-                  display: "flex",
+                  display: "flex",                  
                 }}
               />
             </div>
@@ -76,7 +77,7 @@ export default function Login({ setIsAuthenticated }) {
         </nav>
       </header>
     <div
-      className=""
+      className="login-form"
       style={{
         display: "flex",
         justifyContent: "center",
