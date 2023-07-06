@@ -5,7 +5,7 @@
 }
 
 .sylvia-logo-login {
-  position: relative;
+  position: center;
   height: auto;
   width: 30%;
   margin-top: 8%;
@@ -13,4 +13,18 @@
   z-index: 1;
 }
 
+@media (min-width: 768px) {
+  .sylvia-logo-login {
+    width: 20%;
+    margin-top: 5%;
+    height: auto;
+  }
+}
 
+@media (min-width: 1750px) {
+  .sylvia-logo-login {
+    width: 25%;
+    margin-top: 5%;
+    height: auto;
+  }
+}
