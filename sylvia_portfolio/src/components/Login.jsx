@@ -17,19 +17,50 @@ export default function Login({ setIsAuthenticated }) {
   const onFinish = (values) => {
     const { username, password } = values;
     axios
-      .post("http://localhost:3001/validatePassword", { username, password })
+      .post("http://localhost:3001/register", { username, password }) // Send a POST request to the registration endpoint
       .then((res) => {
-        if (res.data.validation) {
-          setUsername(username);
-          setIsAuthenticated(true);
-          formRef.current.resetFields();
-          navigate("/Portfolio");
+        if (res.data.message === "User registered successfully") {
+          // User registration successful, proceed with login
+          axios
+            .post("http://localhost:3001/validatePassword", { username, password })
+            .then((res) => {
+              if (res.data.validation) {
+                setUsername(username);
+                setIsAuthenticated(true);
+                formRef.current.resetFields();
+                navigate("/Portfolio");
+              } else {
+                alert(
+                  "Password/username is not correct. Contact the website owner to visit this page."
+                );
+              }
+            });
         } else {
-          alert(
-            "Password/username is not correct. Contact the website owner to visit this page."
-          );
+          alert("Username already exists"); // Registration failed, username already exists
         }
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Registration failed"); // Registration failed, handle error
       });
+  
+
+      // const onFinish = (values) => {
+      //   const { username, password } = values;
+      //   axios
+      //     .post("http://localhost:3001/validatePassword", { username, password })
+      //     .then((res) => {
+      //       if (res.data.validation) {
+      //         setUsername(username);
+      //         setIsAuthenticated(true);
+      //         formRef.current.resetFields();
+      //         navigate("/Portfolio");
+      //       } else {
+      //         alert(
+      //           "Password/username is not correct. Contact the website owner to visit this page."
+      //         );
+      //       }
+      //     });
   };
 
   const handleLogout = () => {
