@@ -13,7 +13,7 @@ import PPTPage from "./components/PPTPage";
 import Blog from "./components/Blog";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
-import ErrorPage from './components/ErrorPage';
+
 
 const isAuthenticated = false;
 
