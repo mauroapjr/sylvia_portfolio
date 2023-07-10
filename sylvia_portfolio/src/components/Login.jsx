@@ -60,10 +60,13 @@ export default function Login({ setIsAuthenticated }) {
     formRef.current.resetFields();
   };
 
+  const handleDeleteUserClick = () => {
+    navigate("/DeleteUserForm")
+  };
+
   const handleDeleteUser = (username) => {
-    // Implement the logic to delete the user
+    // Delete user logic
     console.log("Deleting user:", username);
-    // ...
   };
 
   return (
@@ -158,6 +161,23 @@ export default function Login({ setIsAuthenticated }) {
                 {isRegistering ? "Register" : "Log in"}
               </Button>
             </Form.Item>
+
+            <Form.Item>
+
+              <div className="delete-form">
+              <Button
+                type="primary"
+                htmlType="button"
+                className="delete-form-button"
+                onClick={() => setIsDeleting(true)}
+              >
+                Delete User
+                </Button>
+                {isDeleting && <DeleteUserForm handleDeleteUser={handleDeleteUser} />}
+              </div>
+
+            </Form.Item>
+
           </Form>
 
           <p>
@@ -177,9 +197,7 @@ export default function Login({ setIsAuthenticated }) {
               </>
             )}
           </p>
-          <div className="delete-form">
-            Delete {isDeleting && <DeleteUserForm handleDeleteUser={handleDeleteUser} />}
-          </div>
+          
         </div>
       </div>
       
