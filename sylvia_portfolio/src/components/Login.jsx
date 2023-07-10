@@ -5,63 +5,14 @@ import { Form, Input, Button, Modal } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 
+import DeleteUserForm from "./DeleteUserForm";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 import "../styles/login.css";
 
-// export default function Login({ setIsAuthenticated }) {
-//   const [isRegistering, setIsRegistering] = useState(false);
-//   const navigate = useNavigate();
-//   const formRef = useRef(null);
-
-//   const onFinish = (values) => {
-//     const { username, password } = values;
-//     if (isRegistering) {
-//       // Registration logic
-//       axios
-//         .post("http://localhost:3001/register", { username, password })
-//         .then((res) => {
-//           if (res.data.message === "User registered successfully") {
-//             setIsRegistering(false);
-//             formRef.current.resetFields();
-//             alert("Registration successful! You can now log in.");
-//           } else {
-//             alert("Username already exists");
-//           }
-//         })
-//         .catch((error) => {
-//           console.error(error);
-//           alert("Registration failed");
-//         });
-//     } else {
-//       // Login logic
-//       axios
-//         .post("http://localhost:3001/validatePassword", { username, password })
-//         .then((res) => {
-//           if (res.data.validation) {
-//             setIsAuthenticated(true);
-//             formRef.current.resetFields();
-//             navigate("/Portfolio");
-//           } else {
-//             alert("Password/username is not correct.");
-//           }
-//         })
-//         .catch((error) => {
-//           console.error(error);
-//           alert("Login failed");
-//         });
-//     }
-//   };
-
-//   const handleToggleRegister = () => {
-//     setIsRegistering(!isRegistering);
-//     formRef.current.resetFields();
-//   };
-
 export default function Login({ setIsAuthenticated }) {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [deleteUsername, setDeleteUsername] = useState("");
   const navigate = useNavigate();
   const formRef = useRef(null);
 
@@ -83,23 +34,6 @@ export default function Login({ setIsAuthenticated }) {
         .catch((error) => {
           console.error(error);
           alert("Registration failed");
-        });
-    } else if (isDeleting) {
-      // Delete user logic
-      axios
-        .post("http://localhost:3001/deleteUser", { username: deleteUsername })
-        .then((res) => {
-          if (res.data.message === "User deleted successfully") {
-            setIsDeleting(false);
-            formRef.current.resetFields();
-            alert("User deleted successfully.");
-          } else {
-            alert("Failed to delete user");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Delete user failed");
         });
     } else {
       // Login logic
@@ -126,33 +60,20 @@ export default function Login({ setIsAuthenticated }) {
     formRef.current.resetFields();
   };
 
-  const handleToggleDelete = () => {
-    setIsDeleting(!isDeleting);
-    formRef.current.resetFields();
-  };
-
-  const handleConfirmDelete = () => {
-    Modal.confirm({
-      title: "Delete User",
-      content: `Are you sure you want to delete user ${deleteUsername}?`,
-      okText: "Delete",
-      okType: "danger",
-      cancelText: "Cancel",
-      onOk: () => {
-        // Perform the delete user action
-        onFinish({ username: deleteUsername });
-      },
-    });
+  const handleDeleteUser = (username) => {
+    // Implement the logic to delete the user
+    console.log("Deleting user:", username);
+    // ...
   };
 
   return (
     <>
       <header data-bs-theme="dark">
-         <nav className="navbar navbar-expand-lg navbar-dark">
-           <div className="container-fluid">
-             <a className="navbar-brand" href="/">
-               <div className="sylvia-logo-container">
-                 <img
+        <nav className="navbar navbar-expand-lg navbar-dark">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="/">
+              <div className="sylvia-logo-container">
+                <img
                   className="sylvia-logo-login"
                   src={SylviaLogo}
                   alt="Sylvia Logo"
@@ -171,7 +92,7 @@ export default function Login({ setIsAuthenticated }) {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right",
                   marginTop: "15px",
-                  display: "flex",                  
+                  display: "flex",
                 }}
               />
             </div>
@@ -179,21 +100,14 @@ export default function Login({ setIsAuthenticated }) {
         </nav>
       </header>
 
-
-
-
       <div className="login-form">
+        
         <div>
           {isRegistering ? (
             <h2>Create an Account</h2>
           ) : (
             <h2>Login to Your Account</h2>
           )}
-          
-          
-
-
-
 
           <Form
             name="normal_login"
@@ -204,7 +118,6 @@ export default function Login({ setIsAuthenticated }) {
             onFinish={onFinish}
             ref={formRef}
           >
-
             <Form.Item
               name="username"
               rules={[
@@ -214,13 +127,11 @@ export default function Login({ setIsAuthenticated }) {
                 },
               ]}
             >
-
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 placeholder="Username"
               />
             </Form.Item>
-
 
             <Form.Item
               name="password"
@@ -231,7 +142,6 @@ export default function Login({ setIsAuthenticated }) {
                 },
               ]}
             >
-
               <Input
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 type="password"
@@ -250,10 +160,6 @@ export default function Login({ setIsAuthenticated }) {
             </Form.Item>
           </Form>
 
-          
-        
-      
-    
           <p>
             {isRegistering ? (
               <>
@@ -271,8 +177,12 @@ export default function Login({ setIsAuthenticated }) {
               </>
             )}
           </p>
+          <div className="delete-form">
+            Delete {isDeleting && <DeleteUserForm handleDeleteUser={handleDeleteUser} />}
+          </div>
         </div>
       </div>
+      
     </>
   );
 }
@@ -311,24 +221,23 @@ export default function Login({ setIsAuthenticated }) {
 //         console.error(error);
 //         alert("Registration failed"); // Registration failed, handle error
 //       });
-  
 
-      // const onFinish = (values) => {
-      //   const { username, password } = values;
-      //   axios
-      //     .post("http://localhost:3001/validatePassword", { username, password })
-      //     .then((res) => {
-      //       if (res.data.validation) {
-      //         setUsername(username);
-      //         setIsAuthenticated(true);
-      //         formRef.current.resetFields();
-      //         navigate("/Portfolio");
-      //       } else {
-      //         alert(
-      //           "Password/username is not correct. Contact the website owner to visit this page."
-      //         );
-      //       }
-      //     });
+// const onFinish = (values) => {
+//   const { username, password } = values;
+//   axios
+//     .post("http://localhost:3001/validatePassword", { username, password })
+//     .then((res) => {
+//       if (res.data.validation) {
+//         setUsername(username);
+//         setIsAuthenticated(true);
+//         formRef.current.resetFields();
+//         navigate("/Portfolio");
+//       } else {
+//         alert(
+//           "Password/username is not correct. Contact the website owner to visit this page."
+//         );
+//       }
+//     });
 //   };
 
 //   const handleLogout = () => {
@@ -368,7 +277,7 @@ export default function Login({ setIsAuthenticated }) {
 //                   backgroundRepeat: "no-repeat",
 //                   backgroundPosition: "right",
 //                   marginTop: "15px",
-//                   display: "flex",                  
+//                   display: "flex",
 //                 }}
 //               />
 //             </div>
@@ -455,7 +364,3 @@ export default function Login({ setIsAuthenticated }) {
 //     </>
 //   );
 // }
-
-
-
-
