@@ -212,6 +212,21 @@ app.post("/register", (req, res) => {
   );
 });
 
+// ****** Delete User ******
+
+app.post("/deleteUser", (req, res) => {
+  const { username } = req.body;
+
+  db.run(`DELETE FROM credentials WHERE username = '${username}'`, (err) => {
+    if (err) {
+      console.error(err.message);
+      res.status(500).send("Failed to delete user");
+    } else {
+      res.send({ message: "User deleted successfully" });
+    }
+  });
+});
+
 // ***** Blog Database *****
 
 app.get("/admin", (req, res) => {

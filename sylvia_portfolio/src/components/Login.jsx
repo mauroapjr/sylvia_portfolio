@@ -65,7 +65,16 @@ export default function Login({ setIsAuthenticated }) {
   };
 
   const handleDeleteUser = (username) => {
-    // Delete user logic
+    axios
+    .post("http://localhost:3001/deleteUser", { username })
+    .then((res) => {
+      console.log(res.data.message);
+      formRef.current.resetFields();
+    })
+    .catch((error) => {
+      console.error(error);
+      
+    });
     console.log("Deleting user:", username);
   };
 
