@@ -70,10 +70,10 @@ const routerConfig = [
     path: "/About",
     element: <About />,
   },
-  {
-    path: "/DeleteUserForm",
-    element: <DeleteUserForm />,
-  },
+  // {
+  //   path: "/DeleteUserForm",
+  //   element: <DeleteUserForm />,
+  // },
 ];
 
 createRoot(document.getElementById("root")).render(
