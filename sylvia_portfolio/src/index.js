@@ -13,7 +13,7 @@ import PPTPage from "./components/PPTPage";
 import Blog from "./components/Blog";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
-import DeleteUserForm from "./components/DeleteUserForm";
+
 
 const isAuthenticated = false;
 
@@ -70,10 +70,6 @@ const routerConfig = [
     path: "/About",
     element: <About />,
   },
-  // {
-  //   path: "/DeleteUserForm",
-  //   element: <DeleteUserForm />,
-  // },
 ];
 
 createRoot(document.getElementById("root")).render(
