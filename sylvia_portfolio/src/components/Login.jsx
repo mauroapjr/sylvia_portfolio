@@ -13,7 +13,7 @@ import "../styles/login.css";
 export default function Login({ setIsAuthenticated }) {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isFormVisible, setIsFormVisible] = useState(true);
+  //const [isFormVisible, setIsFormVisible] = useState(true);
   const navigate = useNavigate();
   const formRef = useRef(null);
 
@@ -56,23 +56,23 @@ export default function Login({ setIsAuthenticated }) {
     }
   };
 
-  const handleToggleRegister = () => {
-    setIsRegistering(!isRegistering);
-    formRef.current.resetFields();
-  };
+  // const handleToggleRegister = () => {
+  //   setIsRegistering(!isRegistering);
+  //   formRef.current.resetFields();
+  // };
 
-  const handleDeleteUser = (username) => {
-    axios
-      .post("http://localhost:3001/deleteUser", { username })
-      .then((res) => {
-        console.log(res.data.message);
-        formRef.current.resetFields();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    console.log("Deleting user:", username);
-  };
+  // const handleDeleteUser = (username) => {
+  //   axios
+  //     .post("http://localhost:3001/deleteUser", { username })
+  //     .then((res) => {
+  //       console.log(res.data.message);
+  //       formRef.current.resetFields();
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  //   console.log("Deleting user:", username);
+  // };
 
   return (
     <>
@@ -108,13 +108,14 @@ export default function Login({ setIsAuthenticated }) {
         </nav>
       </header>
 
-      <div className="login-form">
+      <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+  
         <div>
-          {isRegistering ? (
+          {/* {isRegistering ? (
             <h2>Create an Account</h2>
-          ) : (
-            <h2>Login to Your Account</h2>
-          )}
+          ) : ( */}
+            <h2>Login to my Portfolio</h2>
+          {/* )} */}
 
           <Form
             name="normal_login"
@@ -137,6 +138,7 @@ export default function Login({ setIsAuthenticated }) {
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 placeholder="Username"
+                style={{ width: "300px" }}
               />
             </Form.Item>
 
@@ -153,6 +155,7 @@ export default function Login({ setIsAuthenticated }) {
                 prefix={<LockOutlined className="site-form-item-icon" />}
                 type="password"
                 placeholder="Password"
+                style={{ width: "300px" }}
               />
             </Form.Item>
 
@@ -161,12 +164,12 @@ export default function Login({ setIsAuthenticated }) {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-              >
-                {isRegistering ? "Register" : "Log in"}
+              > Login
+                {/* {isRegistering ? "Register" : "Log in"} */}
               </Button>
             </Form.Item>
 
-            <Form.Item>
+            {/* <Form.Item>
               <div className="delete-form">
                 <Button
                   type="primary"
@@ -180,10 +183,10 @@ export default function Login({ setIsAuthenticated }) {
                   <DeleteUserForm handleDeleteUser={handleDeleteUser} />
                 )}
               </div>
-            </Form.Item>
+            </Form.Item> */}
           </Form>
 
-          <p>
+          {/* <p>
             {isRegistering ? (
               <>
                 Already have an account?{" "}
@@ -199,7 +202,7 @@ export default function Login({ setIsAuthenticated }) {
                 </Button>
               </>
             )}
-          </p>
+          </p> */}
         </div>
       </div>
     </>

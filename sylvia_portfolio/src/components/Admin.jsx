@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import axios from "axios";
 import { Form, Input, Button, message } from "antd";
 import { ImageFileResizer } from "react-image-file-resizer";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
 
 import "../styles/main.css";
 import "../styles/admin.css";
@@ -11,6 +12,8 @@ import "react-quill/dist/quill.bubble.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "antd/dist/reset.css";
+import Login from "./Login";
+import DeleteUserForm from "./DeleteUserForm";
 
 const { TextArea } = Input;
 
@@ -20,6 +23,10 @@ export default function Admin() {
   const [base64data, setBase64data] = useState(null);
   const editorRef = useRef();
 
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const formRef = useRef(null);
+
   const onChange = (value) => {
     const delta = value.delta || {};
     const content = delta.ops || [];
@@ -28,6 +35,24 @@ export default function Admin() {
       .filter((op) => typeof op.insert === "string" && op.insert.trim() !== "")
       .map((op) => op.insert.trim());
     setContent({ text: value, paragraphs: paragraphs });
+  };
+
+  const handleToggleRegister = () => {
+    setIsRegistering(!isRegistering);
+    formRef.current.resetFields();
+  };
+
+  const handleDeleteUser = (username) => {
+    axios
+      .post("http://localhost:3001/deleteUser", { username })
+      .then((res) => {
+        console.log(res.data.message);
+        formRef.current.resetFields();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    console.log("Deleting user:", username);
   };
 
   const handleImageChange = (event) => {
@@ -210,7 +235,103 @@ export default function Admin() {
             </Form.Item>
           </Form>
         </div>
+        
       </section>
+
+      <div className="login-form">
+        <div>
+          {isRegistering ? (
+            <h2>Create an Account</h2>
+          ) : (
+            <h2>Login to Your Account</h2>
+          )}
+
+          <Form
+            name="normal_login"
+            className="login-form"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
+            ref={formRef}
+          >
+            <Form.Item
+              name="username"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input Username!",
+                },
+              ]}
+            >
+              <Input
+                prefix={<UserOutlined className="site-form-item-icon" />}
+                placeholder="Username"
+              />
+            </Form.Item>
+
+            <Form.Item
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Password!",
+                },
+              ]}
+            >
+              <Input
+                prefix={<LockOutlined className="site-form-item-icon" />}
+                type="password"
+                placeholder="Password"
+              />
+            </Form.Item>
+
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="login-form-button"
+              >
+                {isRegistering ? "Register" : "Log in"}
+              </Button>
+            </Form.Item>
+
+            <Form.Item>
+              <div className="delete-form">
+                <Button
+                  type="primary"
+                  htmlType="button"
+                  className="delete-form-button"
+                  onClick={() => setIsDeleting(true)}
+                >
+                  Delete User
+                </Button>
+                {isDeleting && (
+                  <DeleteUserForm handleDeleteUser={handleDeleteUser} />
+                )}
+              </div>
+            </Form.Item>
+        
+          </Form>
+          <p>
+            {isRegistering ? (
+              <>
+                Already have an account?{" "}
+                <Button type="link" onClick={handleToggleRegister}>
+                  Log in
+                </Button>
+              </>
+            ) : (
+              <>
+                Don't have an account?{" "}
+                <Button type="link" onClick={handleToggleRegister}>
+                  Register
+                </Button>
+              </>
+            )}
+          </p>
+          </div>
+      </div>            
     </>
   );
 }
