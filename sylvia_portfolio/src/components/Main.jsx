@@ -98,10 +98,8 @@ export default function Main() {
 
       <main>
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-md-8">
-              <section className="text-start">
-                <p
+           
+                <h3
                   className="lead text-body-secondary"
                   style={{
                     textAlign: "left",
@@ -118,7 +116,7 @@ export default function Main() {
                   courses to customer education. My passion lies in learning and
                   development, and I am always up to talk about education
                   projects.
-                </p>
+                </h3>
 
                 <h6
                   className="fw-light"
@@ -134,8 +132,7 @@ export default function Main() {
                   Developer | Adult Learning Specialist | Learning Analytics |
                   Localization | Curious by Nature
                 </h6>
-              </section>
-            </div>
+             
 
             <section
               className="box-right"
@@ -198,7 +195,7 @@ export default function Main() {
               </div>
               <ul className="list-unstyled"></ul>
             </section>
-          </div>
+          {/* </div> */}
         </div>
 
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel" >
@@ -423,24 +420,12 @@ export default function Main() {
 
       <footer
         className="text-body-secondary"
-        style={{ backgroundColor: "#9EBA99", padding: "4% 0" }}
+        style={{ backgroundColor: "#9EBA99", padding: "1% 0", height: "40%" }}
       >
-        {/* <div className="float-start" style={{ marginLeft: '7%' }}>
-        <div>
-      {isAuthenticated ? (
-        Render authenticated content
-        <div>Welcome to my Portfolio!</div>
-      ) : (
-        Render login component
-        <Login setIsAuthenticated={setIsAuthenticated} />
-      )}
-    </div> */}
-          {/* <Login /> */}
-        {/* </div> */}
+        
         <div className="container">
           <div className="row">
-            <div className="col-sm-8 col-md-7 py-4"></div>
-            <div className="col-sm-4 offset-md-1 py-4">
+            
               <ul className="list-unstyled d-flex justify-content-end">
                 {" "}
                 <li className="mx-3">
@@ -490,7 +475,7 @@ export default function Main() {
                   </a>
                 </li>
               </ul>
-            </div>
+         
           </div>
           <small className="d-block mb-3 text-dark-grey text-center">
             mauroPereira©2023
