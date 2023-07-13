@@ -4,7 +4,7 @@ import axios from "axios";
 import { Form, Input, Button, message } from "antd";
 import { ImageFileResizer } from "react-image-file-resizer";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-
+import { useNavigate } from "react-router-dom";
 import "../styles/main.css";
 import "../styles/admin.css";
 import "react-quill/dist/quill.snow.css";
@@ -17,7 +17,7 @@ import DeleteUserForm from "./DeleteUserForm";
 
 const { TextArea } = Input;
 
-export default function Admin() {
+export default function Admin(setIsAuthenticated) {
   const [form] = Form.useForm();
   const [content, setContent] = useState({ text: "", paragraphs: [] });
   const [base64data, setBase64data] = useState(null);
@@ -26,6 +26,7 @@ export default function Admin() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   const onChange = (value) => {
     const delta = value.delta || {};
@@ -37,6 +38,45 @@ export default function Admin() {
     setContent({ text: value, paragraphs: paragraphs });
   };
 
+  const onFinishRegisterForm = (values) => {
+    const { username, password } = values;
+    if (isRegistering) {
+      // Registration logic
+      axios
+        .post("http://localhost:3001/register", { username, password })
+        .then((res) => {
+          if (res.data.message === "User registered successfully") {
+            setIsRegistering(false);
+            formRef.current.resetFields();
+            alert("Registration successful! You can now log in.");
+          } else {
+            alert("Username already exists");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Registration failed");
+        });
+    } else {
+      // Login logic
+      axios
+        .post("http://localhost:3001/validatePassword", { username, password })
+        .then((res) => {
+          if (res.data.validation) {
+            setIsAuthenticated(true);
+            formRef.current.resetFields();
+            navigate("/Portfolio");
+          } else {
+            alert("Password/username is not correct.");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Login failed");
+        });
+    }
+  };
+    
   const handleToggleRegister = () => {
     setIsRegistering(!isRegistering);
     formRef.current.resetFields();
@@ -54,6 +94,15 @@ export default function Admin() {
       });
     console.log("Deleting user:", username);
   };
+  
+  const onFinishLoginForm = (values) => {
+    handleToggleRegister(values.username);
+    console.log("VALUE USERNAME", values.username)
+  };
+
+  const onFinishDeleteForm = (values) => {
+    handleDeleteUser(values.username);
+  }
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -77,7 +126,7 @@ export default function Admin() {
     );
   };
 
-  const onFinish = async (values) => {
+  const onFinishPostForm = async (values) => {
     try {
       const deltaContent = editorRef.current.getEditor().getContents();
       const plainTextContent = editorRef.current.getEditor().getText();
@@ -173,7 +222,7 @@ export default function Admin() {
             initialValues={{
               remember: true,
             }}
-            onFinish={(values) => onFinish(values, form)}
+            onFinish={(values) => onFinishPostForm(values, form)}
             form={form}
             style={{ width: "80%" }}
           >
@@ -235,7 +284,6 @@ export default function Admin() {
             </Form.Item>
           </Form>
         </div>
-        
       </section>
 
       <div className="login-form">
@@ -252,7 +300,7 @@ export default function Admin() {
             initialValues={{
               remember: true,
             }}
-            onFinish={onFinish}
+            onFinish={onFinishLoginForm}
             ref={formRef}
           >
             <Form.Item

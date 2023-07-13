@@ -82,12 +82,12 @@ export default function Main() {
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "left",
                   display: "flex",
-                  width: "60%",
-                  marginTop: "75px",
+                  width: "50%",
+                  marginTop: "40px",
                   transform: "rotate(90deg)",
                   position: "absolute",
                   top: 416,
-                  left: -540,
+                  left: -505,
                   zIndex: -2,
                 }}
               />
@@ -105,9 +105,7 @@ export default function Main() {
                   className="lead text-body-secondary"
                   style={{
                     textAlign: "left",
-                    height: "300px",
-                    marginLeft: "10%",
-                    marginTop: "5%",
+                    marginLeft: "10%",                    
                     fontSize: "25px",
                   }}
                 >
@@ -127,9 +125,9 @@ export default function Main() {
                   style={{
                     textAlign: "left",
                     marginLeft: "10%",
-                    marginTop: "15%",
-                    padding: "20px",
-                    fontSize: "20px",
+                    marginTop: "-1%",
+                    padding: "5%",
+                    fontSize: "90%",
                   }}
                 >
                   Customer Education | Learning Experience Designer | eLearning
@@ -144,10 +142,10 @@ export default function Main() {
               style={{
                 backgroundColor: "rgb(200, 200, 200)",
                 width: "40%",
-                
-                marginLeft: "auto",
-                marginRight: "0px",
-                marginTop: "-1.1%",
+                //height: "50%",                
+                marginLeft: "auto",                
+                marginTop: "-14.5%",
+                marginBottom: "1%",
                 zIndex: 0,
                 display: "flex",
                 justifyContent: "flex-end",
