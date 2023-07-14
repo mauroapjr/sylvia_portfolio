@@ -108,7 +108,7 @@ export default function Main() {
                   style={{
                     textAlign: "left",
                     marginLeft: "7%",
-                    marginTop: "-1%",
+                    marginTop: "-4%",
                     padding: "3%",
                     fontSize: "90%",
                     fontWeight: "200",
@@ -127,7 +127,6 @@ export default function Main() {
                 width: "40%",
                    
                 marginLeft: "auto",                
-                marginTop: "-14.5%",
                 marginBottom: "1%",
                 zIndex: 0,
                 display: "flex",
