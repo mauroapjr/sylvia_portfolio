@@ -14,7 +14,6 @@ import Blog from "./components/Blog";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 
-
 const isAuthenticated = false;
 
 const ProtectedRoute = ({ component: Component, isAuthenticated: auth, ...rest }) => (

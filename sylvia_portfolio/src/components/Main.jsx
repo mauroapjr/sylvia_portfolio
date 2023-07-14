@@ -49,11 +49,6 @@ export default function Main() {
                 alt="Background 1"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
-                  backgroundSize: "120%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right",
-                  marginTop: "15px",
-                  display: "flex",
                 }}
               />
               <img
@@ -62,17 +57,17 @@ export default function Main() {
                 alt="Background 2"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
-                  backgroundSize: "100%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "left",
-                  display: "flex",
-                  width: "50%",
-                  marginTop: "40px",
-                  transform: "rotate(90deg)",
-                  position: "absolute",
-                  top: 416,
-                  left: -505,
-                  zIndex: -2,
+                  // backgroundSize: "100%",
+                  // backgroundRepeat: "no-repeat",
+                  // backgroundPosition: "left",
+                  // display: "flex",
+                  // width: "50%",
+                  // marginTop: "40px",
+                  // transform: "rotate(90deg)",
+                  // position: "absolute",
+                  // top: 416,
+                  // left: -505,
+                  // zIndex: -2,
                 }}
               />
             </div>
@@ -100,14 +95,7 @@ export default function Main() {
 
                 <h6
                   className="short-text"
-                  // style={{
-                  //   textAlign: "left",
-                  //   marginLeft: "7%",
-                  //   //marginTop: "-4%",
-                  //   padding: "3%",
-                  //   fontSize: "90%",
-                  //   fontWeight: "200",
-                  // }}
+                  
                 >
                   Customer Education | Learning Experience Designer | eLearning
                   Developer | Adult Learning Specialist | Learning Analytics |
@@ -121,12 +109,7 @@ export default function Main() {
             >
               <div
                 className="link-items"
-                // style={{
-                //   display: "flex",
-                //   alignItems: "flex-end",
-                //   marginLeft: "450px",
-                //   fontSize: "35px",
-                // }}
+                
               >
                 <a
                   href="/Login"
@@ -166,7 +149,7 @@ export default function Main() {
               </div>
               <ul className="list-unstyled"></ul>
             </section>
-          {/* </div> */}
+          
         </div>
 
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel" >

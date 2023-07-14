@@ -192,24 +192,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
         }
 
   
-    /* @media (max-width: 391px) {
-      .text-start {
-        font-size: 80%;
-        width: 100%;
-        height: 500px;
-        
-        margin-bottom: 90px;
-        }
-      } */
-
-      /* style={{
-        textAlign: "left",
-        marginLeft: "7%",
-        //marginTop: "-4%",
-        padding: "3%",
-        fontSize: "90%",
-        fontWeight: "200", */
-
+    
 .short-text {
   text-align: left;
   margin-left: 7%;
@@ -222,11 +205,13 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 
       @media (max-width: 391px) {
         .short-text {
-          font-size: 70% !important;
+          font-size: 70% ;
           width: 100%;
           height: 100px;
-          margin-left: 5% !important;
-          
+          padding: 3%;
+          margin-right: 20px;
+          margin-left: 1%;
+          margin-bottom: -30px;
           }
         }
 
@@ -243,37 +228,54 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   height: 185%;
 }
 
-.flow-background-1{
+
+
+.flow-container.flow-background-1{
   height: 31%;
   object-fit: cover; 
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-top: 15px;
+  display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 391px) {
   .flow-background-1{
-    display: none;
-  }
-}
-
-@media (min-width: 1641px) {
-  .flow-background-1 {
     display: absolute;
   }
 }
-
-.flow-background-2{
-  width: 60%;
-  height: 33%;
-  margin-left: 3%;
-  object-fit: cover; 
+@media (max-width: 845px) {
+  .flow-background-1{
+    display: absolute;
+    margin-top: 20px;
+  }
 }
 
-@media (max-width: 768px) {
+
+.flow-background-2 {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+  display: flex;
+  width: 50%;
+  height: 33%;
+  margin-top: 46.5px;
+  margin-left: -450px;
+  object-fit: cover;
+  transform: rotate(90deg);
+  position: absolute;
+  /* top: 416; */
+  z-index: -2; 
+}
+
+@media (max-width: 391px) {
   .flow-background-2{
     display: none;
   }
 }
 
-@media (min-width: 1641px) {
+@media (max-width: 845px) {
   .flow-background-2 {
     display: none;
   }
