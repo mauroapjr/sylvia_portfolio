@@ -100,10 +100,11 @@ export default function Main() {
         <div className="container">
            
                 <h3
-                  className="lead text-body-secondary"
+                  className="long-text"
                   style={{
                     textAlign: "left",
-                    marginLeft: "10%",                    
+                    marginLeft: "10%",
+                    marginRight: "10%",
                     fontSize: "25px",
                   }}
                 >
@@ -119,13 +120,14 @@ export default function Main() {
                 </h3>
 
                 <h6
-                  className="fw-light"
+                  className="short-text"
                   style={{
                     textAlign: "left",
                     marginLeft: "10%",
                     marginTop: "-1%",
                     padding: "5%",
                     fontSize: "90%",
+                    fontWeight: "200",
                   }}
                 >
                   Customer Education | Learning Experience Designer | eLearning
