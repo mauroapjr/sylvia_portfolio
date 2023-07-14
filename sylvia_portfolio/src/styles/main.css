@@ -136,6 +136,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
     @media (max-width: 391px) {
       .long-text {
         font-size: 90% !important;
+        font-weight: 300;
         width: 90%;
         height: 150px;
          
@@ -214,14 +215,14 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 }
 
 .profile-image-container {
-  position: relative; /* Add position relative to the container */
-  z-index: 1; /* Set a higher z-index to bring the profile image in front */
+  position: relative; 
+  z-index: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 0.8%; /* Adjust the margin value as needed */
-  margin-left: -2%;
-  width: 70%;
+  margin-top: 0.8%; 
+  margin-left: 2%;
+  width: 65%;
 }
 
 .profile-image {
@@ -259,6 +260,13 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   z-index: 1; 
 }
 
+@media (max-width: 391px) {
+  .sylvia-logo-main{
+    width: 120%;
+    margin-left: 40px;
+  }
+}
+
 .link-items {
   color: rgb(13, 13, 13);
   display: flex;
@@ -285,17 +293,63 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 
 .carousel-caption {
   text-align: center !important;
+  /* width: 100%; */
 }
 
-.carousel-item:first-child .carousel-caption {
-  width: 10% !important;
-  background-position: left center !important;
+/* @media(max-width: 391px) {
+  .carousel-inner {
+    width: 150% !important;
+    
+  }
+} */
+
+/* .carousel-inner {
+  width: 250%;
+} */
+
+@media(max-width: 391px) {
+  .carousel-caption {
+    width: 30% !important;
+    
+  }
 }
 
-.footer-dark-grey {
+.carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+@media(max-width: 391px) {
+  .carousel-indicators {
+    margin-bottom: 1% !important;    
+  }
+}
+
+.list-unstyled {
+  display: flex;
+  justify-content: end;
+}
+
+@media(max-width: 391px) {
+  .list-unstyled {
+    margin-bottom: 10% !important;
+    margin-top: 10% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+@media(max-width: 391px) {
+  .mx-3 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* .footer-dark-grey {
   background-color: #f8f9fa;
-}
+} */
 
-.list-unstyled{
+/* .list-unstyled{
   margin-right: 0%;
-}
+} */

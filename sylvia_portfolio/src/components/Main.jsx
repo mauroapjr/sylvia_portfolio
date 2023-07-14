@@ -38,9 +38,9 @@ export default function Main() {
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-      <header data-bs-theme="dark">
+      <header >
         <nav className="navbar navbar-expand-lg navbar-dark">
-          <div className="container-fluid">
+          {/* <div className="container-fluid"> */}
             <a className="navbar-brand" href="/">
               <div className="profile-image-container">
                 <img
@@ -92,7 +92,7 @@ export default function Main() {
                 }}
               />
             </div>
-          </div>
+          {/* </div> */}
         </nav>
       </header>
 
@@ -257,7 +257,7 @@ export default function Main() {
                   className="carousel-caption text-start"
                   style={{
                     backgroundImage: `url(${Alteryx})`,
-                    width: "50%",
+                    width: "30%",
                     height: "100px",
                     backgroundSize: "contain",
                     backgroundPosition: "center center",
@@ -288,7 +288,7 @@ export default function Main() {
                   className="carousel-caption"
                   style={{
                     backgroundImage: `url(${Movidaria})`,
-                    width: "10%",
+                    width: "40%",
                     height: "100px",
                     backgroundSize: "contain",
                     backgroundPosition: "center",
@@ -321,7 +321,8 @@ export default function Main() {
                   style={{
                     backgroundImage: `url(${CTC})`,
                     width: "10%",
-                    height: "100px",
+                    height: "80px",
+                    marginBottom: "10px",
                     backgroundSize: "contain",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
@@ -383,9 +384,9 @@ export default function Main() {
                   className="carousel-caption text-end"
                   style={{
                     backgroundImage: `url(${RoyalConservatory})`,
-                    width: "15%",
-                    height: "100px",
-                    backgroundSize: "contain",
+                    width: "150%",
+                    height: "120px",
+                    backgroundSize: "100% auto",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
@@ -422,16 +423,16 @@ export default function Main() {
 
       <footer
         className="text-body-secondary"
-        style={{ backgroundColor: "#9EBA99", padding: "1% 0", height: "40%" }}
+        style={{ backgroundColor: "#9EBA99", padding: "1% 0", height: "50%" }}
       >
         
         <div className="container">
           <div className="row">
             
-              <ul className="list-unstyled d-flex justify-content-end">
-                {" "}
+              <ul className="list-unstyled">
+                
                 <li className="mx-3">
-                  {" "}
+                  
                   <a
                     href="https://www.linkedin.com/in/sylviabpereira/"
                     className="text-white"
@@ -444,7 +445,7 @@ export default function Main() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  {" "}
+                  
                   <a
                     href="mailto:sylvia.bachiegga@hotmail.com"
                     className="text-white"
@@ -457,7 +458,7 @@ export default function Main() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  {" "}
+                 
                   <a href="#" className="text-white">
                     <FontAwesomeIcon
                       icon={faFileLines}
@@ -467,7 +468,7 @@ export default function Main() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  {" "}
+                 
                   <a href="/Admin" className="text-white">
                     <FontAwesomeIcon
                       icon={faToolbox}
@@ -485,11 +486,11 @@ export default function Main() {
         </div>
       </footer>
 
-      <script
+      {/* <script
         src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossOrigin="anonymous"
-      ></script>
+      ></script> */}
     </>
   );
 }
