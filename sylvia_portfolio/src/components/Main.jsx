@@ -85,12 +85,7 @@ export default function Main() {
            
                 <h3
                   className="long-text"
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "7%",
-                    marginRight: "10%",
-                    fontSize: "25px",
-                  }}
+                  
                 >
                   I am a lifelong learner driven by an insatiable curiosity and
                   a tenacious spirit. People would describe me as a dedicated
@@ -105,14 +100,14 @@ export default function Main() {
 
                 <h6
                   className="short-text"
-                  style={{
-                    textAlign: "left",
-                    marginLeft: "7%",
-                    marginTop: "-4%",
-                    padding: "3%",
-                    fontSize: "90%",
-                    fontWeight: "200",
-                  }}
+                  // style={{
+                  //   textAlign: "left",
+                  //   marginLeft: "7%",
+                  //   //marginTop: "-4%",
+                  //   padding: "3%",
+                  //   fontSize: "90%",
+                  //   fontWeight: "200",
+                  // }}
                 >
                   Customer Education | Learning Experience Designer | eLearning
                   Developer | Adult Learning Specialist | Learning Analytics |
@@ -122,25 +117,16 @@ export default function Main() {
 
             <section
               className="box-right"
-              style={{
-                backgroundColor: "rgb(200, 200, 200)",
-                width: "40%",
-                   
-                marginLeft: "auto",                
-                marginBottom: "1%",
-                zIndex: 0,
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
+              
             >
               <div
                 className="link-items"
-                style={{
-                  display: "flex",
-                  alignItems: "flex-end",
-                  marginLeft: "450px",
-                  fontSize: "35px",
-                }}
+                // style={{
+                //   display: "flex",
+                //   alignItems: "flex-end",
+                //   marginLeft: "450px",
+                //   fontSize: "35px",
+                // }}
               >
                 <a
                   href="/Login"
