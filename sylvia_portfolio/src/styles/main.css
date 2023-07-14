@@ -116,22 +116,41 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 
 @media (max-width: 391px) {
   .box-right {
-    width: 90% !important;
-    height: 400px;
-    margin-left: -2px !important; 
+    width: 80% !important;
+    height: 320px;
+    margin-left: 10px !important; 
   
     }
   }
 
+  @media (max-width: 845px) {
+    .box-right {
+      width: 60% !important;
+      height: 300px;
+      margin-left: 10px !important; 
+      margin-top: 30px !important;
+      }
+    }
+
   @media (max-width: 391px) {
     .link-items {
       width: 80% !important;
-      height: 330px;
+      height: 320px;
       margin-left: 0 !important;
       margin-right: 8px; 
       font-size: 130% !important;
       }
     }
+
+    @media (max-width: 845px) {
+      .link-items {
+        width: 80% !important;
+        height: 200px;
+        margin-left: 0 !important;
+        margin-right: 8px; 
+        font-size: 130% !important;
+        }
+      }
 
     @media (max-width: 391px) {
       .long-text {

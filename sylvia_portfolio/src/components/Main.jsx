@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-import  { ProtectedRoute } from "../index.js";
-
 
 import "../styles/main.css";
-import Login from "./Login";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -22,25 +19,12 @@ import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 export default function Main() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
-
+  
   return (
     <>
-      <link
-        rel="canonical"
-        href="https://getbootstrap.com/docs/5.3/examples/album/"
-      ></link>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-      ></link>
-      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
       <header >
         <nav className="navbar navbar-expand-lg navbar-dark">
-          {/* <div className="container-fluid"> */}
+          
             <a className="navbar-brand" href="/">
               <div className="profile-image-container">
                 <img
@@ -92,7 +76,7 @@ export default function Main() {
                 }}
               />
             </div>
-          {/* </div> */}
+          
         </nav>
       </header>
 
@@ -103,7 +87,7 @@ export default function Main() {
                   className="long-text"
                   style={{
                     textAlign: "left",
-                    marginLeft: "10%",
+                    marginLeft: "7%",
                     marginRight: "10%",
                     fontSize: "25px",
                   }}
@@ -123,9 +107,9 @@ export default function Main() {
                   className="short-text"
                   style={{
                     textAlign: "left",
-                    marginLeft: "10%",
+                    marginLeft: "7%",
                     marginTop: "-1%",
-                    padding: "5%",
+                    padding: "3%",
                     fontSize: "90%",
                     fontWeight: "200",
                   }}
@@ -141,7 +125,7 @@ export default function Main() {
               style={{
                 backgroundColor: "rgb(200, 200, 200)",
                 width: "40%",
-                //height: "50%",                
+                   
                 marginLeft: "auto",                
                 marginTop: "-14.5%",
                 marginBottom: "1%",
@@ -288,7 +272,7 @@ export default function Main() {
                   className="carousel-caption"
                   style={{
                     backgroundImage: `url(${Movidaria})`,
-                    width: "40%",
+                    width: "20%",
                     height: "100px",
                     backgroundSize: "contain",
                     backgroundPosition: "center",
@@ -384,7 +368,7 @@ export default function Main() {
                   className="carousel-caption text-end"
                   style={{
                     backgroundImage: `url(${RoyalConservatory})`,
-                    width: "150%",
+                    width: "20%",
                     height: "120px",
                     backgroundSize: "100% auto",
                     backgroundPosition: "center",
@@ -427,11 +411,11 @@ export default function Main() {
       >
         
         <div className="container">
-          <div className="row">
+          <div className="row" >
             
-              <ul className="list-unstyled">
+              <ul className="list-unstyled" >
                 
-                <li className="mx-3">
+                <li className="mx-3" >
                   
                   <a
                     href="https://www.linkedin.com/in/sylviabpereira/"
@@ -440,7 +424,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2xl"
-                      style={{ color: "#000000" }}
+                      style={{ color: "#343a40" }}
                     />
                   </a>
                 </li>
@@ -453,7 +437,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faEnvelope}
                       size="2xl"
-                      style={{ color: "#000000" }}
+                      style={{ color: "#343a40" }}
                     />
                   </a>
                 </li>
@@ -463,7 +447,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faFileLines}
                       size="2xl"
-                      style={{ color: "#000000" }}
+                      style={{ color: "#343a40" }}
                     />
                   </a>
                 </li>
@@ -473,7 +457,7 @@ export default function Main() {
                     <FontAwesomeIcon
                       icon={faToolbox}
                       size="2xl"
-                      style={{ color: "#000000" }}
+                      style={{ color: "#343a40" }}
                     />
                   </a>
                 </li>
