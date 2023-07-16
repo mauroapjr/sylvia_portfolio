@@ -23,7 +23,7 @@ export default function Main() {
   return (
     <>
       <header >
-        <nav className="navbar navbar-expand-lg navbar-dark">
+        <nav className="navbar">
           
             <a className="navbar-brand" href="/">
               <div className="profile-image-container">
@@ -57,17 +57,7 @@ export default function Main() {
                 alt="Background 2"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
-                  // backgroundSize: "100%",
-                  // backgroundRepeat: "no-repeat",
-                  // backgroundPosition: "left",
-                  // display: "flex",
-                  // width: "50%",
-                  // marginTop: "40px",
-                  // transform: "rotate(90deg)",
-                  // position: "absolute",
-                  // top: 416,
-                  // left: -505,
-                  // zIndex: -2,
+                  
                 }}
               />
             </div>
@@ -86,12 +76,13 @@ export default function Main() {
                   a tenacious spirit. People would describe me as a dedicated
                   and energetic individual who fearlessly takes on new
                   challenges and explores innovative avenues to achieve success.
-                  Throughout the years, I have immersed myself in diverse
+                  
+                </h3>
+                <h3 className="long-text">Throughout the years, I have immersed myself in diverse
                   fields, from music to data analysis, from academic high-school
                   courses to customer education. My passion lies in learning and
                   development, and I am always up to talk about education
-                  projects.
-                </h3>
+                  projects.</h3>
 
                 <h6
                   className="short-text"
@@ -272,7 +263,7 @@ export default function Main() {
                   className="carousel-caption"
                   style={{
                     backgroundImage: `url(${CTC})`,
-                    width: "10%",
+                    width: "20%",
                     height: "80px",
                     marginBottom: "10px",
                     backgroundSize: "contain",
@@ -305,7 +296,7 @@ export default function Main() {
                   className="carousel-caption"
                   style={{
                     backgroundImage: `url(${TVO})`,
-                    width: "10%",
+                    width: "20%",
                     height: "100px",
                     backgroundSize: "contain",
                     backgroundPosition: "center",
@@ -338,7 +329,7 @@ export default function Main() {
                     backgroundImage: `url(${RoyalConservatory})`,
                     width: "20%",
                     height: "120px",
-                    backgroundSize: "100% auto",
+                    backgroundSize: "40% auto",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
