@@ -329,7 +329,7 @@ export default function Main() {
                     backgroundImage: `url(${RoyalConservatory})`,
                     width: "20%",
                     height: "120px",
-                    backgroundSize: "40% auto",
+                    backgroundSize: "90% auto",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}

@@ -88,11 +88,11 @@
   object-fit: cover; 
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .flow-background-1{
     display: none;
   }
-}
+} */
 
 @media (min-width: 1641px) {
   .flow-background-1 {
