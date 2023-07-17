@@ -10,63 +10,52 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-
-
 import ProfilePicture from "../images/Profile_picture.jpg";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
-
 function About() {
   return (
     <>
-      
-        {/* <link
-          rel="canonical"
-          href="https://getbootstrap.com/docs/5.3/examples/album/"
-        ></link>
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-        ></link>
-        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> */}
-
-        <header data-bs-theme="dark">
+      <header data-bs-theme="dark">
         <nav className="navbar">
-         
-            <a className="navbar-brand" href="/">
-              <div className="sylvia-logo-container-about">
-                <img
-                  className="sylvia-logo-about"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
-              </div>
-            </a>
-
-            <div className="flow-container-about">
+          <a className="navbar-brand" href="/">
+            <div className="sylvia-logo-container-about">
               <img
-                className="flow-background-about"
-                src={FlowBackground}
-                alt="Background about"
-                style={{
-                  backgroundImage: `url(${FlowBackground})`,
-                  
-                }}
+                className="sylvia-logo-about"
+                src={SylviaLogo}
+                alt="Sylvia Logo"
               />
             </div>
-         
+          </a>
+
+          <div className="flow-container-about">
+            <img
+              className="flow-background-about"
+              src={FlowBackground}
+              alt="Background about"
+              style={{
+                backgroundImage: `url(${FlowBackground})`,
+              }}
+            />
+          </div>
         </nav>
       </header>
+
       <main>
         <div className="profile-picture-container">
-          <img className="profile-picture-about" src={ProfilePicture} alt="picture" />
+          <img
+            className="profile-picture-about"
+            src={ProfilePicture}
+            alt="picture"
+          />
         </div>
         <div className="about-text-container">
           <div className="col-lg-6 col-md-8 mx-auto">
-            <p className="about-text-top" style={{ color: "black", width: "100%" }}>
+            <p
+              className="about-text-top"
+              style={{ color: "black", width: "100%" }}
+            >
               I have dedicated my time to learn some different things in the
               last few years, from music to data analysis, from academic
               high-school courses to customer enablement, I consider myself a
@@ -78,7 +67,10 @@ function About() {
               instructional design methodologies, and evaluation processes when
               conducting the development of learning programs.
             </p>
-            <p className="about-text-top" style={{ color: "black", width: "100%" }}>
+            <p
+              className="about-text-top"
+              style={{ color: "black", width: "100%" }}
+            >
               As an accomplished and creative professional, one of my strengths
               is to work closely with learners and help them to achieve their
               goals through effective strategies, while ensuring their journey
@@ -195,15 +187,13 @@ function About() {
         <p>
           <a href="#">Back to top</a>
         </p>
-        
+
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-md-7 py-4"></div>
             <div className="col-sm-4 offset-md-1 py-4">
               <ul className="list-unstyled d-flex justify-content-end">
-                {" "}
                 <li className="mx-3">
-                  {" "}
                   <a
                     href="https://www.linkedin.com/in/sylviabpereira/"
                     className="text-white"
@@ -216,7 +206,6 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  {" "}
                   <a
                     href="mailto:sylvia.bachiegga@hotmail.com"
                     className="text-white"
@@ -229,7 +218,6 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  {" "}
                   <a href="#" className="text-white">
                     <FontAwesomeIcon
                       icon={faFileLines}
@@ -239,7 +227,6 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  {" "}
                   <a href="/Admin" className="text-white">
                     <FontAwesomeIcon
                       icon={faToolbox}
