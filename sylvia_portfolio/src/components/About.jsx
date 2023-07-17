@@ -21,7 +21,7 @@ function About() {
   return (
     <>
       
-        <link
+        {/* <link
           rel="canonical"
           href="https://getbootstrap.com/docs/5.3/examples/album/"
         ></link>
@@ -31,13 +31,13 @@ function About() {
         ></link>
         <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> */}
 
         <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark">
-          <div className="container-fluid">
+        <nav className="navbar">
+         
             <a className="navbar-brand" href="/">
-              <div className="sylvia-logo-container">
+              <div className="sylvia-logo-container-about">
                 <img
                   className="sylvia-logo-about"
                   src={SylviaLogo}
@@ -46,27 +46,23 @@ function About() {
               </div>
             </a>
 
-            <div className="flow-container-1">
+            <div className="flow-container-about">
               <img
-                className="flow-background-1"
+                className="flow-background-about"
                 src={FlowBackground}
-                alt="Background 1"
+                alt="Background about"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
-                  backgroundSize: "120%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right",
-                  marginTop: "15px",
-                  display: "flex",
+                  
                 }}
               />
             </div>
-          </div>
+         
         </nav>
       </header>
       <main>
         <div className="profile-picture-container">
-          <img className="profile-picture" src={ProfilePicture} alt="picture" />
+          <img className="profile-picture-about" src={ProfilePicture} alt="picture" />
         </div>
         <div className="about-text-container">
           <div className="col-lg-6 col-md-8 mx-auto">

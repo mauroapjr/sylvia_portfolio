@@ -22,7 +22,7 @@ import InstDesigner from "../images/inst_designer.png";
 initializeIcons();
 
 function Portfolio({ isAuthenticated }) {
-  const navigate = useNavigate(); // handle youtube video
+  const navigate = useNavigate(); // to handle youtube video
 
   const handleClick = () => {
     navigate("/VideoPage");

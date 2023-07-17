@@ -1,41 +1,91 @@
+.flow-background-about {
+  height: 250px ;
+  width: 100vw;
+  margin-top: -75px;
+}
+@media (max-width: 391px) {
+  .flow-background-about{
+   object-fit:cover;
+  }
+}
+
+
 .profile-picture-container {
   display: flex;
   justify-content: center;
 }
-
-.profile-picture {
+.profile-picture-about {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
+  margin-top: 50px;
+}
+@media (max-width: 391px) {
+  .profile-picture-about{
+    width: 40%;
+    height: 40%;
+  }
 }
 
-.sylvia-logo-container{
+
+
+.navbar {
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+.sylvia-logo-container-about{
+  position: relative;
+  z-index: 1;
+  height: 30px;
 }
 .sylvia-logo-about {
-  height: auto;
-  width: 30%;
-  margin-top: 3%;
-  margin-bottom: 15%;
-  z-index: 1; 
+  width: 350px;
 }
+@media (max-width: 391px) {
+  .sylvia-logo-about{
+    width: 100% !important;
+  }
+}
+@media (max-width: 391px) {
+  .sylvia-logo-container-about{
+    display: flex;
+    justify-content: center;  
+    top: 40px;
+  }
+}
+
 
 .about-text-container {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
-
 .about-text-top{
   justify-items: center;
   font-size: 160%;
 }
-
 .about-text-bottom {
   margin-top: 10%;
   margin-bottom: 20%;  
   font-size: 130%;
+}
+@media (max-width: 391px) {
+  .about-text-top{
+    padding: 10px;
+  }
+}
+@media (max-width: 391px) {
+  .about-text-bottom{
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 391px) {
+  .head-items {
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+  }
 }
