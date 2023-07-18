@@ -1,28 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/main.css";
 import "../styles/portfolio.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { ProtectedRoute } from "../index.js";
 
 import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
-import {
-  DocumentCard,
-  DocumentCardPreview,
-  DocumentCardTitle,
-} from "@fluentui/react";
 
 import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 import InstDesigner from "../images/inst_designer.png";
+import PPTPage from "./PPTPage";
 
 initializeIcons();
 
 function Portfolio({ isAuthenticated }) {
-  const navigate = useNavigate(); // to handle youtube video
+  const navigate = useNavigate(); // handle youtube video
+  const [showPdf, setShowPdf] = useState(false);
+  const pdfUrl = "../images/mauroPereiraPresentation.pdf"; // handle PDF file
 
   const handleClick = () => {
     navigate("/VideoPage");
@@ -32,59 +29,16 @@ function Portfolio({ isAuthenticated }) {
     navigate("/StorylinePage");
   };
 
-  const handleClickPpt = () => {
-    navigate("/PPTPage");
+  // const handleClickPpt = () => {
+  //   navigate("/PPTPage");
+  // };
+
+  const handleShowPdf = () => {
+    setShowPdf(true);
   };
 
   return (
     <>
-      {/* <script src="../assets/js/color-modes.js"></script>
-
-      <link
-        rel="canonical"
-        href="https://getbootstrap.com/docs/5.3/examples/album/"
-      ></link>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-      ></link>
-
-      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
-      <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              <div className="sylvia-logo-container">
-                <img
-                  className="sylvia-logo-portfolio"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
-              </div>
-            </a>
-
-            <div className="flow-container-1">
-              <img
-                className="flow-background-1"
-                src={FlowBackground}
-                alt="Background 1"
-                style={{
-                  backgroundImage: `url(${FlowBackground})`,
-                  backgroundSize: "120%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right",
-                  marginTop: "15px",
-                  display: "flex",
-                }}
-              />
-            </div>
-          </div>
-        </nav>
-      </header> */}
-
       <header data-bs-theme="dark">
         <nav className="navbar">
           <a className="navbar-brand" href="/">
@@ -109,6 +63,7 @@ function Portfolio({ isAuthenticated }) {
           </div>
         </nav>
       </header>
+
       <main>
         <div className="container-fluid">
           <div className="row">
@@ -241,6 +196,20 @@ function Portfolio({ isAuthenticated }) {
                   }}
                 ></div>
                 <div className="btn-group">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-secondary"
+                    onClick={handleShowPdf}
+                    style={{
+                      marginBottom: "40%",
+                      backgroundColor: "#245953",
+                      color: "white",
+                    }}
+                  >
+                    Watch Video
+                  </button>
+                </div>
+                {/* <div className="btn-group">
                   <DocumentCard onClick={handleClickPpt}>
                     <DocumentCardPreview
                       previewImages={[
@@ -255,7 +224,7 @@ function Portfolio({ isAuthenticated }) {
                     />
                     <DocumentCardTitle title="Watch Presentation" />
                   </DocumentCard>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -295,6 +264,18 @@ function Portfolio({ isAuthenticated }) {
             </div>
           </div>
         </div>
+
+
+
+        <div>
+      <h1>Portfolio Page</h1>
+      <button onClick={handleShowPdf}>Show PDF</button>
+      {showPdf && <PPTPage pdfUrl={pdfUrl} />}
+    </div>
+
+
+
+
       </main>
 
       <footer className="container py-5">

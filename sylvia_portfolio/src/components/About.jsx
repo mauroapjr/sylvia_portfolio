@@ -193,7 +193,9 @@ function About() {
             <div className="col-sm-8 col-md-7 py-4"></div>
             <div className="col-sm-4 offset-md-1 py-4">
               <ul className="list-unstyled d-flex justify-content-end">
+               
                 <li className="mx-3">
+                  
                   <a
                     href="https://www.linkedin.com/in/sylviabpereira/"
                     className="text-white"
@@ -206,6 +208,7 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
+                  
                   <a
                     href="mailto:sylvia.bachiegga@hotmail.com"
                     className="text-white"
@@ -218,6 +221,7 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
+                  
                   <a href="#" className="text-white">
                     <FontAwesomeIcon
                       icon={faFileLines}
@@ -227,6 +231,7 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
+                 
                   <a href="/Admin" className="text-white">
                     <FontAwesomeIcon
                       icon={faToolbox}
