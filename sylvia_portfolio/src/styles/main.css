@@ -114,7 +114,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   margin-left: 0 !important; 
   }
 }
-@media (max-width: 391px) {
+@media (max-width: 415px) {
   .box-right {
     width: 80% !important;
     height: 320px;
@@ -139,7 +139,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
       margin-left: 450px;
       font-size: 35px;
     }
-  @media (max-width: 391px) {
+  @media (max-width: 415px) {
     .link-items {
       width: 80% !important;
       height: 320px;
@@ -168,7 +168,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
       font-weight: 200;
       word-spacing: 2px;
     }
-      @media (max-width: 391px) {
+      @media (max-width: 415px) {
       .long-text {
         font-size: 90% !important;
         font-weight: 300;
@@ -196,7 +196,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   font-size: 90%;
   font-weight: 200;
 }
-  @media (max-width: 391px) {
+  @media (max-width: 415px) {
     .short-text {
       font-size: 70% ;
       width: 100%;
@@ -244,7 +244,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   display: flex;  
 } */
 
-@media (max-width: 391px) {
+@media (max-width: 415px) {
   .flow-background-1{
     width: 100%;
     margin-left: 10% !important;
@@ -289,7 +289,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   /* top: 416; */
   z-index: -2; 
 }
-@media (max-width: 391px) {
+@media (max-width: 415px) {
   .flow-background-2{
     display: none;
   }
@@ -347,7 +347,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   margin-left: 5%;
   z-index: 1; 
 }
-@media (max-width: 391px) {
+@media (max-width: 415px) {
   .sylvia-logo-main{
     width: 110% !important;
     margin-left: 60px !important;
@@ -373,7 +373,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   margin-bottom: 180px;
   margin-top: 180px;
 } 
-@media (max-width: 418px) {
+@media (max-width: 415px) {
   .link-items {
     display: flex;
     flex-direction: column;
@@ -403,7 +403,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   width: 250%;
 } */
 
-@media(max-width: 391px) {
+@media(max-width: 415px) {
   .carousel-caption {
     width: 20%;
     /* background-size: 90% !important; */
@@ -422,7 +422,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   height: 100%;
 }
 
-@media(max-width: 391px) {
+@media(max-width: 415px) {
   .carousel-indicators {
     margin-bottom: 1% !important;    
   }
@@ -433,7 +433,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   justify-content: end;
 }
 
-@media(max-width: 391px) {
+@media(max-width: 415px) {
   .list-unstyled {
     margin-bottom: 10% !important;
     margin-top: 10% !important;
@@ -442,7 +442,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   }
 }
 
-@media(max-width: 391px) {
+@media(max-width: 415px) {
   .mx-3 {
     display: flex;
     justify-content: center;

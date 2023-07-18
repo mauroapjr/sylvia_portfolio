@@ -2,7 +2,7 @@ import React from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-const pdfUrl = "src\images\mauroPereiraPresentation.pdf"; // handle PDF file
+// const pdfUrl = "src\images\mauroPereiraPresentation.pdf"; // handle PDF file
 
 function PPTPage({ pdfUrl }) {
   
@@ -16,6 +16,59 @@ function PPTPage({ pdfUrl }) {
 }
 
 export default PPTPage;
+
+
+
+
+
+
+// import React, { useEffect } from "react";
+// import "../styles/main.css";
+// //import "../styles/ppt-page.css"; // Create a separate CSS file for PPTPage
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import { pdfjs } from "react-pdf";
+// import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.js";
+
+// pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+// function PPTPage({ pdfUrl }) {
+//   useEffect(() => {
+//     const loadPdf = async () => {
+//       try {
+//         const loadingTask = pdfjs.getDocument(pdfUrl);
+//         const pdf = await loadingTask.promise;
+//         const pageNumber = 1; // Adjust this value to change the displayed page number
+//         const page = await pdf.getPage(pageNumber);
+//         const scale = 1.5; // Adjust this value to change the zoom level
+//         const viewport = page.getViewport({ scale });
+//         const canvas = document.getElementById("pdf-canvas"); // Make sure you have a canvas element with id "pdf-canvas"
+//         const context = canvas.getContext("2d");
+//         canvas.height = viewport.height;
+//         canvas.width = viewport.width;
+//         const renderContext = {
+//           canvasContext: context,
+//           viewport: viewport,
+//         };
+//         await page.render(renderContext);
+//       } catch (error) {
+//         console.error("Error loading PDF:", error);
+//       }
+//     };
+//     loadPdf();
+//   }, [pdfUrl]);
+
+//   return (
+//     <>
+//       {/* Your header and navigation JSX here */}
+//       <div>
+//         <canvas id="pdf-canvas"></canvas>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default PPTPage;
 
 
 // import React from "react";

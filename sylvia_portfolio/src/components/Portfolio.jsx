@@ -29,10 +29,6 @@ function Portfolio({ isAuthenticated }) {
     navigate("/StorylinePage");
   };
 
-  // const handleClickPpt = () => {
-  //   navigate("/PPTPage");
-  // };
-
   const handleShowPdf = () => {
     setShowPdf(true);
   };
