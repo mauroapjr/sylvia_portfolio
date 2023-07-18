@@ -40,7 +40,7 @@ export default function Main() {
                   />
                 </div>
               </div>
-            </a>
+            
 
             <div className="flow-container">
               <img
@@ -51,7 +51,24 @@ export default function Main() {
                   backgroundImage: `url(${FlowBackground})`,
                 }}
               />
-              <img
+              {/* <img
+                className="flow-background-2"
+                src={FlowBackground}
+                alt="Background 2"
+                style={{
+                  backgroundImage: `url(${FlowBackground})`,
+                  
+                }}
+              /> */}
+            </div>
+          </a>
+        </nav>
+      </header>
+
+      <main>
+        <div className="container">
+          <div className="box-left">
+            <img
                 className="flow-background-2"
                 src={FlowBackground}
                 alt="Background 2"
@@ -61,12 +78,6 @@ export default function Main() {
                 }}
               />
             </div>
-          
-        </nav>
-      </header>
-
-      <main>
-        <div className="container">
            
                 <h3
                   className="long-text"

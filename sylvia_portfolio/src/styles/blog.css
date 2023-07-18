@@ -1,64 +1,87 @@
-.thumbnail-container {
-  background-size: cover;
-  background-position: center;
+.flow-background-blog {
+  height: 250px ;
+  width: 100vw;
+  margin-top: -415px;
+}
+@media (max-width: 391px) {
+  .flow-background-blog{
+   object-fit:cover;
+  }
 }
 
-.sylvia-logo-container{
+
+.navbar {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-.sylvia-logo-blog {
-  height: auto;
-  width: 30%;
-  margin-top: 3%;
-  margin-bottom: 15%;
-  z-index: 1; 
+.sylvia-logo-container-about{
+  position: relative;
+  z-index: 1;
+  height: 30px;
 }
+.sylvia-logo-about {
+  width: 350px;
+}
+@media (max-width: 391px) {
+  .sylvia-logo-about{
+    width: 100% !important;
+  }
+}
+@media (max-width: 391px) {
+  .sylvia-logo-container-about{
+    display: flex;
+    justify-content: center;  
+    top: 40px;
+  }
+}
+
 
 .post-content {
   display: none;
   width: 100%;
   padding: 2% !important;
 }
-
 .post-content.show {
   display: block;
   padding: 2% !important;
   margin-right: 2% !important;
 }
-
-.a.stretched-link .post-image {
+.a.stretched-link.post-image {
   max-width: 100% !important;
   max-height: 5% !important;
   width: auto !important;
   height: auto !important;
   padding: 2% !important;
 }
-
 .a.stretched-link.post-image::after {
-  padding: 2% !important;
+  padding: 50% !important;
+  margin-right: 25% !important;
 }
-
+.post-content {
+  max-width: 100%;
+}
 .post-row {
-  width: 110%;
+  width: 100%;
 }
-
-.expanded {
-  /* flex: 1 0 100%; */
+.expanded {  
   margin-right: -10% !important;
   width: 100%;
 }
 
+
 .p-2 {
   background-color: rgb(12, 12, 12);
-  width: 110%;
+  width: 100%;
   margin-top: 5%;
 }
 .p-4 {
   background-color: rgb(200, 200, 200);
 }
 .display-2 {
-  color: aliceblue;
+  color: aliceblue; 
 }
 
+.thumbnail-container {
+  background-size: cover;
+  background-position: center;
+}

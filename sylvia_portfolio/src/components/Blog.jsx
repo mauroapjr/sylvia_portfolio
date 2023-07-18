@@ -27,53 +27,33 @@ function Blog() {
 
   return (
     <>
-      {/* <link
-        rel="canonical"
-        href="https://getbootstrap.com/docs/5.3/examples/album/"
-      ></link>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-      ></link>
-
-      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> */}
-
       <header data-bs-theme="dark">
-        <nav className="navbar ">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              <div className="sylvia-logo-container">
-                <img
-                  className="sylvia-logo-blog"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
-              </div>
-            </a>
-
-            <div className="flow-container-1">
+        <nav className="navbar">
+          <a className="navbar-brand" href="/">
+            <div className="sylvia-logo-container-about">
               <img
-                className="flow-background-1"
-                src={FlowBackground}
-                alt="Background 1"
-                style={{
-                  backgroundImage: `url(${FlowBackground})`,
-                  // backgroundSize: "120%",
-                  // backgroundRepeat: "no-repeat",
-                  // backgroundPosition: "right",
-                  // marginTop: "15px",
-                  // display: "flex",
-                }}
+                className="sylvia-logo-about"
+                src={SylviaLogo}
+                alt="Sylvia Logo"
               />
             </div>
+          </a>
+
+          <div className="flow-container-about">
+            <img
+              className="flow-background-about"
+              src={FlowBackground}
+              alt="Background about"
+              style={{
+                backgroundImage: `url(${FlowBackground})`,
+              }}
+            />
           </div>
         </nav>
       </header>
 
       <main className="container">
-        <div className="p-2 p-md-5 mb-5 rounded">
+        <div className="black-box p-2 p-md-5 mb-5 rounded">
           <div className="col-md-6 px-0">
             <h1 className="display-2 fst-italic ">
               Here is where I share my thoutghs and ideas!
@@ -151,9 +131,8 @@ function Blog() {
               <div className="p-4 mb-3 bg-body-tertiary rounded">
                 <h4 className="fst-italic">About</h4>
                 <p className="mb-0">
-                  Customize this section to tell your visitors a little bit
-                  about your publication, writers, content, or something else
-                  entirely. Totally up to you.
+                  Sharing my ideas on my blog, exploring diverse topics with
+                  passion, and fostering a love for learning.
                 </p>
               </div>
             </div>

@@ -3,7 +3,7 @@ import "../styles/main.css";
 import "../styles/portfolio.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-//import  { ProtectedRoute } from "../index.js";
+import { ProtectedRoute } from "../index.js";
 
 import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
@@ -38,7 +38,7 @@ function Portfolio({ isAuthenticated }) {
 
   return (
     <>
-      <script src="../assets/js/color-modes.js"></script>
+      {/* <script src="../assets/js/color-modes.js"></script>
 
       <link
         rel="canonical"
@@ -81,6 +81,31 @@ function Portfolio({ isAuthenticated }) {
                 }}
               />
             </div>
+          </div>
+        </nav>
+      </header> */}
+
+      <header data-bs-theme="dark">
+        <nav className="navbar">
+          <a className="navbar-brand" href="/">
+            <div className="sylvia-logo-container-about">
+              <img
+                className="sylvia-logo-about"
+                src={SylviaLogo}
+                alt="Sylvia Logo"
+              />
+            </div>
+          </a>
+
+          <div className="flow-container-about">
+            <img
+              className="flow-background-about"
+              src={FlowBackground}
+              alt="Background about"
+              style={{
+                backgroundImage: `url(${FlowBackground})`,
+              }}
+            />
           </div>
         </nav>
       </header>
