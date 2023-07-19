@@ -18,9 +18,8 @@ initializeIcons();
 
 function Portfolio({ isAuthenticated }) {
   const navigate = useNavigate(); // handle youtube video
-  const [showPdf, setShowPdf] = useState(false);
-  const pdfUrl = "../images/mauroPereiraPresentation.pdf"; // handle PDF file
-
+  //const [showPdf, setShowPdf] = useState(false);
+  
   const handleClick = () => {
     navigate("/VideoPage");
   };
@@ -30,8 +29,12 @@ function Portfolio({ isAuthenticated }) {
   };
 
   const handleShowPdf = () => {
-    setShowPdf(true);
+    navigate("/PPTPage");
   };
+
+  // const handleShowPdf = () => {
+  //   setShowPdf(true);
+  // };
 
   return (
     <>
@@ -261,13 +264,13 @@ function Portfolio({ isAuthenticated }) {
           </div>
         </div>
 
+        
 
-
-        <div>
+        {/* <div>
       <h1>Portfolio Page</h1>
       <button onClick={handleShowPdf}>Show PDF</button>
       {showPdf && <PPTPage pdfUrl={pdfUrl} />}
-    </div>
+    </div> */}
 
 
 

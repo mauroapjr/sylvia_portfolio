@@ -16,9 +16,10 @@ app.use(express.json({ limit: "100mb" }));
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 
-app.get("/", (req, res) => {
-  res.send("helloWorld");
-});
+// app.get("/", (req, res) => {
+//   res.send("helloWorld");
+// });
+
 
 // ***** Password validation *****
 

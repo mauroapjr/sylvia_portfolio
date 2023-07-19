@@ -1,23 +1,45 @@
-import React from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+import React, { useState } from "react";
+import { Document, Page } from "react-pdf";
+import pdfFile from '../pdfFiles/mauroPereiraPresentation.pdf'
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-// const pdfUrl = "src\images\mauroPereiraPresentation.pdf"; // handle PDF file
-
-function PPTPage({ pdfUrl }) {
-  
+function PPTPage() {
+  const [numPages, setNumPages] = useState(null)
+  function onDocumentSuccess ({numPages}) {
+    setNumPages (numPages)
+  }
   return (
-    <div>
-      <Document file={pdfUrl}>
-        <Page pageNumber={1} />
-      </Document>
+    
+    <div style={{display: "flex", justifyContent: "center"}}>
+      <div style={{width: "700px", border: "2px solid gray"}}>
+        <Document file={pdfFile} onLoadSuccess={onDocumentSuccess}>
+          {
+            Array(numPages).fill().map((_, index) => (
+              <Page pageNumber={ index + 1 }></Page>
+            ))
+          }
+
+        </Document>
+      </div>
     </div>
-  );
+    
+  )
 }
 
-export default PPTPage;
+export default PPTPage
 
 
+// function PPTPage() {
+//   const pdfUrl = ; // handle PDF file
+//   return (
+//     <div>
+//       <Document file={pdfUrl}>
+//         <Page pageNumber={1} />
+//       </Document>
+//     </div>
+//   );
+// }
+
+// export default PPTPage;
 
 
 
