@@ -76,38 +76,31 @@ export default function Login({ setIsAuthenticated }) {
 
   return (
     <>
-      <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              <div className="sylvia-logo-container">
-                <img
-                  className="sylvia-logo-login"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
-              </div>
-            </a>
-
-            <div className="flow-container-1">
+    <header data-bs-theme="dark">
+        <nav className="navbar-login">
+          <a className="navbar-brand" href="/">
+            <div className="sylvia-logo-container-login">
               <img
-                className="flow-background-1"
-                src={FlowBackground}
-                alt="Background 1"
-                style={{
-                  backgroundImage: `url(${FlowBackground})`,
-                  backgroundSize: "120%",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right",
-                  marginTop: "15px",
-                  display: "flex",
-                }}
+                className="sylvia-logo-login"
+                src={SylviaLogo}
+                alt="Sylvia Logo"
               />
             </div>
+          </a>
+
+          <div className="flow-container-login">
+            <img
+              className="flow-background-login"
+              src={FlowBackground}
+              alt="Background login"
+              style={{
+                backgroundImage: `url(${FlowBackground})`,
+              }}
+            />
           </div>
         </nav>
       </header>
-
+      
       <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
   
         <div>

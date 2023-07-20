@@ -34,3 +34,44 @@
   align-items: center;
   align-content: center;
 } */
+.login-form {
+  margin-top: 20px;
+  
+}
+
+.flow-background-login {
+  height: 250px ;
+  width: 100vw;
+  margin-top: -75px;
+}
+@media (max-width: 415px) {
+  .flow-background-login{
+   object-fit:cover;
+  }
+}
+
+.sylvia-logo-container-login{
+  position: relative;
+  z-index: 1;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;  
+}
+.sylvia-logo-login {
+  width: 300px;
+  
+}
+@media (max-width: 415px) {
+  .sylvia-logo-login{
+    width: 55% !important;
+  }
+}
+@media (max-width: 897px) {
+  .sylvia-logo-container-login{
+    /* display: flex;
+    justify-content: center;   */
+    top: 30px;
+  }
+}
