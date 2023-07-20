@@ -276,7 +276,7 @@ export default function Admin(setIsAuthenticated) {
         </div>
       </section>
 
-      <div className="login-form">
+      <div className="login-admin-form">
         <div>
           {isRegistering ? (
             <h2>Create an Account</h2>
@@ -286,7 +286,7 @@ export default function Admin(setIsAuthenticated) {
 
           <Form
             name="normal_login"
-            className="login-form"
+            className="admin-login-form"
             initialValues={{
               remember: true,
             }}
@@ -354,16 +354,16 @@ export default function Admin(setIsAuthenticated) {
           <p>
             {isRegistering ? (
               <>
-                Already have an account?{" "}
+                Wanna go back to Login?{" "}
                 <Button type="link" onClick={handleToggleRegister}>
-                  Log in
+                  Click HERE
                 </Button>
               </>
             ) : (
               <>
-                Don't have an account?{" "}
+                Wanna register a new visitor?{" "}
                 <Button type="link" onClick={handleToggleRegister}>
-                  Register
+                  Click HERE
                 </Button>
               </>
             )}

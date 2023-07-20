@@ -1,3 +1,15 @@
+.flow-background-login {
+  height: 250px ;
+  width: 100vw;
+  margin-top: -75px;
+}
+@media (max-width: 415px) {
+  .flow-background-login{
+   object-fit:cover;
+  }
+}
+
+
 .quill-editor .ql-container {
   border-radius: 5px;
 }
@@ -20,4 +32,28 @@
 
 .author-label {
   font-size: 20px;
+}
+
+.login-admin-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  
+}
+.admin-login-form {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  align-items: center;
+
+}
+
+.login-form-button {
+  margin-left: 10px;
+}
+
+.delete-form-button {
+  margin-left: 10px;
+  background-color: brown;
 }
