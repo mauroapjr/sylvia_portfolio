@@ -14,6 +14,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "antd/dist/reset.css";
 import Login from "./Login";
 import DeleteUserForm from "./DeleteUserForm";
+import FlowBackground from "../images/Flow_backgroung.jpg";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+
 
 const { TextArea } = Input;
 
@@ -168,45 +171,32 @@ export default function Admin(setIsAuthenticated) {
 
   return (
     <>
-      <link
-        rel="canonical"
-        href="https://getbootstrap.com/docs/5.3/examples/album/"
-      ></link>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-      ></link>
-      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+<header data-bs-theme="dark">
+        <nav className="navbar">
+          <a className="navbar-brand" href="/">
+            <div className="sylvia-logo-container-about">
+              <img
+                className="sylvia-logo-about"
+                src={SylviaLogo}
+                alt="Sylvia Logo"
+              />
+            </div>
+          </a>
 
-      <header data-bs-theme="dark">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                aria-hidden="true"
-                className="me-2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                <circle cx="12" cy="13" r="4"></circle>
-              </svg>
-
-              <strong>Sylvia</strong>
-              <h6>Learning Experience Designer</h6>
-            </a>
+          <div className="flow-container-about">
+            <img
+              className="flow-background-about"
+              src={FlowBackground}
+              alt="Background about"
+              style={{
+                backgroundImage: `url(${FlowBackground})`,
+              }}
+            />
           </div>
         </nav>
       </header>
+      
       <section>
         <div
           className=""
