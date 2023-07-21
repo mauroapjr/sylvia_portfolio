@@ -53,10 +53,10 @@
   height: auto !important;
   padding: 2% !important;
 }
-.a.stretched-link.post-image::after {
+/* .a.stretched-link.post-image::after {
   padding: 50% !important;
   margin-right: 25% !important;
-}
+} */
 .post-content {
   max-width: 100%;
 }
