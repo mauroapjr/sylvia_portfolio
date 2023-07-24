@@ -93,6 +93,61 @@ app.post("/deleteUser", (req, res) => {
   });
 });
 
+// ***** Check Database users *****
+// import axios from "axios";
+// function fetchCredentialsTable() {
+//   axios
+//     .get("http://localhost:3001/log-credentials-table")
+//     .then((response) => {
+//       console.log("Credentials Table Content:");
+//       console.log(response.data); // The data received from the server (rows from the "credentials" table)
+//     })
+//     .catch((error) => {
+//       console.error("Failed to fetch credentials table content:", error);
+//     });
+// }
+
+// Call the function when needed (e.g., after successful registration)
+//fetchCredentialsTable();
+
+// function logCredentialsTable() {
+//   db.all("SELECT * FROM credentials", (err, rows) => {
+//     if (err) {
+//       console.error("Error fetching data from credentials table:", err);
+//     } else {
+//       console.log("Credentials Table Content:");
+//       console.log(rows);
+//     }
+//   });
+// }
+
+// app.post("/register", (req, res) => {
+//   const { username, password } = req.body;
+
+//   // Check if the username already exists in the database
+//   db.get(`SELECT * FROM credentials WHERE username = '${username}'`, (err, row) => {
+//     if (err) {
+//       throw err;
+//     }
+//     if (row) {
+//       res.send({ message: "Username already exists" });
+//     } else {
+//       db.run(
+//         `INSERT INTO credentials (username, password) VALUES ('${username}', '${password}')`,
+//         (err) => {
+//           if (err) {
+//             throw err;
+//           }
+//           res.send({ message: "User registered successfully!" });
+          
+//           // Log the content of the "credentials" table after successful registration
+//           logCredentialsTable();
+//         }
+//       );
+//     }
+//   });
+// });
+
 // ***** Blog Database *****
 
 app.get("/admin", (req, res) => {
