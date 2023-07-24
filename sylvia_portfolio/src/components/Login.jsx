@@ -16,6 +16,7 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
   //const [isFormVisible, setIsFormVisible] = useState(true);
   const navigate = useNavigate();
   const formRef = useRef(null);
+  
 
   const onFinish = (values) => {
     const { username, password } = values;
@@ -102,7 +103,7 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
       </header>
       
       <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-  
+      
         <div>
           {isRegistering ? (
             <h2>Create an Account</h2>
