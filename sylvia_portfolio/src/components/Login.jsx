@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
-import { Form, Input, Button, Modal } from "antd";
+import { Form, Input, Button, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 
@@ -10,7 +10,7 @@ import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 import "../styles/login.css";
 
-export default function Login({ setIsAuthenticated }) {
+export default function Login({ setIsAuthenticated, isAdminPage }) {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   //const [isFormVisible, setIsFormVisible] = useState(true);
@@ -56,23 +56,23 @@ export default function Login({ setIsAuthenticated }) {
     }
   };
 
-  // const handleToggleRegister = () => {
-  //   setIsRegistering(!isRegistering);
-  //   formRef.current.resetFields();
-  // };
+  const handleToggleRegister = () => {
+    setIsRegistering(!isRegistering);
+    formRef.current.resetFields();
+  };
 
-  // const handleDeleteUser = (username) => {
-  //   axios
-  //     .post("http://localhost:3001/deleteUser", { username })
-  //     .then((res) => {
-  //       console.log(res.data.message);
-  //       formRef.current.resetFields();
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  //   console.log("Deleting user:", username);
-  // };
+  const handleDeleteUser = (username) => {
+    axios
+      .post("http://localhost:3001/deleteUser", { username })
+      .then((res) => {
+        console.log(res.data.message);
+        formRef.current.resetFields();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    console.log("Deleting user:", username);
+  };
 
   return (
     <>
@@ -104,11 +104,11 @@ export default function Login({ setIsAuthenticated }) {
       <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
   
         <div>
-          {/* {isRegistering ? (
+          {isRegistering ? (
             <h2>Create an Account</h2>
-          ) : ( */}
+          ) : (
             <h2>Login to my Portfolio</h2>
-          {/* )} */}
+        )} 
 
           <Form
             name="normal_login"
@@ -157,12 +157,12 @@ export default function Login({ setIsAuthenticated }) {
                 type="primary"
                 htmlType="submit"
                 className="login-form-button"
-              > Login
-                {/* {isRegistering ? "Register" : "Log in"} */}
+              > 
+                {isRegistering ? "Register" : "Login"} 
               </Button>
             </Form.Item>
 
-            {/* <Form.Item>
+            <Form.Item>
               <div className="delete-form">
                 <Button
                   type="primary"
@@ -176,10 +176,10 @@ export default function Login({ setIsAuthenticated }) {
                   <DeleteUserForm handleDeleteUser={handleDeleteUser} />
                 )}
               </div>
-            </Form.Item> */}
+            </Form.Item>
           </Form>
 
-          {/* <p>
+          <p>
             {isRegistering ? (
               <>
                 Already have an account?{" "}
@@ -195,7 +195,7 @@ export default function Login({ setIsAuthenticated }) {
                 </Button>
               </>
             )}
-          </p> */}
+          </p>
         </div>
       </div>
     </>

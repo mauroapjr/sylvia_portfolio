@@ -26,6 +26,8 @@ export default function Admin(setIsAuthenticated) {
   const [base64data, setBase64data] = useState(null);
   const editorRef = useRef();
 
+  const isAdminPage = true;
+  
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const formRef = useRef(null);
@@ -40,6 +42,7 @@ export default function Admin(setIsAuthenticated) {
       .map((op) => op.insert.trim());
     setContent({ text: value, paragraphs: paragraphs });
   };
+
 
   const onFinishRegisterForm = (values) => {
     const { username, password } = values;
@@ -80,10 +83,48 @@ export default function Admin(setIsAuthenticated) {
     }
   };
     
-  const handleToggleRegister = () => {
-    setIsRegistering(!isRegistering);
-    formRef.current.resetFields();
-  };
+  // const handleToggleRegister = () => {
+  //   setIsRegistering(!isRegistering);
+  //   formRef.current.resetFields();
+  // };
+
+////////////////////////////////////////////////
+
+const handleToggleRegister = () => {
+  setIsRegistering(!isRegistering);
+  formRef.current.resetFields();
+};
+
+// Function to handle registration
+const handleRegister = (values) => {
+  const { username, password } = values;
+  axios
+    .post("http://localhost:3001/register", { username, password })
+    .then((res) => {
+      if (res.data.message === "User registered successfully") {
+        setIsRegistering(false);
+        formRef.current.resetFields();
+        alert("Registration successful! You can now log in.");
+      } else {
+        alert("Username already exists");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Registration failed");
+    });
+};
+
+
+
+//////////////////////////////////////////////////////
+
+
+
+
+
+
+
 
   const handleDeleteUser = (username) => {
     axios
@@ -284,6 +325,55 @@ export default function Admin(setIsAuthenticated) {
             <h2>Login to Your Account</h2>
           )}
 
+          {/* Conditionally render the RegistrationForm */}
+          {isRegistering ? (
+            <Login handleRegister={handleRegister} />
+          ) : (
+            <Form
+              name="normal_login"
+              className="admin-login-form"
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinishLoginForm}
+              ref={formRef}
+            >
+              {/* ... (existing login form content) */}
+            </Form>
+          )}
+
+          <p>
+            {isRegistering ? (
+              <>
+                Wanna go back to Login?{" "}
+                <Button type="link" onClick={handleToggleRegister}>
+                  Click HERE
+                </Button>
+              </>
+            ) : (
+              <>
+                Wanna register a new visitor?{" "}
+                <Button type="link" onClick={handleToggleRegister}>
+                  Click HERE
+                </Button>
+              </>
+            )}
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+      {/* <div className="login-admin-form">
+        <div>
+          {isRegistering ? (
+            <h2>Create an Account</h2>
+          ) : (
+            <h2>Login to Your Account</h2>
+          )}
+
           <Form
             name="normal_login"
             className="admin-login-form"
@@ -369,7 +459,7 @@ export default function Admin(setIsAuthenticated) {
             )}
           </p>
           </div>
-      </div>            
+      </div>             */}
     </>
   );
 }
