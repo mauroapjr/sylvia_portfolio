@@ -602,9 +602,10 @@ export default function Admin(setIsAuthenticated) {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const navigate = useNavigate();
+
   const formRef = useRef(null);
 
-  const isAdminPage = true;
+  // const isAdminPage = true;
   
   //const [isRegistering, setIsRegistering] = useState(false);
   //const [isDeleting, setIsDeleting] = useState(false);
@@ -622,44 +623,44 @@ export default function Admin(setIsAuthenticated) {
   };
 
 
-  const onFinishRegisterForm = (values) => {
-    const { username, password } = values;
-    if (isRegistering) {
-      // Registration logic
-      axios
-        .post("http://localhost:3001/register", { username, password })
-        .then((res) => {
-          if (res.data.message === "User registered successfully") {
-            setIsRegistering(false);
-            formRef.current.resetFields();
-            alert("Registration successful! You can now log in.");
-          } else {
-            alert("Username already exists");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Registration failed");
-        });
-    } else {
-      // Login logic
-      axios
-        .post("http://localhost:3001/validatePassword", { username, password })
-        .then((res) => {
-          if (res.data.validation) {
-            setIsAuthenticated(true);
-            formRef.current.resetFields();
-            navigate("/Portfolio");
-          } else {
-            alert("Password/username is not correct.");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Login failed");
-        });
-    }
-  };
+  // const onFinishRegisterForm = (values) => {
+  //   const { username, password } = values;
+  //   if (isRegistering) {
+  //     // Registration logic
+  //     axios
+  //       .post("http://localhost:3001/register", { username, password })
+  //       .then((res) => {
+  //         if (res.data.message === "User registered successfully") {
+  //           setIsRegistering(false);
+  //           formRef.current.resetFields();
+  //           alert("Registration successful! You can now log in.");
+  //         } else {
+  //           alert("Username already exists");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         alert("Registration failed");
+  //       });
+  //   } else {
+  //     // Login logic
+  //     axios
+  //       .post("http://localhost:3001/validatePassword", { username, password })
+  //       .then((res) => {
+  //         if (res.data.validation) {
+  //           setIsAuthenticated(true);
+  //           formRef.current.resetFields();
+  //           navigate("/Portfolio");
+  //         } else {
+  //           alert("Password/username is not correct.");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         alert("Login failed");
+  //       });
+  //   }
+  // };
     
   // const handleToggleRegister = () => {
   //   setIsRegistering(!isRegistering);
@@ -699,32 +700,53 @@ export default function Admin(setIsAuthenticated) {
 
 
 
-
-
-
-
-
-  const handleDeleteUser = (username) => {
+const handleDeleteUser = (username) => {
+  return new Promise((resolve, reject) => {
     axios
       .post("http://localhost:3001/deleteUser", { username })
       .then((res) => {
-        console.log(res.data.message);
+        const message = res.data.message;
         formRef.current.resetFields();
+        resolve({ message, username }); // Resolve the promise with the message and deleted username
       })
       .catch((error) => {
         console.error(error);
+        reject(error);
       });
     console.log("Deleting user:", username);
-  };
-  
-  // const onFinishLoginForm = (values) => {
-  //   handleToggleRegister(values.username);
-  //   console.log("VALUE USERNAME", values.username)
-  // };
+  });
+};
 
-  const onFinishDeleteForm = (values) => {
-    handleDeleteUser(values.username);
-  }
+const onFinishDeleteForm = (values) => {
+  handleDeleteUser(values.username)
+    .then((result) => {
+      const { message, username } = result;
+      alert(`User "${username}" has been deleted successfully. ${message}`);
+    })
+    .catch((error) => {
+      alert("An error occurred while deleting the user.");
+    });
+};
+
+
+
+
+  // const handleDeleteUser = (username) => {
+  //   axios
+  //     .post("http://localhost:3001/deleteUser", { username })
+  //     .then((res) => {
+  //       console.log(res.data.message);
+  //       formRef.current.resetFields();
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  //   console.log("Deleting user:", username);
+  // };
+  
+  // const onFinishDeleteForm = (values) => {
+  //   handleDeleteUser(values.username);
+  // }
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -787,51 +809,73 @@ export default function Admin(setIsAuthenticated) {
       message.error("Failed to create post");
     }
   };
-
-
   const onFinish = (values) => {
     const { username, password } = values;
-    if (isRegistering) {
-      // Registration logic
-      axios
-        .post("http://localhost:3001/register", { username, password })
-        .then((res) => {
-          if (res.data.message === "User registered successfully") {
-            setIsRegistering(false);
-            formRef.current.resetFields();
-            alert("Registration successful! You can now log in.");
-          } else {
-            alert("Username already exists");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Registration failed");
-        });
-    } else {
-      // Login logic
-      axios
-        .post("http://localhost:3001/validatePassword", { username, password })
-        .then((res) => {
-          if (res.data.validation) {
-            setIsAuthenticated(true);
-            formRef.current.resetFields();
-            navigate("/Portfolio");
-          } else {
-            alert("Password/username is not correct.");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          alert("Login failed");
-        });
-    }
+    // Registration logic
+    axios
+      .post("http://localhost:3001/register", { username, password })
+      .then((res) => {
+        if (res.data.message === "User registered successfully") {
+          setIsRegistering(false);
+          formRef.current.resetFields();
+          alert("Registration successful! You can now log in.");
+        } 
+        
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Registration failed");
+      });
   };
-
+  
   const handleToggleRegister = () => {
     setIsRegistering(!isRegistering);
     formRef.current.resetFields();
   };
+
+  // const onFinish = (values) => {
+  //   const { username, password } = values;
+  //   if (isRegistering) {
+  //     // Registration logic
+  //     axios
+  //       .post("http://localhost:3001/register", { username, password })
+  //       .then((res) => {
+  //         if (res.data.message === "User registered successfully") {
+  //           setIsRegistering(false);
+  //           formRef.current.resetFields();
+  //           alert("Registration successful! You can now log in.");
+  //         } else {
+  //           alert("Username already exists");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         alert("Registration failed");
+  //       });
+  //   } else {
+  //     // Login logic
+  //     axios
+  //       .post("http://localhost:3001/validatePassword", { username, password })
+  //       .then((res) => {
+  //         if (res.data.validation) {
+  //           setIsAuthenticated(true); 
+  //           formRef.current.resetFields(); // added true as a parameter
+  //           navigate("/Portfolio");
+  //         } else {
+  //           alert("Password/username is not correct.");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         alert("Login failed");
+  //       });
+  //   }
+  // };
+
+  // const handleToggleRegister = () => {
+  //   setIsRegistering(!isRegistering);
+  //   formRef.current.resetFields();
+  // };
 
   // const handleDeleteUser = (username) => {
   //   axios

@@ -62,18 +62,18 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
     formRef.current.resetFields();
   };
 
-  const handleDeleteUser = (username) => {
-    axios
-      .post("http://localhost:3001/deleteUser", { username })
-      .then((res) => {
-        console.log(res.data.message);
-        formRef.current.resetFields();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    console.log("Deleting user:", username);
-  };
+  // const handleDeleteUser = (username) => {
+  //   axios
+  //     .post("http://localhost:3001/deleteUser", { username })
+  //     .then((res) => {
+  //       console.log(res.data.message);
+  //       formRef.current.resetFields();
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  //   console.log("Deleting user:", username);
+  // };
 
   return (
     <>
@@ -163,7 +163,7 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
               </Button>
             </Form.Item>
 
-            <Form.Item>
+            {/* <Form.Item>
               <div className="delete-form">
                 <Button
                   type="primary"
@@ -177,10 +177,10 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
                   <DeleteUserForm handleDeleteUser={handleDeleteUser} />
                 )}
               </div>
-            </Form.Item>
+            </Form.Item> */}
           </Form>
 
-          <p>
+          {/* <p>
             {isRegistering ? (
               <>
                 Already have an account?{" "}
@@ -196,7 +196,7 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
                 </Button>
               </>
             )}
-          </p>
+          </p> */}
         </div>
       </div>
     </>
