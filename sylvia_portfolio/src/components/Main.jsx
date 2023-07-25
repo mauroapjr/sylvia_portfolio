@@ -213,7 +213,7 @@ export default function Main() {
                     backgroundImage: `url(${Alteryx})`,
                     width: "30%",
                     height: "100px",
-                    backgroundSize: "contain",
+                    backgroundSize: "30%",
                     backgroundPosition: "center center",
                     backgroundRepeat: "no-repeat",
                   }}
@@ -244,7 +244,7 @@ export default function Main() {
                     backgroundImage: `url(${Movidaria})`,
                     width: "20%",
                     height: "100px",
-                    backgroundSize: "contain",
+                    backgroundSize: "25%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
@@ -277,7 +277,7 @@ export default function Main() {
                     width: "20%",
                     height: "80px",
                     marginBottom: "10px",
-                    backgroundSize: "contain",
+                    backgroundSize: "18%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
@@ -309,7 +309,7 @@ export default function Main() {
                     backgroundImage: `url(${TVO})`,
                     width: "20%",
                     height: "100px",
-                    backgroundSize: "contain",
+                    backgroundSize: "35%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
@@ -340,7 +340,7 @@ export default function Main() {
                     backgroundImage: `url(${RoyalConservatory})`,
                     width: "20%",
                     height: "120px",
-                    backgroundSize: "90% auto",
+                    backgroundSize: "40%",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
