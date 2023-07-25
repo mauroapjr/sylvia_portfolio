@@ -20,8 +20,6 @@ import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on
 
 // Login page
 
-
-
 import "antd/dist/reset.css";
 import "../styles/login.css";
 
@@ -955,7 +953,89 @@ export default function Admin(setIsAuthenticated) {
         </div>
       </section>
 
-      <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <div className="login-admin-form" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+  <div>
+    <h2>Create an Account</h2>
+    <Form
+      name="normal_login"
+      className="admin-login-form"
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+      ref={formRef}
+    >
+      <Form.Item
+        name="username"
+        rules={[
+          {
+            required: true,
+            message: "Please input Username!",
+          },
+        ]}
+      >
+        <Input
+          prefix={<UserOutlined className="site-form-item-icon" />}
+          placeholder="Username"
+          style={{ width: "300px" }}
+          autoComplete="username"
+        />
+      </Form.Item>
+
+      <Form.Item
+        name="password"
+        rules={[
+          {
+            required: true,
+            message: "Please input your Password!",
+          },
+        ]}
+      >
+        <Input
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="Password"
+          style={{ width: "300px" }}
+          autoComplete="password"
+        />
+      </Form.Item>
+
+      <Form.Item>
+        <Button
+          type="primary"
+          htmlType="submit"
+          className="login-form-button"
+          
+        >
+          Register
+        </Button>
+      </Form.Item>
+    </Form>
+<div className="delete-form">
+      <Button
+        type="primary"
+        htmlType="button"
+        className="delete-form-button"
+        onClick={() => setIsDeleting(true)}
+      >
+        Click Here to Delete User
+      </Button>
+      {isDeleting && (
+        <DeleteUserForm handleDeleteUser={handleDeleteUser} />
+      )}
+    </div>
+    <p>
+      {/* Already have an account?{" "} */}
+      <Button type="link" href="/Login" onClick={handleToggleRegister}>
+        Back to Login
+      </Button>
+    </p>
+
+    
+  </div>
+</div>
+
+      {/* <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
       
       <div>
         {isRegistering ? (
@@ -1051,7 +1131,7 @@ export default function Admin(setIsAuthenticated) {
           )}
         </p>
       </div>
-    </div>
+    </div> */}
   
 
 
