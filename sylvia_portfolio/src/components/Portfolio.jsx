@@ -32,10 +32,7 @@ function Portfolio({ isAuthenticated }) {
     navigate("/PPTPage");
   };
 
-  // const handleShowPdf = () => {
-  //   setShowPdf(true);
-  // };
-
+  
   return (
     <>
       <header data-bs-theme="dark">
