@@ -12,7 +12,7 @@ import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 import InstDesigner from "../images/inst_designer.png";
-import PPTPage from "./PPTPage";
+// import PPTPage from "./PPTPage";
 
 initializeIcons();
 
