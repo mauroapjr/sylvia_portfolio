@@ -2,10 +2,10 @@
   display: flex !important;
   justify-content: center !important;  
   align-items: center !important;
-  margin-top: 80px;
+  margin-top: 20px;
   z-index: 1 !important;
-  width: 100% !important; 
-  height: 80% !important; 
+  /* width: 100% !important; 
+  height: 80% !important;  */
 }
 
 .react-pdf__Page__textContent {
@@ -14,6 +14,15 @@
 
 .react-pdf__Page__canvas {
   margin-bottom: -500px; 
-  width: calc(100% / 4);  
-  height: auto !important; 
+  margin-left: -250px;
+  /* width: calc(100% / 4);  
+  height: auto !important;  */
+  width: 180% !important;  
+  height: 180% !important; 
+}
+
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  font-size: large;
 }

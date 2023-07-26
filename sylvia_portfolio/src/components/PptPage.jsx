@@ -45,6 +45,7 @@ function PPTPage({ pdfUrl }) {
           </div>
         </nav>
       </header>
+      <main>
       <div className="parent-container">
       <div className="pdf-container">
         <Document file={PdfExample} onLoadSuccess={onDocumentLoadSuccess}>
@@ -54,11 +55,13 @@ function PPTPage({ pdfUrl }) {
         </Document>
       </div>
       </div>
-      {/* <div>
-        <Document file={PdfExample}>
-          <Page pageNumber={1} />
-        </Document>
-      </div> */}
+      </main>
+      <footer>
+        <div className="back-to-top">
+        <p>
+          <a href="#">Back to top</a>
+        </p></div>
+        </footer>
     </>
   );
 }
