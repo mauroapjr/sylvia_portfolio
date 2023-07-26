@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 .container-fluid {
   margin-bottom: 20px;
 }
@@ -69,7 +61,7 @@
   margin-top: 100px ;
 }
 
-.container.py-5 {
-  margin-top: 30%;
+.container-portfolio {
+  margin-top: 50%;
   align-content: flex-end;
 }

@@ -176,8 +176,8 @@ function Portfolio({ isAuthenticated }) {
             <div className="col-md-6">
               <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 py-3">
-                  <h2 className="display-5">TBD</h2>
-                  <p className="lead">Short video that explain...</p>
+                  <h2 className="display-5">PDF</h2>
+                  <p className="lead">Short .pdf presentation that explain...</p>
                 </div>
                 <div
                   className="bg-body-tertiary shadow-sm mx-auto"
@@ -202,7 +202,7 @@ function Portfolio({ isAuthenticated }) {
                       color: "white",
                     }}
                   >
-                    Watch Video
+                    Open file
                   </button>
                 </div>
                 {/* <div className="btn-group">
@@ -227,7 +227,7 @@ function Portfolio({ isAuthenticated }) {
             <div className="col-md-6">
               <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 p-3">
-                  <h2 className="display-5">TBD</h2>
+                  <h2 className="display-5">Instructional Designer</h2>
                   <p className="lead">Short video that explain...</p>
                 </div>
                 <div
@@ -274,7 +274,7 @@ function Portfolio({ isAuthenticated }) {
 
       </main>
 
-      <footer className="container py-5">
+      <footer className="container-portfolio py-5">
         <ul
           className="head-item"
           style={{

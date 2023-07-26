@@ -44,7 +44,7 @@ export default function Main() {
 
             <div className="flow-container">
               <img
-                className="flow-background-1"
+                className="flow-background-main-1"
                 src={FlowBackground}
                 alt="Background 1"
                 style={{
