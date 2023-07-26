@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/main.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../styles/pptPage.css";
 
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -44,12 +45,14 @@ function PPTPage({ pdfUrl }) {
           </div>
         </nav>
       </header>
+      <div className="parent-container">
       <div className="pdf-container">
         <Document file={PdfExample} onLoadSuccess={onDocumentLoadSuccess}>
-          {Array.from(new Array(numPages), (el, index) => (
+          {Array.from(new Array(numPages), (element, index) => (
             <Page key={`page_${index + 1}`} pageNumber={index + 1} />
           ))}
         </Document>
+      </div>
       </div>
       {/* <div>
         <Document file={PdfExample}>
