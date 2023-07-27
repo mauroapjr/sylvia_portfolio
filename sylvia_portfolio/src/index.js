@@ -13,6 +13,7 @@ import PPTPage from "./components/PPTPage";
 import Blog from "./components/Blog";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
+import Resume from "./components/Resume";
 
 const isAuthenticated = false;
 
@@ -68,6 +69,10 @@ const routerConfig = [
   {
     path: "/About",
     element: <About />,
+  },
+  {
+    path: "/Resume",
+    element: <Resume />,
   },
 ];
 

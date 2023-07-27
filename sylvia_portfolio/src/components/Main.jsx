@@ -413,7 +413,7 @@ export default function Main() {
                 </li>
                 <li className="mx-3">
                  
-                  <a href="#" className="text-white">
+                  <a href="/Resume" className="text-white">
                     <FontAwesomeIcon
                       icon={faFileLines}
                       size="2xl"
