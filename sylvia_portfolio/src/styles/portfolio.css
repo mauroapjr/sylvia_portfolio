@@ -29,7 +29,7 @@
   }
 }
 
-.sylvia-logo-container{
+/* .sylvia-logo-container{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,27 +41,106 @@
   margin-bottom: 15%;
   z-index: 1; 
 }
+@media (max-width: 415px) {
+  .sylvia-logo-about{
+  width: 80%;
+  }
+} */
+
+
+.sylvia-logo-container-portfolio {
+  position: relative;
+  z-index: 1;
+  height: 30px;
+}
+@media (max-width: 897px) {
+  .sylvia-logo-container-portfolio {
+    display: flex;
+    justify-content: center;  
+    top: 40px;
+  }
+}
+.sylvia-logo-portfolio  {
+  width: 350px;
+}
+@media (max-width: 415px) {
+  .sylvia-logo-portfolio {
+    width: 100% !important;
+  }
+}
+@media (max-width: 897px) {
+  .sylvia-logo-portfolio {
+    width: 100% !important;
+  }
+}
+
+
+
 
 .custom-bg-color {
   background-color: rgb(200, 200, 200) !important;
 }
 
-.flow-background-blog {
+.flow-background-portfolio  {
   height: 250px ;
   width: 100vw;
-  margin-top: -415px;
+  margin-top: -50px;
 }
 @media (max-width: 415px) {
-  .flow-background-blog{
+  .flow-background-portfolio {
    object-fit:cover;
+   margin-left: -20px;
+  }
+}
+@media (max-width: 897px) {
+  .flow-background-portfolio {
+   object-fit:cover;
+   margin-left: -20px;
   }
 }
 
+
+
 .col-md-6 {
   margin-top: 100px ;
+}
+@media (max-width: 415px) {
+  .col-md-6 {
+    width: 100%;
+    margin-top: 20px ;
+   
+  }
+}
+@media (max-width: 897px) {
+  .col-md-6 {
+    width: 100%;
+    margin-top: 20px ;
+  }
 }
 
 .container-portfolio {
   margin-top: 50%;
   align-content: flex-end;
+}
+@media (max-width: 415px) {
+  .container-portfolio {
+    width: 100%;
+    margin-top: 1200px !important;
+    margin-right: 0px !important;
+    padding: 10px;
+
+  }
+}
+@media (max-width: 897px) {
+  .container-portfolio {
+    width: 100%;
+    margin-top: 1300px ;
+    margin-right: 0px !important;
+    padding: 10px;
+
+  }
+}
+
+.head-item-portfolio {
+margin-right: 30px;
 }

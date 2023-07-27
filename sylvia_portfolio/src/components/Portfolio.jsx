@@ -38,20 +38,20 @@ function Portfolio({ isAuthenticated }) {
       <header data-bs-theme="dark">
         <nav className="navbar">
           <a className="navbar-brand" href="/">
-            <div className="sylvia-logo-container-about">
+            <div className="sylvia-logo-container-portfolio">
               <img
-                className="sylvia-logo-about"
+                className="sylvia-logo-portfolio"
                 src={SylviaLogo}
                 alt="Sylvia Logo"
               />
             </div>
           </a>
 
-          <div className="flow-container-about">
+          <div className="flow-container-portfolio">
             <img
-              className="flow-background-about"
+              className="flow-background-portfolio"
               src={FlowBackground}
-              alt="Background about"
+              alt="Background portfolio"
               style={{
                 backgroundImage: `url(${FlowBackground})`,
               }}
@@ -276,7 +276,7 @@ function Portfolio({ isAuthenticated }) {
 
       <footer className="container-portfolio py-5">
         <ul
-          className="head-item"
+          className="head-item-portfolio"
           style={{
             display: "flex",
             justifyContent: "center",
