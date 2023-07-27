@@ -7,7 +7,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
 
-import YoutubeImage from "../images/Youtube_image.JPG";
 import StorylineImage from "../images/Storyline.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
@@ -64,116 +63,6 @@ function Portfolio({ isAuthenticated }) {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-6">
-              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-4 text-center overflow-hidden">
-                <div className="my-3 p-3">
-                  <h2 className="display-5">"Desafio Semanal"</h2>
-                  <p className="lead text-dark">Short video that explain...</p>
-                </div>
-                <div
-                  className="bg-dark shadow-sm mx-auto"
-                  style={{
-                    width: "80%",
-                    height: "300px",
-                    marginBottom: "5%",
-                    borderRadius: "21px 21px 0 0",
-                    backgroundImage: `url(${YoutubeImage})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
-                <div className="btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    onClick={handleClick}
-                    style={{
-                      marginBottom: "40%",
-                      backgroundColor: "#245953",
-                      color: "white",
-                    }}
-                  >
-                    Watch Video
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div className="my-3 py-3">
-                  <h2 className="display-5">"StoryLine Presentation"</h2>
-                  <p className="lead">Short video that explain...</p>
-                </div>
-                <div
-                  className="bg-body-tertiary shadow-sm mx-auto"
-                  style={{
-                    width: "80%",
-                    height: "300px",
-                    marginBottom: "5%",
-                    borderRadius: "21px 21px 0 0",
-                    backgroundImage: `url(${StorylineImage})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
-                <div className="btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    onClick={handleClickStoryline}
-                    style={{
-                      marginBottom: "40%",
-                      backgroundColor: "#245953",
-                      color: "white",
-                    }}
-                  >
-                    Watch Video
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div className="my-3 py-3">
-                  <h2 className="display-5">TBD</h2>
-                  <p className="lead">Short video that explain...</p>
-                </div>
-                <div
-                  className="bg-body-tertiary shadow-sm mx-auto"
-                  style={{
-                    width: "80%",
-                    height: "300px",
-                    marginBottom: "5%",
-                    borderRadius: "21px 21px 0 0",
-                    backgroundImage: `url(${StorylineImage})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
-                <div className="btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-outline-secondary"
-                    onClick={handleClickStoryline}
-                    style={{
-                      marginBottom: "40%",
-                      backgroundColor: "#245953",
-                      color: "white",
-                    }}
-                  >
-                    Watch Video
-                  </button>
-                </div>
-              </div>
-            </div> */}
-
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-6">
               <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 py-3">
                   <h2 className="display-5">PDF</h2>
@@ -204,23 +93,7 @@ function Portfolio({ isAuthenticated }) {
                   >
                     Open file
                   </button>
-                </div>
-                {/* <div className="btn-group">
-                  <DocumentCard onClick={handleClickPpt}>
-                    <DocumentCardPreview
-                      previewImages={[
-                        {
-                          previewImageSrc:
-                            "path-to-your-presentation-thumbnail",
-                          width: 318,
-                          height: 196,
-                          accentColor: "#ce4b1f",
-                        },
-                      ]}
-                    />
-                    <DocumentCardTitle title="Watch Presentation" />
-                  </DocumentCard>
-                </div> */}
+                </div>                
               </div>
             </div>
 
@@ -260,18 +133,6 @@ function Portfolio({ isAuthenticated }) {
             </div>
           </div>
         </div>
-
-        
-
-        {/* <div>
-      <h1>Portfolio Page</h1>
-      <button onClick={handleShowPdf}>Show PDF</button>
-      {showPdf && <PPTPage pdfUrl={pdfUrl} />}
-    </div> */}
-
-
-
-
       </main>
 
       <footer className="container-portfolio py-5">
@@ -343,12 +204,3 @@ function Portfolio({ isAuthenticated }) {
 
 export default Portfolio;
 
-// export default function PortfolioWrapper() {
-//   return (
-//     <ProtectedRoute
-//       component={Portfolio}
-//       isAuthenticated={isAuthenticated}
-//       path="/Portfolio/*"
-//     />
-//   );
-// }
