@@ -1,22 +1,14 @@
 import React, { useState } from "react";
 
-import { Document, Page, pdfjs } from "react-pdf";
-
-import SylviaResume from "../pdfFiles/Sylvia_Pereira_Resume_2022[4520].pdf"; 
-
+import ResumePg1 from "../images/Sylvia_Resume_pg1.JPG";
+import ResumePg2 from "../images/Sylvia_Resume_pg2.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import "../styles/resume.css";
 
 function Resume() {
-  const [numPages, setNumPages] = useState(null);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
-
-  return (    
+  return (
     <>
       <header data-bs-theme="dark">
         <nav className="navbar">
@@ -42,24 +34,28 @@ function Resume() {
         </nav>
       </header>
       <main>
-      <div className="parent-container-resume">
-      <div className="pdf-container-resume">
-        <Document file={SylviaResume} onLoadSuccess={onDocumentLoadSuccess}>
-          {Array.from(new Array(numPages), (element, index) => (
-            <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-          ))}
-        </Document>
-      </div>
-      </div>
+        <div className="resume-container">
+        <iframe
+            title="Resume"
+            src="https://resume.creddle.io/resume/bp52urjocg3"
+            width="100%"
+            height="1000px" 
+            style={{ border: "none" }}
+            allowFullScreen 
+          />
+          {/* <img className="resume-pg1" src={ResumePg1} alt="Page 1"/>
+          <img className="resume-pg2" src={ResumePg2} alt="Page 2"/> */}
+        </div>
       </main>
-      <footer>
+      {/* <footer>
         <div className="back-to-top">
-        <p>
-          <a href="#">Back to top</a>
-        </p></div>
-        </footer>
+          <p>
+            <a href="#">Back to top</a>
+          </p>
+        </div>
+      </footer> */}
     </>
-  )
+  );
 }
 
 export default Resume;
