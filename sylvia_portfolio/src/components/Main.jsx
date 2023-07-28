@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -19,28 +19,25 @@ import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 export default function Main() {
-  
   return (
     <>
-      <header >
+      <header>
         <nav className="navbar">
-          
-            <a className="navbar-brand" href="/">
-              <div className="profile-image-container">
+          <a className="navbar-brand" href="/">
+            <div className="profile-image-container">
+              <img
+                className="profile-image"
+                src={ProfileImage}
+                alt="Profile Image"
+              />
+              <div className="sylvia-logo-container">
                 <img
-                  className="profile-image"
-                  src={ProfileImage}
-                  alt="Profile Image"
+                  className="sylvia-logo-main"
+                  src={SylviaLogo}
+                  alt="Sylvia Logo"
                 />
-                <div className="sylvia-logo-container">
-                  <img
-                    className="sylvia-logo-main"
-                    src={SylviaLogo}
-                    alt="Sylvia Logo"
-                  />
-                </div>
               </div>
-            
+            </div>
 
             <div className="flow-container">
               <img
@@ -51,15 +48,15 @@ export default function Main() {
                   backgroundImage: `url(${FlowBackground})`,
                 }}
               />
-              {/* <img
-                className="flow-background-2"
+              <img
+                className="flow-background-main-2"
                 src={FlowBackground}
                 alt="Background 2"
                 style={{
                   backgroundImage: `url(${FlowBackground})`,
                   
                 }}
-              /> */}
+              />
             </div>
           </a>
         </nav>
@@ -69,92 +66,77 @@ export default function Main() {
         <div className="container">
           <div className="box-left">
             <img
-                className="flow-background-2"
-                src={FlowBackground}
-                alt="Background 2"
+              className="flow-background-2"
+              src={FlowBackground}
+              alt="Background 2"
+              style={{
+                backgroundImage: `url(${FlowBackground})`,
+              }}
+            />
+          </div>
+
+          <h3 className="long-text">
+            I am a lifelong learner driven by an insatiable curiosity and a
+            tenacious spirit. People would describe me as a dedicated and
+            energetic individual who fearlessly takes on new challenges and
+            explores innovative avenues to achieve success.
+          </h3>
+          <h3 className="long-text">
+            Throughout the years, I have immersed myself in diverse fields, from
+            music to data analysis, from academic high-school courses to
+            customer education. My passion lies in learning and development, and
+            I am always up to talk about education projects.
+          </h3>
+
+          <h6 className="short-text">
+            Customer Education | Learning Experience Designer | eLearning
+            Developer | Adult Learning Specialist | Learning Analytics |
+            Localization | Curious by Nature
+          </h6>
+
+          <section className="box-right">
+            <div className="link-items">
+              <a
+                href="/Login"
                 style={{
-                  backgroundImage: `url(${FlowBackground})`,
-                  
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginTop: "180px",
+                  margin: "15px -40px",
+                  zIndex: 1,
                 }}
-              />
-            </div>
-           
-                <h3
-                  className="long-text"
-                  
-                >
-                  I am a lifelong learner driven by an insatiable curiosity and
-                  a tenacious spirit. People would describe me as a dedicated
-                  and energetic individual who fearlessly takes on new
-                  challenges and explores innovative avenues to achieve success.
-                  
-                </h3>
-                <h3 className="long-text">Throughout the years, I have immersed myself in diverse
-                  fields, from music to data analysis, from academic high-school
-                  courses to customer education. My passion lies in learning and
-                  development, and I am always up to talk about education
-                  projects.</h3>
-
-                <h6
-                  className="short-text"
-                  
-                >
-                  Customer Education | Learning Experience Designer | eLearning
-                  Developer | Adult Learning Specialist | Learning Analytics |
-                  Localization | Curious by Nature
-                </h6>
-             
-
-            <section
-              className="box-right"
-              
-            >
-              <div
-                className="link-items"
-                
               >
-                <a
-                  href="/Login"
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    marginTop: "180px",
-                    margin: "15px -40px",
-                    zIndex: 1,
-                  }}
-                >
-                  <p className="link-portfolio">PORTFOLIO</p>
-                </a>
-                <a
-                  href="/Blog"
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    margin: "15px -38px",
-                    zIndex: 1,
-                  }}
-                >
-                  <p className="link-blog">BLOG</p>
-                </a>
-                <a
-                  href="/About"
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    margin: "15px -33px",
-                    marginBottom: "180px",
-                    zIndex: 1,
-                  }}
-                >
-                  <p className="link-about">ABOUT</p>
-                </a>
-              </div>
-              <ul className="list-unstyled"></ul>
-            </section>
-          
+                <p className="link-portfolio">PORTFOLIO</p>
+              </a>
+              <a
+                href="/Blog"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  margin: "15px -38px",
+                  zIndex: 1,
+                }}
+              >
+                <p className="link-blog">BLOG</p>
+              </a>
+              <a
+                href="/About"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  margin: "15px -33px",
+                  marginBottom: "180px",
+                  zIndex: 1,
+                }}
+              >
+                <p className="link-about">ABOUT</p>
+              </a>
+            </div>
+            <ul className="list-unstyled"></ul>
+          </section>
         </div>
 
-        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel" >
+        <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             <button
               type="button"
@@ -379,60 +361,56 @@ export default function Main() {
         className="text-body-secondary"
         style={{ backgroundColor: "#9EBA99", padding: "1% 0", height: "50%" }}
       >
-        
         <div className="container">
-          <div className="row" >
-            
-              <ul className="list-unstyled" >
-                
-                <li className="mx-3" >
-                  
-                  <a
-                    href="https://www.linkedin.com/in/sylviabpereira/"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      size="2xl"
-                      style={{ color: "#343a40" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-3">
-                  
-                  <a
-                    href="mailto:sylvia.bachiegga@hotmail.com"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      size="2xl"
-                      style={{ color: "#343a40" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-3">
-                 
-                  <a href="/Resume" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faFileLines}
-                      size="2xl"
-                      style={{ color: "#343a40" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-3">
-                 
-                  <a href="/Admin" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faToolbox}
-                      size="2xl"
-                      style={{ color: "#343a40" }}
-                    />
-                  </a>
-                </li>
-              </ul>
-         
+          <div className="row">
+            <ul className="list-unstyled">
+
+              <li className="mx-3">
+                <a
+                  href="https://www.linkedin.com/in/sylviabpereira/"
+                  className="text-white"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+
+              <li className="mx-3">
+                <a
+                  href="mailto:sylvia.bachiegga@hotmail.com"
+                  className="text-white"
+                >
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+
+              <li className="mx-3">
+                <a href="/Resume" className="text-white">
+                  <FontAwesomeIcon
+                    icon={faFileLines}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+
+              <li className="mx-3">
+                <a href="/Admin" className="text-white">
+                  <FontAwesomeIcon
+                    icon={faToolbox}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+            </ul>
           </div>
           <small className="d-block mb-3 text-dark-grey text-center">
             mauroPereira©2023

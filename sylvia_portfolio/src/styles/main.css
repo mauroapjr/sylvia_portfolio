@@ -276,7 +276,7 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
 } */
 
 
-.flow-background-2 {
+.flow-background-main-2 {
   /* background-size: 100%; */
   background-repeat: no-repeat;
   background-position: left;
@@ -292,17 +292,17 @@ box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
   z-index: -2; 
 }
 @media (max-width: 415px) {
-  .flow-background-2{
+  .flow-background-main-2{
     display: none;
   }
 }
 @media (max-width: 897px) {
-  .flow-background-2 {
+  .flow-background-main-2 {
     display: none;
   }
 }
 @media (max-width: 1980px) {
-  .flow-background-2 {
+  .flow-background-main-2 {
     display: none !important;
   }
 }

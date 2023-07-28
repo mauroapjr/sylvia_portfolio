@@ -37,7 +37,7 @@ function Resume() {
             title="Resume"
             src="https://resume.creddle.io/resume/bp52urjocg3"
             width="100%"
-            height="1000px"
+            height="100%"
             style={{ border: "none" }}
             allowFullScreen
           />
