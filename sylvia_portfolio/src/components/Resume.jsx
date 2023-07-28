@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 
-import ResumePg1 from "../images/Sylvia_Resume_pg1.JPG";
-import ResumePg2 from "../images/Sylvia_Resume_pg2.JPG";
 import FlowBackground from "../images/Flow_backgroung.jpg";
 import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
@@ -35,25 +33,16 @@ function Resume() {
       </header>
       <main>
         <div className="resume-container">
-        <iframe
+          <iframe
             title="Resume"
             src="https://resume.creddle.io/resume/bp52urjocg3"
             width="100%"
-            height="1000px" 
+            height="1000px"
             style={{ border: "none" }}
-            allowFullScreen 
+            allowFullScreen
           />
-          {/* <img className="resume-pg1" src={ResumePg1} alt="Page 1"/>
-          <img className="resume-pg2" src={ResumePg2} alt="Page 2"/> */}
         </div>
       </main>
-      {/* <footer>
-        <div className="back-to-top">
-          <p>
-            <a href="#">Back to top</a>
-          </p>
-        </div>
-      </footer> */}
     </>
   );
 }
