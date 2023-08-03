@@ -144,7 +144,7 @@
 @media (max-width: 1980px) {
   .link-items {
     height: 220px;
-    margin-top: 450px;
+    margin-top: 440px;
   }
 }
 
@@ -208,6 +208,18 @@
     margin-right: 20px;
     margin-left: 1%;
     margin-bottom: -30px;
+  }
+}
+@media (max-width: 1980px) {
+  .short-text {
+    text-align: left;
+  margin-left: 7%;
+  margin-right: 600px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  /* padding: 3%; */
+  font-size: 90%;
+  font-weight: 200;
   }
 }
 
