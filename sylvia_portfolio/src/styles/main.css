@@ -91,6 +91,13 @@
     margin-top: 1px !important;
   }
 }
+@media (max-width: 1980px) {
+  .box-right {
+    height: 720px;
+  margin-left: 690px;
+  margin-top: -550px;
+  }
+}
 
 /* Itens inside Grey box */
 
@@ -231,16 +238,12 @@
   .flow-background-main-1 {
     width: 100% !important;
     height: 10% !important;
-    /* display: relative; */
     margin-left: 10%;
     margin-top: -240px;
   }
 }
 @media (max-width: 1980px) {
   .flow-background-main-1 {
-    /* display: none !important; */
-    /* width: 100% !important;
-  height: 250px !important; */
   margin-left: 190px;
   margin-top: -350px;
   }
