@@ -53,6 +53,151 @@
 }
 
 
+/* Background images */
+
+.container-fluid {
+  position: absolute;
+}
+.navbar {
+  display: flex;
+  /* margin-top: 1px; */
+  margin-left: 20px;
+}
+.flow-container {
+  position: relative;
+  margin-top: 3px;
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 90%;
+  height: 120%;
+}
+
+
+/* Background image on the top */
+
+.flow-background-main-1 {
+  width: 100% !important;
+  height: 250px !important;
+  margin-left: 190px;
+  margin-top: -520px ;
+}
+
+@media (max-width: 415px) {
+  .flow-background-main-1 {    
+    margin-left: 10% !important;
+    margin-top: -155px !important;    
+  }
+}
+@media (max-width: 897px) {
+  .flow-background-main-1 {
+    width: 120% !important;
+    height: 10% !important;
+    margin-left: 8% !important;
+    margin-top: 20px ;
+  }
+}
+@media (max-width: 1980px) {
+  .flow-background-main-1 {
+    height: 200px;
+  margin-left: 170px;
+  margin-top: -320px;
+  }
+}
+
+
+/* Background image on the left side */
+
+.flow-background-main-2 {
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: left;
+  display: flex;
+  width: 40%;
+  height: 25%;
+  margin-top: 10px;
+  margin-left: -450px;
+  object-fit: cover;
+  transform: rotate(90deg);
+  position: absolute;
+  /* top: 416; */
+  bottom: 235px;
+  z-index: -2;
+}
+@media (max-width: 415px) {
+  .flow-background-main-2 {
+    display: none;
+  }
+}
+@media (max-width: 897px) {
+  .flow-background-main-2 {
+    display: none;
+  }
+}
+@media (max-width: 1980px) {
+  .flow-background-main-2 {
+    display: none !important;
+  }
+}
+
+
+
+/* Profile photo */
+
+.profile-image-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2px;
+  margin-left: 3px;
+  width: 60%;
+}
+.profile-image {
+  width: 80%;
+  border-radius: 50%;
+  border: 3px solid #043260;
+}
+@media (max-width: 415px) {
+  .profile-image {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 415px) {
+  .profile-image {
+    width: 33.5%;
+    margin: 0 auto;
+    margin-left: 3%;
+  }
+}
+
+
+
+/* Logo */
+
+.sylvia-logo-main {
+  height: auto;
+  width: 45%;
+  margin-bottom: 35%;
+  margin-left: 5%;
+  z-index: 1;
+}
+@media (max-width: 415px) {
+  .sylvia-logo-main {
+    width: 110% !important;
+    margin-left: 60px !important;
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 897px) {
+  .sylvia-logo-main {
+    width: 80%;
+    margin-left: 40px;
+    margin-top: 12%;
+  }
+}
+
 
 /* Grey box */
 
@@ -225,149 +370,7 @@
 
 
 
-/* Background images */
 
-.container-fluid {
-  position: absolute;
-}
-.navbar {
-  display: flex;
-  margin-top: 1px;
-  margin-left: 20px;
-}
-.flow-container {
-  position: relative;
-  margin-top: 3px;
-  margin-left: 20px;
-  margin-right: 10px;
-  width: 90%;
-  height: 120%;
-}
-
-
-/* Background image on the top */
-
-.flow-background-main-1 {
-  width: 100% !important;
-  height: 250px !important;
-  margin-left: 190px;
-  margin-top: -490px;
-}
-
-@media (max-width: 415px) {
-  .flow-background-main-1 {    
-    margin-left: 10% !important;
-    margin-top: -50% !important;    
-  }
-}
-@media (max-width: 897px) {
-  .flow-background-main-1 {
-    width: 120% !important;
-    height: 10% !important;
-    margin-left: 8% !important;
-    margin-top: -240px !important;
-  }
-}
-@media (max-width: 1980px) {
-  .flow-background-main-1 {
-  margin-left: 190px;
-  margin-top: -350px;
-  }
-}
-
-
-/* Background image on the left side */
-
-.flow-background-main-2 {
-  /* background-size: 100%; */
-  background-repeat: no-repeat;
-  background-position: left;
-  display: flex;
-  width: 40%;
-  height: 25%;
-  margin-top: 10px;
-  margin-left: -450px;
-  object-fit: cover;
-  transform: rotate(90deg);
-  position: absolute;
-  /* top: 416; */
-  bottom: 235px;
-  z-index: -2;
-}
-@media (max-width: 415px) {
-  .flow-background-main-2 {
-    display: none;
-  }
-}
-@media (max-width: 897px) {
-  .flow-background-main-2 {
-    display: none;
-  }
-}
-@media (max-width: 1980px) {
-  .flow-background-main-2 {
-    display: none !important;
-  }
-}
-
-
-
-/* Profile photo */
-
-.profile-image-container {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -2px;
-  margin-left: 3px;
-  width: 60%;
-}
-.profile-image {
-  width: 80%;
-  border-radius: 50%;
-  border: 3px solid #043260;
-}
-@media (max-width: 415px) {
-  .profile-image {
-    width: 50%;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 415px) {
-  .profile-image {
-    width: 33.5%;
-    margin: 0 auto;
-    margin-left: 3%;
-  }
-}
-
-
-
-/* Logo */
-
-.sylvia-logo-main {
-  height: auto;
-  width: 45%;
-  margin-bottom: 35%;
-  margin-left: 5%;
-  z-index: 1;
-}
-@media (max-width: 415px) {
-  .sylvia-logo-main {
-    width: 110% !important;
-    margin-left: 60px !important;
-    margin-bottom: 60px;
-  }
-}
-@media (max-width: 897px) {
-  .sylvia-logo-main {
-    width: 80%;
-    margin-left: 40px;
-    margin-top: 12%;
-  }
-}
 
 
 
