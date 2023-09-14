@@ -97,13 +97,13 @@
     margin-top: 20px ;
   }
 } */
-/* @media (max-width: 1980px) {
+@media (max-width: 1980px) {
   .flow-background-main-1 {
     height: 200px;
-  margin-left: 170px;
-  margin-top: -320px;
+    margin-left: 150px;
+    margin-top: 40px;
   }
-} */
+}
 
 
 /* Background image on the left side */
@@ -329,7 +329,7 @@
     width: 90%;
     height: 170px;
     margin-bottom: -20px !important;    
-    padding-top: 3%;
+    padding-top: 6%;
     padding-right: 50%;
   }
 }
@@ -357,17 +357,28 @@
     margin-bottom: -30px;
   }
 }
+@media (max-width: 1590px) {
+  .short-text {
+    text-align: left;
+    margin-left: 7%;
+    margin-right: 600px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* padding: 3%; */
+    font-size: 90%;
+    font-weight: 200;
+    padding-top: 5%;
+  }
+}
 @media (max-width: 1980px) {
   .short-text {
     text-align: left;
-  margin-left: 7%;
-  margin-right: 600px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  /* padding: 3%; */
-  font-size: 90%;
-  font-weight: 200;
-  padding-top: 1%;
+    margin-left: 7%;
+    margin-right: 600px;
+    margin-top: 70px;
+    margin-bottom: -1px;
+    font-size: 90%;
+    font-weight: 200;    
   }
 }
 
@@ -376,7 +387,7 @@
 /* Control what is inside the carousel */
 
 .carousel-caption {
-  /* padding-top: 5%; */
+  padding-top: 5%;
   text-align: center !important;
   /* width: 100%; */
 }
