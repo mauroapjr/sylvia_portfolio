@@ -239,7 +239,7 @@
   flex: 1; /* Allows the "container" to take up available space */
   text-align: left;
   margin-left: 7%;
-  margin-right: 450px;
+  /* margin-right: 450px; */
   font-size: 25px;
   font-weight: 200;
   word-spacing: 2px;
@@ -253,7 +253,7 @@
 .long-text {
   text-align: left;
   margin-left: 7%;
-  margin-right: 450px;
+  /* margin-right: 450px; */
   font-size: 25px;
   font-weight: 200;
   word-spacing: 2px;
@@ -291,9 +291,9 @@
 .short-text {
   text-align: left;
   margin-left: 7%;
-  margin-right: 400px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  /* margin-right: 400px; */
+  /* margin-top: 20px; */
+  /* margin-bottom: 10px; */
   /* padding: 3%; */
   font-size: 90%;
   font-weight: 200;
