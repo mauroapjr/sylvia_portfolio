@@ -94,9 +94,12 @@ export default function Main() {
             Localization | Curious by Nature
           </h6>
 
+
+
           <section className="box-right">
+          
             <div className="link-items">
-              <a
+              {/* <a
                 href="/Login"
                 style={{
                   textDecoration: "none",
@@ -107,7 +110,24 @@ export default function Main() {
                 }}
               >
                 <p className="link-portfolio">PORTFOLIO</p>
+              </a> */}
+
+
+              <a
+                href="/Login"
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  marginTop: "180px",
+                  margin: "15px -40px",
+                  zIndex: 1,
+                }}
+              >
+                <p className="badge rounded-pill text-bg-secondary link-portfolio">PORTFOLIO</p>
               </a>
+
+
+
               <a
                 href="/Blog"
                 style={{
@@ -117,7 +137,7 @@ export default function Main() {
                   zIndex: 1,
                 }}
               >
-                <p className="link-blog">BLOG</p>
+                <p className="badge rounded-pill text-bg-secondary link-blog">BLOG</p>
               </a>
               <a
                 href="/About"
@@ -129,7 +149,7 @@ export default function Main() {
                   zIndex: 1,
                 }}
               >
-                <p className="link-about">ABOUT</p>
+                <p className="badge rounded-pill text-bg-secondary link-about">ABOUT</p>
               </a>
             </div>
             <ul className="list-unstyled"></ul>

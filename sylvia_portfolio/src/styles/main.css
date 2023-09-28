@@ -202,7 +202,7 @@
 
 /* Grey box */
 
-.box-right {
+/* .box-right {
   background-color: #c4c8cb;
   width: 40%;
   height: 720px;
@@ -226,7 +226,7 @@
     width: 80% !important;
     height: 320px;
     margin-left: 10px !important;
-    /* margin-top: 10%; */
+    
   }
 }
 @media (max-width: 897px) {
@@ -243,7 +243,7 @@
   margin-left: 690px;
   margin-top: -550px;
   }
-}
+} */
 
 /* Itens inside Grey box */
 
