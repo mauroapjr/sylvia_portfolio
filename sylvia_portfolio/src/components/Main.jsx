@@ -63,7 +63,8 @@ export default function Main() {
       </header>
 
       <main>
-        <div className="container">
+        <div className="page-container">
+        <div className="text-container">
           <div className="box-left">
             <img
               className="flow-background-main-2"
@@ -94,66 +95,43 @@ export default function Main() {
             Localization | Curious by Nature
           </h6>
 
-
-
-          <section className="box-right">
-          
-            <div className="link-items">
-              {/* <a
-                href="/Login"
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  marginTop: "180px",
-                  margin: "15px -40px",
-                  zIndex: 1,
-                }}
-              >
-                <p className="link-portfolio">PORTFOLIO</p>
-              </a> */}
-
-
-              <a
-                href="/Login"
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  marginTop: "180px",
-                  margin: "15px -40px",
-                  zIndex: 1,
-                }}
-              >
-                <p className="badge rounded-pill text-bg-secondary link-portfolio">PORTFOLIO</p>
-              </a>
-
-
-
-              <a
-                href="/Blog"
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  margin: "15px -38px",
-                  zIndex: 1,
-                }}
-              >
-                <p className="badge rounded-pill text-bg-secondary link-blog">BLOG</p>
-              </a>
-              <a
-                href="/About"
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  margin: "15px -33px",
-                  marginBottom: "180px",
-                  zIndex: 1,
-                }}
-              >
-                <p className="badge rounded-pill text-bg-secondary link-about">ABOUT</p>
-              </a>
-            </div>
-            <ul className="list-unstyled"></ul>
-          </section>
+          <div className="badge-container">
+            <section className="box-right">
+              <div className="link-items">
+                <a
+                  href="/Login"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <p className="badge rounded-pill text-bg-secondary link-portfolio">
+                    PORTFOLIO
+                  </p>
+                </a>
+                <a
+                  href="/Blog"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <p className="badge rounded-pill text-bg-secondary link-blog">
+                    BLOG
+                  </p>
+                </a>
+                <a
+                  href="/About"
+                  style={{
+                    textDecoration: "none",
+                  }}
+                >
+                  <p className="badge rounded-pill text-bg-secondary link-about">
+                    ABOUT
+                  </p>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
         </div>
 
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -384,7 +362,6 @@ export default function Main() {
         <div className="container">
           <div className="row">
             <ul className="list-unstyled">
-
               <li className="mx-3">
                 <a
                   href="https://www.linkedin.com/in/sylviabpereira/"
