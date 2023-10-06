@@ -64,37 +64,37 @@ export default function Main() {
 
       <main>
         <div className="page-container">
-        <div className="text-container">
-          <div className="box-left">
-            <img
-              className="flow-background-main-2"
-              src={FlowBackground}
-              alt="Background 2"
-              style={{
-                backgroundImage: `url(${FlowBackground})`,
-              }}
-            />
+          <div className="text-container">
+            <div className="box-left">
+              <img
+                className="flow-background-main-2"
+                src={FlowBackground}
+                alt="Background 2"
+                style={{
+                  backgroundImage: `url(${FlowBackground})`,
+                }}
+              />
+            </div>
+
+            <h3 className="long-text">
+              I am a lifelong learner driven by an insatiable curiosity and a
+              tenacious spirit. People would describe me as a dedicated and
+              energetic individual who fearlessly takes on new challenges and
+              explores innovative avenues to achieve success.
+            </h3>
+            <h3 className="long-text">
+              Throughout the years, I have immersed myself in diverse fields,
+              from music to data analysis, from academic high-school courses to
+              customer education. My passion lies in learning and development,
+              and I am always up to talk about education projects.
+            </h3>
+
+            <h6 className="short-text">
+              Customer Education | Learning Experience Designer | eLearning
+              Developer | Adult Learning Specialist | Learning Analytics |
+              Localization | Curious by Nature
+            </h6>
           </div>
-
-          <h3 className="long-text">
-            I am a lifelong learner driven by an insatiable curiosity and a
-            tenacious spirit. People would describe me as a dedicated and
-            energetic individual who fearlessly takes on new challenges and
-            explores innovative avenues to achieve success.
-          </h3>
-          <h3 className="long-text">
-            Throughout the years, I have immersed myself in diverse fields, from
-            music to data analysis, from academic high-school courses to
-            customer education. My passion lies in learning and development, and
-            I am always up to talk about education projects.
-          </h3>
-
-          <h6 className="short-text">
-            Customer Education | Learning Experience Designer | eLearning
-            Developer | Adult Learning Specialist | Learning Analytics |
-            Localization | Curious by Nature
-          </h6>
-
           <div className="badge-container">
             <section className="box-right">
               <div className="link-items">
@@ -131,7 +131,6 @@ export default function Main() {
               </div>
             </section>
           </div>
-        </div>
         </div>
 
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
