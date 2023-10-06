@@ -182,7 +182,7 @@ export default function Main() {
                 <rect
                   width="100%"
                   height="100%"
-                  fill="var(--bs-secondary-color)"
+                  fill="white"
                 ></rect>
               </svg>
               <div className="container">
@@ -212,7 +212,7 @@ export default function Main() {
                 <rect
                   width="100%"
                   height="100%"
-                  fill="var(--bs-secondary-color)"
+                  fill="white"
                 ></rect>
               </svg>
 
@@ -244,7 +244,7 @@ export default function Main() {
                 <rect
                   width="100%"
                   height="100%"
-                  fill="var(--bs-secondary-color)"
+                  fill="white"
                 ></rect>
               </svg>
 
@@ -277,7 +277,7 @@ export default function Main() {
                 <rect
                   width="100%"
                   height="100%"
-                  fill="var(--bs-secondary-color)"
+                  fill="white"
                 ></rect>
               </svg>
 
@@ -309,7 +309,7 @@ export default function Main() {
                 <rect
                   width="100%"
                   height="100%"
-                  fill="var(--bs-secondary-color)"
+                  fill="white"
                 ></rect>
               </svg>
               <div className="container">
