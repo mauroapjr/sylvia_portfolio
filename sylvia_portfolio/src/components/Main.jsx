@@ -179,11 +179,7 @@ export default function Main() {
                 preserveAspectRatio="xMidYMid slice"
                 focusable="false"
               >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="white"
-                ></rect>
+                <rect width="100%" height="100%" fill="white"></rect>
               </svg>
               <div className="container">
                 <div
@@ -209,11 +205,7 @@ export default function Main() {
                 preserveAspectRatio="xMidYMid slice"
                 focusable="false"
               >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="white"
-                ></rect>
+                <rect width="100%" height="100%" fill="white"></rect>
               </svg>
 
               <div className="container">
@@ -241,11 +233,7 @@ export default function Main() {
                 preserveAspectRatio="xMidYMid slice"
                 focusable="false"
               >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="white"
-                ></rect>
+                <rect width="100%" height="100%" fill="white"></rect>
               </svg>
 
               <div className="container">
@@ -274,11 +262,7 @@ export default function Main() {
                 preserveAspectRatio="xMidYMid slice"
                 focusable="false"
               >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="white"
-                ></rect>
+                <rect width="100%" height="100%" fill="white"></rect>
               </svg>
 
               <div className="container">
@@ -306,11 +290,7 @@ export default function Main() {
                 preserveAspectRatio="xMidYMid slice"
                 focusable="false"
               >
-                <rect
-                  width="100%"
-                  height="100%"
-                  fill="white"
-                ></rect>
+                <rect width="100%" height="100%" fill="white"></rect>
               </svg>
               <div className="container">
                 <div
