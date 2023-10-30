@@ -252,6 +252,7 @@
   align-items: center;
   justify-content: center;
   text-align: center; 
+  gap: 10px;
   margin-bottom: 180px;
   margin-top: 180px;
   margin-left: 150px;
@@ -287,8 +288,17 @@
   .link-items {
     height: 120px;
     margin-top: 220px;
-    margin-right: 50px;
+    margin-right: 90px;
   }
+  
+}
+
+.badge {
+  width: 350px !important;
+  text-align: center; /* Center the text within each badge */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Display ellipsis (...) for long text */
 }
 
 
