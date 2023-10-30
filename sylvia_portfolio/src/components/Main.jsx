@@ -99,6 +99,9 @@ export default function Main() {
                 <li>Metrics & Evaluation</li>
               </ul>
             </h3>
+            <h2 className="text-title">
+Main Projects
+            </h2>
           </div>
           <div className="badge-container">
             <section className="box-right">
