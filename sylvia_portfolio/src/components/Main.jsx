@@ -77,23 +77,28 @@ export default function Main() {
             </div>
 
             <h3 className="long-text">
-              I am a lifelong learner driven by an insatiable curiosity and a
-              tenacious spirit. People would describe me as a dedicated and
-              energetic individual who fearlessly takes on new challenges and
-              explores innovative avenues to achieve success.
+            Nice to e-meet you!
             </h3>
             <h3 className="long-text">
-              Throughout the years, I have immersed myself in diverse fields,
-              from music to data analysis, from academic high-school courses to
-              customer education. My passion lies in learning and development,
-              and I am always up to talk about education projects.
+              I'm Sylvia Pereira, an enthusiastic learning designer who's all
+              about embracing the joy of constant learning. I've ventured into a
+              world of skills that includes music, data analysis, high-school
+              courses, and customer education.
             </h3>
-
-            <h6 className="short-text">
-              Customer Education | Learning Experience Designer | eLearning
-              Developer | Adult Learning Specialist | Learning Analytics |
-              Localization | Curious by Nature
-            </h6>
+            <h3 className="long-text">
+              If you ask people to describe me, they would likely tell you,
+              "Sylvia is curious, energetic, dedicated, and committed to any
+              task at hand.“
+            </h3>
+            <h3 className="long-text">
+              Here's a summary of my expertise in the field of learning design:
+              <ul>
+                <li>Adult Education Principles</li>
+                <li>Learner-Centric Approach</li>
+                <li>Learning Transfer</li>
+                <li>Metrics & Evaluation</li>
+              </ul>
+            </h3>
           </div>
           <div className="badge-container">
             <section className="box-right">
