@@ -53,31 +53,31 @@
 }
 
 
+
 /* Logo */
 
 .navbar {
   background-image: url("../images/Flow_backgroung.jpg");
   background-size: cover;
   background-position: center;
-  width: 100%; 
-  display: flex; 
-  justify-content: flex-start; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* This will push the navbar-brand and navbar-menu apart */
+  align-items: center; /* Align items vertically */
 }
 
-.navbar a {
-  display: flex; 
-  justify-content: flex-start;
-  width: 100%; 
+/* Assuming navbar-brand is your class for the logo and profile image container */
+.navbar a.navbar-brand {
+  display: flex;
+  align-items: center; /* Align items vertically within the navbar-brand */
   text-decoration: none; 
 }
 
 .header-content {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 5px;
-  width: 100%; 
+  align-items: center; /* Ensure items are vertically centered */
 }
+
 
 .profile-image {
   border-radius: 50%; 
@@ -102,6 +102,25 @@
   .sylvia-logo-main {
     width: 80px; /* Adjust size for mobile */
   }
+}
+
+.navbar-menu {
+  display: flex;
+  padding-left:620px ;
+  padding-top: 150px;
+  gap: 20px; /* Adjust space between links */
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #000; /* Adjust link color */
+  font-weight: thin; /* Adjust as needed */
+  font-size: large;
+}
+
+/* Add hover effects or other styles as needed */
+.navbar-link:hover {
+  color: #555; /* Example hover color */
 }
 
 
@@ -351,4 +370,5 @@
     justify-content: center;
   }
 }
+
 

@@ -9,28 +9,45 @@ import SylviaLogo from "../src/images/sylvia-bachiegga-high-resolution-logo-blac
 
 import "../src/styles/main.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faFileLines } from "@fortawesome/free-regular-svg-icons";
+import { faToolbox } from "@fortawesome/free-solid-svg-icons";
+
 const imageUrls = [Alteryx, Movidaria, CTC, TVO, RoyalConservatory];
 
 export const Header = () => {
   return (
-  <header>
-        <nav className="navbar">
+    <header>
+      <nav className="navbar">
+        <div className="header-content">
           <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
+            <img
+              className="profile-image"
+              src={ProfileImage}
+              alt="Profile Image"
+            />
+            <img
+              className="sylvia-logo-main"
+              src={SylviaLogo}
+              alt="Sylvia Logo"
+            />
           </a>
-        </nav>
-      </header>
+        </div>
+        <div className="navbar-menu">
+          <a href="/login" className="navbar-link">
+            Portfolio
+          </a>
+          <a href="/blog" className="navbar-link">
+            Blog
+          </a>
+          <a href="/about" className="navbar-link">
+            About
+          </a>
+        </div>
+      </nav>
+    </header>
   );
 };
 
@@ -59,3 +76,67 @@ export const ImageGallery = () => (
     ))}
   </div>
 );
+
+export const Footer = () => {
+  return (
+<footer
+        className="text-body-secondary"
+        style={{ backgroundColor: "#9EBA99", padding: "1% 0", height: "50%" }}
+      >
+        <div className="container">
+          <div className="row">
+            <ul className="list-unstyled">
+              <li className="mx-3">
+                <a
+                  href="https://www.linkedin.com/in/sylviabpereira/"
+                  className="text-white"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+
+              <li className="mx-3">
+                <a
+                  href="mailto:sylvia.bachiegga@hotmail.com"
+                  className="text-white"
+                >
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+
+              <li className="mx-3">
+                <a href="/Resume" className="text-white">
+                  <FontAwesomeIcon
+                    icon={faFileLines}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+
+              <li className="mx-3">
+                <a href="/Admin" className="text-white">
+                  <FontAwesomeIcon
+                    icon={faToolbox}
+                    size="2xl"
+                    style={{ color: "#343a40" }}
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <small className="d-block mb-3 text-dark-grey text-center">
+            mauroPereira©2023
+          </small>
+        </div>
+      </footer>
+  );
+};

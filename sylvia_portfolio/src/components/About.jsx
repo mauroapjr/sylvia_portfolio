@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/main.css";
 import "../styles/about.css";
-import { Header } from "../helpers.jsx";
+import { Header, Footer } from "../helpers.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -96,117 +96,12 @@ function About() {
             </h6>
           </div>
         </div>
-      </main>
-
-      <footer className="container py-5">
-        <ul
-          className="head-item"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
-          <div
-            className="head-items"
-            style={{ display: "flex", fontSize: "155%" }}
-          >
-            <a
-              href="/Portfolio"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <p className="head-portfolio" style={{ margin: "0 30px" }}>
-                PORTFOLIO
-              </p>
-            </a>
-            <a
-              href="/Blog"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <p className="head-blog" style={{ margin: "0 30px" }}>
-                BLOG
-              </p>
-            </a>
-            <a
-              href="/About"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <p className="head-about" style={{ margin: "0 30px" }}>
-                ABOUT
-              </p>
-            </a>
-          </div>
-        </ul>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarHeader"
-          aria-controls="navbarHeader"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
         <p>
           <a href="#">Back to top</a>
         </p>
+      </main>
 
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-8 col-md-7 py-4"></div>
-            <div className="col-sm-4 offset-md-1 py-4">
-              <ul className="list-unstyled d-flex justify-content-end">
-                <li className="mx-3">
-                  <a
-                    href="https://www.linkedin.com/in/sylviabpereira/"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      size="2xl"
-                      style={{ color: "#000000" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-3">
-                  <a
-                    href="mailto:sylvia.bachiegga@hotmail.com"
-                    className="text-white"
-                  >
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      size="2xl"
-                      style={{ color: "#000000" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-3">
-                  <a href="#" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faFileLines}
-                      size="2xl"
-                      style={{ color: "#000000" }}
-                    />
-                  </a>
-                </li>
-                <li className="mx-3">
-                  <a href="/Admin" className="text-white">
-                    <FontAwesomeIcon
-                      icon={faToolbox}
-                      size="2xl"
-                      style={{ color: "#000000" }}
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <small className="d-block mb-3 text-dark-grey text-center">
-            mauroPereira©2023
-          </small>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

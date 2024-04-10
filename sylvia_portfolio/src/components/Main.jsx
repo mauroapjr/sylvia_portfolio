@@ -1,17 +1,12 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
-import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-import { ImageGallery, Header } from "../helpers.jsx";
+import { ImageGallery, Header, Footer } from "../helpers.jsx";
 import "../styles/main.css";
 
 export default function Main() {
   return (
     <>
-    <Header/>
-      
+      <Header />
+
       <main>
         <div className="page-container">
           <div className="text-container">
@@ -78,65 +73,7 @@ export default function Main() {
         <ImageGallery />
       </main>
 
-      <footer
-        className="text-body-secondary"
-        style={{ backgroundColor: "#9EBA99", padding: "1% 0", height: "50%" }}
-      >
-        <div className="container">
-          <div className="row">
-            <ul className="list-unstyled">
-              <li className="mx-3">
-                <a
-                  href="https://www.linkedin.com/in/sylviabpereira/"
-                  className="text-white"
-                >
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    size="2xl"
-                    style={{ color: "#343a40" }}
-                  />
-                </a>
-              </li>
-
-              <li className="mx-3">
-                <a
-                  href="mailto:sylvia.bachiegga@hotmail.com"
-                  className="text-white"
-                >
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    size="2xl"
-                    style={{ color: "#343a40" }}
-                  />
-                </a>
-              </li>
-
-              <li className="mx-3">
-                <a href="/Resume" className="text-white">
-                  <FontAwesomeIcon
-                    icon={faFileLines}
-                    size="2xl"
-                    style={{ color: "#343a40" }}
-                  />
-                </a>
-              </li>
-
-              <li className="mx-3">
-                <a href="/Admin" className="text-white">
-                  <FontAwesomeIcon
-                    icon={faToolbox}
-                    size="2xl"
-                    style={{ color: "#343a40" }}
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <small className="d-block mb-3 text-dark-grey text-center">
-            mauroPereira©2023
-          </small>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

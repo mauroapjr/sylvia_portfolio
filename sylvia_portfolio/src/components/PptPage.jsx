@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../styles/pptPage.css";
 
 import { Document, Page, pdfjs } from "react-pdf";
+import { Link } from "react-router-dom";
 import { Header } from "../helpers.jsx";
 
 import PdfExample from "../pdfFiles/mauroPereiraPresentation.pdf";
@@ -33,6 +34,7 @@ function PPTPage({ pdfUrl }) {
       </div>
       </main>
       <footer>
+      <Link to="/portfolio" className="btn btn-primary">Return to Portfolio</Link>
         <div className="back-to-top">
         <p>
           <a href="#">Back to top</a>

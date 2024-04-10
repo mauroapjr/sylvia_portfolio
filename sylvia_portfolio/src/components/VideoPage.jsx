@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/main.css";
 import "../styles/videoPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,7 +22,7 @@ export default function VideoPage() {
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-      <Header/>        
+      <Header/> 
       <div className="ratio ratio-16x9">
         <iframe
           src="https://www.youtube.com/embed/sjDuXGhCzwc"
@@ -29,7 +30,7 @@ export default function VideoPage() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-      </div>
+      </div><Link to="/portfolio" className="btn btn-primary">Return to Portfolio</Link>       
       <small className="d-block mb-3 text-body-secondary">
         mauro pereira © 2023
       </small>
