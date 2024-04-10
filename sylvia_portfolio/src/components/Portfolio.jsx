@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
 
 import StorylineImage from "../images/Storyline.JPG";
-import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+import ProfileImage from "../images/Profile_picture.jpg";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 import InstDesigner from "../images/inst_designer.png";
 // import PPTPage from "./PPTPage";
 
@@ -34,28 +34,22 @@ function Portfolio({ isAuthenticated }) {
   
   return (
     <>
-      <header data-bs-theme="dark">
+      <header>
         <nav className="navbar">
           <a className="navbar-brand" href="/">
-            <div className="sylvia-logo-container-portfolio">
+            <div className="header-content">
               <img
-                className="sylvia-logo-portfolio"
+                className="profile-image"
+                src={ProfileImage}
+                alt="Profile Image"
+              />
+              <img
+                className="sylvia-logo-main"
                 src={SylviaLogo}
                 alt="Sylvia Logo"
               />
             </div>
           </a>
-
-          <div className="flow-container-portfolio">
-            <img
-              className="flow-background-portfolio"
-              src={FlowBackground}
-              alt="Background portfolio"
-              style={{
-                backgroundImage: `url(${FlowBackground})`,
-              }}
-            />
-          </div>
         </nav>
       </header>
 
