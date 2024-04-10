@@ -6,8 +6,8 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import axios from "axios";
 
 import DeleteUserForm from "./DeleteUserForm";
-import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+import ProfileImage from "../images/Profile_picture.jpg";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 import "../styles/login.css";
 
 export default function Login({ setIsAuthenticated, isAdminPage }) {
@@ -77,28 +77,22 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
 
   return (
     <>
-    <header data-bs-theme="dark">
-        <nav className="navbar-login">
+    <header>
+        <nav className="navbar">
           <a className="navbar-brand" href="/">
-            <div className="sylvia-logo-container-login">
+            <div className="header-content">
               <img
-                className="sylvia-logo-login"
+                className="profile-image"
+                src={ProfileImage}
+                alt="Profile Image"
+              />
+              <img
+                className="sylvia-logo-main"
                 src={SylviaLogo}
                 alt="Sylvia Logo"
               />
             </div>
           </a>
-
-          <div className="flow-container-login">
-            <img
-              className="flow-background-login"
-              src={FlowBackground}
-              alt="Background login"
-              style={{
-                backgroundImage: `url(${FlowBackground})`,
-              }}
-            />
-          </div>
         </nav>
       </header>
       
