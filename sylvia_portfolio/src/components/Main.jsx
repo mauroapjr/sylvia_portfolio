@@ -5,14 +5,11 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 import { ImageGallery } from "../helpers.jsx";
-
 import "../styles/main.css";
-//import "bootstrap/dist/css/bootstrap.min.css";
-//import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import ProfileImage from "../images/Profile_picture.jpg";
 import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
 export default function Main() {
   return (
@@ -20,29 +17,16 @@ export default function Main() {
       <header>
         <nav className="navbar">
           <a className="navbar-brand" href="/">
-            <div className="profile-image-container">
+            <div className="header-content">
               <img
                 className="profile-image"
                 src={ProfileImage}
                 alt="Profile Image"
               />
-              <div className="sylvia-logo-container">
-                <img
-                  className="sylvia-logo-main"
-                  src={SylviaLogo}
-                  alt="Sylvia Logo"
-                />
-              </div>
-            </div>
-
-            <div className="flow-container">
               <img
-                className="flow-background-main-1"
-                src={FlowBackground}
-                alt="Background 1"
-                style={{
-                  backgroundImage: `url(${FlowBackground})`,
-                }}
+                className="sylvia-logo-main"
+                src={SylviaLogo}
+                alt="Sylvia Logo"
               />
             </div>
           </a>
@@ -52,19 +36,19 @@ export default function Main() {
       <main>
         <div className="page-container">
           <div className="text-container">
-            <h3 className="long-text">Nice to e-meet you!</h3>
-            <h3 className="long-text">
+            <p className="long-text">Nice to e-meet you!</p>
+            <p className="long-text">
               I'm Sylvia Pereira, an enthusiastic learning designer who's all
               about embracing the joy of constant learning. I've ventured into a
               world of skills that includes music, data analysis, high-school
               courses, and customer education.
-            </h3>
-            <h3 className="long-text">
+            </p>
+            <p className="long-text">
               If you ask people to describe me, they would likely tell you,
               "Sylvia is curious, energetic, dedicated, and committed to any
               task at hand.“
-            </h3>
-            <h3 className="long-text">
+            </p>
+            <p className="long-text">
               Here's a summary of my expertise in the field of learning design:
               <ul>
                 <li>Adult Education Principles</li>
@@ -72,9 +56,9 @@ export default function Main() {
                 <li>Learning Transfer</li>
                 <li>Metrics & Evaluation</li>
               </ul>
-            </h3>
-            <h2 className="text-title">Main Projects</h2>
+            </p>
           </div>
+
           <div className="badge-container">
             <section className="box-right">
               <div className="link-items">
@@ -113,7 +97,6 @@ export default function Main() {
           </div>
         </div>
         <ImageGallery />
-        {/* <Carousel /> */}
       </main>
 
       <footer
