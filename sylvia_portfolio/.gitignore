@@ -24,4 +24,4 @@ yarn-error.log*
 
 # terraform (need to get fixed on how to push it to github)
 # sylvia_portfolio/src/terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/4.9.0/windows_amd64/terraform-provider-aws_v4.9.0_x5.exe
-.terraform
+#.terraform
