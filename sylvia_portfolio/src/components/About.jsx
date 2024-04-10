@@ -1,8 +1,6 @@
 import React from "react";
 import "../styles/main.css";
 import "../styles/about.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -10,46 +8,33 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-import ProfilePicture from "../images/Profile_picture.jpg";
-import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+import ProfileImage from "../images/Profile_picture.jpg";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
 function About() {
   return (
     <>
-      <header data-bs-theme="dark">
+      <header>
         <nav className="navbar">
           <a className="navbar-brand" href="/">
-            <div className="sylvia-logo-container-about">
+            <div className="header-content">
               <img
-                className="sylvia-logo-about"
+                className="profile-image"
+                src={ProfileImage}
+                alt="Profile Image"
+              />
+              <img
+                className="sylvia-logo-main"
                 src={SylviaLogo}
                 alt="Sylvia Logo"
               />
             </div>
           </a>
-
-          <div className="flow-container-about">
-            <img
-              className="flow-background-about"
-              src={FlowBackground}
-              alt="Background about"
-              style={{
-                backgroundImage: `url(${FlowBackground})`,
-              }}
-            />
-          </div>
         </nav>
       </header>
 
       <main>
-        <div className="profile-picture-container">
-          <img
-            className="profile-picture-about"
-            src={ProfilePicture}
-            alt="picture"
-          />
-        </div>
+        
         <div className="about-text-container">
           <div className="col-lg-6 col-md-8 mx-auto">
             <p
