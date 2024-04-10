@@ -1,30 +1,12 @@
 import React from "react";
+import { Header } from "../helpers.jsx";
 
-import ProfileImage from "../images/Profile_picture.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 import "../styles/resume.css";
 
 function Resume() {
   return (
     <>
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
+      <Header/>        
       <main>
         <div className="resume-container">
           <iframe

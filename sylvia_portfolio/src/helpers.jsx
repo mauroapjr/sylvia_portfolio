@@ -12,6 +12,7 @@ import "../src/styles/main.css";
 const imageUrls = [Alteryx, Movidaria, CTC, TVO, RoyalConservatory];
 
 export const Header = () => {
+  return (
   <header>
         <nav className="navbar">
           <a className="navbar-brand" href="/">
@@ -30,6 +31,7 @@ export const Header = () => {
           </a>
         </nav>
       </header>
+  );
 };
 
 export const ImageGallery = () => (

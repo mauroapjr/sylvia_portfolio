@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/main.css";
 import "../styles/about.css";
+import { Header } from "../helpers.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -8,33 +9,11 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 
-import ProfileImage from "../images/Profile_picture.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
-
 function About() {
   return (
     <>
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
-
+      <Header />
       <main>
-        
         <div className="about-text-container">
           <div className="col-lg-6 col-md-8 mx-auto">
             <p
@@ -178,9 +157,7 @@ function About() {
             <div className="col-sm-8 col-md-7 py-4"></div>
             <div className="col-sm-4 offset-md-1 py-4">
               <ul className="list-unstyled d-flex justify-content-end">
-               
                 <li className="mx-3">
-                  
                   <a
                     href="https://www.linkedin.com/in/sylviabpereira/"
                     className="text-white"
@@ -193,7 +170,6 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  
                   <a
                     href="mailto:sylvia.bachiegga@hotmail.com"
                     className="text-white"
@@ -206,7 +182,6 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
-                  
                   <a href="#" className="text-white">
                     <FontAwesomeIcon
                       icon={faFileLines}
@@ -216,7 +191,6 @@ function About() {
                   </a>
                 </li>
                 <li className="mx-3">
-                 
                   <a href="/Admin" className="text-white">
                     <FontAwesomeIcon
                       icon={faToolbox}

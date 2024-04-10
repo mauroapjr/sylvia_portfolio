@@ -5,10 +5,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../styles/pptPage.css";
 
 import { Document, Page, pdfjs } from "react-pdf";
+import { Header } from "../helpers.jsx";
 
 import PdfExample from "../pdfFiles/mauroPereiraPresentation.pdf";
-import ProfileImage from "../images/Profile_picture.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -21,24 +20,7 @@ function PPTPage({ pdfUrl }) {
 
   return (
     <>
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
+      <Header/>        
       <main>
       <div className="parent-container">
       <div className="pdf-container">

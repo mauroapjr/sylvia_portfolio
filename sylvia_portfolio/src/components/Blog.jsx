@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Header } from "../helpers.jsx";
 import "../styles/main.css";
 import "../styles/blog.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
-import ProfileImage from "../images/Profile_picture.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
 function Blog() {
   const [posts, setPosts] = useState([]);
@@ -27,25 +25,7 @@ function Blog() {
 
   return (
     <>
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
-
+      <Header/>        
       <main className="container">
         <div className="black-box p-2 p-md-5 mb-5 rounded">
           <div className="col-md-6 px-0">

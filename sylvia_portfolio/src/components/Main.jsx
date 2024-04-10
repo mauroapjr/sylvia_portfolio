@@ -4,35 +4,14 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faFileLines } from "@fortawesome/free-regular-svg-icons";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-import { ImageGallery } from "../helpers.jsx";
+import { ImageGallery, Header } from "../helpers.jsx";
 import "../styles/main.css";
-
-import ProfileImage from "../images/Profile_picture.jpg";
-import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
 export default function Main() {
   return (
     <>
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
-
+    <Header/>
+      
       <main>
         <div className="page-container">
           <div className="text-container">

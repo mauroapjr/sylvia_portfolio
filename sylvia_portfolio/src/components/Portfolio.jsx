@@ -4,12 +4,11 @@ import "../styles/portfolio.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+import { Header } from "../helpers.jsx";
 import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
 
 import StorylineImage from "../images/Storyline.JPG";
-import ProfileImage from "../images/Profile_picture.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 import InstDesigner from "../images/inst_designer.png";
 // import PPTPage from "./PPTPage";
 
@@ -18,7 +17,7 @@ initializeIcons();
 function Portfolio({ isAuthenticated }) {
   const navigate = useNavigate(); // handle youtube video
   //const [showPdf, setShowPdf] = useState(false);
-  
+
   const handleClick = () => {
     navigate("/VideoPage");
   };
@@ -31,28 +30,9 @@ function Portfolio({ isAuthenticated }) {
     navigate("/PPTPage");
   };
 
-  
   return (
     <>
-      <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
-
+      <Header />
       <main>
         <div className="container-fluid">
           <div className="row">
@@ -60,7 +40,9 @@ function Portfolio({ isAuthenticated }) {
               <div className="bg-body-tertiary custom-bg-color me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                 <div className="my-3 py-3">
                   <h2 className="display-5">PDF</h2>
-                  <p className="lead">Short .pdf presentation that explain...</p>
+                  <p className="lead">
+                    Short .pdf presentation that explain...
+                  </p>
                 </div>
                 <div
                   className="bg-body-tertiary shadow-sm mx-auto"
@@ -87,7 +69,7 @@ function Portfolio({ isAuthenticated }) {
                   >
                     Open file
                   </button>
-                </div>                
+                </div>
               </div>
             </div>
 
@@ -197,4 +179,3 @@ function Portfolio({ isAuthenticated }) {
 }
 
 export default Portfolio;
-

@@ -3,11 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "antd/dist/reset.css";
 import { Form, Input, Button, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Header } from "../helpers.jsx";
 import axios from "axios";
 
-import DeleteUserForm from "./DeleteUserForm";
-import ProfileImage from "../images/Profile_picture.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 import "../styles/login.css";
 
 export default function Login({ setIsAuthenticated, isAdminPage }) {
@@ -77,25 +75,8 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
 
   return (
     <>
-    <header>
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="header-content">
-              <img
-                className="profile-image"
-                src={ProfileImage}
-                alt="Profile Image"
-              />
-              <img
-                className="sylvia-logo-main"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-        </nav>
-      </header>
-      
+    <Header/>
+              
       <div className="login-form"  style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
       
         <div>
