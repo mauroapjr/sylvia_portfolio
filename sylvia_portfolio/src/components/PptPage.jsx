@@ -7,8 +7,8 @@ import "../styles/pptPage.css";
 import { Document, Page, pdfjs } from "react-pdf";
 
 import PdfExample from "../pdfFiles/mauroPereiraPresentation.pdf";
-import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
+import ProfileImage from "../images/Profile_picture.jpg";
+import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -21,28 +21,22 @@ function PPTPage({ pdfUrl }) {
 
   return (
     <>
-      <header data-bs-theme="dark">
+      <header>
         <nav className="navbar">
           <a className="navbar-brand" href="/">
-            <div className="sylvia-logo-container-about">
+            <div className="header-content">
               <img
-                className="sylvia-logo-about"
+                className="profile-image"
+                src={ProfileImage}
+                alt="Profile Image"
+              />
+              <img
+                className="sylvia-logo-main"
                 src={SylviaLogo}
                 alt="Sylvia Logo"
               />
             </div>
           </a>
-
-          <div className="flow-container-about">
-            <img
-              className="flow-background-about"
-              src={FlowBackground}
-              alt="Background about"
-              style={{
-                backgroundImage: `url(${FlowBackground})`,
-              }}
-            />
-          </div>
         </nav>
       </header>
       <main>
