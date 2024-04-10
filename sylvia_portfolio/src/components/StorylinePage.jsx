@@ -4,7 +4,7 @@ import "../styles/videoPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { Header } from "../helpers.jsx";
+import { Header, Footer } from "../helpers.jsx";
 
 function StorylinePage() {
   return (
@@ -37,6 +37,7 @@ function StorylinePage() {
       <small className="d-block mb-3 text-body-secondary">
         mauro pereira © 2023
       </small>
+      <Footer/>
     </>
   );
 }

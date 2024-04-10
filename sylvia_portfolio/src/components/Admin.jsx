@@ -4,6 +4,7 @@ import axios from "axios";
 import { Form, Input, Button, message } from "antd";
 import { ImageFileResizer } from "react-image-file-resizer";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Header, Footer } from "../helpers.jsx";
 
 import "../styles/main.css";
 import "../styles/admin.css";
@@ -15,8 +16,6 @@ import "antd/dist/reset.css";
 import "../styles/login.css";
 
 import DeleteUserForm from "./DeleteUserForm";
-import FlowBackground from "../images/Flow_backgroung.jpg";
-import SylviaLogo from "../images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background.png";
 
 const { TextArea } = Input;
 
@@ -29,7 +28,7 @@ export default function Admin(setIsAuthenticated) {
   // Login page
   const [isRegistering, setIsRegistering] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   const formRef = useRef(null);
 
   const onChange = (value) => {
@@ -157,32 +156,10 @@ export default function Admin(setIsAuthenticated) {
 
   return (
     <>
-      <header data-bs-theme="dark">
-        <nav className="navbar">
-          <a className="navbar-brand" href="/">
-            <div className="sylvia-logo-container-about">
-              <img
-                className="sylvia-logo-about"
-                src={SylviaLogo}
-                alt="Sylvia Logo"
-              />
-            </div>
-          </a>
-
-          <div className="flow-container-about">
-            <img
-              className="flow-background-about"
-              src={FlowBackground}
-              alt="Background about"
-              style={{
-                backgroundImage: `url(${FlowBackground})`,
-              }}
-            />
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <section>
+      <h2>Create a Blog Post</h2>
         <div
           className=""
           style={{
@@ -346,6 +323,7 @@ export default function Admin(setIsAuthenticated) {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

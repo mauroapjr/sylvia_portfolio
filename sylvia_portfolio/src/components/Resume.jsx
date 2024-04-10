@@ -1,12 +1,12 @@
 import React from "react";
-import { Header } from "../helpers.jsx";
+import { Header, Footer } from "../helpers.jsx";
 
 import "../styles/resume.css";
 
 function Resume() {
   return (
     <>
-      <Header/>        
+      <Header />
       <main>
         <div className="resume-container">
           <iframe
@@ -19,6 +19,7 @@ function Resume() {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 }

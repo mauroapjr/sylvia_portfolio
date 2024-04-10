@@ -93,60 +93,40 @@ app.post("/deleteUser", (req, res) => {
   });
 });
 
-// ***** Check Database users *****
-// import axios from "axios";
-// function fetchCredentialsTable() {
-//   axios
-//     .get("http://localhost:3001/log-credentials-table")
-//     .then((response) => {
-//       console.log("Credentials Table Content:");
-//       console.log(response.data); // The data received from the server (rows from the "credentials" table)
-//     })
-//     .catch((error) => {
-//       console.error("Failed to fetch credentials table content:", error);
-//     });
-// }
+// ****** Admin User ******
 
-// Call the function when needed (e.g., after successful registration)
-//fetchCredentialsTable();
+// Create a separated table for Admin Password
 
-// function logCredentialsTable() {
-//   db.all("SELECT * FROM credentials", (err, rows) => {
-//     if (err) {
-//       console.error("Error fetching data from credentials table:", err);
-//     } else {
-//       console.log("Credentials Table Content:");
-//       console.log(rows);
-//     }
-//   });
-// }
-
-// app.post("/register", (req, res) => {
-//   const { username, password } = req.body;
-
-//   // Check if the username already exists in the database
-//   db.get(`SELECT * FROM credentials WHERE username = '${username}'`, (err, row) => {
-//     if (err) {
-//       throw err;
-//     }
-//     if (row) {
-//       res.send({ message: "Username already exists" });
-//     } else {
-//       db.run(
-//         `INSERT INTO credentials (username, password) VALUES ('${username}', '${password}')`,
-//         (err) => {
-//           if (err) {
-//             throw err;
-//           }
-//           res.send({ message: "User registered successfully!" });
-          
-//           // Log the content of the "credentials" table after successful registration
-//           logCredentialsTable();
-//         }
-//       );
-//     }
-//   });
+// db.run(`ALTER TABLE credentials ADD COLUMN isAdmin INTEGER NOT NULL DEFAULT 0;`, (err) => {
+//   if (err) {
+//     console.error("Failed to add isAdmin column:", err.message);
+//   } else {
+//     console.log("Added isAdmin column to credentials table successfully.");
+//   }
 // });
+
+app.post("/adminLogin", (req, res) => {
+  const { username, password } = req.body;
+
+  db.get(
+    `SELECT * FROM credentials WHERE username = ? AND password = ? AND isAdmin = TRUE`,
+    [username, password],
+    (err, row) => {
+      if (err) {
+        console.error(err.message);
+        res.status(500).send({ message: "An error occurred." });
+        return;
+      }
+      if (row) {
+        // User is authenticated and is an admin
+        res.send({ isAdmin: true, message: "Admin login successful." });
+      } else {
+        // Authentication failed or not an admin
+        res.send({ isAdmin: false, message: "Invalid credentials or not an admin." });
+      }
+    }
+  );
+});
 
 // ***** Blog Database *****
 

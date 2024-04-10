@@ -1,15 +1,3 @@
-.flow-background-login {
-  height: 250px ;
-  width: 100vw;
-  margin-top: -75px;
-}
-@media (max-width: 415px) {
-  .flow-background-login{
-   object-fit:cover;
-  }
-}
-
-
 .quill-editor .ql-container {
   border-radius: 5px;
 }

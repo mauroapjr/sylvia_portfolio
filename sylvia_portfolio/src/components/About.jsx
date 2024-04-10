@@ -3,12 +3,6 @@ import "../styles/main.css";
 import "../styles/about.css";
 import { Header, Footer } from "../helpers.jsx";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faFileLines } from "@fortawesome/free-regular-svg-icons";
-import { faToolbox } from "@fortawesome/free-solid-svg-icons";
-
 function About() {
   return (
     <>
