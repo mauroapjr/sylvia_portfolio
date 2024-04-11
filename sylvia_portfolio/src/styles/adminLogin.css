@@ -1,0 +1,20 @@
+.admin-login-form-container {
+  display: flex;
+  flex-direction: column;  
+  justify-content: center; 
+  align-items: center;     
+  padding: 220px;           
+}
+
+.admin-login-form {
+  width: 100%;             
+  margin-bottom: 20px; 
+}  
+
+.admin-login-form-button {
+  margin-left: 20px;    
+}
+
+.admin-login-form-container .admin-form-item {
+  margin-left: 10px;  
+}

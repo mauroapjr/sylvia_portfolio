@@ -52,15 +52,7 @@ export const Header = () => {
 };
 
 export const ImageGallery = () => (
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      backgroundColor: "#5f5a5a",
-      padding: "20px",
-    }}
-  >
+  <div className="image-gallery">
     {imageUrls.map((imageUrl, index) => (
       <img
         key={index}

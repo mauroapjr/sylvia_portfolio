@@ -62,20 +62,21 @@
   background-position: center;
   width: 100%;
   display: flex;
-  justify-content: space-between; /* This will push the navbar-brand and navbar-menu apart */
-  align-items: center; /* Align items vertically */
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px;
+  flex-wrap: wrap; 
 }
 
-/* Assuming navbar-brand is your class for the logo and profile image container */
-.navbar a.navbar-brand {
+/* .navbar a.navbar-brand {
   display: flex;
-  align-items: center; /* Align items vertically within the navbar-brand */
+  align-items: center; 
   text-decoration: none; 
-}
+} */
 
 .header-content {
   display: flex;
-  align-items: center; /* Ensure items are vertically centered */
+  align-items: center; 
 }
 
 
@@ -93,34 +94,58 @@
   height: auto; 
 }
 
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   .profile-image {
-    width: 80px; /* Smaller size for mobile */
-    height: 80px;
+    width: 120px; 
+    height: 120px;
+    margin-left: -5px;
   }
 
   .sylvia-logo-main {
-    width: 80px; /* Adjust size for mobile */
+    width: 200px ;   
   }
 }
 
 .navbar-menu {
   display: flex;
-  padding-left:620px ;
-  padding-top: 150px;
-  gap: 20px; /* Adjust space between links */
+  padding-left:20px ;
+  padding-top: 50px;
+  gap: 20px; 
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+@media (max-width: 415px) {
+  .navbar {
+    flex-direction: column; 
+    align-items: flex-start;
+    width:max-content;
+    
+  }
+
+  .navbar-menu {
+    order: 2;
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 5x;
+    padding-right: 0px;
+  }
+
+  .navbar-link {
+    font-size: small !important;
+  }
+
 }
 
 .navbar-link {
   text-decoration: none;
-  color: #000; /* Adjust link color */
-  font-weight: thin; /* Adjust as needed */
+  color: #000; 
   font-size: large;
 }
 
-/* Add hover effects or other styles as needed */
+
 .navbar-link:hover {
-  color: #555; /* Example hover color */
+  color: #555; 
 }
 
 
@@ -166,6 +191,12 @@
     
 }
 
+@media (max-width: 431px) {
+  .badge {
+    display: none;
+  }
+}
+
 .text-container {
   flex: 1; 
   text-align: left;
@@ -174,6 +205,45 @@
   font-weight: 200;
   word-spacing: 2px;
 }
+
+@media (max-width: 431px) {
+  .text-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5f5a5a;
+  padding: 20px;
+}
+
+.gallery-image {
+  width: 100px;
+  height: auto;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 431px) {
+  .image-gallery {    
+    flex-direction: row; 
+    padding: 2px;  
+    justify-content: center;
+  }
+
+  .gallery-image img {
+    width: 10px;  
+    margin-left: 1px;  
+    margin-right: 1px;
+  }
+}
+
 
 .link-items {
   color: rgb(13, 13, 13);
@@ -188,7 +258,7 @@
   margin-left: 150px;
   font-size: 35px;
 }
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   .link-items {
     display: flex;
     flex-direction: column;
@@ -237,15 +307,15 @@
   margin-bottom: 10% !important; 
 }
 
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   .long-text {
-    font-size: 90% !important;    
-    width: 110% !important;
-    height: 290px !important;
-    margin-bottom: -50px !important;
+    font-size: 80% !important;    
+    width: 100% !important;
+    word-spacing: 5px;
+    margin-bottom: 0px !important;
   }
 }
-@media (max-width: 897px) {
+/* @media (max-width: 897px) {
   .long-text {
     font-weight: 200 !important;
     width: 110% !important;
@@ -262,7 +332,7 @@
     
     
   }
-} */
+} */ */
 /* @media (max-width: 1980px) {
   .long-text {
     font-size: 18px !important;
@@ -282,7 +352,7 @@
 
 /* Adjust companies logos */
 
-.image-gallery {
+/* .image-gallery {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,11 +364,11 @@
   width: 100px !important;
   height: auto !important;
   margin: 0 10px !important;
-}
+} */
 
 /* Grey box */
 
-.box-right {
+/* .box-right {
   width: 100%;  
   z-index: 1;
   display: flex;
@@ -310,7 +380,7 @@
     margin-left: 0 !important;
   }
 }
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   .box-right {
     width: 80% !important;
     height: 320px;
@@ -331,7 +401,7 @@
   padding-right: 0px;
   margin-bottom: 0px;
   }
-}
+} */
 
 
 
@@ -343,7 +413,7 @@
   justify-content: flex-end;
 }
 
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   .list-unstyled {
     margin-bottom: 10% !important;
     margin-top: 10% !important;
@@ -364,7 +434,7 @@
 
 /* Control the icon inside the footer */
 
-@media (max-width: 415px) {
+@media (max-width: 430px) {
   .mx-3 {
     display: flex;
     justify-content: center;
