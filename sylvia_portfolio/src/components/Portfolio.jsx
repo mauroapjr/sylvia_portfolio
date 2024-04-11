@@ -4,7 +4,7 @@ import "../styles/portfolio.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { Header } from "../helpers.jsx";
+import { Header, Footer } from "../helpers.jsx";
 import { useNavigate } from "react-router-dom";
 import { initializeIcons } from "@uifabric/icons";
 
@@ -111,69 +111,7 @@ function Portfolio({ isAuthenticated }) {
         </div>
       </main>
 
-      <footer className="container-portfolio py-5">
-        <ul
-          className="head-item-portfolio"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
-          <div
-            className="head-items"
-            style={{ display: "flex", fontSize: "155%" }}
-          >
-            <a
-              href="/Portfolio"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <p className="head-portfolio" style={{ margin: "0 30px" }}>
-                PORTFOLIO
-              </p>
-            </a>
-            <a
-              href="/Blog"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <p className="head-blog" style={{ margin: "0 30px" }}>
-                BLOG
-              </p>
-            </a>
-            <a
-              href="/About"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <p className="head-about" style={{ margin: "0 30px" }}>
-                ABOUT
-              </p>
-            </a>
-          </div>
-        </ul>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarHeader"
-          aria-controls="navbarHeader"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <p>
-          <a href="#">Back to top</a>
-        </p>
-        <div className="row">
-          <div className="col-12 col-md d-flex justify-content-center">
-            <small className="d-block mb-3 text-body-secondary">
-              mauroPereira©2023
-            </small>
-          </div>
-        </div>
-      </footer>
-
-      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      <Footer />
     </>
   );
 }
