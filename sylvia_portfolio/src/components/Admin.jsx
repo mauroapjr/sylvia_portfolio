@@ -41,6 +41,29 @@ export default function Admin(setIsAuthenticated) {
     setContent({ text: value, paragraphs: paragraphs });
   };
 
+// Create Admin Login
+  const onFinishAdminForm = (values) => {
+    const { adminUsername, adminPassword } = values;
+    // Implement your admin registration logic here
+    // This is a placeholder POST request, adjust the URL and body as needed
+    axios
+      .post("http://localhost:3001/adminRegister", {
+        username: adminUsername,
+        password: adminPassword,
+        isAdmin: true, // Indicate this is an admin account
+      })
+      .then((response) => {
+        // Handle successful registration
+        alert("Admin registration successful!");
+        form.resetFields();
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error("Admin registration failed:", error);
+        alert("Admin registration failed.");
+      });
+  };
+
   const handleDeleteUser = (username) => {
     return new Promise((resolve, reject) => {
       axios
@@ -322,6 +345,37 @@ export default function Admin(setIsAuthenticated) {
             </Button>
           </p>
         </div>
+      </div>
+      <div className="admin-registration-form" style={{ marginTop: "20px", display: "flex", justifyContent: "center" }}>
+        <Form
+          form={form}
+          name="admin_registration"
+          onFinish={onFinishAdminForm}
+          style={{ width: 300 }}
+        >
+          <h2>Register Admin</h2>
+          <Form.Item
+            name="adminUsername"
+            rules={[{ required: true, message: "Please input your username!" }]}
+          >
+            <Input prefix={<UserOutlined />} placeholder="Username" />
+          </Form.Item>
+          <Form.Item
+            name="adminPassword"
+            rules={[{ required: true, message: "Please input your password!" }]}
+          >
+            <Input
+              prefix={<LockOutlined />}
+              type="password"
+              placeholder="Password"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Register Admin
+            </Button>
+          </Form.Item>
+        </Form>
       </div>
       <Footer />
     </>

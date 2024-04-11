@@ -7,10 +7,11 @@ import { Header, Footer } from "../helpers.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
-
+import { useAuth } from '../authContext';  
 import "../styles/login.css";
 
-export default function Login({ setIsAuthenticated, isAdminPage }) {
+export default function Login() {
+  const { setIsAuthenticated } = useAuth();
   const [isRegistering, setIsRegistering] = useState(false);
   const navigate = useNavigate();
   const formRef = useRef(null);
@@ -25,14 +26,14 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
           if (res.data.message === "User registered successfully") {
             setIsRegistering(false);
             formRef.current.resetFields();
-            alert("Registration successful! You can now log in.");
+            message.success("Registration successful! You can now log in.");
           } else {
-            alert("Username already exists");
+            message.error("Username already exists");
           }
         })
         .catch((error) => {
           console.error(error);
-          alert("Registration failed");
+          message.error("Registration failed");
         });
     } else {
       // Login logic
@@ -44,12 +45,12 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
             formRef.current.resetFields();
             navigate("/Portfolio");
           } else {
-            alert("Password/username is not correct.");
+            message.error("Password/username is not correct.");
           }
         })
         .catch((error) => {
           console.error(error);
-          alert("Login failed");
+          message.error("Login failed");
         });
     }
   };
@@ -58,69 +59,37 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
     <>
       <Header />
       <main>
-        <div
-          className="login-form"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className="login-form" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <div>
-            {isRegistering ? (
-              <h2>Create an Account</h2>
-            ) : (
-              <h2>Login to my Portfolio</h2>
-            )}
+            {isRegistering ? <h2>Create an Account</h2> : <h2>Login to my Portfolio</h2>}
 
             <Form
               name="normal_login"
               className="login-form"
-              initialValues={{
-                remember: true,
-              }}
+              initialValues={{ remember: true }}
               onFinish={onFinish}
               ref={formRef}
             >
               <Form.Item
                 name="username"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input Username!",
-                  },
-                ]}
+                rules={[{ required: true, message: "Please input Username!" }]}
               >
-                <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="Username"
-                  style={{ width: "300px" }}
-                />
+                <Input prefix={<UserOutlined />} placeholder="Username" />
               </Form.Item>
 
               <Form.Item
                 name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your Password!",
-                  },
-                ]}
+                rules={[{ required: true, message: "Please input your Password!" }]}
               >
                 <Input
-                  prefix={<LockOutlined className="site-form-item-icon" />}
+                  prefix={<LockOutlined />}
                   type="password"
                   placeholder="Password"
-                  style={{ width: "300px" }}
                 />
               </Form.Item>
 
               <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="login-form-button"
-                >
+                <Button type="primary" htmlType="submit" className="login-form-button">
                   {isRegistering ? "Register" : "Login"}
                 </Button>
               </Form.Item>
@@ -129,19 +98,10 @@ export default function Login({ setIsAuthenticated, isAdminPage }) {
             <p>
               Don't have a Login and want to know more about my work experience?
               Contact me:{" "}
-            </p>
-            <div className="mx-3">
-              <a
-                href="mailto:sylvia.bachiegga@hotmail.com"
-                className="text-white"
-              >
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  size="2xl"
-                  style={{ color: "#343a40" }}
-                />
+              <a href="mailto:sylvia.bachiegga77@gmail.com" className="text-white">
+                <FontAwesomeIcon icon={faEnvelope} size="2xl" style={{ color: "#343a40" }} />
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </main>
