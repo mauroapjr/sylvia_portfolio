@@ -12,7 +12,7 @@ export default function Main() {
           <div className="text-container">
             <p className="long-text">Nice to e-meet you!</p>
             <p className="long-text">
-              I'm Sylvia Pereira, an enthusiastic learning designer who's all
+              I'm Sylvia Bachiegga, an enthusiastic learning designer who's all
               about embracing the joy of constant learning. I've ventured into a
               world of skills that includes music, data analysis, high-school
               courses, and customer education.
