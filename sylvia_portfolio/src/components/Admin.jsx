@@ -41,24 +41,23 @@ export default function Admin(setIsAuthenticated) {
     setContent({ text: value, paragraphs: paragraphs });
   };
 
-// Create Admin Login
+  // Create Admin Login
   const onFinishAdminForm = (values) => {
     const { adminUsername, adminPassword } = values;
-    // Implement your admin registration logic here
-    // This is a placeholder POST request, adjust the URL and body as needed
+    
     axios
       .post("http://localhost:3001/adminRegister", {
         username: adminUsername,
         password: adminPassword,
-        isAdmin: true, // Indicate this is an admin account
+        isAdmin: true, 
       })
       .then((response) => {
-        // Handle successful registration
+        
         alert("Admin registration successful!");
         form.resetFields();
       })
       .catch((error) => {
-        // Handle errors
+       
         console.error("Admin registration failed:", error);
         alert("Admin registration failed.");
       });
@@ -181,10 +180,10 @@ export default function Admin(setIsAuthenticated) {
     <>
       <Header />
 
-      <section>
-      <h2>Create a Blog Post</h2>
+      <section className="content-section">
+        <h2>Create a Blog Post</h2>
         <div
-          className=""
+          className="form-container"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -338,15 +337,9 @@ export default function Admin(setIsAuthenticated) {
               <DeleteUserForm handleDeleteUser={handleDeleteUser} />
             )}
           </div>
-          <p>
-            {/* Already have an account?{" "} */}
-            <Button type="link" href="/Login" onClick={handleToggleRegister}>
-              Back to Login
-            </Button>
-          </p>
         </div>
       </div>
-      <div className="admin-registration-form" style={{ marginTop: "20px", display: "flex", justifyContent: "center" }}>
+      <div className="admin-registration-form">
         <Form
           form={form}
           name="admin_registration"
@@ -375,6 +368,11 @@ export default function Admin(setIsAuthenticated) {
               Register Admin
             </Button>
           </Form.Item>
+          <p>
+            <Button type="link" href="/Login" onClick={handleToggleRegister}>
+              Back to Login
+            </Button>
+          </p>
         </Form>
       </div>
       <Footer />
