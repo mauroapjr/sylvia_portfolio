@@ -6,6 +6,7 @@
 
 .col-md-6 {
   margin-top: 100px ;
+  margin-bottom: 30px;
 }
 @media (max-width: 430px) {
   .col-md-6 {

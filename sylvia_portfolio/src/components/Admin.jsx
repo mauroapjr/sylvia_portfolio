@@ -5,6 +5,7 @@ import { Form, Input, Button, message } from "antd";
 import { ImageFileResizer } from "react-image-file-resizer";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Header, Footer } from "../helpers.jsx";
+import { useAuth } from "../authContext";
 
 import "../styles/main.css";
 import "../styles/admin.css";
@@ -114,6 +115,10 @@ export default function Admin(setIsAuthenticated) {
   };
 
   const onFinishPostForm = async (values) => {
+    // if (!isAdminAuthenticated) {
+    //   message.error("You are not authorized to perform this action.");
+    //   return;
+    // }
     try {
       const deltaContent = editorRef.current.getEditor().getContents();
       const plainTextContent = editorRef.current.getEditor().getText();
@@ -339,7 +344,7 @@ export default function Admin(setIsAuthenticated) {
           </div>
         </div>
       </div>
-      <div className="admin-registration-form">
+      {/* <div className="admin-registration-form">
         <Form
           form={form}
           name="admin_registration"
@@ -374,7 +379,7 @@ export default function Admin(setIsAuthenticated) {
             </Button>
           </p>
         </Form>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

@@ -171,7 +171,8 @@
 .badge-container {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;  
+  justify-content: flex-end;
+  
 }
 
 .badge {
@@ -205,8 +206,8 @@
   margin-bottom: -80px;
   text-align: left;
   margin-left: 7%;  
-  font-size: 25px;
-  font-weight: 200;
+  font-size: 20px;
+  font-weight: 10;
   word-spacing: 2px;
 }
 
@@ -311,8 +312,8 @@
 .long-text {
   text-align: left;
   margin-left: 7%;
-  font-size: 25px;
-  font-weight: 200;
+  font-size: 20px;
+  font-weight: 20;
   word-spacing: 2px;  
 }
 
@@ -345,7 +346,11 @@
     
     
   }
-} */ */
+} */ 
+
+
+/* for small screen laptop */
+
 /* @media (max-width: 1980px) {
   .long-text {
     font-size: 18px !important;
@@ -381,11 +386,12 @@
 
 /* Grey box */
 
-/* .box-right {
+.box-right {
   width: 100%;  
   z-index: 1;
   display: flex;
- 
+  
+ margin-top: -50px;
 }
 @media (max-width: 768px) {
   .box-right {
@@ -414,7 +420,7 @@
   padding-right: 0px;
   margin-bottom: 0px;
   }
-} */
+}
 
 
 

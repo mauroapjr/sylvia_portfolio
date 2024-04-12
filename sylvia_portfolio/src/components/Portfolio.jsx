@@ -49,7 +49,7 @@ function Portfolio({ isAuthenticated }) {
                   style={{
                     width: "80%",
                     height: "300px",
-                    marginBottom: "5%",
+                    marginBottom: "6%",
                     borderRadius: "21px 21px 0 0",
                     backgroundImage: `url(${StorylineImage})`,
                     backgroundSize: "cover",
