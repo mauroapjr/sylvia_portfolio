@@ -58,12 +58,12 @@ export const ImageGallery = () => (
         key={index}
         src={imageUrl}
         alt={`Slide ${index}`}
-        style={{
-          width: "100px",
-          height: "auto",
-          marginLeft: "80px",
-          marginRight: "80px",
-        }}
+        // style={{
+        //   width: "100px",
+        //   height: "auto",
+        //   marginLeft: "80px",
+        //   marginRight: "80px",
+        // }}
       />
     ))}
   </div>
