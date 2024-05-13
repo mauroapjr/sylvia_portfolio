@@ -93,7 +93,7 @@ export const Footer = () => {
 
             <li className="mx-3">
               <a
-                href="mailto:sylvia.bachiegga77@gmail.com"
+                href="mailto:sylvia.bachiegga@hotmail.com"
                 className="text-white"
               >
                 <FontAwesomeIcon

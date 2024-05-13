@@ -98,7 +98,7 @@ export default function Login() {
             <p>
               Don't have a Login and want to know more about my work experience?
               Contact me:{" "}
-              <a href="mailto:sylvia.bachiegga77@gmail.com" className="text-white">
+              <a href="mailto:sylvia.bachiegga@hotmail.com" className="text-white">
                 <FontAwesomeIcon icon={faEnvelope} size="2xl" style={{ color: "#343a40" }} />
               </a>
             </p>
