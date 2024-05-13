@@ -42,7 +42,7 @@ app.post("/validatePassword", (req, res) => {
 // Create New User
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
+  const hashedPassword = await bcrypt.hash(password, 10); 
 
   db.get(`SELECT * FROM credentials WHERE username = ?`, [username], (err, row) => {
     if (err) {
@@ -63,16 +63,47 @@ app.post("/register", async (req, res) => {
   });
 });
 
+app.post("/register", (req, res) => {
+  const { username, password } = req.body;
+  // Simulate checking if the user exists
+  const userExists = checkUserExists(username); // This should be an actual DB call
+
+  if (userExists) {
+    console.log("User exists, cannot create:", username);
+    res.status(409).send({ message: "Username already exists from 22" });
+  } else {
+    console.log("Creating user:", username);
+    // Code to create the user
+    createUser(username, password);
+    res.status(200).send({ message: "User registered successfully from 2 " });
+  }
+});
+
 // Delete User
+// app.post("/deleteUser", (req, res) => {
+//   const { username } = req.body;
+
+//   db.run(`DELETE FROM credentials WHERE username = ?`, [username], (err) => {
+//     if (err) {
+//       console.error(err.message);
+//       return res.status(500).send("Failed to delete user");
+//     }
+//     res.send({ message: "User deleted successfully" });
+//   });
+// });
+
 app.post("/deleteUser", (req, res) => {
   const { username } = req.body;
-
-  db.run(`DELETE FROM credentials WHERE username = ?`, [username], (err) => {
+  db.run(`DELETE FROM credentials WHERE username = ?`, [username], function(err) {
     if (err) {
-      console.error(err.message);
-      return res.status(500).send("Failed to delete user");
+      console.error("Error deleting user:", err.message);
+      res.status(500).send({ message: "Failed to delete user due to server error." });
+    } else if (this.changes === 0) {
+      console.error("No user found with the username:", username);
+      res.status(404).send({ message: "User not found." });
+    } else {
+      res.send({ message: "User deleted successfully" });
     }
-    res.send({ message: "User deleted successfully" });
   });
 });
 

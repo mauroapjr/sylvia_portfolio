@@ -18,42 +18,62 @@ export default function Login() {
 
   const onFinish = (values) => {
     const { username, password } = values;
-    if (isRegistering) {
-      // Registration logic
-      axios
-        .post("http://localhost:3001/register", { username, password })
-        .then((res) => {
-          if (res.data.message === "User registered successfully") {
-            setIsRegistering(false);
-            formRef.current.resetFields();
-            message.success("Registration successful! You can now log in.");
-          } else {
-            message.error("Username already exists");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          message.error("Registration failed");
-        });
-    } else {
-      // Login logic
-      axios
-        .post("http://localhost:3001/validatePassword", { username, password })
-        .then((res) => {
-          if (res.data.validation) {
-            setIsAuthenticated(true);
-            formRef.current.resetFields();
-            navigate("/Portfolio");
-          } else {
-            message.error("Password/username is not correct.");
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          message.error("Login failed");
-        });
-    }
+    // Login logic only
+    axios.post("http://localhost:3001/validatePassword", { username, password })
+      .then((res) => {
+        if (res.data.validation) {
+          setIsAuthenticated(true);
+          formRef.current.resetFields();
+          navigate("/Portfolio");  // Adjust as necessary to navigate post-login
+        } else {
+          message.error("Password/username is not correct.");
+        }
+      })
+      .catch((error) => {
+        console.error("Login failed", error);
+        message.error("Login failed");
+      });
   };
+  
+
+  // const onFinish = (values) => {
+  //   const { username, password } = values;
+  //   if (isRegistering) {
+  //     // Registration logic
+  //     axios
+  //       .post("http://localhost:3001/register", { username, password })
+  //       .then((res) => {
+  //         if (res.data.message === "User registered successfully") {
+  //           setIsRegistering(false);
+  //           formRef.current.resetFields();
+  //           message.success("Registration successful! You can now log in.");
+  //         } else {
+  //           message.error("Username already exists");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         message.error("Registration failed");
+  //       });
+  //   } else {
+  //     // Login logic
+  //     axios
+  //       .post("http://localhost:3001/validatePassword", { username, password })
+  //       .then((res) => {
+  //         if (res.data.validation) {
+  //           setIsAuthenticated(true);
+  //           formRef.current.resetFields();
+  //           navigate("/Portfolio");
+  //         } else {
+  //           message.error("Password/username is not correct.");
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error(error);
+  //         message.error("Login failed");
+  //       });
+  //   }
+  // };
 
   return (
     <>
