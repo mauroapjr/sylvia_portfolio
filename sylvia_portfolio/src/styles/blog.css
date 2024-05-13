@@ -35,6 +35,15 @@
   }
 }
 
+.black-box {
+  background-color: black;  
+  color: white;             
+}
+.custom-black-box {
+  padding: 10px; 
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+}
 
 .post-content {
   display: none;

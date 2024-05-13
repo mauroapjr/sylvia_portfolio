@@ -27,13 +27,13 @@ function Blog() {
     <>
       <Header />
       <main className="container">
-        <div className="black-box p-2 p-md-5 mb-5 rounded">
-          <div className="col-md-6 px-0">
-            <h1 className="display-2 fst-italic ">
-              Here is where I share my thoutghs and ideas!
-            </h1>
-          </div>
-        </div>
+      <div className="black-box custom-black-box rounded">
+  <div className="col-md-6 px-3">
+    <h1 className="display-2 fst-italic">
+      Here is where I share my thoughts and ideas!
+    </h1>
+  </div>
+</div>
         <div className="row row-cols-1 row-cols-md-3 g-4 mb-4">
           {posts.map((post) => {
             const isExpanded = post.id === expandedPostId;
