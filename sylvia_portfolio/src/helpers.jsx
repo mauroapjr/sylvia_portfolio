@@ -1,9 +1,9 @@
 import React from "react";
 import Alteryx from "../src/images/alteryxSS.png";
 import Movidaria from "../src/images/movidariaS.png";
-import RoyalConservatory from "../src/images/Royal_Conservatory_of_Music_logo.svgS.png";
-import TVO from "../src/images/TVOS.jpg";
-import CTC from "../src/images/canadian-tire-logoS.png";
+import RoyalConservatory from "../src/images/rcm_logo_white2.png";
+import TVO from "../src/images/tvo_logo_white.png";
+import CTC from "../src/images/canadian-tire-logo_white.png";
 import ProfileImage from "../src/images/Profile_picture.jpg";
 import SylviaLogo from "../src/images/sylvia-bachiegga-high-resolution-logo-black-on-transparent-background-no-flower.png";
 
