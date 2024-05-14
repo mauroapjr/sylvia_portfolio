@@ -9,58 +9,76 @@ app.use(cors());
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 
-let db = new sqlite3.Database("credentials.db", sqlite3.OPEN_READWRITE, (err) => {
-  if (err) {
-    console.error(err.message);
+let db = new sqlite3.Database(
+  "credentials.db",
+  sqlite3.OPEN_READWRITE,
+  (err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Connected to the credentials database.");
   }
-  console.log("Connected to the credentials database.");
-});
+);
 
 // Validate Password (for both regular and admin users)
 app.post("/validatePassword", (req, res) => {
   const { username, password } = req.body;
-  
-  db.get(`SELECT * FROM credentials WHERE username = ?`, [username], async (err, row) => {
-    if (err) {
-      console.error(err.message);
-      return res.status(500).send("An error occurred during the login process.");
-    }
-    if (row) {
-      // Check hashed password
-      const match = await bcrypt.compare(password, row.password);
-      if (match) {
-        res.send({ validation: true, isAdmin: row.isAdmin === 1 });
+
+  db.get(
+    `SELECT * FROM credentials WHERE username = ?`,
+    [username],
+    async (err, row) => {
+      if (err) {
+        console.error(err.message);
+        return res
+          .status(500)
+          .send("An error occurred during the login process.");
+      }
+      if (row) {
+        // Check hashed password
+        const match = await bcrypt.compare(password, row.password);
+        if (match) {
+          res.send({ validation: true, isAdmin: row.isAdmin === 1 });
+        } else {
+          res.send({ validation: false });
+        }
       } else {
         res.send({ validation: false });
       }
-    } else {
-      res.send({ validation: false });
     }
-  });
+  );
 });
 
 // Create New User
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10); 
+  const hashedPassword = await bcrypt.hash(password, 10);
 
-  db.get(`SELECT * FROM credentials WHERE username = ?`, [username], (err, row) => {
-    if (err) {
-      console.error(err.message);
-      return;
+  db.get(
+    `SELECT * FROM credentials WHERE username = ?`,
+    [username],
+    (err, row) => {
+      if (err) {
+        console.error(err.message);
+        return;
+      }
+      if (row) {
+        res.send({ message: "Username already exists" });
+      } else {
+        db.run(
+          `INSERT INTO credentials (username, password, isAdmin) VALUES (?, ?, ?)`,
+          [username, hashedPassword, 0],
+          (err) => {
+            if (err) {
+              console.error(err.message);
+              return res.status(500).send("Failed to register the user.");
+            }
+            res.send({ message: "User registered successfully!" });
+          }
+        );
+      }
     }
-    if (row) {
-      res.send({ message: "Username already exists" });
-    } else {
-      db.run(`INSERT INTO credentials (username, password, isAdmin) VALUES (?, ?, ?)`, [username, hashedPassword, 0], (err) => {
-        if (err) {
-          console.error(err.message);
-          return res.status(500).send("Failed to register the user.");
-        }
-        res.send({ message: "User registered successfully!" });
-      });
-    }
-  });
+  );
 });
 
 app.post("/register", (req, res) => {
@@ -80,65 +98,61 @@ app.post("/register", (req, res) => {
 });
 
 // Delete User
-// app.post("/deleteUser", (req, res) => {
-//   const { username } = req.body;
-
-//   db.run(`DELETE FROM credentials WHERE username = ?`, [username], (err) => {
-//     if (err) {
-//       console.error(err.message);
-//       return res.status(500).send("Failed to delete user");
-//     }
-//     res.send({ message: "User deleted successfully" });
-//   });
-// });
-
 app.post("/deleteUser", (req, res) => {
   const { username } = req.body;
-  db.run(`DELETE FROM credentials WHERE username = ?`, [username], function(err) {
-    if (err) {
-      console.error("Error deleting user:", err.message);
-      res.status(500).send({ message: "Failed to delete user due to server error." });
-    } else if (this.changes === 0) {
-      console.error("No user found with the username:", username);
-      res.status(404).send({ message: "User not found." });
-    } else {
-      res.send({ message: "User deleted successfully" });
+  db.run(
+    `DELETE FROM credentials WHERE username = ?`,
+    [username],
+    function (err) {
+      if (err) {
+        console.error("Error deleting user:", err.message);
+        res
+          .status(500)
+          .send({ message: "Failed to delete user due to server error." });
+      } else if (this.changes === 0) {
+        console.error("No user found with the username:", username);
+        res.status(404).send({ message: "User not found." });
+      } else {
+        res.send({ message: "User deleted successfully" });
+      }
     }
-  });
+  );
 });
 
 // Admin Login
-
 app.post("/adminLogin", (req, res) => {
   const { username, password } = req.body;
 
-  db.get(`SELECT * FROM credentials WHERE username = ?`, [username], async (err, row) => {
-    if (err) {
-      console.error("Database error:", err.message);
-      return res.status(500).send("An internal server error occurred.");
-    }
+  db.get(
+    `SELECT * FROM credentials WHERE username = ?`,
+    [username],
+    async (err, row) => {
+      if (err) {
+        console.error("Database error:", err.message);
+        return res.status(500).send("An internal server error occurred.");
+      }
 
-    if (!row) {
-      console.log("Login attempt failed: User not found", { username });
-      return res.status(401).send("Invalid credentials.");
-    }
+      if (!row) {
+        console.log("Login attempt failed: User not found", { username });
+        return res.status(401).send("Invalid credentials.");
+      }
 
-    if (!row.isAdmin) {
-      console.log("Login attempt by non-admin user", { username });
-      return res.status(401).send("Access denied.");
-    }
+      if (!row.isAdmin) {
+        console.log("Login attempt by non-admin user", { username });
+        return res.status(401).send("Access denied.");
+      }
 
-    const match = await bcrypt.compare(password, row.password);
-    if (match) {
-      console.log("Admin logged in successfully", { username });
-      res.send({ isAdmin: true });
-    } else {
-      console.log("Login attempt failed: Incorrect password", { username });
-      res.status(401).send("Invalid credentials.");
+      const match = await bcrypt.compare(password, row.password);
+      if (match) {
+        console.log("Admin logged in successfully", { username });
+        res.send({ isAdmin: true });
+      } else {
+        console.log("Login attempt failed: Incorrect password", { username });
+        res.status(401).send("Invalid credentials.");
+      }
     }
-  });
+  );
 });
-
 
 // ***** Blog Database *****
 
@@ -147,7 +161,7 @@ app.get("/admin", (req, res) => {
     if (err) {
       throw err;
     }
-    
+
     res.send(rows);
   });
 });
@@ -160,7 +174,7 @@ let blogDb = new sqlite3.Database("blog.db", (err) => {
   }
 });
 
-// Add image column to posts table - Needed just to create the column once. 
+// Add image column to posts table - Needed just to create the column once.
 
 // blogDb.run(`ALTER TABLE posts ADD COLUMN image TEXT`, (err) => {
 //   if (err) {

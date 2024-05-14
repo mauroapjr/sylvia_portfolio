@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import { Form, Input, Button } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 
-export default function DeleteUserForm ({ handleDeleteUser }) {
-  const [deleteUsername, setDeleteUsername] = useState("");
+export default function DeleteUserForm({ handleDeleteUser }) {
+  const [form] = Form.useForm();
 
   const handleConfirmDelete = () => {
-
-    handleDeleteUser(deleteUsername);
+    form
+      .validateFields()
+      .then((values) => {
+        handleDeleteUser(values.deleteUsername);
+        form.resetFields();
+      })
+      .catch((info) => {
+        console.log("Validate Failed:", info);
+      });
   };
 
   return (
-    <div>
+    <Form form={form}>
       <h2>Delete User</h2>
       <Form.Item
         name="deleteUsername"
@@ -25,20 +32,18 @@ export default function DeleteUserForm ({ handleDeleteUser }) {
         <Input
           prefix={<UserOutlined className="site-form-item-icon" />}
           placeholder="Username"
-          onChange={(e) => setDeleteUsername(e.target.value)}
         />
       </Form.Item>
       <Form.Item>
         <Button
           type="primary"
           danger
-          htmlType="submit"
-          className="login-form-button"
           onClick={handleConfirmDelete}
+          className="login-form-button"
         >
           Delete User
         </Button>
       </Form.Item>
-    </div>
+    </Form>
   );
 }

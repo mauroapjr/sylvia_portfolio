@@ -42,121 +42,32 @@ export default function Admin(setIsAuthenticated) {
     setContent({ text: value, paragraphs: paragraphs });
   };
 
-  // Create Admin Login
-  // const onFinishAdminForm = (values) => {
-  //   const { adminUsername, adminPassword } = values;
-    
-  //   axios
-  //     .post("http://localhost:3001/adminRegister", {
-  //       username: adminUsername,
-  //       password: adminPassword,
-  //       isAdmin: true, 
-  //     })
-  //     .then((response) => {
-        
-  //       alert("Admin registration successful!");
-  //       form.resetFields();
-  //     })
-  //     .catch((error) => {
-       
-  //       console.error("Admin registration failed:", error);
-  //       alert("Admin registration failed.");
-  //     });
-  // };
-
-  // const handleDeleteUser = (username) => {
-  //   return new Promise((resolve, reject) => {
-  //     axios
-  //       .post("http://localhost:3001/deleteUser", { username })
-  //       .then((res) => {
-  //         const message = res.data.message;
-  //         formRef.current.resetFields();
-  //         resolve({ message, username }); // Resolve the promise with the message and deleted username
-  //       })
-  //       .catch((error) => {
-  //         console.error(error);
-  //         reject(error);
-  //       });
-  //     console.log("Deleting user:", username);
-  //   });
-  // };
-
-  // const handleDeleteUser = (username) => {
-  //   return new Promise((resolve, reject) => {
-  //     axios.post("http://localhost:3001/deleteUser", { username })
-  //       .then((res) => {
-  //         if (res.status === 200) {
-  //           resolve({ message: res.data.message, username });
-  //         } else {
-  //           reject(new Error(res.data.message || "Unknown error"));
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error when deleting user:", error);
-  //         reject(new Error(error.response?.data.message || "Failed to communicate with the server"));
-  //       });
-  //   });
-  // };
-  
   const handleDeleteUser = (username) => {
-    axios.post("http://localhost:3001/deleteUser", { username })
+    axios
+      .post("http://localhost:3001/deleteUser", { username })
       .then((response) => {
-        // Check for a successful response (which defaults to 200 OK)
         if (response.status === 200) {
-          alert(response.data.message); // This should show the successful deletion message
+          alert(response.data.message);
         } else {
           alert("Something went wrong: " + response.data.message);
         }
+        formRef.current.resetFields();
       })
       .catch((error) => {
+        console.error("Delete error:", error);
         // Handling errors
         if (error.response) {
           alert("Error: " + error.response.data.message);
         } else {
           alert("Error: An unexpected error occurred.");
         }
+      })
+      .finally(() => {
+        formRef.current.resetFields();
       });
   };
-  
-
-  // const onFinishDeleteForm = (values) => {
-  //   handleDeleteUser(values.username)
-  //     .then((result) => {
-  //       const { message, username } = result;
-  //       alert(`User "${username}" has been deleted successfully. ${message}`);
-  //     })
-  //     .catch((error) => {
-  //       alert("An error occurred while deleting the user.");
-  //     });
-  // };
-
-  // const handleImageChange = (event) => {
-  //   const file = event.target.files[0];
-
-  //   ImageFileResizer.imageFileResizer(
-  //     file,
-  //     600, //max width
-  //     600, //max height
-  //     "JPEG", //format
-  //     80, //quality
-  //     0, //rotation
-  //     (compressedImage) => {
-  //       const reader = new FileReader();
-  //       reader.readAsDataURL(compressedImage);
-  //       reader.onload = () => {
-  //         const base64data = reader.result.split(",")[1];
-  //         setBase64data(base64data);
-  //       };
-  //     },
-  //     "base64"
-  //   );
-  // };
 
   const onFinishPostForm = async (values) => {
-    // if (!isAdminAuthenticated) {
-    //   message.error("You are not authorized to perform this action.");
-    //   return;
-    // }
     try {
       const deltaContent = editorRef.current.getEditor().getContents();
       const plainTextContent = editorRef.current.getEditor().getText();
@@ -199,62 +110,20 @@ export default function Admin(setIsAuthenticated) {
   const onFinish = (values) => {
     const { username, password } = values;
 
-    axios.post("http://localhost:3001/register", { username, password })
-    .then((res) => {
-      alert(res.data.message);
-      formRef.current.resetFields();
-    })
-    .catch((error) => {
-      if (error.response) {
-        
-        alert(error.response.data.message);
-      } else {
-        
-        alert("Network error or no response from server");
-      }
-    });
-  
-
-
-  //   axios.post("http://localhost:3001/register", { username, password })
-  // .then((res) => {
-  //   if (res.data.message === "User registered successfully") {
-  //     alert("Registration successful! You can now log in.");
-  //     formRef.current.resetFields();
-  //   } else {
-  //     alert("Username already exists");
-  //   }
-  // })
-  // .catch((error) => {
-  //   console.error(error);
-  //   alert("Registration failed");
-  // });
-
-
-
-
-    // Registration logic
-    // axios
-    //   .post("http://localhost:3001/register", { username, password })
-    //   .then((res) => {
-    //     if (res.data.message === "User registered successfully") {
-    //       setIsRegistering(false);
-    //       formRef.current.resetFields();
-    //       alert("Registration successful! You can now log in.");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //     alert("Registration failed");
-    //   });
+    axios
+      .post("http://localhost:3001/register", { username, password })
+      .then((res) => {
+        alert(res.data.message);
+        formRef.current.resetFields();
+      })
+      .catch((error) => {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert("Network error or no response from server");
+        }
+      });
   };
-
-   
-
-  // const handleToggleRegister = () => {
-  //   setIsRegistering(!isRegistering);
-  //   formRef.current.resetFields();
-  // };
 
   return (
     <>
@@ -405,7 +274,6 @@ export default function Admin(setIsAuthenticated) {
             </Form.Item>
           </Form>
 
-          
           <div className="delete-form">
             <Button
               type="primary"
@@ -420,9 +288,8 @@ export default function Admin(setIsAuthenticated) {
             )}
           </div>
         </div>
-        
       </div>
-      
+
       <Footer />
     </>
   );
