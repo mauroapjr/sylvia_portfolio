@@ -6,6 +6,7 @@ import { ImageFileResizer } from "react-image-file-resizer";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Header, Footer } from "../helpers.jsx";
 import { useAuth } from "../authContext";
+import { Tabs } from "antd";
 
 import "../styles/main.css";
 import "../styles/admin.css";
@@ -18,6 +19,7 @@ import "../styles/login.css";
 
 import DeleteUserForm from "./DeleteUserForm";
 
+const { TabPane } = Tabs;
 const { TextArea } = Input;
 
 export default function Admin(setIsAuthenticated) {
@@ -128,168 +130,174 @@ export default function Admin(setIsAuthenticated) {
   return (
     <>
       <Header />
-
-      <section className="content-section">
-        <h2>Create a Blog Post</h2>
-        <div
-          className="form-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 80,
-          }}
-        >
-          <Form
-            name="post_form"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={(values) => onFinishPostForm(values, form)}
-            form={form}
-            style={{ width: "80%" }}
-          >
-            <Form.Item
-              label={<span className="title-label">Title</span>}
-              name="title"
-              style={{ width: "100%", marginBottom: "40px" }}
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the post title!",
-                },
-              ]}
+      <Tabs defaultActiveKey="1" style={{ margin: 20 }}>
+        <TabPane tab="Create Blog Post" key="1">
+          <section className="content-section">
+            <h2>Create a Blog Post</h2>
+            <div
+              className="form-container"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: 80,
+              }}
             >
-              <Input style={{ fontSize: "18px" }} />
-            </Form.Item>
-
-            <Form.Item
-              label={<span className="content-label">Content</span>}
-              name="content"
-              rules={[
-                { required: true, message: "Please input the post content!" },
-              ]}
-            >
-              <ReactQuill
-                ref={editorRef}
-                value={JSON.stringify(content)}
-                onChange={(content) => onChange(content)}
-                className="quill-editor"
-                modules={{
-                  toolbar: [
-                    [{ header: [1, 2, false] }],
-                    ["bold", "italic", "underline", "strike"],
-                    [{ color: [] }, { background: [] }],
-                    [{ align: [] }],
-                    ["link", "image"],
-                    ["clean"],
-                  ],
+              <Form
+                name="post_form"
+                initialValues={{
+                  remember: true,
                 }}
-              />
-            </Form.Item>
-            <Form.Item
-              label={<span className="author-label">Author</span>}
-              name="author"
-              style={{ width: "100%", marginTop: "40px", fontSize: "18px" }}
-              rules={[
-                {
-                  required: true,
-                  message: "Please input the author of this post!",
-                },
-              ]}
-            >
-              <Input style={{ fontSize: "18px" }} />
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Create Post
-              </Button>
-            </Form.Item>
-          </Form>
-        </div>
-      </section>
-
-      <div
-        className="login-admin-form"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <h2>Create an Account</h2>
-          <Form
-            name="normal_login"
-            className="admin-login-form"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-            ref={formRef}
-          >
-            <Form.Item
-              name="username"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input Username!",
-                },
-              ]}
-            >
-              <Input
-                prefix={<UserOutlined className="site-form-item-icon" />}
-                placeholder="Username"
-                style={{ width: "300px" }}
-                autoComplete="username"
-              />
-            </Form.Item>
-
-            <Form.Item
-              name="password"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your Password!",
-                },
-              ]}
-            >
-              <Input
-                prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
-                placeholder="Password"
-                style={{ width: "300px" }}
-                autoComplete="password"
-              />
-            </Form.Item>
-
-            <Form.Item>
-              <Button
-                type="primary"
-                htmlType="submit"
-                className="login-form-button"
+                onFinish={(values) => onFinishPostForm(values, form)}
+                form={form}
+                style={{ width: "80%" }}
               >
-                Register
-              </Button>
-            </Form.Item>
-          </Form>
+                <Form.Item
+                  label={<span className="title-label">Title</span>}
+                  name="title"
+                  style={{ width: "100%", marginBottom: "40px" }}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input the post title!",
+                    },
+                  ]}
+                >
+                  <Input style={{ fontSize: "18px" }} />
+                </Form.Item>
 
-          <div className="delete-form">
-            <Button
-              type="primary"
-              htmlType="button"
-              className="delete-form-button"
-              onClick={() => setIsDeleting(true)}
-            >
-              Click Here to Delete User
-            </Button>
-            {isDeleting && (
-              <DeleteUserForm handleDeleteUser={handleDeleteUser} />
-            )}
+                <Form.Item
+                  label={<span className="content-label">Content</span>}
+                  name="content"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input the post content!",
+                    },
+                  ]}
+                >
+                  <ReactQuill
+                    ref={editorRef}
+                    value={JSON.stringify(content)}
+                    onChange={(content) => onChange(content)}
+                    className="quill-editor"
+                    modules={{
+                      toolbar: [
+                        [{ header: [1, 2, false] }],
+                        ["bold", "italic", "underline", "strike"],
+                        [{ color: [] }, { background: [] }],
+                        [{ align: [] }],
+                        ["link", "image"],
+                        ["clean"],
+                      ],
+                    }}
+                  />
+                </Form.Item>
+                <Form.Item
+                  label={<span className="author-label">Author</span>}
+                  name="author"
+                  style={{ width: "100%", marginTop: "40px", fontSize: "18px" }}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input the author of this post!",
+                    },
+                  ]}
+                >
+                  <Input style={{ fontSize: "18px" }} />
+                </Form.Item>
+                <Form.Item>
+                  <Button type="primary" htmlType="submit">
+                    Create Post
+                  </Button>
+                </Form.Item>
+              </Form>
+            </div>
+          </section>
+        </TabPane>
+        <TabPane tab="Account Management" key="2">
+          <div
+            className="login-admin-form"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <h2>Create an Account</h2>
+              <Form
+                name="normal_login"
+                className="admin-login-form"
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={onFinish}
+                ref={formRef}
+              >
+                <Form.Item
+                  name="username"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input Username!",
+                    },
+                  ]}
+                >
+                  <Input
+                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    placeholder="Username"
+                    style={{ width: "300px" }}
+                    autoComplete="username"
+                  />
+                </Form.Item>
+
+                <Form.Item
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your Password!",
+                    },
+                  ]}
+                >
+                  <Input
+                    prefix={<LockOutlined className="site-form-item-icon" />}
+                    type="password"
+                    placeholder="Password"
+                    style={{ width: "300px" }}
+                    autoComplete="password"
+                  />
+                </Form.Item>
+
+                <Form.Item>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    className="login-form-button"
+                  >
+                    Register
+                  </Button>
+                </Form.Item>
+              </Form>
+
+              <div className="delete-form">
+                <Button
+                  type="primary"
+                  htmlType="button"
+                  className="delete-form-button"
+                  onClick={() => setIsDeleting(true)}
+                >
+                  Click Here to Delete User
+                </Button>
+                {isDeleting && (
+                  <DeleteUserForm handleDeleteUser={handleDeleteUser} />
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
+        </TabPane>
+      </Tabs>
       <Footer />
     </>
   );
